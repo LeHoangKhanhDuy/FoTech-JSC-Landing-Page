@@ -1,36 +1,35 @@
-import { Building2 } from 'lucide-react';
-
-const companies = [
-  'FoTech JSC',
-  'VinCommerce',
-  'Techcom Retail',
-  'FPT Logistics',
-  'VNPay Hub',
-  'Tiki Delivery',
-  'Shopee Logistics',
-  'Highlands Coffee',
+const brandLogos = [
+  { name: 'VPBank', style: 'font-black text-2xl tracking-tight' },
+  { name: 'ACB', style: 'font-black text-2xl tracking-widest uppercase' },
+  { name: 'vietjetAir.com', style: 'font-extrabold italic text-xl tracking-tighter' },
+  { name: '247Express', style: 'font-black text-2xl tracking-tight' },
+  { name: 'NIPPON EXPRESS', style: 'font-extrabold text-lg tracking-widest uppercase' },
+  { name: 'WinCommerce', style: 'font-bold text-2xl tracking-tight' },
+  { name: 'Techcombank', style: 'font-extrabold text-2xl tracking-normal' },
+  { name: 'FPT Corporation', style: 'font-black text-xl tracking-widest uppercase' },
+  { name: 'Highlands Coffee', style: 'font-extrabold text-xl tracking-tight' },
+  { name: 'VNPay', style: 'font-black text-2xl tracking-tighter' },
 ];
 
 export default function TrustedCompanies() {
-  const logos = [...companies, ...companies];
+  const logos = [...brandLogos, ...brandLogos];
 
   return (
-    <section className="py-10 border-y border-slate-200/60 bg-white dark:border-slate-800/80 dark:bg-slate-950">
+    <section className="bg-white dark:bg-slate-950">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
           Được tin dùng bởi hơn 500+ doanh nghiệp hàng đầu tại Việt Nam
         </p>
 
-        <div className="mt-6 overflow-hidden">
-          <div className="flex w-max items-center gap-6 logo-marquee">
-            {logos.map((company, index) => (
-              <div
-                key={`${company}-${index}`}
-                className="flex items-center gap-2 rounded-xl border border-slate-200/80 bg-slate-50 px-5 py-2.5 text-xs font-bold text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+        <div className="mt-8 mb-16 overflow-hidden">
+          <div className="flex w-max items-center gap-12 sm:gap-16 logo-marquee">
+            {logos.map((brand, index) => (
+              <span
+                key={`${brand.name}-${index}`}
+                className={`shrink-0 select-none text-slate-400/90 transition-colors duration-300 hover:text-slate-800 dark:text-slate-500 dark:hover:text-slate-100 ${brand.style}`}
               >
-                <Building2 className="h-4 w-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                <span>{company}</span>
-              </div>
+                {brand.name}
+              </span>
             ))}
           </div>
         </div>

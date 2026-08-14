@@ -1,81 +1,103 @@
-import { useState, useEffect } from 'react';
-import { Menu, Moon, Sun, X, ChevronDown, Users, Stethoscope, Cloud, BarChart3, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Button from '@/components/ui/Button';
-import CorporateLogoMark from '@/components/layout/CorporateLogoMark';
-import LeadModal from '@/components/ui/LeadModal';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useState, useEffect } from "react";
+import {
+  Menu,
+  Moon,
+  Sun,
+  X,
+  ChevronDown,
+  Users,
+  Stethoscope,
+  Cloud,
+  BarChart3,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Button from "@/components/ui/Button";
+import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
+import LeadModal from "@/components/ui/LeadModal";
+import { useDarkMode } from "@/hooks/useDarkMode";
+
+const ecosystemProducts = [
+  {
+    name: "FoHRM",
+    tagline: "Quản trị Nhân sự AI",
+    desc: "Tự động hóa chấm công, tính lương và trợ lý AI FINA.",
+    icon: Users,
+    color: "bg-blue-600",
+    link: "/fohrm",
+    isRoute: true,
+  },
+  {
+    name: "FoMed",
+    tagline: "Quản lý Phòng khám",
+    desc: "Hồ sơ bệnh án điện tử, lịch khám & doanh thu.",
+    icon: Stethoscope,
+    color: "bg-emerald-600",
+    link: "#fomed",
+    isRoute: false,
+  },
+  {
+    name: "FoTech Cloud",
+    tagline: "Hạ tầng & AI Engine",
+    desc: "Đám mây doanh nghiệp an toàn trên AWS Cloud.",
+    icon: Cloud,
+    color: "bg-indigo-600",
+    link: "#fotech-cloud",
+    isRoute: false,
+  },
+  {
+    name: "FoAnalytics",
+    tagline: "Báo cáo Điều hành",
+    desc: "Dashboard thông minh & dự báo realtime.",
+    icon: BarChart3,
+    color: "bg-amber-500",
+    link: "#foanalytics",
+    isRoute: false,
+  },
+];
 
 export default function CorporateNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [ecosystemOpen, setEcosystemOpen] = useState(false);
   const { isDark, toggleDarkMode } = useDarkMode();
-  
+
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    type: 'demo' | 'trial' | 'login' | 'consulting';
-  }>({ isOpen: false, type: 'consulting' });
+    type: "demo" | "trial" | "login" | "consulting";
+  }>({ isOpen: false, type: "consulting" });
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const openModal = (type: 'demo' | 'trial' | 'login' | 'consulting') => {
+  const openModal = (type: "demo" | "trial" | "login" | "consulting") => {
     setModalState({ isOpen: true, type });
-    setIsOpen(false);
-    setEcosystemOpen(false);
   };
 
-  const ecosystemProducts = [
-    {
-      name: 'FoHRM',
-      tagline: 'Quản trị Nhân sự Tích hợp AI',
-      desc: 'Tự động chấm công, tính lương & trợ lý AI FINA.',
-      icon: Users,
-      color: 'bg-blue-600',
-      link: '/fohrm',
-      isRoute: true,
-    },
-    {
-      name: 'FoMed',
-      tagline: 'Quản lý Phòng khám & Y tế',
-      desc: 'Tối ưu luồng bệnh nhân, hồ sơ bệnh án & đơn thuốc.',
-      icon: Stethoscope,
-      color: 'bg-emerald-600',
-      link: '#fomed',
-      isRoute: false,
-    },
-    {
-      name: 'FoTech Cloud',
-      tagline: 'Hạ tầng Điện toán Đám mây & AI',
-      desc: 'Lưu trữ an toàn, API Gateway & AI Engine doanh nghiệp.',
-      icon: Cloud,
-      color: 'bg-indigo-600',
-      link: '#fotech-cloud',
-      isRoute: false,
-    },
-    {
-      name: 'FoAnalytics',
-      tagline: 'Trung tâm Báo cáo Điều hành',
-      desc: 'Dashboard dữ liệu tập trung realtime cho Ban quản trị.',
-      icon: BarChart3,
-      color: 'bg-amber-500',
-      link: '#foanalytics',
-      isRoute: false,
-    },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <>
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/90'
-            : 'bg-transparent'
+            ? "border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/90"
+            : "bg-transparent"
         }`}
       >
         <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -83,7 +105,6 @@ export default function CorporateNavbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-8 md:flex">
-            
             {/* Dropdown Menu for Ecosystem */}
             <div
               className="relative"
@@ -96,7 +117,12 @@ export default function CorporateNavbar() {
                 className="flex items-center gap-1.5 text-sm font-semibold text-slate-700 transition hover:text-blue-600 dark:text-slate-200 dark:hover:text-white"
               >
                 <span>Hệ sinh thái</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${ecosystemOpen ? 'rotate-180 text-blue-600' : ''}`} aria-hidden="true" />
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    ecosystemOpen ? "rotate-180 text-blue-600" : ""
+                  }`}
+                  aria-hidden="true"
+                />
               </button>
 
               {/* Dropdown Panel */}
@@ -108,10 +134,12 @@ export default function CorporateNavbar() {
                   <div className="space-y-1">
                     {ecosystemProducts.map((prod) => {
                       const Icon = prod.icon;
-                      
+
                       const content = (
                         <div className="group flex items-start gap-3 rounded-xl p-2.5 transition hover:bg-slate-50 dark:hover:bg-slate-800/80">
-                          <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}>
+                          <div
+                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}
+                          >
                             <Icon className="h-4 w-4" aria-hidden="true" />
                           </div>
                           <div>
@@ -132,14 +160,22 @@ export default function CorporateNavbar() {
 
                       if (prod.isRoute) {
                         return (
-                          <Link key={prod.name} to={prod.link} onClick={() => setEcosystemOpen(false)}>
+                          <Link
+                            key={prod.name}
+                            to={prod.link}
+                            onClick={() => setEcosystemOpen(false)}
+                          >
                             {content}
                           </Link>
                         );
                       }
 
                       return (
-                        <a key={prod.name} href={prod.link} onClick={() => setEcosystemOpen(false)}>
+                        <a
+                          key={prod.name}
+                          href={prod.link}
+                          onClick={() => setEcosystemOpen(false)}
+                        >
                           {content}
                         </a>
                       );
@@ -177,102 +213,180 @@ export default function CorporateNavbar() {
               onClick={toggleDarkMode}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-500/40 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
             >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+              {isDark ? (
+                <Sun className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <Moon className="h-4 w-4" aria-hidden="true" />
+              )}
             </button>
-
-            <Button
-              variant="ghost"
-              icon={null}
-              onClick={() => openModal('consulting')}
-            >
-              Liên hệ tư vấn
-            </Button>
 
             <Button
               variant="primary"
-              onClick={() => openModal('login')}
-              icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
+              icon={null}
+              onClick={() => openModal("consulting")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
             >
-              Đăng nhập Hệ thống
+              Liên hệ tư vấn
             </Button>
           </div>
 
-          {/* Mobile Controls */}
+          {/* Mobile Toggle Button */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
-              aria-label="Đổi chế độ sáng tối"
-              onClick={toggleDarkMode}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
-            >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-            </button>
-
-            <button
-              type="button"
               aria-label="Mở menu"
-              onClick={() => setIsOpen((value) => !value)}
+              onClick={() => setIsOpen(true)}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 dark:border-slate-800 dark:bg-slate-900 dark:text-white"
             >
-              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              <Menu className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </nav>
+      </header>
 
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="border-t border-slate-200 bg-white px-4 py-5 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden animate-fade-in">
-            <div className="mx-auto grid max-w-[1440px] gap-3">
-              <div className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+      {/* Mobile Slide-over Drawer & Backdrop (3/4 width slide from right + blurred backdrop) */}
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Blurred Backdrop for the remaining 1/4 area */}
+        <div
+          className={`absolute inset-0 bg-slate-950/50 backdrop-blur-sm transition-opacity duration-300 ${
+            isOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Right Drawer Panel (3/4 screen width) */}
+        <div
+          className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-900 flex flex-col justify-between overflow-y-auto ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div>
+            {/* Drawer Top Bar */}
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+              <CorporateLogoMark />
+              <button
+                type="button"
+                aria-label="Đóng menu"
+                onClick={() => setIsOpen(false)}
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+
+            {/* Ecosystem Products List */}
+            <div className="mt-6 space-y-4">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                 Sản phẩm Hệ sinh thái
               </div>
-              <div className="grid gap-2">
-                <Link
-                  to="/fohrm"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between rounded-xl bg-blue-50 px-3.5 py-2.5 text-xs font-bold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300"
-                >
-                  <span>FoHRM (Quản trị Nhân sự AI)</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <a
-                  href="#fomed"
-                  onClick={() => setIsOpen(false)}
-                  className="rounded-xl px-3.5 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
-                >
-                  FoMed (Quản lý Phòng khám)
-                </a>
-                <a
-                  href="#fotech-cloud"
-                  onClick={() => setIsOpen(false)}
-                  className="rounded-xl px-3.5 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
-                >
-                  FoTech Cloud (Hạ tầng & AI)
-                </a>
+              <div className="space-y-1">
+                {ecosystemProducts.map((prod) => {
+                  const Icon = prod.icon;
+                  const content = (
+                    <div className="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-slate-50 dark:hover:bg-slate-800/80">
+                      <div
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-sm`}
+                      >
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs font-bold text-slate-900 dark:text-white">
+                          {prod.name}
+                        </span>
+                        <span className="text-[10px] text-slate-500 line-clamp-1">
+                          {prod.tagline}
+                        </span>
+                      </div>
+                    </div>
+                  );
+
+                  if (prod.isRoute) {
+                    return (
+                      <Link
+                        key={prod.name}
+                        to={prod.link}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {content}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={prod.name}
+                      href={prod.link}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {content}
+                    </a>
+                  );
+                })}
               </div>
 
-              <div className="mt-2 grid gap-2">
-                <Button
-                  variant="outline"
-                  icon={null}
-                  onClick={() => openModal('consulting')}
-                  className="w-full"
+              {/* General Nav Links */}
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-1.5">
+                <a
+                  href="#solutions"
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
-                  Liên hệ tư vấn
-                </Button>
-                <Button
-                  variant="primary"
-                  onClick={() => openModal('login')}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600"
+                  Giải pháp
+                </a>
+                <a
+                  href="#why-trust"
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
-                  Đăng nhập Hệ thống
-                </Button>
+                  Về chúng tôi
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                >
+                  Liên hệ
+                </a>
               </div>
             </div>
           </div>
-        )}
-      </header>
+
+          {/* Drawer Bottom Actions & Dark Mode */}
+          <div className="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-xs font-semibold text-slate-500">Giao diện</span>
+              <button
+                type="button"
+                aria-label="Đổi chế độ sáng tối"
+                onClick={toggleDarkMode}
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200"
+              >
+                {isDark ? (
+                  <Sun className="h-4 w-4" aria-hidden="true" />
+                ) : (
+                  <Moon className="h-4 w-4" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+
+            <Button
+              variant="primary"
+              icon={null}
+              onClick={() => {
+                setIsOpen(false);
+                openModal("consulting");
+              }}
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600"
+            >
+              Liên hệ tư vấn
+            </Button>
+          </div>
+        </div>
+      </div>
 
       <LeadModal
         isOpen={modalState.isOpen}
