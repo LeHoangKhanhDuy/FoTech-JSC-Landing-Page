@@ -23,6 +23,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const openModal = (type: 'demo' | 'trial' | 'login' | 'consulting') => {
     setModalState({ isOpen: true, type });
     setIsOpen(false);
@@ -78,62 +90,106 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Action Controls */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
-              aria-label="Đổi chế độ sáng tối"
-              onClick={toggleDarkMode}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
-            >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-            </button>
-            <button
-              type="button"
               aria-label="Mở menu"
-              onClick={() => setIsOpen((value) => !value)}
+              onClick={() => setIsOpen(true)}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 dark:border-slate-800 dark:bg-slate-900 dark:text-white"
             >
-              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              <Menu className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </nav>
+      </header>
 
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden">
-            <div className="mx-auto grid max-w-[1440px] gap-2">
+      {/* Mobile Slide-over Drawer & Backdrop (3/4 width slide from right + blurred backdrop) */}
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Blurred Backdrop for remaining 1/4 area */}
+        <div
+          className={`absolute inset-0 bg-slate-950/50 backdrop-blur-sm transition-opacity duration-300 ${
+            isOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Right Drawer Panel (3/4 screen width) */}
+        <div
+          className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-900 flex flex-col justify-between overflow-y-auto ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div>
+            {/* Drawer Top Bar */}
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+              <LogoMark />
+              <button
+                type="button"
+                aria-label="Đóng menu"
+                onClick={() => setIsOpen(false)}
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+
+            {/* Navigation Items */}
+            <div className="mt-6 space-y-1.5">
+              <div className="px-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                Điều hướng
+              </div>
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                  className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                <Button
-                  variant="outline"
-                  icon={null}
-                  onClick={() => openModal('login')}
-                  className="w-full"
-                >
-                  Đăng nhập
-                </Button>
-                <Button
-                  variant="primary"
-                  onClick={() => openModal('trial')}
-                  className="w-full"
-                >
-                  Dùng thử miễn phí
-                </Button>
-              </div>
             </div>
           </div>
-        )}
-      </header>
+
+          {/* Drawer Bottom Actions & Dark Mode */}
+          <div className="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-xs font-semibold text-slate-500">Giao diện</span>
+              <button
+                type="button"
+                aria-label="Đổi chế độ sáng tối"
+                onClick={toggleDarkMode}
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200"
+              >
+                {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+              </button>
+            </div>
+
+            <div className="grid gap-2">
+              <Button
+                variant="outline"
+                icon={null}
+                onClick={() => openModal('login')}
+                className="w-full"
+              >
+                Đăng nhập
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => openModal('trial')}
+                className="w-full"
+              >
+                Dùng thử miễn phí
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <LeadModal
         isOpen={modalState.isOpen}
