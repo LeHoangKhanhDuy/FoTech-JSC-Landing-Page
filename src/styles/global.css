@@ -96,12 +96,23 @@ summary,
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes pulseGlow {
   0%, 100% {
     box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
   }
   50% {
-    box-shadow: 0 0 45px rgba(37, 99, 235, 0.45);
+    box-shadow: 0 0 55px rgba(37, 99, 235, 0.45);
   }
 }
 
@@ -125,6 +136,10 @@ summary,
 
 .animate-fade-in {
   animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-pulse-glow {
