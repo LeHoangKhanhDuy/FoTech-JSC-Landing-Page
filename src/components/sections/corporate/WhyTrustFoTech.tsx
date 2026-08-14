@@ -27,7 +27,7 @@ const coreValues = [
 export default function WhyTrustFoTech() {
   return (
     <section id="why-trust" className="relative py-24 bg-white dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">

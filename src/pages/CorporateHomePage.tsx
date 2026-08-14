@@ -1,9 +1,9 @@
 import CorporateNavbar from '@/components/layout/CorporateNavbar';
-import CorporateHero from '@/components/sections/CorporateHero';
-import TrustedCompanies from '@/components/sections/TrustedCompanies';
-import EcosystemSection from '@/components/sections/EcosystemSection';
-import WhyTrustFoTech from '@/components/sections/WhyTrustFoTech';
-import CtaSection from '@/components/sections/CtaSection';
+import CorporateHero from '@/components/sections/corporate/CorporateHero';
+import TrustedCompanies from '@/components/sections/corporate/TrustedCompanies';
+import EcosystemSection from '@/components/sections/corporate/EcosystemSection';
+import WhyTrustFoTech from '@/components/sections/corporate/WhyTrustFoTech';
+import CtaSection from '@/components/sections/corporate/CtaSection';
 import CorporateFooter from '@/components/layout/CorporateFooter';
 
 export default function CorporateHomePage() {

@@ -1,10 +1,10 @@
 import { Facebook, Linkedin, Mail, Phone, MapPin, Globe } from 'lucide-react';
-import LogoMark from '@/components/common/LogoMark';
+import LogoMark from '@/components/layout/LogoMark';
 
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white pt-16 pb-12 dark:border-slate-800 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         <div className="grid gap-10 md:grid-cols-12">
           

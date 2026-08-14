@@ -1,4 +1,4 @@
-import Reveal from '@/components/common/Reveal';
+import Reveal from '@/components/ui/Reveal';
 
 type SectionHeadingProps = {
   eyebrow?: string;

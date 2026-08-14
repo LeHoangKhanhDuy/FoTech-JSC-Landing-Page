@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CheckCircle2, Zap, ArrowRight } from 'lucide-react';
-import Button from '@/components/common/Button';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import LeadModal from '@/components/ui/LeadModal';
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);

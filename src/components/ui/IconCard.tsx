@@ -1,5 +1,5 @@
 import type { IconCard as IconCardType } from '@/types/landing';
-import Reveal from '@/components/common/Reveal';
+import Reveal from '@/components/ui/Reveal';
 
 type IconCardProps = {
   item: IconCardType;

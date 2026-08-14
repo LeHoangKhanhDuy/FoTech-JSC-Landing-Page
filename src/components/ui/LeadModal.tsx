@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { X, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
-import Button from '@/components/common/Button';
+import Button from '@/components/ui/Button';
 import toast from 'react-hot-toast';
 
 type LeadModalProps = {

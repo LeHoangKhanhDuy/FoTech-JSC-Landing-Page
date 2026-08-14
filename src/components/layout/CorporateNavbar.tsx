@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, Moon, Sun, X, ChevronDown, Users, Stethoscope, Cloud, BarChart3, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Button from '@/components/common/Button';
-import CorporateLogoMark from '@/components/common/CorporateLogoMark';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import CorporateLogoMark from '@/components/layout/CorporateLogoMark';
+import LeadModal from '@/components/ui/LeadModal';
 import { useDarkMode } from '@/hooks/useDarkMode';
 
 export default function CorporateNavbar() {
@@ -78,7 +78,7 @@ export default function CorporateNavbar() {
             : 'bg-transparent'
         }`}
       >
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <CorporateLogoMark />
 
           {/* Desktop Navigation Links */}
@@ -223,7 +223,7 @@ export default function CorporateNavbar() {
         {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="border-t border-slate-200 bg-white px-4 py-5 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden animate-fade-in">
-            <div className="mx-auto grid max-w-7xl gap-3">
+            <div className="mx-auto grid max-w-[1440px] gap-3">
               <div className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400">
                 Sản phẩm Hệ sinh thái
               </div>

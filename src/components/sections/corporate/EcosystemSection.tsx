@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Users, Stethoscope, Cloud, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Database, Bot, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Button from '@/components/common/Button';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import LeadModal from '@/components/ui/LeadModal';
 
 export default function EcosystemSection() {
   const [modalState, setModalState] = useState<{
@@ -12,7 +12,7 @@ export default function EcosystemSection() {
 
   return (
     <section id="ecosystem" className="relative py-24 bg-slate-50/70 dark:bg-slate-900/60">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">

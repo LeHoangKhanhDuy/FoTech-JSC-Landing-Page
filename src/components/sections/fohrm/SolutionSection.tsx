@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ShoppingBag, Factory, Laptop, Layers, CheckCircle2, ArrowRight } from 'lucide-react';
-import Button from '@/components/common/Button';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import LeadModal from '@/components/ui/LeadModal';
 
 const solutionsData = [
   {
