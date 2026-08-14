@@ -1,37 +1,79 @@
-import { Headphones, Rocket } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, Sparkles, PhoneCall, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import Button from '@/components/common/Button';
-import Reveal from '@/components/common/Reveal';
-import Section from '@/components/common/Section';
-import { submitLead } from '@/services/leadService';
+import LeadModal from '@/components/common/LeadModal';
 
 export default function CtaSection() {
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: 'demo' | 'trial' | 'consulting';
+  }>({ isOpen: false, type: 'trial' });
+
   return (
-    <Section className="bg-slate-950 text-white">
-      <Reveal>
-        <div className="grid items-center gap-8 rounded-2xl border border-white/10 bg-white/[0.06] p-7 backdrop-blur-xl md:grid-cols-[1fr_auto] md:p-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#00C951]">FoTalent AI</p>
-            <h2 className="mt-4 text-balance text-3xl font-black leading-tight md:text-4xl">
-              Sẵn sàng chuyển đổi số nhân sự với AI?
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
-              Đặt lịch demo để xem cách FoTalent AI chuẩn hóa chấm công, nghỉ phép, payroll và hỏi đáp HR với FINA.
-            </p>
+    <section className="relative py-20 overflow-hidden bg-slate-900 text-white">
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.25),transparent_70%)] pointer-events-none" />
+
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        {/* Centered Box */}
+        <div className="rounded-3xl border border-blue-500/30 bg-gradient-to-b from-blue-900/40 to-slate-900/90 p-8 text-center shadow-2xl backdrop-blur-xl sm:p-12 md:p-14">
+          
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/40">
+            <Sparkles className="h-6 w-6" aria-hidden="true" />
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-            <Button icon={<Rocket className="h-5 w-5" aria-hidden="true" />} onClick={() => submitLead('demo')}>
-              Đăng ký Demo
+
+          <h2 className="mt-6 text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+            Bắt đầu Số hóa Quản trị Nhân sự cùng FoHRM Ngay Hôm Nay
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
+            Gia nhập 500+ doanh nghiệp tại Việt Nam tối ưu hóa quy trình chấm công, tính lương và nâng tầm trải nghiệm nhân sự với AI thông minh.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => setModalState({ isOpen: true, type: 'trial' })}
+              icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
+              className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+            >
+              Bắt đầu miễn phí 14 ngày
             </Button>
             <Button
-              variant="secondary"
-              icon={<Headphones className="h-5 w-5" aria-hidden="true" />}
-              onClick={() => submitLead('consulting')}
+              variant="outline"
+              size="lg"
+              onClick={() => setModalState({ isOpen: true, type: 'consulting' })}
+              icon={<PhoneCall className="h-4 w-4" aria-hidden="true" />}
+              className="w-full sm:w-auto text-white border-slate-700 bg-slate-800/80 hover:bg-slate-700 hover:border-slate-600"
             >
-              Liên hệ tư vấn
+              Đặt lịch Tư vấn 1:1
             </Button>
           </div>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+              Cấu hình hoàn tất trong 5 phút
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+              Không cần thẻ tín dụng
+            </span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 text-blue-400" aria-hidden="true" />
+              Hỗ trợ kỹ thuật 24/7
+            </span>
+          </div>
+
         </div>
-      </Reveal>
-    </Section>
+      </div>
+
+      <LeadModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ ...modalState, isOpen: false })}
+        type={modalState.type}
+      />
+    </section>
   );
 }

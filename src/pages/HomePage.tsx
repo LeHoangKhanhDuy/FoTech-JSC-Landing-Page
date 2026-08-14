@@ -1,34 +1,24 @@
-import BenefitsSection from '@/components/sections/BenefitsSection';
-import CtaSection from '@/components/sections/CtaSection';
-import DashboardPreviewSection from '@/components/sections/DashboardPreviewSection';
-import FaqSection from '@/components/sections/FaqSection';
-import FeaturesSection from '@/components/sections/FeaturesSection';
-import FinaSection from '@/components/sections/FinaSection';
-import Hero from '@/components/sections/Hero';
-import ModulesSection from '@/components/sections/ModulesSection';
-import PricingSection from '@/components/sections/PricingSection';
-import ProblemSection from '@/components/sections/ProblemSection';
-import SolutionSection from '@/components/sections/SolutionSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import TrustedCompanies from '@/components/sections/TrustedCompanies';
-import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import Hero from '@/components/sections/Hero';
+import TrustedCompanies from '@/components/sections/TrustedCompanies';
+import FeaturesSection from '@/components/sections/FeaturesSection';
+import BenefitsSection from '@/components/sections/BenefitsSection';
+import SolutionSection from '@/components/sections/SolutionSection';
+import PricingSection from '@/components/sections/PricingSection';
+import FaqSection from '@/components/sections/FaqSection';
+import CtaSection from '@/components/sections/CtaSection';
+import Footer from '@/components/layout/Footer';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-950 dark:bg-[#0F172A] dark:text-white">
+    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
       <main>
         <Hero />
         <TrustedCompanies />
-        <ProblemSection />
-        <SolutionSection />
         <FeaturesSection />
-        <FinaSection />
-        <DashboardPreviewSection />
-        <ModulesSection />
         <BenefitsSection />
-        <TestimonialsSection />
+        <SolutionSection />
         <PricingSection />
         <FaqSection />
         <CtaSection />

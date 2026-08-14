@@ -2,8 +2,7 @@ import type { NavItem } from '@/types/landing';
 
 export const navigationItems: NavItem[] = [
   { label: 'Tính năng', href: '#features' },
-  { label: 'Giải pháp', href: '#solution' },
+  { label: 'Giải pháp', href: '#solutions' },
   { label: 'Bảng giá', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Liên hệ', href: '#contact' },
+  { label: 'Tài nguyên', href: '#resources' },
 ];

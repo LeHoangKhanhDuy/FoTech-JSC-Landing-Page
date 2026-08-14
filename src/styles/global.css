@@ -11,8 +11,9 @@
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
+    Roboto,
     sans-serif;
-  background: #f8fafc;
+  background-color: #ffffff;
   color: #0f172a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,7 +23,7 @@
 
 .dark {
   color-scheme: dark;
-  background: #0f172a;
+  background-color: #0f172a;
   color: #f8fafc;
 }
 
@@ -45,7 +46,7 @@ summary,
 }
 
 ::selection {
-  background: #1972f5;
+  background-color: #2563eb;
   color: #ffffff;
 }
 
@@ -53,38 +54,131 @@ summary,
   text-wrap: balance;
 }
 
+/* Glassmorphism & Custom Card styles */
 .glass-panel {
-  border: 1px solid rgb(148 163 184 / 0.22);
-  background: rgb(255 255 255 / 0.74);
-  box-shadow: 0 24px 70px rgb(15 23 42 / 0.08);
-  backdrop-filter: blur(18px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(16px);
 }
 
 .dark .glass-panel {
-  border-color: rgb(148 163 184 / 0.18);
-  background: rgb(15 23 42 / 0.68);
-  box-shadow: 0 24px 70px rgb(0 0 0 / 0.26);
-}
-
-.logo-marquee {
-  animation: marquee 26s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  border-color: rgba(30, 41, 59, 0.8);
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .dashboard-grid {
   background-image:
-    linear-gradient(rgb(25 114 245 / 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(25 114 245 / 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
+    radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%),
+    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+.dark .dashboard-grid {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(37, 99, 235, 0.45);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-float-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.logo-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
 @media (prefers-reduced-motion: reduce) {
