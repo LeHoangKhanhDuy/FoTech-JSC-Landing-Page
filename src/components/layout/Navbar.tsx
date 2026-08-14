@@ -37,7 +37,7 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8 lg:px-8">
           <LogoMark />
 
           {/* Desktop Navigation */}
