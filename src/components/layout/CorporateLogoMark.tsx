@@ -1,11 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import FoTechLogo from '@/assets/FoTech_Logo.png';
 
 export default function CorporateLogoMark() {
+  const location = useLocation();
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <Link
       to="/"
-      className="group flex items-center gap-3 rounded-xl transition focus:outline-none focus:ring-4 focus:ring-blue-500/20"
+      onClick={handleClick}
+      className="group flex items-center gap-3 outline-none focus:outline-none"
     >
       <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-50 p-1 shadow-sm transition-transform group-hover:scale-105 dark:bg-slate-900">
         <img
@@ -13,7 +23,6 @@ export default function CorporateLogoMark() {
           alt="FoTech Logo"
           className="h-full w-full object-contain"
         />
-        <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-white dark:ring-slate-900" />
       </div>
       <div className="flex flex-col leading-none">
         <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
