@@ -67,11 +67,6 @@ export default function CorporateHero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Text Content & CTAs (5.5 / 12 cols) */}
           <div className="lg:col-span-5 text-left animate-fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-50/80 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm backdrop-blur-md dark:border-indigo-500/30 dark:bg-indigo-950/60 dark:text-indigo-300">
-              <span className="text-sm">🚀</span>
-              <span>Đẩy nhanh tốc độ Chuyển đổi số của bạn</span>
-            </div>
 
             {/* Headline */}
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-5xl leading-[1.12]">
