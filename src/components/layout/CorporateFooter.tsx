@@ -1,6 +1,6 @@
 import { Facebook, Linkedin, Mail, Phone, MapPin, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import CorporateLogoMark from '@/components/common/CorporateLogoMark';
+import CorporateLogoMark from '@/components/layout/CorporateLogoMark';
 
 export default function CorporateFooter() {
   return (

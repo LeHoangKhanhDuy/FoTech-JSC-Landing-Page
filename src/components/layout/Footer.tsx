@@ -1,5 +1,5 @@
 import { Facebook, Linkedin, Mail, Phone, MapPin, Globe } from 'lucide-react';
-import LogoMark from '@/components/common/LogoMark';
+import LogoMark from '@/components/layout/LogoMark';
 
 export default function Footer() {
   return (

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Users, Stethoscope, Cloud, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Database, Bot, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Button from '@/components/common/Button';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import LeadModal from '@/components/ui/LeadModal';
 
 export default function EcosystemSection() {
   const [modalState, setModalState] = useState<{

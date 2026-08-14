@@ -1,8 +1,8 @@
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import Button from '@/components/common/Button';
-import LogoMark from '@/components/common/LogoMark';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import LogoMark from '@/components/layout/LogoMark';
+import LeadModal from '@/components/ui/LeadModal';
 import { navigationItems } from '@/constants/navigation';
 import { useDarkMode } from '@/hooks/useDarkMode';
 

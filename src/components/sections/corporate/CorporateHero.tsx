@@ -5,26 +5,25 @@ import {
   Pause,
   Volume2,
   VolumeX,
-  Sparkles,
   ShieldCheck,
   CheckCircle2,
   Lock,
-  Star,
+  Layers,
 } from "lucide-react";
-import Button from "@/components/common/Button";
-import LeadModal from "@/components/common/LeadModal";
+import Button from '@/components/ui/Button';
+import LeadModal from '@/components/ui/LeadModal';
 
-export default function Hero() {
+export default function CorporateHero() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "trial" | "login" | "consulting";
-  }>({ isOpen: false, type: "trial" });
+  }>({ isOpen: false, type: "consulting" });
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const openModal = (type: "demo" | "trial") => {
+  const openModal = (type: "demo" | "consulting") => {
     setModalState({ isOpen: true, type });
   };
 
@@ -57,38 +56,35 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 bg-white dark:bg-slate-950"
+      className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-28 bg-white dark:bg-slate-950"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.12),rgba(255,255,255,0))]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-[500px] bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.06),transparent_70%)]" />
+      {/* Background Radial Glow & Grid Overlay */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.14),rgba(255,255,255,0))]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.07),transparent_70%)]" />
+
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        {/* 2-Column Side-by-Side Layout (Jumpshare Style) */}
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Left Column:*/}
-          <div className="lg:col-span-5 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-50/80 px-4 py-1.5 text-xs font-bold text-blue-600 shadow-sm backdrop-blur-md dark:border-blue-500/30 dark:bg-blue-950/50 dark:text-blue-400">
-              <Sparkles
-                className="h-4 w-4 text-blue-600 dark:text-blue-400"
-                aria-hidden="true"
-              />
-              <span>✨ Nền tảng HR Tech Tích hợp AI Hàng đầu</span>
+          {/* Left Column: Text Content & CTAs (5.5 / 12 cols) */}
+          <div className="lg:col-span-5 text-left animate-fade-in-up">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-50/80 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm backdrop-blur-md dark:border-indigo-500/30 dark:bg-indigo-950/60 dark:text-indigo-300">
+              <span className="text-sm">🚀</span>
+              <span>Đẩy nhanh tốc độ Chuyển đổi số của bạn</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Headline */}
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-5xl leading-[1.12]">
-              Nền tảng
-              <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-                Quản trị Nhân sự
+              Hệ sinh thái Giải pháp số {""}
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                toàn diện
               </span>
-              <br className="hidden sm:inline" />
-              toàn diện
             </h1>
 
             {/* Sub-headline */}
             <p className="mt-6 text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg max-w-xl">
-              Tự động hóa chấm công, tính lương, và nâng tầm trải nghiệm nhân
-              viên với trợ lý AI thông minh. Tuân thủ 100% Luật Lao động Việt
-              Nam.
+              Cung cấp các nền tảng phần mềm mạnh mẽ, tích hợp AI, giúp doanh
+              nghiệp tối ưu vận hành, từ quản trị nhân sự đến quản lý y tế.
             </p>
 
             {/* CTA Buttons Side-by-Side */}
@@ -96,11 +92,14 @@ export default function Hero() {
               <Button
                 variant="primary"
                 size="lg"
-                onClick={() => openModal("trial")}
+                onClick={() => {
+                  const elem = document.getElementById("ecosystem");
+                  elem?.scrollIntoView({ behavior: "smooth" });
+                }}
                 icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
-                className="shadow-xl shadow-blue-500/25 px-6"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl shadow-indigo-500/25 px-7"
               >
-                Bắt đầu miễn phí
+                Khám phá Hệ sinh thái
               </Button>
 
               <Button
@@ -109,87 +108,54 @@ export default function Hero() {
                 onClick={() => openModal("demo")}
                 icon={
                   <Play
-                    className="h-4 w-4 fill-current text-blue-600"
+                    className="h-4 w-4 fill-current text-indigo-600"
                     aria-hidden="true"
                   />
                 }
-                className="px-6"
+                className="px-7"
               >
-                Xem Demo
+                Lịch trình Demo
               </Button>
             </div>
 
-            {/* Rating & Trust Badges */}
+            {/* Trust Badges */}
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/80">
-              <div className="flex items-center gap-3">
-                {/* Avatar stack */}
-                <div className="flex -space-x-2 overflow-hidden">
-                  {["NV", "HR", "CEO", "CTO"].map((initials, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full ring-2 ring-white dark:ring-slate-950 bg-gradient-to-br from-blue-500 to-indigo-600 text-[10px] font-bold text-white shadow-sm"
-                    >
-                      {initials}
-                    </span>
-                  ))}
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-1 text-amber-400">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-current"
-                        aria-hidden="true"
-                      />
-                    ))}
-                    <span className="ml-1.5 text-xs font-bold text-slate-900 dark:text-white">
-                      4.9/5
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                    dựa trên hơn 500+ doanh nghiệp tại Việt Nam
-                  </p>
-                </div>
-              </div>
-
-              {/* Checkmarks Row */}
-              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2
                     className="h-4 w-4 text-emerald-500"
                     aria-hidden="true"
                   />
-                  14 ngày dùng thử
+                  Đồng bộ SSO 1 tài khoản
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2
                     className="h-4 w-4 text-emerald-500"
                     aria-hidden="true"
                   />
-                  Không cần thẻ tín dụng
+                  Đám mây AWS SLA 99.99%
                 </span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck
-                    className="h-4 w-4 text-blue-600 dark:text-blue-400"
+                    className="h-4 w-4 text-indigo-600 dark:text-indigo-400"
                     aria-hidden="true"
                   />
-                  Triển khai 5 phút
+                  Bảo mật ISO 27001
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Video Container (Jumpshare Style macOS Window Mockup - 7 / 12 cols) */}
+          {/* Right Column: Jumpshare Style macOS Video Mockup (7 / 12 cols) */}
           <div
             className="lg:col-span-7 relative animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
             {/* Glowing Radial Background */}
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-600/25 via-indigo-500/20 to-emerald-500/20 blur-3xl opacity-70 dark:opacity-60 -z-10 animate-pulse-glow" />
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-600/20 via-indigo-500/20 to-emerald-500/20 blur-3xl opacity-70 dark:opacity-60 -z-10 animate-pulse-glow" />
 
-            {/* macOS Window Frame Wrapper */}
-            <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-slate-200/80 bg-slate-900 shadow-2xl shadow-blue-900/15 dark:border-slate-800 dark:shadow-black/70">
+            {/* macOS Browser Window Frame Wrapper */}
+            <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-slate-200/80 bg-slate-900 shadow-2xl shadow-indigo-900/15 dark:border-slate-800 dark:shadow-black/70">
               {/* macOS Top Bar */}
               <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-4 py-3 backdrop-blur-md">
                 {/* Colored Dots (Red, Yellow, Green) */}
@@ -206,10 +172,10 @@ export default function Hero() {
                     aria-hidden="true"
                   />
                   <span className="text-slate-200 font-semibold">
-                    app.fohrm.vn
+                    fotech.vn/ecosystem
                   </span>
                   <span className="hidden sm:inline text-slate-500">
-                    — Quản trị Nhân sự AI
+                    — FoTech Enterprise Platform
                   </span>
                 </div>
 
@@ -219,11 +185,11 @@ export default function Hero() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                   </span>
-                  <span className="hidden sm:inline">Live Preview</span>
+                  <span className="hidden sm:inline">Engine Active</span>
                 </div>
               </div>
 
-              {/* Video Player Box */}
+              {/* Video Container Box */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
                 <video
                   ref={videoRef}
@@ -231,21 +197,21 @@ export default function Hero() {
                   loop
                   muted={isMuted}
                   playsInline
-                  className="h-full w-full object-cover"
-                  src="https://assets.mixkit.co/videos/preview/mixkit-financial-trading-dashboard-on-a-monitor-screen-39547-large.mp4"
+                  className="object-cover w-full h-full"
+                  src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-across-multiple-screens-42512-large.mp4"
                 />
 
                 {/* Jumpshare Style Floating Control Pill overlay on left */}
                 <div className="absolute top-4 left-4 flex items-center gap-2 rounded-xl border border-white/20 bg-slate-950/80 px-3 py-1.5 backdrop-blur-md text-white shadow-lg">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-rose-400">
-                    <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
-                    <span>0:01</span>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Live 4K</span>
                   </div>
                   <div className="h-3 w-px bg-slate-700" />
                   <button
                     type="button"
                     onClick={togglePlay}
-                    className="text-white hover:text-blue-400 transition"
+                    className="text-white hover:text-indigo-400 transition"
                     aria-label="Play/Pause"
                   >
                     {isPlaying ? (
@@ -259,7 +225,7 @@ export default function Hero() {
                   </button>
                 </div>
 
-                {/* Bottom Right Control Overlay */}
+                {/* Bottom Right Controls Overlay */}
                 <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/80 p-1.5 backdrop-blur-md opacity-90 group-hover:opacity-100 transition-opacity">
                   <button
                     type="button"
@@ -293,11 +259,11 @@ export default function Hero() {
 
                 {/* Floating AI Badge on top right */}
                 <div className="absolute top-4 right-4 hidden sm:flex items-center gap-2 rounded-xl border border-white/15 bg-slate-950/80 px-3 py-1.5 backdrop-blur-md text-xs font-semibold text-white shadow-md">
-                  <Sparkles
-                    className="h-3.5 w-3.5 text-blue-400"
+                  <Layers
+                    className="h-3.5 w-3.5 text-indigo-400"
                     aria-hidden="true"
                   />
-                  <span>FINA AI Assistant</span>
+                  <span>FoTech Core B2B Engine</span>
                 </div>
               </div>
             </div>

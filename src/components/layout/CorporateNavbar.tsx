@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, Moon, Sun, X, ChevronDown, Users, Stethoscope, Cloud, BarChart3, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Button from '@/components/common/Button';
-import CorporateLogoMark from '@/components/common/CorporateLogoMark';
-import LeadModal from '@/components/common/LeadModal';
+import Button from '@/components/ui/Button';
+import CorporateLogoMark from '@/components/layout/CorporateLogoMark';
+import LeadModal from '@/components/ui/LeadModal';
 import { useDarkMode } from '@/hooks/useDarkMode';
 
 export default function CorporateNavbar() {
