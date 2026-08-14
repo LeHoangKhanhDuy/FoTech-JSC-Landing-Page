@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Button from '@/components/ui/Button';
 import LeadModal from '@/components/ui/LeadModal';
+import IntroFoTech from '@/assets/Intro_FoTech.mp4';
 
 export default function CorporateHero() {
   const [modalState, setModalState] = useState<{
@@ -193,7 +194,7 @@ export default function CorporateHero() {
                   muted={isMuted}
                   playsInline
                   className="object-cover w-full h-full"
-                  src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-across-multiple-screens-42512-large.mp4"
+                  src={IntroFoTech}
                 />
 
                 {/* Jumpshare Style Floating Control Pill overlay on left */}
@@ -202,22 +203,6 @@ export default function CorporateHero() {
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span>Live 4K</span>
                   </div>
-                  <div className="h-3 w-px bg-slate-700" />
-                  <button
-                    type="button"
-                    onClick={togglePlay}
-                    className="text-white hover:text-indigo-400 transition"
-                    aria-label="Play/Pause"
-                  >
-                    {isPlaying ? (
-                      <Pause className="h-3.5 w-3.5" aria-hidden="true" />
-                    ) : (
-                      <Play
-                        className="h-3.5 w-3.5 fill-current"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </button>
                 </div>
 
                 {/* Bottom Right Controls Overlay */}
