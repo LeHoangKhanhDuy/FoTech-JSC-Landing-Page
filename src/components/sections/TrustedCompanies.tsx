@@ -16,7 +16,7 @@ export default function TrustedCompanies() {
 
   return (
     <section className="py-10 border-y border-slate-200/60 bg-white dark:border-slate-800/80 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
           Được tin dùng bởi hơn 500+ doanh nghiệp hàng đầu tại Việt Nam
         </p>

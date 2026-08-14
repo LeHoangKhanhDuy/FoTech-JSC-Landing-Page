@@ -37,7 +37,7 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-8 lg:px-8">
           <LogoMark />
 
           {/* Desktop Navigation */}
@@ -102,7 +102,7 @@ export default function Navbar() {
         {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-xl dark:border-slate-800 dark:bg-slate-900 md:hidden">
-            <div className="mx-auto grid max-w-7xl gap-2">
+            <div className="mx-auto grid max-w-[1440px] gap-2">
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
