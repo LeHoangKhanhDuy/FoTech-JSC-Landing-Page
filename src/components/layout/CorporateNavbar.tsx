@@ -74,8 +74,8 @@ export default function CorporateNavbar() {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/90'
-            : 'bg-transparent'
+            ? "border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/90"
+            : "bg-transparent"
         }`}
       >
         <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,6 @@ export default function CorporateNavbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-8 md:flex">
-            
             {/* Dropdown Menu for Ecosystem */}
             <div
               className="relative"
@@ -96,7 +95,10 @@ export default function CorporateNavbar() {
                 className="flex items-center gap-1.5 text-sm font-semibold text-slate-700 transition hover:text-blue-600 dark:text-slate-200 dark:hover:text-white"
               >
                 <span>Hệ sinh thái</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${ecosystemOpen ? 'rotate-180 text-blue-600' : ''}`} aria-hidden="true" />
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${ecosystemOpen ? "rotate-180 text-blue-600" : ""}`}
+                  aria-hidden="true"
+                />
               </button>
 
               {/* Dropdown Panel */}
@@ -108,10 +110,12 @@ export default function CorporateNavbar() {
                   <div className="space-y-1">
                     {ecosystemProducts.map((prod) => {
                       const Icon = prod.icon;
-                      
+
                       const content = (
                         <div className="group flex items-start gap-3 rounded-xl p-2.5 transition hover:bg-slate-50 dark:hover:bg-slate-800/80">
-                          <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}>
+                          <div
+                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}
+                          >
                             <Icon className="h-4 w-4" aria-hidden="true" />
                           </div>
                           <div>
@@ -132,14 +136,22 @@ export default function CorporateNavbar() {
 
                       if (prod.isRoute) {
                         return (
-                          <Link key={prod.name} to={prod.link} onClick={() => setEcosystemOpen(false)}>
+                          <Link
+                            key={prod.name}
+                            to={prod.link}
+                            onClick={() => setEcosystemOpen(false)}
+                          >
                             {content}
                           </Link>
                         );
                       }
 
                       return (
-                        <a key={prod.name} href={prod.link} onClick={() => setEcosystemOpen(false)}>
+                        <a
+                          key={prod.name}
+                          href={prod.link}
+                          onClick={() => setEcosystemOpen(false)}
+                        >
                           {content}
                         </a>
                       );
@@ -177,24 +189,20 @@ export default function CorporateNavbar() {
               onClick={toggleDarkMode}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-500/40 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
             >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+              {isDark ? (
+                <Sun className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <Moon className="h-4 w-4" aria-hidden="true" />
+              )}
             </button>
 
             <Button
-              variant="ghost"
-              icon={null}
-              onClick={() => openModal('consulting')}
-            >
-              Liên hệ tư vấn
-            </Button>
-
-            <Button
               variant="primary"
-              onClick={() => openModal('login')}
-              icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
+              icon={null}
+              onClick={() => openModal("consulting")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
             >
-              Đăng nhập Hệ thống
+              Liên hệ tư vấn
             </Button>
           </div>
 
@@ -206,7 +214,11 @@ export default function CorporateNavbar() {
               onClick={toggleDarkMode}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
             >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
+              {isDark ? (
+                <Sun className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <Moon className="h-4 w-4" aria-hidden="true" />
+              )}
             </button>
 
             <button
@@ -215,7 +227,11 @@ export default function CorporateNavbar() {
               onClick={() => setIsOpen((value) => !value)}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 dark:border-slate-800 dark:bg-slate-900 dark:text-white"
             >
-              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              {isOpen ? (
+                <X className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden="true" />
+              )}
             </button>
           </div>
         </nav>
@@ -254,19 +270,12 @@ export default function CorporateNavbar() {
 
               <div className="mt-2 grid gap-2">
                 <Button
-                  variant="outline"
-                  icon={null}
-                  onClick={() => openModal('consulting')}
-                  className="w-full"
-                >
-                  Liên hệ tư vấn
-                </Button>
-                <Button
                   variant="primary"
-                  onClick={() => openModal('login')}
+                  icon={null}
+                  onClick={() => openModal("consulting")}
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600"
                 >
-                  Đăng nhập Hệ thống
+                  Liên hệ tư vấn
                 </Button>
               </div>
             </div>

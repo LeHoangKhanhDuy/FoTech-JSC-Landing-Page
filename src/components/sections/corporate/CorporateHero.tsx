@@ -5,14 +5,12 @@ import {
   Pause,
   Volume2,
   VolumeX,
-  ShieldCheck,
-  CheckCircle2,
   Lock,
   Layers,
 } from "lucide-react";
-import Button from '@/components/ui/Button';
-import LeadModal from '@/components/ui/LeadModal';
-import IntroFoTech from '@/assets/Intro_FoTech.mp4';
+import Button from "@/components/ui/Button";
+import LeadModal from "@/components/ui/LeadModal";
+import IntroFoTech from "@/assets/Intro_FoTech.mp4";
 
 export default function CorporateHero() {
   const [modalState, setModalState] = useState<{
@@ -68,7 +66,6 @@ export default function CorporateHero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Text Content & CTAs (5.5 / 12 cols) */}
           <div className="lg:col-span-5 text-left animate-fade-in-up">
-
             {/* Headline */}
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-5xl leading-[1.12]">
               Hệ sinh thái Giải pháp số {""}
@@ -95,7 +92,7 @@ export default function CorporateHero() {
                 icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl shadow-indigo-500/25 px-7"
               >
-                Khám phá Hệ sinh thái
+                Đăng ký dùng thử
               </Button>
 
               <Button
@@ -110,35 +107,8 @@ export default function CorporateHero() {
                 }
                 className="px-7"
               >
-                Lịch trình Demo
+                Xem Demo
               </Button>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/80">
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2
-                    className="h-4 w-4 text-emerald-500"
-                    aria-hidden="true"
-                  />
-                  Đồng bộ SSO 1 tài khoản
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2
-                    className="h-4 w-4 text-emerald-500"
-                    aria-hidden="true"
-                  />
-                  Đám mây AWS SLA 99.99%
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck
-                    className="h-4 w-4 text-indigo-600 dark:text-indigo-400"
-                    aria-hidden="true"
-                  />
-                  Bảo mật ISO 27001
-                </span>
-              </div>
             </div>
           </div>
 
