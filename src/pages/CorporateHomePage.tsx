@@ -2,7 +2,7 @@ import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import EcosystemSection from "@/modules/ecosystem/components/EcosystemSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
-import WhyTrustFoTech from "@/modules/corporate/WhyTrustFoTech";
+import WhyTrustFoTech from "@/modules/marketing/components/WhyTrustFoTech";
 import CtaSection from "@/modules/corporate/CtaSection";
 import HeroCard from "@/modules/hero/components/HeroCard";
 
