@@ -1,10 +1,10 @@
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
-import CorporateHero from "@/components/sections/corporate/CorporateHero";
-import TrustedCompanies from "@/components/sections/corporate/TrustedCompanies";
 import EcosystemSection from "@/modules/ecosystem/components/EcosystemSection";
-import WhyTrustFoTech from "@/components/sections/corporate/WhyTrustFoTech";
-import CtaSection from "@/components/sections/corporate/CtaSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
+import CorporateHero from "@/modules/corporate/CorporateHero";
+import TrustedCompanies from "@/modules/corporate/TrustedCompanies";
+import WhyTrustFoTech from "@/modules/corporate/WhyTrustFoTech";
+import CtaSection from "@/modules/corporate/CtaSection";
 
 export default function CorporateHomePage() {
   return (
