@@ -7,7 +7,7 @@ import PricingSection from "@/components/sections/fohrm/PricingSection";
 import FaqSection from "@/components/sections/fohrm/FaqSection";
 import Footer from "@/components/layout/Footer";
 import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
-import CtaSection from "@/modules/corporate/CtaSection";
+import CtaSection from "@/modules/cta/components/CtaSection";
 
 export default function HomePage() {
   return (
