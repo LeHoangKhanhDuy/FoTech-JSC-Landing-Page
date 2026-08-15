@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
       name="description"
       content="Hệ sinh thái sản phẩm B2B hàng đầu từ FoTech bao gồm FoHRM (Quản trị Nhân sự AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech)."
     />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#030817" />
     <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="FoTech - Nền tảng Chuyển đổi số & Quản trị Nhân sự AI" />
@@ -16,6 +16,17 @@
       property="og:description"
       content="Hệ sinh thái sản phẩm B2B hàng đầu từ FoTech: FoHRM, FoMed, FoCode, Troo.vn."
     />
+
+    <script>
+      (function() {
+        var theme = localStorage.getItem('fotalent-theme');
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet" />
