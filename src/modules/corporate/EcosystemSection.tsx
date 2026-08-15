@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Users, Stethoscope, Cloud, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Database, Bot, Cpu } from 'lucide-react';
+import { Users, Stethoscope, Cloud, ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Database, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 import LeadModal from '@/components/ui/LeadModal';
@@ -16,10 +16,6 @@ export default function EcosystemSection() {
         
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1 text-xs font-bold text-blue-600 dark:bg-blue-950/50 dark:text-blue-400">
-            <Cpu className="h-3.5 w-3.5" aria-hidden="true" />
-            Hệ Sinh Thái Sản Phẩm B2B
-          </span>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Các Nền Tảng Chuyển Đổi Số Hàng Đầu Từ FoTech
           </h2>
