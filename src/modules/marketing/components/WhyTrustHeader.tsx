@@ -3,7 +3,6 @@ import { Award } from 'lucide-react';
 export default function WhyTrustHeader() {
   return (
     <div className="relative mx-auto max-w-3xl text-center">
-      {/* Decorative Subtle Network Lines Behind Heading */}
       <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-64 w-[600px] -translate-x-1/2 opacity-20 dark:opacity-30 hidden sm:block">
         <svg viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
           <path
@@ -24,13 +23,11 @@ export default function WhyTrustHeader() {
         </svg>
       </div>
 
-      {/* Eyebrow Badge */}
       <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 shadow-xs backdrop-blur-md dark:border-blue-500/30 dark:bg-blue-600/10 dark:text-blue-300">
         <Award className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
         <span>Năng Lực & Triết Lý Sản Phẩm</span>
       </div>
 
-      {/* Main Heading */}
       <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-[48px] lg:leading-[1.08]">
         Tại Sao Các Doanh Nghiệp Hàng Đầu <br className="hidden sm:inline" />
         Lựa Chọn{' '}
@@ -40,7 +37,6 @@ export default function WhyTrustHeader() {
         ?
       </h2>
 
-      {/* Subtitle */}
       <p className="mx-auto mt-4 max-w-[680px] text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base">
         Nền tảng công nghệ đáng tin cậy được thiết kế để đồng hành cùng tốc độ tăng trưởng của doanh nghiệp bạn.
       </p>

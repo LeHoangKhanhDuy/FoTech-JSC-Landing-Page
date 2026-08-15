@@ -5,7 +5,7 @@ const storageKey = 'fotalent-theme';
 export function useDarkMode() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window === 'undefined') {
-      return false;
+      return true;
     }
 
     const stored = window.localStorage.getItem(storageKey);
@@ -13,7 +13,7 @@ export function useDarkMode() {
       return stored === 'dark';
     }
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return true;
   });
 
   useEffect(() => {
