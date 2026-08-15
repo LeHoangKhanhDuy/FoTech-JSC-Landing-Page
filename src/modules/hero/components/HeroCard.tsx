@@ -12,7 +12,7 @@ import Button from "@/components/ui/Button";
 import LeadModal from "@/components/ui/LeadModal";
 import IntroFoTech from "@/assets/Intro_FoTech.mp4";
 
-export default function CorporateHero() {
+export default function HeroCard() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "trial" | "login" | "consulting";
