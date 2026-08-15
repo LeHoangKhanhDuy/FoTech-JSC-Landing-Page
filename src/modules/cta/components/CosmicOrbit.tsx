@@ -8,7 +8,6 @@ export default function CosmicOrbit() {
         className="w-full h-full object-cover"
         preserveAspectRatio="xMidYMid slice"
       >
-        {/* Outer Ellipse 3 */}
         <ellipse
           cx="500"
           cy="310"
@@ -19,7 +18,6 @@ export default function CosmicOrbit() {
           strokeDasharray="5 5"
         />
 
-        {/* Middle Ellipse 2 */}
         <ellipse
           cx="500"
           cy="310"
@@ -29,7 +27,7 @@ export default function CosmicOrbit() {
           strokeWidth="2.2"
         />
 
-        {/* Inner Ellipse 1 */}
+
         <ellipse
           cx="500"
           cy="310"
@@ -40,9 +38,7 @@ export default function CosmicOrbit() {
           strokeDasharray="4 4"
         />
 
-        {/* GLOWING NODE DOTS ONLY ON THE LEFT AND RIGHT WINGS */}
         <g className="animate-pulse" style={{ animationDuration: '3.5s' }}>
-          {/* Left Wing Nodes */}
           <circle cx="185" cy="310" r="4.5" fill="#38BDF8" />
           <circle cx="185" cy="310" r="10" fill="#38BDF8" fillOpacity="0.4" />
 
@@ -52,7 +48,6 @@ export default function CosmicOrbit() {
           <circle cx="140" cy="410" r="4.5" fill="#A855F7" />
           <circle cx="140" cy="410" r="10" fill="#A855F7" fillOpacity="0.35" />
 
-          {/* Right Wing Nodes */}
           <circle cx="815" cy="310" r="4.5" fill="#38BDF8" />
           <circle cx="815" cy="310" r="10" fill="#38BDF8" fillOpacity="0.35" />
 
@@ -63,7 +58,6 @@ export default function CosmicOrbit() {
           <circle cx="860" cy="410" r="10" fill="#9D4EDD" fillOpacity="0.35" />
         </g>
 
-        {/* SVG Gradients (Fade center completely: opacity 0 between 28% and 72%) */}
         <defs>
           <linearGradient id="card-orbit-sides-1" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.85" />

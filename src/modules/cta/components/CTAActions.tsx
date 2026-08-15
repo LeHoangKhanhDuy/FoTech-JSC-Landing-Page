@@ -9,7 +9,6 @@ interface CTAActionsProps {
 export default function CTAActions({ onOpenTrial, onOpenConsulting }: CTAActionsProps) {
   return (
     <div className="mt-7 sm:mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4 max-w-sm sm:max-w-none mx-auto">
-      {/* Primary Button */}
       <Button
         variant="primary"
         size="lg"
@@ -17,10 +16,9 @@ export default function CTAActions({ onOpenTrial, onOpenConsulting }: CTAActions
         icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
         className="w-full sm:w-auto h-[48px] sm:h-[50px] px-7 text-xs sm:text-base font-bold rounded-xl bg-[#1A60FF] hover:bg-[#0052FF] text-white shadow-md shadow-blue-500/25 dark:shadow-[0_0_25px_rgba(26,96,255,0.5)] border-0"
       >
-        Bắt đầu dùng thử miễn phí
+        Đăng ký dùng thử miễn phí
       </Button>
 
-      {/* Secondary Button - Light & Dark Mode Responsive */}
       <Button
         variant="outline"
         size="lg"

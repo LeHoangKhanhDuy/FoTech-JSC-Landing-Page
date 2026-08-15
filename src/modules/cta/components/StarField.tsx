@@ -1,4 +1,4 @@
-import { starsData } from '../data/ctaData';
+import { starsData } from '@/modules/cta/data/ctaData';
 
 export default function StarField() {
   return (

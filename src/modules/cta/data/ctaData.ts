@@ -1,5 +1,5 @@
 import { ShieldCheck, Headphones, Layers } from 'lucide-react';
-import { TrustPointItem, StarItem } from '../types';
+import { TrustPointItem, StarItem } from '@/modules/cta/types/index';
 
 export const trustPointsData: TrustPointItem[] = [
   {
@@ -26,7 +26,6 @@ export const trustPointsData: TrustPointItem[] = [
 ];
 
 export const starsData: StarItem[] = [
-  // Stars distributed inside the CTA Card for ambient cosmic atmosphere
   { id: 1, x: 8, y: 25, size: 2.5, delay: 0.1, duration: 3.5, glow: true },
   { id: 2, x: 15, y: 55, size: 3.5, delay: 0.8, duration: 4.2, glow: true },
   { id: 3, x: 12, y: 78, size: 2, delay: 1.4, duration: 3.2 },

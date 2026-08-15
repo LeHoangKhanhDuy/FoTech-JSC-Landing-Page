@@ -1,4 +1,4 @@
-import { trustPointsData } from '../data/ctaData';
+import { trustPointsData } from '@/modules/cta/data/ctaData';
 
 export default function CTATrustPoints() {
   return (
@@ -9,22 +9,18 @@ export default function CTATrustPoints() {
 
           return (
             <div key={item.id} className="flex items-center gap-3.5 sm:gap-8">
-              {/* Trust Badge Row Item */}
               <div className="flex w-full sm:w-auto items-center gap-3 rounded-xl sm:rounded-none bg-slate-50/90 sm:bg-transparent p-2.5 sm:p-0 border border-slate-200/80 sm:border-none dark:bg-slate-900/80 dark:border-slate-800/60">
-                {/* Circular Icon Badge */}
                 <div
                   className={`flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full shadow-md ${item.iconBg}`}
                 >
                   <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${item.iconColor}`} aria-hidden="true" />
                 </div>
 
-                {/* Label Text */}
                 <span className="text-left text-xs font-semibold leading-tight text-slate-700 dark:text-slate-300 sm:text-xs">
                   {item.label}
                 </span>
               </div>
 
-              {/* Vertical Divider for Desktop */}
               {index < trustPointsData.length - 1 && (
                 <div className="hidden h-7 w-px bg-slate-200 dark:bg-slate-800/90 sm:block" aria-hidden="true" />
               )}

@@ -10,10 +10,10 @@ export interface TrustPointItem {
 
 export interface StarItem {
   id: number;
-  x: number; // percentage left (0-100)
-  y: number; // percentage top (0-100)
-  size: number; // px
-  delay: number; // seconds
-  duration: number; // seconds
+  x: number; 
+  y: number; 
+  size: number; 
+  delay: number; 
+  duration: number; 
   glow?: boolean;
 }
