@@ -5,7 +5,7 @@ const coreValues = [
     icon: Layers,
     tone: 'blue',
     title: 'Tích Hợp Liền Mạch (Seamless Integration)',
-    description: 'Đồng bộ dữ liệu thông suốt giữa tất cả ứng dụng trong hệ sinh thái FoTech (FoHRM, FoMed, FoAnalytics). Người dùng chỉ cần 1 tài khoản duy nhất (Single Sign-On - SSO) để truy cập toàn bộ hệ thống.',
+    description: 'Đồng bộ dữ liệu thông suốt giữa tất cả ứng dụng trong hệ sinh thái FoTech (FoHRM, FoMed, FoCode, Troo.vn). Người dùng chỉ cần 1 tài khoản duy nhất (Single Sign-On - SSO) để truy cập toàn bộ hệ thống.',
     bullets: ['Đăng nhập 1 lần SSO cho mọi ứng dụng', 'Đồng bộ danh mục phòng ban & nhân sự', 'Tích hợp API Webhook linh hoạt'],
   },
   {
