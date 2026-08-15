@@ -1,13 +1,13 @@
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/fohrm/Hero';
-import TrustedCompanies from '@/components/sections/corporate/TrustedCompanies';
 import FeaturesSection from '@/components/sections/fohrm/FeaturesSection';
 import BenefitsSection from '@/components/sections/fohrm/BenefitsSection';
 import SolutionSection from '@/components/sections/fohrm/SolutionSection';
 import PricingSection from '@/components/sections/fohrm/PricingSection';
 import FaqSection from '@/components/sections/fohrm/FaqSection';
-import CtaSection from '@/components/sections/corporate/CtaSection';
 import Footer from '@/components/layout/Footer';
+import TrustedCompanies from '@/modules/corporate/TrustedCompanies';
+import CtaSection from '@/modules/corporate/CtaSection';
 
 export default function HomePage() {
   return (

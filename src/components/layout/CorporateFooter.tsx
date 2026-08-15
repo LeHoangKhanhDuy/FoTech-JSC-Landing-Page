@@ -49,13 +49,13 @@ export default function CorporateFooter() {
                 </a>
               </li>
               <li>
-                <a href="#fotech-cloud" className="hover:text-blue-600 transition">
-                  FoTech Cloud (Hạ tầng & AI)
+                <a href="#focode" className="hover:text-blue-600 transition">
+                  FoCode (Thương mại Điện tử)
                 </a>
               </li>
               <li>
-                <a href="#foanalytics" className="hover:text-blue-600 transition">
-                  FoAnalytics (Intelligence)
+                <a href="#troovn" className="hover:text-blue-600 transition">
+                  Troo.vn (Quản lý & Tìm kiếm Trọ)
                 </a>
               </li>
             </ul>

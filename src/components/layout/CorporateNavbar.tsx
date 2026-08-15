@@ -7,8 +7,8 @@ import {
   ChevronDown,
   Users,
   Stethoscope,
-  Cloud,
-  BarChart3,
+  ShoppingBag,
+  Home,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Button from "@/components/ui/Button";
@@ -36,21 +36,21 @@ const ecosystemProducts = [
     isRoute: false,
   },
   {
-    name: "FoTech Cloud",
-    tagline: "Hạ tầng & AI Engine",
-    desc: "Đám mây doanh nghiệp an toàn trên AWS Cloud.",
-    icon: Cloud,
+    name: "FoCode",
+    tagline: "Thương mại Điện tử",
+    desc: "Website, app bán hàng & bán hàng đa kênh.",
+    icon: ShoppingBag,
     color: "bg-indigo-600",
-    link: "#fotech-cloud",
+    link: "#focode",
     isRoute: false,
   },
   {
-    name: "FoAnalytics",
-    tagline: "Báo cáo Điều hành",
-    desc: "Dashboard thông minh & dự báo realtime.",
-    icon: BarChart3,
-    color: "bg-amber-500",
-    link: "#foanalytics",
+    name: "Troo.vn",
+    tagline: "Tìm kiếm & Quản lý Trọ",
+    desc: "Kết nối phòng trọ chính chủ & hợp đồng điện tử.",
+    icon: Home,
+    color: "bg-[#c5b487]",
+    link: "#troovn",
     isRoute: false,
   },
 ];
