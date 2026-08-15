@@ -1,6 +1,6 @@
 export default function CosmicOrbit() {
   return (
-    <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0" aria-hidden="true">
+    <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0 opacity-60 dark:opacity-100 transition-opacity duration-300" aria-hidden="true">
       <svg
         viewBox="0 0 1000 500"
         fill="none"

@@ -1,32 +1,32 @@
-import { ShieldCheck, Headphones } from 'lucide-react';
+import { ShieldCheck, Headphones, Layers } from 'lucide-react';
 import { TrustPointItem, StarItem } from '../types';
 
 export const trustPointsData: TrustPointItem[] = [
   {
     id: 'setup-time',
-    label: 'Cấu hình hoàn tất trong 5 phút',
-    icon: ShieldCheck,
-    iconBg: 'bg-[#022A27] border border-[#00E5A3]/40',
-    iconColor: 'text-[#00E5A3]',
+    label: 'Tích hợp liền mạch trong 5 phút',
+    icon: Layers,
+    iconBg: 'bg-emerald-50 border border-emerald-200 text-emerald-600 dark:bg-[#022A27] dark:border-[#00E5A3]/40 dark:text-[#00E5A3]',
+    iconColor: '',
   },
   {
     id: 'no-credit-card',
     label: 'Không cần thẻ tín dụng',
     icon: ShieldCheck,
-    iconBg: 'bg-[#051C47] border border-[#2979FF]/40',
-    iconColor: 'text-[#2979FF]',
+    iconBg: 'bg-blue-50 border border-blue-200 text-blue-600 dark:bg-[#051C47] dark:border-[#2979FF]/40 dark:text-[#2979FF]',
+    iconColor: '',
   },
   {
     id: 'dedicated-support',
     label: 'Hỗ trợ kỹ thuật 24/7',
     icon: Headphones,
-    iconBg: 'bg-[#200052] border border-[#9D4EDD]/40',
-    iconColor: 'text-[#9D4EDD]',
+    iconBg: 'bg-purple-50 border border-purple-200 text-purple-600 dark:bg-[#200052] dark:border-[#9D4EDD]/40 dark:text-[#9D4EDD]',
+    iconColor: '',
   },
 ];
 
 export const starsData: StarItem[] = [
-  // Stars distributed inside the CTA Card
+  // Stars distributed inside the CTA Card for ambient cosmic atmosphere
   { id: 1, x: 8, y: 25, size: 2.5, delay: 0.1, duration: 3.5, glow: true },
   { id: 2, x: 15, y: 55, size: 3.5, delay: 0.8, duration: 4.2, glow: true },
   { id: 3, x: 12, y: 78, size: 2, delay: 1.4, duration: 3.2 },

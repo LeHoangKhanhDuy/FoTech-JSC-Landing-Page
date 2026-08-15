@@ -17,9 +17,9 @@ export default function CtaSection() {
   };
 
   return (
-    <section id="cta" className="relative py-20 md:py-28 overflow-hidden bg-[#030712] text-white">
+    <section id="cta" className="relative py-20 md:py-28 overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#030712] dark:text-white transition-colors duration-300">
       {/* Outer Ambient Radial Glow */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)]" aria-hidden="true" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.06),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)]" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <CTAContent onOpenTrial={handleOpenTrial} onOpenConsulting={handleOpenConsulting} />

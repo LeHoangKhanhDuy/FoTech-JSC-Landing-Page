@@ -10,7 +10,7 @@ interface CTAContentProps {
 
 export default function CTAContent({ onOpenTrial, onOpenConsulting }: CTAContentProps) {
   return (
-    <div className="relative mx-auto max-w-[980px] overflow-hidden rounded-[30px] border border-[#2563EB]/60 bg-[#060E28] p-8 sm:p-12 md:p-14 text-center shadow-[0_0_80px_rgba(37,99,235,0.35)]">
+    <div className="relative mx-auto max-w-[980px] overflow-hidden rounded-[24px] sm:rounded-[30px] border border-slate-200 bg-white p-6 sm:p-12 md:p-14 text-center shadow-xl dark:border-[#2563EB]/60 dark:bg-[#060E28] dark:shadow-[0_0_80px_rgba(37,99,235,0.35)] backdrop-blur-xl">
       
       {/* Inside-Card Cosmic Orbit & Star Background */}
       <CosmicOrbitBackground />
@@ -18,23 +18,23 @@ export default function CTAContent({ onOpenTrial, onOpenConsulting }: CTAContent
       {/* Card Foreground Content */}
       <div className="relative z-10">
         {/* Top Sparkles Icon Badge */}
-        <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#1E50FF] to-[#00A3FF] text-white shadow-[0_0_25px_rgba(0,163,255,0.7)] border border-blue-400/50">
-          <Sparkles className="h-6 w-6" aria-hidden="true" />
+        <div className="mx-auto mb-5 sm:mb-6 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#1E50FF] to-[#00A3FF] text-white shadow-lg shadow-blue-500/30 border border-blue-400/50">
+          <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
         </div>
 
-        {/* Main Heading */}
-        <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl leading-[1.12]">
-          Bắt đầu Số hóa Quản trị Nhân sự <br className="hidden sm:inline" />
+        {/* Main Heading for FoTech Corporate Ecosystem */}
+        <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl leading-[1.15] sm:leading-[1.12]">
+          Bắt đầu Hành trình Chuyển đổi Số <br className="hidden sm:inline" />
           cùng{' '}
-          <span className="bg-gradient-to-r from-[#00A3FF] via-[#2979FF] to-[#A855F7] bg-clip-text text-transparent">
-            FoHRM
+          <span className="bg-gradient-to-r from-[#2563EB] via-[#1D4EDD] to-[#8B5CF6] dark:from-[#00A3FF] dark:via-[#2979FF] dark:to-[#A855F7] bg-clip-text text-transparent">
+            FoTech
           </span>{' '}
           Ngay Hôm Nay
         </h2>
 
         {/* Subtitle Description */}
-        <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-300">
-          Gia nhập 500+ doanh nghiệp tại Việt Nam tối ưu hóa quy trình chấm công, tính lương và nâng tầm trải nghiệm nhân sự với AI thông minh.
+        <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          Gia nhập 500+ doanh nghiệp tại Việt Nam tối ưu hóa quy trình vận hành toàn diện với hệ sinh thái giải pháp phần mềm tích hợp AI thông minh.
         </p>
 
         {/* Action Buttons */}
