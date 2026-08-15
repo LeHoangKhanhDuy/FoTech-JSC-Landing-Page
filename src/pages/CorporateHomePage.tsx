@@ -1,8 +1,8 @@
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import EcosystemSection from "@/modules/ecosystem/components/EcosystemSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
-import CorporateHero from "@/modules/corporate/CorporateHero";
-import TrustedCompanies from "@/modules/corporate/TrustedCompanies";
+import CorporateHero from "@/modules/hero/components/CorporateHero";
+import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import WhyTrustFoTech from "@/modules/corporate/WhyTrustFoTech";
 import CtaSection from "@/modules/corporate/CtaSection";
 
