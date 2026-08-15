@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { EcosystemProduct } from "@/modules/ecosystem/data/ecosystemData";
+import { EcosystemProduct } from "@/modules/ecosystem/types";
 
 interface EcosystemCardProps {
   product: EcosystemProduct;
