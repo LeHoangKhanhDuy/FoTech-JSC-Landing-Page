@@ -21,7 +21,7 @@ export default function EcosystemSection() {
     >
       <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(37,99,235,0.06),transparent_45%)] dark:bg-[radial-gradient(circle_at_50%_20%,rgba(37,99,235,0.12),transparent_45%)]" />
       <div className="absolute inset-0 pointer-events-none -z-10 opacity-10 dark:opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_20%,#000_70%,transparent_100%)]" />
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <EcosystemHeader />
 
         <div className="mt-14 grid gap-5 grid-cols-1 lg:grid-cols-2">
