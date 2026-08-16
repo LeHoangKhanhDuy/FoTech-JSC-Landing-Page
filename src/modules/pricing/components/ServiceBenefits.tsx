@@ -1,4 +1,4 @@
-import { ServiceBenefit } from "../types/types";
+import { ServiceBenefit } from "@/modules/pricing/types/pricing-types";
 
 interface ServiceBenefitsProps {
   benefits: ServiceBenefit[];

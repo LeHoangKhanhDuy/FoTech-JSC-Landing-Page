@@ -23,7 +23,7 @@ import {
   ServiceItemData,
   WebsitePricingPackage,
   ServiceBenefit,
-} from "../types/types";
+} from "@/modules/pricing/types/pricing-types";
 
 export const commonBenefits: ServiceBenefit[] = [
   {

@@ -1,6 +1,6 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { websitePackagesData } from "../data/data";
+import { websitePackagesData } from "@/modules/pricing/data/pricing-data";
 
 interface WebsitePricingContentProps {
   onSelectPackage: (pkgName: string) => void;
@@ -11,7 +11,6 @@ export default function WebsitePricingContent({
 }: WebsitePricingContentProps) {
   return (
     <div className="space-y-8">
-      {/* Header */}
       <div>
         <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-950/60 px-3.5 py-1 text-xs font-bold text-amber-400 backdrop-blur-md">
           <span>Web Development Pricing</span>
@@ -30,7 +29,6 @@ export default function WebsitePricingContent({
         </p>
       </div>
 
-      {/* 3 Packages Grid */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {websitePackagesData.map((pkg) => (
           <div

@@ -1,6 +1,6 @@
 import { KeyboardEvent } from "react";
-import ServiceNavItem from "./ServiceNavItem";
-import { ServiceItemData, ServiceId } from "../types/types";
+import ServiceNavItem from "@/modules/pricing/components/ServiceNavItem";
+import { ServiceItemData, ServiceId } from "@/modules/pricing/types/pricing-types";
 
 interface ServiceSidebarProps {
   services: ServiceItemData[];
@@ -32,7 +32,6 @@ export default function ServiceSidebar({
 
   return (
     <>
-      {/* Desktop Vertical Sidebar (≥ 1024px) */}
       <div
         role="tablist"
         aria-orientation="vertical"
@@ -52,7 +51,6 @@ export default function ServiceSidebar({
         ))}
       </div>
 
-      {/* Mobile & Tablet Segmented Horizontal Nav (< 1024px) */}
       <div
         role="tablist"
         aria-orientation="horizontal"

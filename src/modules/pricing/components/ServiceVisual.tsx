@@ -1,4 +1,4 @@
-import { ServiceId } from "../types/types";
+import { ServiceId } from "@/modules/pricing/types/pricing-types";
 import { Users, CheckCircle, Code2, HeartPulse, Globe } from "lucide-react";
 
 interface ServiceVisualProps {
@@ -9,10 +9,7 @@ export default function ServiceVisual({ serviceId }: ServiceVisualProps) {
   if (serviceId === "fohrm") {
     return (
       <div className="relative w-full max-w-[340px] rounded-2xl border border-slate-800 bg-slate-900/90 p-4 shadow-2xl backdrop-blur-xl">
-        {/* Subtle Orbit Rings Effect */}
         <div className="absolute -inset-4 pointer-events-none -z-10 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15),transparent_70%)]" />
-
-        {/* Header Bar */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600/30 text-blue-400">
@@ -25,7 +22,6 @@ export default function ServiceVisual({ serviceId }: ServiceVisualProps) {
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
         </div>
 
-        {/* Mini Analytics Block */}
         <div className="mt-3 grid grid-cols-2 gap-2">
           <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-2.5">
             <span className="text-[10px] text-slate-400">
@@ -45,7 +41,6 @@ export default function ServiceVisual({ serviceId }: ServiceVisualProps) {
           </div>
         </div>
 
-        {/* Employee Activity Item */}
         <div className="mt-3 flex items-center justify-between rounded-xl border border-slate-800/80 bg-slate-950/40 p-2.5">
           <div className="flex items-center gap-2.5">
             <div className="h-7 w-7 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white">

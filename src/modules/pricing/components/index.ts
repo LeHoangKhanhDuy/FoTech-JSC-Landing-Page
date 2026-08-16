@@ -1,3 +1,3 @@
-export { default as ServicesSection } from "./ServicesSection";
-export * from "../types/types";
-export * from "../data/data";
+export { default as ServicesSection } from "@/modules/pricing/components/ServicesSection";
+export * from "@/modules/pricing/types/pricing-types";
+export * from "@/modules/pricing/data/pricing-data";

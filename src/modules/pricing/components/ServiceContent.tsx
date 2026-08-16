@@ -1,11 +1,11 @@
-import ServiceHeader from "./ServiceHeader";
-import ServiceVisual from "./ServiceVisual";
-import ServiceHighlights from "./ServiceHighlights";
-import ServiceFeatureList from "./ServiceFeatureList";
-import ServiceCTA from "./ServiceCTA";
-import ServiceBenefits from "./ServiceBenefits";
-import WebsitePricingContent from "./WebsitePricingContent";
-import { ServiceItemData } from "../types/types";
+import ServiceHeader from "@/modules/pricing/components/ServiceHeader";
+import ServiceVisual from "@/modules/pricing/components/ServiceVisual";
+import ServiceHighlights from "@/modules/pricing/components/ServiceHighlights";
+import ServiceFeatureList from "@/modules/pricing/components/ServiceFeatureList";
+import ServiceCTA from "@/modules/pricing/components/ServiceCTA";
+import ServiceBenefits from "@/modules/pricing/components/ServiceBenefits";
+import WebsitePricingContent from "@/modules/pricing/components/WebsitePricingContent";
+import { ServiceItemData } from "@/modules/pricing/types/pricing-types";
 
 interface ServiceContentProps {
   service: ServiceItemData;
@@ -33,7 +33,6 @@ export default function ServiceContent({
           />
         ) : (
           <>
-            {/* Top Layout: Header (Left 65%) + Visual Mockup (Right 35%) */}
             <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
               <div className="flex-1">
                 <ServiceHeader service={service} />
@@ -44,10 +43,8 @@ export default function ServiceContent({
               </div>
             </div>
 
-            {/* Middle Layout: 4 Feature Highlights Information Blocks */}
             <ServiceHighlights highlights={service.highlights} />
 
-            {/* Lower Middle Layout: Feature List (Left) + CTA Panel (Right) */}
             <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 items-stretch">
               <div className="lg:col-span-7">
                 <ServiceFeatureList features={service.features} />
@@ -64,7 +61,6 @@ export default function ServiceContent({
         )}
       </div>
 
-      {/* Bottom Horizontal Benefit Strip */}
       <ServiceBenefits benefits={service.benefits} />
     </div>
   );

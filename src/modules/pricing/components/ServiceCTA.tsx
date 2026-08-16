@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { ServiceCTA as ServiceCTAType } from "../types/types";
+import { ServiceCTA as ServiceCTAType } from "@/modules/pricing/types/pricing-types";
 
 interface ServiceCTAProps {
   ctaData: ServiceCTAType;

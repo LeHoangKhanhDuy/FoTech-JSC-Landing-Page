@@ -1,4 +1,4 @@
-import { ServiceHighlight } from "../types/types";
+import { ServiceHighlight } from "@/modules/pricing/types/pricing-types";
 
 interface ServiceHighlightsProps {
   highlights: ServiceHighlight[];
