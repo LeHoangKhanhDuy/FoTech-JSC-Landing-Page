@@ -1,0 +1,54 @@
+import { LucideIcon } from 'lucide-react';
+
+export type ServiceId = 'fohrm' | 'focode' | 'fomed' | 'website';
+
+export type ServiceAccent = 'blue' | 'purple' | 'emerald' | 'amber';
+
+export interface ServiceHighlight {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+export interface ServiceBenefit {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+export interface ServiceCTA {
+  iconBadge: LucideIcon;
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
+export interface ServiceItemData {
+  id: ServiceId;
+  name: string;
+  description: string;
+  icon: LucideIcon;
+  accent: ServiceAccent;
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  highlights: ServiceHighlight[];
+  features: string[];
+  cta: ServiceCTA;
+  benefits: ServiceBenefit[];
+}
+
+export interface WebsitePricingPackage {
+  id: string;
+  name: string;
+  target: string;
+  price: string;
+  period: string;
+  description: string;
+  popular?: boolean;
+  features: string[];
+  ctaText: string;
+}

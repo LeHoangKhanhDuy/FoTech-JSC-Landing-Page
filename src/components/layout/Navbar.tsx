@@ -1,15 +1,13 @@
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
 import LogoMark from '@/components/layout/LogoMark';
 import LeadModal from '@/components/ui/LeadModal';
 import { navigationItems } from '@/constants/navigation';
-import { useDarkMode } from '@/hooks/useDarkMode';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { isDark, toggleDarkMode } = useDarkMode();
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: 'demo' | 'trial' | 'login' | 'consulting';
@@ -45,7 +43,7 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/90'
+            ? 'border-b border-slate-800/80 bg-slate-950/90 shadow-lg backdrop-blur-xl'
             : 'bg-transparent'
         }`}
       >
@@ -58,7 +56,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-white"
+                className="text-sm font-semibold text-slate-300 transition-colors hover:text-white"
               >
                 {item.label}
               </a>
@@ -67,14 +65,6 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
-            <button
-              type="button"
-              aria-label="Đổi chế độ sáng tối"
-              onClick={toggleDarkMode}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-500/40 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-blue-500/40"
-            >
-              {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-            </button>
             <Button
               variant="ghost"
               icon={null}
@@ -96,7 +86,7 @@ export default function Navbar() {
               type="button"
               aria-label="Mở menu"
               onClick={() => setIsOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 dark:border-slate-800 dark:bg-slate-900 dark:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-white"
             >
               <Menu className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -112,7 +102,7 @@ export default function Navbar() {
       >
         {/* Blurred Backdrop for remaining 1/4 area */}
         <div
-          className={`absolute inset-0 bg-slate-950/50 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity duration-300 ${
             isOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsOpen(false)}
@@ -120,19 +110,19 @@ export default function Navbar() {
 
         {/* Right Drawer Panel (3/4 screen width) */}
         <div
-          className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-900 flex flex-col justify-between overflow-y-auto ${
+          className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-slate-900 p-6 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <div>
             {/* Drawer Top Bar */}
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <LogoMark />
               <button
                 type="button"
                 aria-label="Đóng menu"
                 onClick={() => setIsOpen(false)}
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-800 text-slate-200 hover:bg-slate-700"
               >
                 <X className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -148,7 +138,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                  className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:bg-slate-800"
                 >
                   {item.label}
                 </a>
@@ -156,20 +146,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Drawer Bottom Actions & Dark Mode */}
-          <div className="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
-            <div className="flex items-center justify-between px-1">
-              <span className="text-xs font-semibold text-slate-500">Giao diện</span>
-              <button
-                type="button"
-                aria-label="Đổi chế độ sáng tối"
-                onClick={toggleDarkMode}
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-200"
-              >
-                {isDark ? <Sun className="h-4 w-4" aria-hidden="true" /> : <Moon className="h-4 w-4" aria-hidden="true" />}
-              </button>
-            </div>
-
+          {/* Drawer Bottom Actions */}
+          <div className="pt-6 mt-6 border-t border-slate-800 space-y-3">
             <div className="grid gap-2">
               <Button
                 variant="outline"
