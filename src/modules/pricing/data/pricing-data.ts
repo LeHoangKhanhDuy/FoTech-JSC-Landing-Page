@@ -109,6 +109,28 @@ export const servicesData: ServiceItemData[] = [
     benefits: commonBenefits,
   },
   {
+    id: "website",
+    name: "Thiết kế website",
+    description: "Bảng giá & gói dịch vụ thiết kế website",
+    icon: ShoppingCart,
+    accent: "amber",
+    badge: "Web Development Pricing",
+    title: "Thiết kế website theo nhu cầu",
+    titleHighlight: "doanh nghiệp",
+    subtitle:
+      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
+    highlights: [],
+    features: [],
+    cta: {
+      iconBadge: Rocket,
+      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
+      description:
+        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
+      buttonText: "Yêu cầu tư vấn & Báo giá",
+    },
+    benefits: commonBenefits,
+  },
+  {
     id: "focode",
     name: "FoCode",
     description: "Thiết kế & lập trình phần mềm",
@@ -216,28 +238,6 @@ export const servicesData: ServiceItemData[] = [
       title: "Số hóa phòng khám của bạn ngay hôm nay cùng FoMed?",
       description: "Dễ dàng vận hành – Tuân thủ chuẩn y tế – Nâng tầm dịch vụ",
       buttonText: "Đăng ký trải nghiệm FoMed",
-    },
-    benefits: commonBenefits,
-  },
-  {
-    id: "website",
-    name: "Giá thiết kế website",
-    description: "Bảng giá & gói dịch vụ thiết kế website",
-    icon: ShoppingCart,
-    accent: "amber",
-    badge: "Web Development Pricing",
-    title: "Thiết kế website theo nhu cầu",
-    titleHighlight: "doanh nghiệp",
-    subtitle:
-      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
-    highlights: [],
-    features: [],
-    cta: {
-      iconBadge: Rocket,
-      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
-      description:
-        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
-      buttonText: "Yêu cầu tư vấn & Báo giá",
     },
     benefits: commonBenefits,
   },
