@@ -19,7 +19,7 @@ export default function WebsitePricingContent({
         <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
           Thiết kế website theo nhu cầu{" "}
           <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">
-            doanh nghiệp
+            doanh nghiệp hiện đại
           </span>
         </h3>
 
@@ -33,14 +33,14 @@ export default function WebsitePricingContent({
         {websitePackagesData.map((pkg) => (
           <div
             key={pkg.id}
-            className={`group relative flex flex-col justify-between rounded-2xl p-5 transition-all duration-200 ${
+            className={`group relative flex flex-col justify-between rounded-xl p-5 transition-all duration-200 ${
               pkg.popular
                 ? "border-2 border-amber-500 bg-slate-900/90 shadow-[0_0_30px_rgba(245,158,11,0.2)]"
                 : "border border-slate-800 bg-slate-900/50 hover:border-amber-500/40"
             }`}
           >
             {pkg.popular && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <span className="rounded-full bg-amber-500 px-3 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-slate-950 shadow-md">
                   PHỔ BIẾN NHẤT
                 </span>
@@ -57,7 +57,6 @@ export default function WebsitePricingContent({
                 <span className="text-2xl font-extrabold text-amber-400 tracking-tight">
                   {pkg.price}
                 </span>
-                <span className="text-[11px] text-slate-400">{pkg.period}</span>
               </div>
 
               <p className="mt-3 text-xs leading-relaxed text-slate-300">
@@ -88,8 +87,8 @@ export default function WebsitePricingContent({
                 icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
                 className={`w-full justify-center font-bold text-xs rounded-xl h-10 ${
                   pkg.popular
-                    ? "bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold border-0 shadow-md"
-                    : "border border-amber-500/30 bg-amber-950/40 text-amber-400 hover:bg-amber-500/20"
+                    ? "bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold"
+                    : "bg-amber-950/40 text-amber-400 hover:bg-amber-500/20"
                 }`}
               >
                 {pkg.ctaText}

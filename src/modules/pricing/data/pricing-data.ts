@@ -34,7 +34,8 @@ export const commonBenefits: ServiceBenefit[] = [
   {
     id: "b1",
     title: "Triển khai nhanh chóng",
-    description: "Hoàn tất triển khai chỉ từ 3–5 ngày làm việc",
+    description:
+      "Quy trình triển khai tối ưu. Bám sát tiến độ dự án",
     icon: Zap,
   },
   {
@@ -312,13 +313,12 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "starter-web",
     name: "Starter Website",
     target: "Cá nhân & Doanh nghiệp nhỏ",
-    price: "9.900.000đ",
-    period: "/ dự án",
+    price: "3.900.000đ",
     description:
       "Website giới thiệu sản phẩm/dịch vụ chuẩn SEO, giao diện mượt mà.",
     features: [
       "Thiết kế giao diện chuẩn Responsive",
-      "Tối ưu tốc độ tải trang Core Web Vitals",
+      "Tối ưu tốc độ tải trang (chuẩn Google)",
       "Chuẩn hóa cấu trúc SEO Google",
       "Tích hợp Form nhận báo giá / liên hệ",
       "Bảo hành & Hỗ trợ 3 tháng",
@@ -329,8 +329,7 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "business-web",
     name: "Business Website",
     target: "Doanh nghiệp vừa & nhỏ",
-    price: "19.900.000đ",
-    period: "/ dự án",
+    price: "10.900.000đ",
     popular: true,
     description:
       "Giải pháp website nâng tầm thương hiệu, tối ưu tỷ lệ chuyển đổi.",
@@ -339,7 +338,7 @@ export const websitePackagesData: WebsitePricingPackage[] = [
       "Hệ thống quản trị tin tức & Blog",
       "Chuẩn SEO nâng cao & Schema Data",
       "Tích hợp Chatbot & Mạng xã hội",
-      "Tối ưu bảo mật SSL & Anti-DDoS",
+      "Tích hợp Tường lửa WAF & Bảo vệ Anti-DDoS",
       "Bảo hành & Hỗ trợ 6 tháng",
     ],
     ctaText: "Chọn gói Business",
@@ -348,18 +347,17 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "enterprise-app",
     name: "Custom Web Application",
     target: "Doanh nghiệp lớn & Tập đoàn",
-    price: "39.900.000đ",
-    period: "/ dự án",
+    price: "Liên hệ báo giá",
     description:
       "Phần mềm Web tùy biến cao, tích hợp hệ thống CRM/ERP mở rộng.",
     features: [
       "Lập trình Web App tính năng tùy biến",
       "Tích hợp API hệ thống doanh nghiệp",
       "Hệ thống phân quyền đa cấp bậc",
-      "Tối ưu hạ tầng Cloud / VPS Server",
+      "Triển khai trên Cloud / VPS độc lập",
       "Đào tạo & Chuyển giao quy trình",
       "Bảo hành & Hỗ trợ 12 tháng",
     ],
-    ctaText: "Chọn gói Enterprise",
+    ctaText: "Liên hệ tư vấn",
   },
 ];

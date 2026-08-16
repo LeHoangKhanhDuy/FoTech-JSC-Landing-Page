@@ -46,7 +46,6 @@ export interface WebsitePricingPackage {
   name: string;
   target: string;
   price: string;
-  period: string;
   description: string;
   popular?: boolean;
   features: string[];
