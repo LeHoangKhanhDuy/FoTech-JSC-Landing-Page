@@ -2,6 +2,7 @@ import { useState } from "react";
 import LeadModal from "@/components/ui/LeadModal";
 import ServiceSidebar from "@/modules/pricing/components/ServiceSidebar";
 import ServiceContent from "@/modules/pricing/components/ServiceContent";
+import ServicesHeader from "@/modules/pricing/components/ServicesHeader";
 import { servicesData } from "@/modules/pricing/data/pricing-data";
 import { ServiceId } from "@/modules/pricing/types/pricing-types";
 
@@ -29,18 +30,23 @@ export default function ServicesSection() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto w-[calc(100%-32px)] sm:w-[calc(100%-48px)] max-w-[1440px] rounded-[28px] border border-slate-800/80 bg-[#071225] shadow-2xl shadow-blue-950/20 overflow-hidden">
-        <div className="flex flex-col lg:flex-row">
-          <ServiceSidebar
-            services={servicesData}
-            activeServiceId={activeServiceId}
-            onSelectService={setActiveServiceId}
-          />
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <ServicesHeader />
 
-          <ServiceContent
-            service={activeService}
-            onOpenModal={handleOpenModal}
-          />
+        {/* Main Tabbed Service Container Card */}
+        <div className="rounded-xl border border-slate-800/80 bg-[#071225] shadow-2xl shadow-blue-950/20 overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            <ServiceSidebar
+              services={servicesData}
+              activeServiceId={activeServiceId}
+              onSelectService={setActiveServiceId}
+            />
+
+            <ServiceContent
+              service={activeService}
+              onOpenModal={handleOpenModal}
+            />
+          </div>
         </div>
       </div>
 

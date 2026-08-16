@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 
-export type ServiceId = 'fohrm' | 'focode' | 'fomed' | 'website';
+export type ServiceId = 'fohrm' | 'focode' | 'fomed' | 'website' | 'troovn';
 
 export type ServiceAccent = 'blue' | 'purple' | 'emerald' | 'amber';
 
@@ -46,7 +46,6 @@ export interface WebsitePricingPackage {
   name: string;
   target: string;
   price: string;
-  period: string;
   description: string;
   popular?: boolean;
   features: string[];

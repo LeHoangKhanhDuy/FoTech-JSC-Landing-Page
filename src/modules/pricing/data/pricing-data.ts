@@ -18,6 +18,11 @@ import {
   Pill,
   TrendingUp,
   Rocket,
+  Home,
+  Search,
+  FileCheck,
+  Calculator,
+  CreditCard,
 } from "lucide-react";
 import {
   ServiceItemData,
@@ -29,7 +34,8 @@ export const commonBenefits: ServiceBenefit[] = [
   {
     id: "b1",
     title: "Triển khai nhanh chóng",
-    description: "Hoàn tất triển khai chỉ từ 3–5 ngày làm việc",
+    description:
+      "Quy trình triển khai tối ưu. Bám sát tiến độ dự án",
     icon: Zap,
   },
   {
@@ -53,6 +59,28 @@ export const commonBenefits: ServiceBenefit[] = [
 ];
 
 export const servicesData: ServiceItemData[] = [
+  {
+    id: "website",
+    name: "Thiết kế website",
+    description: "Bảng giá & gói dịch vụ thiết kế website",
+    icon: ShoppingCart,
+    accent: "amber",
+    badge: "Web Development Pricing",
+    title: "Thiết kế website theo nhu cầu",
+    titleHighlight: "doanh nghiệp",
+    subtitle:
+      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
+    highlights: [],
+    features: [],
+    cta: {
+      iconBadge: Rocket,
+      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
+      description:
+        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
+      buttonText: "Yêu cầu tư vấn & Báo giá",
+    },
+    benefits: commonBenefits,
+  },
   {
     id: "fohrm",
     name: "FoHRM",
@@ -105,6 +133,65 @@ export const servicesData: ServiceItemData[] = [
       title: "Sẵn sàng nâng cấp quản trị nhân sự của doanh nghiệp bạn?",
       description: "Triển khai nhanh chóng – Dễ sử dụng – Hiệu quả vượt trội",
       buttonText: "Dùng thử miễn phí 14 ngày",
+    },
+    benefits: commonBenefits,
+  },
+  {
+    id: "troovn",
+    name: "Troo.vn",
+    description: "Tìm kiếm & Quản lý phòng trọ",
+    icon: Home,
+    accent: "amber",
+    badge: "PropTech Platform",
+    title: "Nền tảng tìm kiếm & Quản lý trọ",
+    titleHighlight: "chính chủ",
+    subtitle:
+      "Troo.vn là giải pháp công nghệ PropTech thế hệ mới kết nối người thuê tìm phòng trọ chính chủ xác thực, đồng thời tự động hóa quy trình quản lý phòng, hợp đồng và tính tiền điện nước cho chủ nhà.",
+    highlights: [
+      {
+        id: "h1",
+        title: "Tìm phòng 360°",
+        description:
+          "Tìm kiếm phòng trọ chính chủ verified với hình ảnh thực tế",
+        icon: Search,
+      },
+      {
+        id: "h2",
+        title: "Hợp đồng điện tử",
+        description:
+          "Ký hợp đồng thuê nhà trực tuyến nhanh chóng & an toàn pháp lý",
+        icon: FileCheck,
+      },
+      {
+        id: "h3",
+        title: "Tự động chốt thu chi",
+        description:
+          "Tự động tính tiền điện nước, dịch vụ & gửi hóa đơn Zalo/App",
+        icon: Calculator,
+      },
+      {
+        id: "h4",
+        title: "Thanh toán QR Code",
+        description: "Thanh toán tiền phòng online, tự động gạch nợ minh bạch",
+        icon: CreditCard,
+      },
+    ],
+    features: [
+      "Tìm kiếm phòng trọ chính chủ xác thực 100%",
+      "Bộ lọc thông minh theo giá, khu vực & tiện ích",
+      "Quản lý danh sách phòng & thông tin khách thuê",
+      "Tự động chốt số điện nước & xuất hóa đơn",
+      "Ký hợp đồng thuê nhà điện tử bảo mật",
+      "Tự động gửi thông báo tiền phòng qua Zalo/App",
+      "Báo cáo doanh thu & tỷ lệ lấp đầy phòng",
+      "Hỗ trợ chủ nhà đăng tin cho thuê miễn phí",
+    ],
+    cta: {
+      iconBadge: Home,
+      title: "Bạn đang tìm phòng trọ hoặc muốn tối ưu quản lý dãy trọ?",
+      description:
+        "Trải nghiệm nền tảng PropTech Troo.vn ngay hôm nay – Nhanh chóng & Tiện lợi",
+      buttonText: "Truy cập Troo.vn ngay",
     },
     benefits: commonBenefits,
   },
@@ -219,28 +306,6 @@ export const servicesData: ServiceItemData[] = [
     },
     benefits: commonBenefits,
   },
-  {
-    id: "website",
-    name: "Giá thiết kế website",
-    description: "Bảng giá & gói dịch vụ thiết kế website",
-    icon: ShoppingCart,
-    accent: "amber",
-    badge: "Web Development Pricing",
-    title: "Thiết kế website theo nhu cầu",
-    titleHighlight: "doanh nghiệp",
-    subtitle:
-      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
-    highlights: [],
-    features: [],
-    cta: {
-      iconBadge: Rocket,
-      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
-      description:
-        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
-      buttonText: "Yêu cầu tư vấn & Báo giá",
-    },
-    benefits: commonBenefits,
-  },
 ];
 
 export const websitePackagesData: WebsitePricingPackage[] = [
@@ -248,13 +313,12 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "starter-web",
     name: "Starter Website",
     target: "Cá nhân & Doanh nghiệp nhỏ",
-    price: "9.900.000đ",
-    period: "/ dự án",
+    price: "3.900.000đ",
     description:
       "Website giới thiệu sản phẩm/dịch vụ chuẩn SEO, giao diện mượt mà.",
     features: [
       "Thiết kế giao diện chuẩn Responsive",
-      "Tối ưu tốc độ tải trang Core Web Vitals",
+      "Tối ưu tốc độ tải trang (chuẩn Google)",
       "Chuẩn hóa cấu trúc SEO Google",
       "Tích hợp Form nhận báo giá / liên hệ",
       "Bảo hành & Hỗ trợ 3 tháng",
@@ -265,8 +329,7 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "business-web",
     name: "Business Website",
     target: "Doanh nghiệp vừa & nhỏ",
-    price: "19.900.000đ",
-    period: "/ dự án",
+    price: "10.900.000đ",
     popular: true,
     description:
       "Giải pháp website nâng tầm thương hiệu, tối ưu tỷ lệ chuyển đổi.",
@@ -275,7 +338,7 @@ export const websitePackagesData: WebsitePricingPackage[] = [
       "Hệ thống quản trị tin tức & Blog",
       "Chuẩn SEO nâng cao & Schema Data",
       "Tích hợp Chatbot & Mạng xã hội",
-      "Tối ưu bảo mật SSL & Anti-DDoS",
+      "Tích hợp Tường lửa WAF & Bảo vệ Anti-DDoS",
       "Bảo hành & Hỗ trợ 6 tháng",
     ],
     ctaText: "Chọn gói Business",
@@ -284,18 +347,17 @@ export const websitePackagesData: WebsitePricingPackage[] = [
     id: "enterprise-app",
     name: "Custom Web Application",
     target: "Doanh nghiệp lớn & Tập đoàn",
-    price: "39.900.000đ",
-    period: "/ dự án",
+    price: "Liên hệ báo giá",
     description:
       "Phần mềm Web tùy biến cao, tích hợp hệ thống CRM/ERP mở rộng.",
     features: [
       "Lập trình Web App tính năng tùy biến",
       "Tích hợp API hệ thống doanh nghiệp",
       "Hệ thống phân quyền đa cấp bậc",
-      "Tối ưu hạ tầng Cloud / VPS Server",
+      "Triển khai trên Cloud / VPS độc lập",
       "Đào tạo & Chuyển giao quy trình",
       "Bảo hành & Hỗ trợ 12 tháng",
     ],
-    ctaText: "Chọn gói Enterprise",
+    ctaText: "Liên hệ tư vấn",
   },
 ];

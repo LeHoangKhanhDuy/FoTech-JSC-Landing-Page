@@ -39,7 +39,7 @@ export default function ServiceSidebar({
         className="hidden lg:flex w-[320px] shrink-0 flex-col gap-3 border-r border-slate-800/80 p-6"
       >
         <div className="mb-2 px-1 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-          Danh sách sản phẩm & dịch vụ
+          Sản phẩm & bảng giá dịch vụ
         </div>
         {services.map((service) => (
           <ServiceNavItem

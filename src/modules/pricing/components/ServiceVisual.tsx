@@ -1,5 +1,5 @@
 import { ServiceId } from "@/modules/pricing/types/pricing-types";
-import { Users, CheckCircle, Code2, HeartPulse, Globe } from "lucide-react";
+import { Users, CheckCircle, Code2, HeartPulse, Globe, Home } from "lucide-react";
 
 interface ServiceVisualProps {
   serviceId: ServiceId;
@@ -119,6 +119,37 @@ export default function ServiceVisual({ serviceId }: ServiceVisualProps) {
           <div className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950/60 p-2.5 text-xs">
             <span className="text-slate-300">Kho thuốc & Đơn điện tử</span>
             <span className="font-bold text-blue-400">Tự động cảnh báo</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (serviceId === "troovn") {
+    return (
+      <div className="relative w-full max-w-[340px] rounded-2xl border border-slate-800 bg-slate-900/90 p-4 shadow-2xl backdrop-blur-xl">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-600/30 text-amber-400">
+              <Home className="h-4 w-4" />
+            </div>
+            <span className="text-xs font-bold text-white">
+              Troo.vn PropTech Platform
+            </span>
+          </div>
+          <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[9px] font-bold text-amber-400">
+            Verified
+          </span>
+        </div>
+
+        <div className="mt-3 space-y-2">
+          <div className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950/60 p-2.5 text-xs">
+            <span className="text-slate-300">Phòng trọ chính chủ</span>
+            <span className="font-bold text-emerald-400">100% Xác thực</span>
+          </div>
+          <div className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950/60 p-2.5 text-xs">
+            <span className="text-slate-300">Hợp đồng & Điện nước</span>
+            <span className="font-bold text-blue-400">Tự động hóa</span>
           </div>
         </div>
       </div>
