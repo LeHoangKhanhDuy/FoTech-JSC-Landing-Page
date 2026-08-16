@@ -18,6 +18,11 @@ import {
   Pill,
   TrendingUp,
   Rocket,
+  Home,
+  Search,
+  FileCheck,
+  Calculator,
+  CreditCard,
 } from "lucide-react";
 import {
   ServiceItemData,
@@ -53,6 +58,28 @@ export const commonBenefits: ServiceBenefit[] = [
 ];
 
 export const servicesData: ServiceItemData[] = [
+  {
+    id: "website",
+    name: "Thiết kế website",
+    description: "Bảng giá & gói dịch vụ thiết kế website",
+    icon: ShoppingCart,
+    accent: "amber",
+    badge: "Web Development Pricing",
+    title: "Thiết kế website theo nhu cầu",
+    titleHighlight: "doanh nghiệp",
+    subtitle:
+      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
+    highlights: [],
+    features: [],
+    cta: {
+      iconBadge: Rocket,
+      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
+      description:
+        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
+      buttonText: "Yêu cầu tư vấn & Báo giá",
+    },
+    benefits: commonBenefits,
+  },
   {
     id: "fohrm",
     name: "FoHRM",
@@ -109,24 +136,61 @@ export const servicesData: ServiceItemData[] = [
     benefits: commonBenefits,
   },
   {
-    id: "website",
-    name: "Thiết kế website",
-    description: "Bảng giá & gói dịch vụ thiết kế website",
-    icon: ShoppingCart,
+    id: "troovn",
+    name: "Troo.vn",
+    description: "Tìm kiếm & Quản lý phòng trọ",
+    icon: Home,
     accent: "amber",
-    badge: "Web Development Pricing",
-    title: "Thiết kế website theo nhu cầu",
-    titleHighlight: "doanh nghiệp",
+    badge: "PropTech Platform",
+    title: "Nền tảng tìm kiếm & Quản lý trọ",
+    titleHighlight: "chính chủ",
     subtitle:
-      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
-    highlights: [],
-    features: [],
+      "Troo.vn là giải pháp công nghệ PropTech thế hệ mới kết nối người thuê tìm phòng trọ chính chủ xác thực, đồng thời tự động hóa quy trình quản lý phòng, hợp đồng và tính tiền điện nước cho chủ nhà.",
+    highlights: [
+      {
+        id: "h1",
+        title: "Tìm phòng 360°",
+        description:
+          "Tìm kiếm phòng trọ chính chủ verified với hình ảnh thực tế",
+        icon: Search,
+      },
+      {
+        id: "h2",
+        title: "Hợp đồng điện tử",
+        description:
+          "Ký hợp đồng thuê nhà trực tuyến nhanh chóng & an toàn pháp lý",
+        icon: FileCheck,
+      },
+      {
+        id: "h3",
+        title: "Tự động chốt thu chi",
+        description:
+          "Tự động tính tiền điện nước, dịch vụ & gửi hóa đơn Zalo/App",
+        icon: Calculator,
+      },
+      {
+        id: "h4",
+        title: "Thanh toán QR Code",
+        description: "Thanh toán tiền phòng online, tự động gạch nợ minh bạch",
+        icon: CreditCard,
+      },
+    ],
+    features: [
+      "Tìm kiếm phòng trọ chính chủ xác thực 100%",
+      "Bộ lọc thông minh theo giá, khu vực & tiện ích",
+      "Quản lý danh sách phòng & thông tin khách thuê",
+      "Tự động chốt số điện nước & xuất hóa đơn",
+      "Ký hợp đồng thuê nhà điện tử bảo mật",
+      "Tự động gửi thông báo tiền phòng qua Zalo/App",
+      "Báo cáo doanh thu & tỷ lệ lấp đầy phòng",
+      "Hỗ trợ chủ nhà đăng tin cho thuê miễn phí",
+    ],
     cta: {
-      iconBadge: Rocket,
-      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
+      iconBadge: Home,
+      title: "Bạn đang tìm phòng trọ hoặc muốn tối ưu quản lý dãy trọ?",
       description:
-        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
-      buttonText: "Yêu cầu tư vấn & Báo giá",
+        "Trải nghiệm nền tảng PropTech Troo.vn ngay hôm nay – Nhanh chóng & Tiện lợi",
+      buttonText: "Truy cập Troo.vn ngay",
     },
     benefits: commonBenefits,
   },
