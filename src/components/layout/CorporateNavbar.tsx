@@ -101,18 +101,17 @@ export default function CorporateNavbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-8 md:flex">
-            {/* Dropdown Menu for Ecosystem */}
             <div
-              className="relative"
+              className="relative py-2"
               onMouseEnter={() => setEcosystemOpen(true)}
               onMouseLeave={() => setEcosystemOpen(false)}
             >
               <button
                 type="button"
                 onClick={() => setEcosystemOpen(!ecosystemOpen)}
-                className="flex items-center gap-1.5 text-sm font-semibold text-slate-200 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-sm font-semibold text-slate-200 hover:text-white transition-colors py-1"
               >
-                <span>Hệ sinh thái</span>
+                <span>Sản phẩm</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-transform duration-200 ${
                     ecosystemOpen ? "rotate-180 text-blue-500" : ""
@@ -121,61 +120,62 @@ export default function CorporateNavbar() {
                 />
               </button>
 
-              {/* Dropdown Panel */}
               {ecosystemOpen && (
-                <div className="absolute top-full -left-4 mt-2 w-96 rounded-2xl border border-slate-800 bg-slate-900/95 p-3 shadow-2xl backdrop-blur-xl animate-fade-in">
-                  <div className="mb-2 px-3 pt-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    Sản phẩm B2B Digital Transformation
-                  </div>
-                  <div className="space-y-1">
-                    {ecosystemProducts.map((prod) => {
-                      const Icon = prod.icon;
+                <div className="absolute top-full -left-4 pt-2 w-96 z-50">
+                  <div className="rounded-2xl border border-slate-800 bg-slate-900/95 p-3 shadow-2xl backdrop-blur-xl animate-fade-in">
+                    <div className="mb-2 px-3 pt-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                      Danh mục Sản phẩm FoTech
+                    </div>
+                    <div className="space-y-1">
+                      {ecosystemProducts.map((prod) => {
+                        const Icon = prod.icon;
 
-                      const content = (
-                        <div className="group flex items-start gap-3 rounded-xl p-2.5 transition hover:bg-slate-800/80">
-                          <div
-                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}
-                          >
-                            <Icon className="h-4 w-4" aria-hidden="true" />
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-bold text-white group-hover:text-blue-400">
-                                {prod.name}
-                              </span>
-                              <span className="text-[10px] font-medium text-slate-400">
-                                {prod.tagline}
-                              </span>
+                        const content = (
+                          <div className="group flex items-start gap-3 rounded-xl p-2.5 transition hover:bg-slate-800/80">
+                            <div
+                              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${prod.color} text-white shadow-md`}
+                            >
+                              <Icon className="h-4 w-4" aria-hidden="true" />
                             </div>
-                            <p className="mt-0.5 text-xs text-slate-400 line-clamp-1">
-                              {prod.desc}
-                            </p>
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-bold text-white group-hover:text-blue-400">
+                                  {prod.name}
+                                </span>
+                                <span className="text-[10px] font-medium text-slate-400">
+                                  {prod.tagline}
+                                </span>
+                              </div>
+                              <p className="mt-0.5 text-xs text-slate-400 line-clamp-1">
+                                {prod.desc}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      );
+                        );
 
-                      if (prod.isRoute) {
+                        if (prod.isRoute) {
+                          return (
+                            <Link
+                              key={prod.name}
+                              to={prod.link}
+                              onClick={() => setEcosystemOpen(false)}
+                            >
+                              {content}
+                            </Link>
+                          );
+                        }
+
                         return (
-                          <Link
+                          <a
                             key={prod.name}
-                            to={prod.link}
+                            href={prod.link}
                             onClick={() => setEcosystemOpen(false)}
                           >
                             {content}
-                          </Link>
+                          </a>
                         );
-                      }
-
-                      return (
-                        <a
-                          key={prod.name}
-                          href={prod.link}
-                          onClick={() => setEcosystemOpen(false)}
-                        >
-                          {content}
-                        </a>
-                      );
-                    })}
+                      })}
+                    </div>
                   </div>
                 </div>
               )}
@@ -201,7 +201,6 @@ export default function CorporateNavbar() {
             </a>
           </div>
 
-          {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
             <Button
               variant="primary"
@@ -213,7 +212,6 @@ export default function CorporateNavbar() {
             </Button>
           </div>
 
-          {/* Mobile Toggle Button */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
@@ -227,7 +225,7 @@ export default function CorporateNavbar() {
         </nav>
       </header>
 
-      {/* Mobile Slide-over Drawer & Backdrop (3/4 width slide from right + blurred backdrop) */}
+      {/* Mobile Slide-over Drawer & Backdrop */}
       <div
         className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
           isOpen
@@ -235,7 +233,6 @@ export default function CorporateNavbar() {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Blurred Backdrop for the remaining 1/4 area */}
         <div
           className={`absolute inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0"
@@ -243,14 +240,12 @@ export default function CorporateNavbar() {
           onClick={() => setIsOpen(false)}
         />
 
-        {/* Right Drawer Panel (3/4 screen width) */}
         <div
           className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-slate-900 p-6 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div>
-            {/* Drawer Top Bar */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <CorporateLogoMark />
               <button
@@ -263,10 +258,9 @@ export default function CorporateNavbar() {
               </button>
             </div>
 
-            {/* Ecosystem Products List */}
             <div className="mt-6 space-y-4">
               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                Sản phẩm Hệ sinh thái
+                Sản phẩm
               </div>
               <div className="space-y-1">
                 {ecosystemProducts.map((prod) => {
@@ -313,7 +307,6 @@ export default function CorporateNavbar() {
                 })}
               </div>
 
-              {/* General Nav Links */}
               <div className="pt-4 border-t border-slate-800 space-y-1.5">
                 <a
                   href="#solutions"
@@ -340,7 +333,6 @@ export default function CorporateNavbar() {
             </div>
           </div>
 
-          {/* Drawer Bottom Actions */}
           <div className="pt-6 mt-6 border-t border-slate-800 space-y-3">
             <Button
               variant="primary"
