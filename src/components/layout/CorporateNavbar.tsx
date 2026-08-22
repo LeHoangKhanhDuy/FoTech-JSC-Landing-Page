@@ -185,7 +185,7 @@ export default function CorporateNavbar() {
               href="#solutions"
               className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
             >
-              Giải pháp
+              Dịch vụ
             </a>
             <a
               href="#why-trust"
@@ -230,7 +230,9 @@ export default function CorporateNavbar() {
       {/* Mobile Slide-over Drawer & Backdrop (3/4 width slide from right + blurred backdrop) */}
       <div
         className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
         {/* Blurred Backdrop for the remaining 1/4 area */}
@@ -318,7 +320,7 @@ export default function CorporateNavbar() {
                   onClick={() => setIsOpen(false)}
                   className="block rounded-xl px-3 py-2 text-xs font-bold text-slate-200 hover:bg-slate-800"
                 >
-                  Giải pháp
+                  Dịch vụ
                 </a>
                 <a
                   href="#why-trust"
