@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import toast from 'react-hot-toast';
 
@@ -193,11 +193,6 @@ export default function LeadModal({
                 </Button>
               </div>
             </form>
-
-            <div className="mt-4 flex items-center justify-center gap-2 text-center text-xs text-slate-500 dark:text-slate-400">
-              <ShieldCheck className="h-4 w-4 text-emerald-500" aria-hidden="true" />
-              <span>Bảo mật dữ liệu 100% theo tiêu chuẩn Luật LĐ & ISO 27001</span>
-            </div>
           </div>
         )}
       </div>
