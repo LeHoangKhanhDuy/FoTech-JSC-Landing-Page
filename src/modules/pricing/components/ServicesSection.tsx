@@ -7,7 +7,7 @@ import { servicesData } from "@/modules/pricing/data/pricing-data";
 import { ServiceId } from "@/modules/pricing/types/pricing-types";
 
 export default function ServicesSection() {
-  const [activeServiceId, setActiveServiceId] = useState<ServiceId>("fohrm");
+  const [activeServiceId, setActiveServiceId] = useState<ServiceId>("website");
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "trial" | "consulting";
@@ -33,7 +33,6 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <ServicesHeader />
 
-        {/* Main Tabbed Service Container Card */}
         <div className="rounded-xl border border-slate-800/80 bg-[#071225] shadow-2xl shadow-blue-950/20 overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             <ServiceSidebar
