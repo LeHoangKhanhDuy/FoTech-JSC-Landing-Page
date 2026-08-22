@@ -12,12 +12,12 @@ import {
   Star,
 } from "lucide-react";
 import Button from '@/components/ui/Button';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 
 export default function Hero() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    type: "demo" | "trial" | "login" | "consulting";
+    type: "demo" | "trial" | "consulting";
   }>({ isOpen: false, type: "trial" });
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -290,7 +290,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}

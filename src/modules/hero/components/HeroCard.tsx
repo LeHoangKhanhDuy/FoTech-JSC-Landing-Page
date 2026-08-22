@@ -1,12 +1,12 @@
 import { useState } from "react";
-import LeadModal from "@/components/ui/LeadModal";
+import ContactModal from "@/modules/contact/components/ContactModal";
 import HeroContent from "@/modules/hero/components/HeroContent";
 import HeroVideoPlayer from "@/modules/hero/components/HeroVideoPlayer";
 
 export default function HeroCard() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    type: "demo" | "trial" | "login" | "consulting";
+    type: "demo" | "trial" | "consulting";
   }>({ isOpen: false, type: "consulting" });
 
   const handleOpenDemo = () => {
@@ -28,7 +28,7 @@ export default function HeroCard() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}

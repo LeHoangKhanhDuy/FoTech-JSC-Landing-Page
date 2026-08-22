@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 import CTAContent from '@/modules/cta/components/CTAContent';
 
 export default function CtaSection() {
@@ -24,7 +24,7 @@ export default function CtaSection() {
         <CTAContent onOpenTrial={handleOpenTrial} onOpenConsulting={handleOpenConsulting} />
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}

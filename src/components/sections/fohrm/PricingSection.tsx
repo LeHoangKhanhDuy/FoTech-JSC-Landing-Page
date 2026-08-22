@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CheckCircle2, Zap, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -173,7 +173,7 @@ export default function PricingSection() {
 
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         type="trial"

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LeadModal from "@/components/ui/LeadModal";
+import ContactModal from "@/modules/contact/components/ContactModal";
 import ServiceSidebar from "@/modules/pricing/components/ServiceSidebar";
 import ServiceContent from "@/modules/pricing/components/ServiceContent";
 import ServicesHeader from "@/modules/pricing/components/ServicesHeader";
@@ -49,7 +49,7 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}

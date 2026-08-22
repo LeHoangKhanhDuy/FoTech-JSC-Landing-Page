@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import Button from "@/components/ui/Button";
 import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
-import LeadModal from "@/components/ui/LeadModal";
+import ContactModal from "@/modules/contact/components/ContactModal";
 
 const ecosystemProducts = [
   {
@@ -59,10 +59,10 @@ export default function CorporateNavbar() {
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    type: "demo" | "trial" | "login" | "consulting";
+    type: "demo" | "trial" | "consulting";
   }>({ isOpen: false, type: "consulting" });
 
-  const openModal = (type: "demo" | "trial" | "login" | "consulting") => {
+  const openModal = (type: "demo" | "trial" | "consulting") => {
     setModalState({ isOpen: true, type });
   };
 
@@ -349,7 +349,7 @@ export default function CorporateNavbar() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}

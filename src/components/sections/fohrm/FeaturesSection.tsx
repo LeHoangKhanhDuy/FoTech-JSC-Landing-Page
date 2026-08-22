@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 
 export default function FeaturesSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -296,7 +296,7 @@ export default function FeaturesSection() {
 
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         type="trial"

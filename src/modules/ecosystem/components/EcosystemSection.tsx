@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LeadModal from "@/components/ui/LeadModal";
+import ContactModal from "@/modules/contact/components/ContactModal";
 import { ecosystemProducts } from "@/modules/ecosystem/data/ecosystemData";
 import EcosystemHeader from "@/modules/ecosystem/components/EcosystemHeader";
 import EcosystemCard from "@/modules/ecosystem/components/EcosystemCard";
@@ -35,7 +35,7 @@ export default function EcosystemSection() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}
