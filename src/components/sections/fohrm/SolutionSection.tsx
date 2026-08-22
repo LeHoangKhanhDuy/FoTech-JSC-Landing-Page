@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ShoppingBag, Factory, Laptop, Layers, CheckCircle2, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 
 const solutionsData = [
   {
@@ -165,7 +165,7 @@ export default function SolutionSection() {
 
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         type="demo"

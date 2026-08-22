@@ -1,4 +1,4 @@
-import { Users, Stethoscope, ShoppingBag, Home, Building2, ShieldCheck, Activity, Layers } from 'lucide-react';
+import { Users, Stethoscope, ShoppingBag, Home, Building2, ShieldCheck, Activity, Layers, Code2 } from 'lucide-react';
 import { EcosystemProduct } from '@/modules/ecosystem/types';
 
 export const ecosystemProducts: EcosystemProduct[] = [
@@ -46,13 +46,13 @@ export const ecosystemProducts: EcosystemProduct[] = [
     description: 'Nền tảng quản lý phòng khám toàn diện, tối ưu luồng bệnh nhân, hồ sơ bệnh án điện tử (EMR), kê đơn thuốc chuẩn Bộ Y Tế và quản lý kho dược thông minh.',
     icon: Stethoscope,
     theme: {
-      iconBg: 'bg-emerald-600 shadow-emerald-500/25 text-white',
-      badgeStyle: 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/15 dark:text-emerald-400 dark:border-emerald-500/20',
-      cardBorderHover: 'hover:border-emerald-500/50 hover:shadow-emerald-500/10 border-emerald-500/20',
-      subtitleColor: 'text-emerald-600 dark:text-emerald-400',
-      checkIconColor: 'text-emerald-600 dark:text-emerald-400',
-      statIconColor: 'text-emerald-600 dark:text-emerald-400',
-      btnStyle: 'border-emerald-500/40 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500/40 dark:text-emerald-400 dark:hover:bg-emerald-500/10',
+      iconBg: 'bg-[#F43F5E] shadow-rose-500/25 text-white',
+      badgeStyle: 'bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-500/15 dark:text-rose-400 dark:border-rose-500/20',
+      cardBorderHover: 'hover:border-rose-500/50 hover:shadow-rose-500/10 border-rose-500/20',
+      subtitleColor: 'text-rose-600 dark:text-rose-400',
+      checkIconColor: 'text-rose-600 dark:text-rose-400',
+      statIconColor: 'text-rose-600 dark:text-rose-400',
+      btnStyle: 'border-rose-500/40 text-rose-700 hover:bg-rose-50 dark:border-rose-500/40 dark:text-rose-400 dark:hover:bg-rose-500/10',
     },
     features: [
       'Hồ sơ bệnh án điện tử EMR chuẩn y tế',
@@ -75,30 +75,30 @@ export const ecosystemProducts: EcosystemProduct[] = [
   {
     id: 'focode',
     name: 'FoCode',
-    badge: 'E-Commerce SaaS',
-    subtitle: 'Nền tảng Thương mại Điện tử & Bán hàng Đa kênh',
-    description: 'Giải pháp thương mại điện tử toàn diện giúp doanh nghiệp xây dựng cửa hàng online, quản lý đơn hàng tập trung, tích hợp cổng thanh toán và vận chuyển tự động.',
+    badge: 'Code Marketplace',
+    subtitle: 'Sàn Thương mại Điện tử Bán Source Code & Phần mềm',
+    description: 'Sàn thương mại điện tử chuyên nghiệp cung cấp kho Source Code mẫu, Web App, Mobile App đóng gói sẵn và Template UI/UX cao cấp, giúp lập trình viên và doanh nghiệp tiết kiệm 80% thời gian phát triển.',
     icon: ShoppingBag,
     theme: {
-      iconBg: 'bg-indigo-600 shadow-indigo-500/25 text-white',
-      badgeStyle: 'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-500/15 dark:text-indigo-300 dark:border-indigo-500/20',
-      cardBorderHover: 'hover:border-indigo-500/50 hover:shadow-indigo-500/10 border-indigo-500/20',
-      subtitleColor: 'text-indigo-600 dark:text-indigo-400',
-      checkIconColor: 'text-indigo-600 dark:text-indigo-400',
-      statIconColor: 'text-indigo-600 dark:text-indigo-400',
-      btnStyle: 'border-indigo-500/40 text-indigo-700 hover:bg-indigo-50 dark:border-indigo-500/40 dark:text-indigo-300 dark:hover:bg-indigo-500/10',
+      iconBg: 'bg-emerald-600 shadow-emerald-500/25 text-white',
+      badgeStyle: 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-500/15 dark:text-emerald-400 dark:border-emerald-500/20',
+      cardBorderHover: 'hover:border-emerald-500/50 hover:shadow-emerald-500/10 border-emerald-500/20',
+      subtitleColor: 'text-emerald-600 dark:text-emerald-400',
+      checkIconColor: 'text-emerald-600 dark:text-emerald-400',
+      statIconColor: 'text-emerald-600 dark:text-emerald-400',
+      btnStyle: 'border-emerald-500/40 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500/40 dark:text-emerald-400 dark:hover:bg-emerald-500/10',
     },
     features: [
-      'Xây dựng Website & App bán hàng chuẩn SEO',
-      'Tích hợp 10+ Cổng thanh toán & Đơn vị vận chuyển',
-      'Quản lý kho hàng & Đơn hàng đa kênh (Omnichannel)',
+      'Kho 1,000+ Source Code Web & App xác thực 100%',
+      'Tự động bàn giao mã nguồn trọn gói ngay 1-click',
+      'Kiểm duyệt 100% không mã độc & có tài liệu chi tiết',
     ],
     stats: {
-      value1: '100K+',
-      label1: 'Đơn hàng/ngày',
-      stat1Icon: ShoppingBag,
-      value2: 'Omnichannel',
-      label2: 'Bán hàng đa kênh',
+      value1: '1,000+',
+      label1: 'Source Code chất lượng',
+      stat1Icon: Code2,
+      value2: '80%',
+      label2: 'Tiết kiệm thời gian',
       stat2Icon: Layers,
     },
     cta: {

@@ -1,5 +1,4 @@
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
-import EcosystemSection from "@/modules/ecosystem/components/EcosystemSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import WhyTrustFoTech from "@/modules/marketing/components/WhyTrustFoTech";
@@ -14,7 +13,6 @@ export default function CorporateHomePage() {
       <main>
         <HeroCard />
         <TrustedCompanies />
-        <EcosystemSection />
         <WhyTrustFoTech />
         <ServicesSection />
         <CtaSection />

@@ -2,7 +2,7 @@ import { LucideIcon } from 'lucide-react';
 
 export type ServiceId = 'fohrm' | 'focode' | 'fomed' | 'website' | 'troovn';
 
-export type ServiceAccent = 'blue' | 'purple' | 'emerald' | 'amber';
+export type ServiceAccent = 'blue' | 'purple' | 'emerald' | 'amber' | 'rose' | 'silver';
 
 export interface ServiceHighlight {
   id: string;
@@ -46,8 +46,9 @@ export interface WebsitePricingPackage {
   name: string;
   target: string;
   price: string;
-  description: string;
+  period?: string;
   popular?: boolean;
+  description: string;
   features: string[];
   ctaText: string;
 }

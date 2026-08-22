@@ -1,14 +1,18 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 interface HeroContentProps {
-  onOpenDemo: () => void;
+  onOpenDemo?: () => void;
 }
 
 export default function HeroContent({ onOpenDemo }: HeroContentProps) {
   const handleScrollToEcosystem = () => {
-    const elem = document.getElementById("ecosystem");
-    elem?.scrollIntoView({ behavior: "smooth" });
+    if (onOpenDemo) {
+      onOpenDemo();
+    } else {
+      const elem = document.getElementById("ecosystem");
+      elem?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -34,21 +38,6 @@ export default function HeroContent({ onOpenDemo }: HeroContentProps) {
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl shadow-indigo-500/25 px-7"
         >
           Đăng ký dùng thử
-        </Button>
-
-        <Button
-          variant="outline"
-          size="lg"
-          onClick={onOpenDemo}
-          icon={
-            <Play
-              className="h-4 w-4 fill-current text-indigo-600"
-              aria-hidden="true"
-            />
-          }
-          className="px-7"
-        >
-          Xem Demo
         </Button>
       </div>
     </div>

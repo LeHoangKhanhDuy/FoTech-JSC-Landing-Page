@@ -2,7 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
 import LogoMark from '@/components/layout/LogoMark';
-import LeadModal from '@/components/ui/LeadModal';
+import ContactModal from '@/modules/contact/components/ContactModal';
 import { navigationItems } from '@/constants/navigation';
 
 export default function Navbar() {
@@ -10,7 +10,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    type: 'demo' | 'trial' | 'login' | 'consulting';
+    type: 'demo' | 'trial' | 'consulting';
   }>({ isOpen: false, type: 'trial' });
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const openModal = (type: 'demo' | 'trial' | 'login' | 'consulting') => {
+  const openModal = (type: 'demo' | 'trial' | 'consulting') => {
     setModalState({ isOpen: true, type });
     setIsOpen(false);
   };
@@ -63,15 +63,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
-            <Button
-              variant="ghost"
-              icon={null}
-              onClick={() => openModal('login')}
-            >
-              Đăng nhập
-            </Button>
             <Button
               variant="primary"
               onClick={() => openModal('trial')}
@@ -80,7 +72,6 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
@@ -100,7 +91,6 @@ export default function Navbar() {
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Blurred Backdrop for remaining 1/4 area */}
         <div
           className={`absolute inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity duration-300 ${
             isOpen ? 'opacity-100' : 'opacity-0'
@@ -108,14 +98,12 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
         />
 
-        {/* Right Drawer Panel (3/4 screen width) */}
         <div
           className={`absolute top-0 right-0 bottom-0 h-full w-[75vw] max-w-xs sm:w-80 bg-slate-900 p-6 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <div>
-            {/* Drawer Top Bar */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <LogoMark />
               <button
@@ -128,7 +116,6 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Navigation Items */}
             <div className="mt-6 space-y-1.5">
               <div className="px-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
                 Điều hướng
@@ -146,17 +133,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Drawer Bottom Actions */}
           <div className="pt-6 mt-6 border-t border-slate-800 space-y-3">
             <div className="grid gap-2">
-              <Button
-                variant="outline"
-                icon={null}
-                onClick={() => openModal('login')}
-                className="w-full"
-              >
-                Đăng nhập
-              </Button>
               <Button
                 variant="primary"
                 onClick={() => openModal('trial')}
@@ -169,7 +147,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <LeadModal
+      <ContactModal
         isOpen={modalState.isOpen}
         onClose={() => setModalState({ ...modalState, isOpen: false })}
         type={modalState.type}
