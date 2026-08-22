@@ -34,8 +34,7 @@ export const commonBenefits: ServiceBenefit[] = [
   {
     id: "b1",
     title: "Triển khai nhanh chóng",
-    description:
-      "Quy trình triển khai tối ưu. Bám sát tiến độ dự án",
+    description: "Quy trình triển khai tối ưu. Bám sát tiến độ dự án",
     icon: Zap,
   },
   {
@@ -64,10 +63,10 @@ export const servicesData: ServiceItemData[] = [
     name: "Thiết kế website",
     description: "Bảng giá & gói dịch vụ thiết kế website",
     icon: ShoppingCart,
-    accent: "amber",
+    accent: "silver",
     badge: "Web Development Pricing",
     title: "Thiết kế website theo nhu cầu",
-    titleHighlight: "doanh nghiệp",
+    titleHighlight: "doanh nghiệp hiện đại",
     subtitle:
       "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
     highlights: [],
@@ -200,7 +199,7 @@ export const servicesData: ServiceItemData[] = [
     name: "FoCode",
     description: "Thiết kế & lập trình phần mềm",
     icon: Code2,
-    accent: "purple",
+    accent: "emerald",
     badge: "Software Engineering",
     title: "Thiết kế & phát triển phần mềm",
     titleHighlight: "chuyên nghiệp",
@@ -256,7 +255,7 @@ export const servicesData: ServiceItemData[] = [
     name: "FoMed",
     description: "Giải pháp quản lý phòng khám",
     icon: HeartPulse,
-    accent: "emerald",
+    accent: "rose",
     badge: "Healthcare Management",
     title: "Giải pháp quản lý phòng khám",
     titleHighlight: "toàn diện",
