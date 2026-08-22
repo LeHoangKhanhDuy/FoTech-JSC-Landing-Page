@@ -7,7 +7,7 @@ export default function TrustedCompanies() {
     <section className="bg-white dark:bg-slate-950">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-          Được tin dùng bởi hơn 500+ doanh nghiệp hàng đầu tại Việt Nam
+          Công nghệ lập trình & Framework hiện đại được ứng dụng
         </p>
 
         <div className="mt-8 mb-16 overflow-hidden">

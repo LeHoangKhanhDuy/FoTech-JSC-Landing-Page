@@ -102,21 +102,6 @@ export default function Hero() {
               >
                 Bắt đầu miễn phí
               </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => openModal("demo")}
-                icon={
-                  <Play
-                    className="h-4 w-4 fill-current text-blue-600"
-                    aria-hidden="true"
-                  />
-                }
-                className="px-6"
-              >
-                Xem Demo
-              </Button>
             </div>
 
             {/* Rating & Trust Badges */}
