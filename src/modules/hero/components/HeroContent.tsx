@@ -1,4 +1,4 @@
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 interface HeroContentProps {
@@ -55,11 +55,10 @@ export default function HeroContent({
         <Button
           variant="outline"
           size="lg"
-          onClick={handleConsulting}
-          icon={<PhoneCall className="h-4 w-4 text-blue-400" aria-hidden="true" />}
+          onClick={handleConsulting}        
           className="w-full sm:w-auto px-7 h-[48px] font-bold rounded-xl border border-slate-700/90 bg-[#06122E]/90 hover:bg-slate-800 text-white shadow-sm text-sm sm:text-base"
         >
-          Liên hệ tư vấn
+          Nhận báo giá
         </Button>
       </div>
     </div>
