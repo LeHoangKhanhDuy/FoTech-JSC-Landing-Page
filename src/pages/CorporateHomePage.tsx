@@ -1,6 +1,5 @@
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import CorporateFooter from "@/components/layout/CorporateFooter";
-import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import WhyTrustFoTech from "@/modules/marketing/components/WhyTrustFoTech";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import HeroCard from "@/modules/hero/components/HeroCard";
@@ -12,7 +11,6 @@ export default function CorporateHomePage() {
       <CorporateNavbar />
       <main>
         <HeroCard />
-        <TrustedCompanies />
         <WhyTrustFoTech />
         <ServicesSection />
         <CtaSection />
