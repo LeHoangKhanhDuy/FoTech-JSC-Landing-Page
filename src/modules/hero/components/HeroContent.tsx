@@ -30,14 +30,14 @@ export default function HeroContent({
 
   return (
     <div className="mx-auto max-w-4xl text-center animate-fade-in-up flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl leading-[1.12]">
+      <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.12]">
         Hệ sinh thái giải pháp số{" "}
-        <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
+        <span className="text-blue-500">
           toàn diện
         </span>
       </h1>
 
-      <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+      <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-relaxed text-slate-300 max-w-2xl mx-auto">
         Cung cấp các nền tảng phần mềm mạnh mẽ, tích hợp AI, giúp doanh nghiệp
         tối ưu vận hành, từ quản trị nhân sự đến quản lý y tế.
       </p>
@@ -47,16 +47,16 @@ export default function HeroContent({
           variant="primary"
           size="lg"
           onClick={handleTrial}
-          icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
-          className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl shadow-indigo-500/25 px-7 h-[48px] font-bold rounded-xl text-sm sm:text-base"
+          icon={<ArrowRight className="h-5 w-5 text-white" aria-hidden="true" />}
+          className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-600/25 px-7 h-[48px] font-bold rounded-xl text-sm sm:text-base border-none transition-colors"
         >
           Đăng ký dùng thử
         </Button>
         <Button
           variant="outline"
           size="lg"
-          onClick={handleConsulting}        
-          className="w-full sm:w-auto px-7 h-[48px] font-bold rounded-xl border border-slate-700/90 bg-[#06122E]/90 hover:bg-slate-800 text-white shadow-sm text-sm sm:text-base"
+          onClick={handleConsulting}
+          className="w-full sm:w-auto px-7 h-[48px] font-bold rounded-xl border border-slate-700/90 bg-[#06122E]/90 hover:bg-slate-800 text-white shadow-sm text-sm sm:text-base transition-colors"
         >
           Nhận báo giá
         </Button>
