@@ -21,7 +21,7 @@ export default function CTAContent({ onOpenTrial, onOpenConsulting }: CTAContent
         <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl leading-[1.15] sm:leading-[1.12]">
           Bắt đầu Hành trình Chuyển đổi Số <br className="hidden sm:inline" />
           cùng{' '}
-          <span className="bg-gradient-to-r from-[#2563EB] via-[#1D4EDD] to-[#8B5CF6] dark:from-[#00A3FF] dark:via-[#2979FF] dark:to-[#A855F7] bg-clip-text text-transparent">
+          <span className="text-blue-600 dark:text-blue-500">
             FoTech
           </span>{' '}
           Ngay Hôm Nay

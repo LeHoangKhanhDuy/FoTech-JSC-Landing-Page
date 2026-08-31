@@ -15,12 +15,12 @@ export default function ServiceHeader({ service }: ServiceHeaderProps) {
   };
 
   const highlightStyles: Record<ServiceAccent, string> = {
-    rose: "from-rose-400 via-pink-400 to-rose-300",
-    emerald: "from-emerald-400 via-teal-300 to-emerald-200",
-    silver: "from-slate-100 via-zinc-200 to-slate-300",
-    blue: "from-[#00A3FF] via-[#2979FF] to-[#A855F7]",
-    amber: "from-amber-400 via-orange-400 to-amber-200",
-    purple: "from-purple-400 via-indigo-300 to-purple-300",
+    rose: "bg-gradient-to-r from-rose-400 via-pink-400 to-rose-300 bg-clip-text text-transparent",
+    emerald: "bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200 bg-clip-text text-transparent",
+    silver: "bg-gradient-to-r from-slate-100 via-zinc-200 to-slate-300 bg-clip-text text-transparent",
+    blue: "text-blue-500",
+    amber: "bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent",
+    purple: "bg-gradient-to-r from-purple-400 via-indigo-300 to-purple-300 bg-clip-text text-transparent",
   };
 
   const badgeClass = badgeStyles[service.accent] || badgeStyles.blue;
@@ -36,7 +36,7 @@ export default function ServiceHeader({ service }: ServiceHeaderProps) {
 
       <h3 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[44px] lg:leading-[1.12]">
         {service.title}{" "}
-        <span className={`bg-gradient-to-r ${highlightClass} bg-clip-text text-transparent`}>
+        <span className={highlightClass}>
           {service.titleHighlight}
         </span>
       </h3>

@@ -5,20 +5,20 @@ export interface HeroStatItem {
 
 const statsData: HeroStatItem[] = [
   {
-    value: "99.99%",
-    label: "Tỷ lệ Sẵn sàng System SLA",
+    value: "10+",
+    label: "Dịch vụ & Sản phẩm cốt lõi",
   },
   {
-    value: "500+",
-    label: "Doanh nghiệp Tin dùng",
+    value: "100%",
+    label: "Dữ liệu mã hóa bảo mật",
   },
   {
-    value: "10M+",
-    label: "Tác vụ Xử lý / Ngày",
+    value: "20+",
+    label: "Nền tảng tích hợp",
   },
   {
-    value: "<50ms",
-    label: "Tốc độ Phản hồi FINA AI",
+    value: "24/7",
+    label: "Giám sát & Hỗ trợ kỹ thuật",
   },
 ];
 

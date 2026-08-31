@@ -25,8 +25,8 @@ export default function CorporateLogoMark() {
         />
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Fo<span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Tech</span>
+        <span className="text-xl font-extrabold tracking-tight text-blue-600 dark:text-blue-500">
+          FoTech
         </span>
         <span className="mt-1 text-[11px] font-medium tracking-wide text-slate-500 dark:text-slate-400">
           Enterprise Ecosystem
