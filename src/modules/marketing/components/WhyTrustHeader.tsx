@@ -31,7 +31,7 @@ export default function WhyTrustHeader() {
       <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-[48px] lg:leading-[1.08]">
         Tại Sao Các Doanh Nghiệp Hàng Đầu <br className="hidden sm:inline" />
         Lựa Chọn{' '}
-        <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400">
+        <span className="text-blue-600 dark:text-blue-500">
           FoTech
         </span>
         ?

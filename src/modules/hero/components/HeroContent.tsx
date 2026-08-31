@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import Button from "@/components/ui/Button";
 import StarBorder from "@/components/ui/StarBorder";
 
 interface HeroContentProps {
@@ -55,19 +54,18 @@ export default function HeroContent({
           className="w-full sm:w-auto text-sm sm:text-base cursor-pointer transition-transform hover:scale-[1.02]"
         >
           <span className="flex items-center justify-center gap-2">
-            <span>Đăng ký dùng thử</span>
+            <span>Dùng thử miễn phí</span>
             <ArrowRight className="h-5 w-5 text-white" aria-hidden="true" />
           </span>
         </StarBorder>
 
-        <Button
-          variant="outline"
-          size="lg"
+        <button
+          type="button"
           onClick={handleConsulting}
-          className="w-full sm:w-auto px-7 h-[48px] font-bold rounded-xl border border-slate-700/90 bg-[#06122E]/90 hover:bg-slate-800 text-white shadow-sm text-sm sm:text-base transition-colors"
+          className="w-full sm:w-auto inline-flex items-center justify-center rounded-[20px] bg-[#06122E] hover:bg-slate-900/90 text-white font-bold py-[14px] px-[26px] text-[16px] transition-all hover:scale-[1.02] shadow-sm"
         >
           Nhận báo giá
-        </Button>
+        </button>
       </div>
     </div>
   );
