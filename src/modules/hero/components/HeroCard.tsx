@@ -26,6 +26,7 @@ export default function HeroCard() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.18),rgba(255,255,255,0))] pointer-events-none z-0" />
       <div className="absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.12),transparent_70%)] pointer-events-none z-0" />
+
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <LightRays
           raysOrigin="top-center"
@@ -52,8 +53,8 @@ export default function HeroCard() {
           />
         </div>
 
-        <div className="w-full max-w-4xl mx-auto py-2">
-          <div className="w-28 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mx-auto rounded-full mb-5 opacity-75" />
+        <div className="w-full max-w-4xl mx-auto py-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+          <div className="w-28 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mx-auto rounded-full mb-5 opacity-75 shadow-sm shadow-blue-500/50" />
           <TrustedCompanies />
         </div>
 
