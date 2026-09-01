@@ -3,7 +3,6 @@ import ServiceVisual from "@/modules/pricing/components/ServiceVisual";
 import ServiceHighlights from "@/modules/pricing/components/ServiceHighlights";
 import ServiceFeatureList from "@/modules/pricing/components/ServiceFeatureList";
 import ServiceCTA from "@/modules/pricing/components/ServiceCTA";
-import ServiceBenefits from "@/modules/pricing/components/ServiceBenefits";
 import WebsitePricingContent from "@/modules/pricing/components/WebsitePricingContent";
 import { ServiceItemData } from "@/modules/pricing/types/pricing-types";
 
@@ -60,8 +59,6 @@ export default function ServiceContent({
           </>
         )}
       </div>
-
-      <ServiceBenefits benefits={service.benefits} />
     </div>
   );
 }
