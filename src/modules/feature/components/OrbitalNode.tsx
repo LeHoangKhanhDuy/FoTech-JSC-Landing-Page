@@ -14,11 +14,16 @@ export default function OrbitalNode({
 }: OrbitalNodeProps) {
   const Icon = node.icon;
   const [showTooltip, setShowTooltip] = useState(false);
+  const floatDelay = `${(node.angle / 360) * 3}s`;
 
   return (
     <div
-      className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer"
-      style={{ left: `${node.x}%`, top: `${node.y}%` }}
+      className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer animate-float-card"
+      style={{
+        left: `${node.x}%`,
+        top: `${node.y}%`,
+        animationDelay: floatDelay,
+      }}
       onMouseEnter={() => {
         setShowTooltip(true);
         onHover(node.id);
@@ -31,8 +36,8 @@ export default function OrbitalNode({
       <div
         className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl border transition-all duration-300 backdrop-blur-md shadow-lg ${
           isActive || showTooltip
-            ? "border-blue-400 bg-blue-950/80 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.5)] scale-110"
-            : "border-slate-800/90 bg-slate-900/90 text-slate-300 hover:border-slate-600 hover:text-white hover:scale-105"
+            ? "border-blue-400 bg-blue-950/90 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.6)] scale-110"
+            : "border-slate-800/90 bg-slate-900/90 text-slate-300 hover:border-blue-500/60 hover:text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]"
         }`}
       >
         <Icon
@@ -51,7 +56,7 @@ export default function OrbitalNode({
       </span>
 
       {showTooltip && (
-        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-48 p-2.5 rounded-xl border border-slate-700 bg-slate-900/95 text-slate-100 text-xs shadow-2xl backdrop-blur-xl z-50 pointer-events-none animate-fade-in">
+        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-48 p-2.5 rounded-xl border border-blue-500/40 bg-slate-900/95 text-slate-100 text-xs shadow-2xl backdrop-blur-xl z-50 pointer-events-none animate-fade-in">
           <div className="font-bold text-blue-400 mb-0.5">
             {node.sublabel || node.label}
           </div>

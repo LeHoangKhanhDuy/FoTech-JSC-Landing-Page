@@ -12,7 +12,7 @@ export default function OrbitalMap({ hubName, nodes }: OrbitalMapProps) {
   const [activeNodeId, setActiveNodeId] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full aspect-square max-w-[520px] mx-auto flex items-center justify-center select-none">
+    <div className="relative w-full aspect-square max-w-[520px] mx-auto flex items-center justify-center select-none animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
         viewBox="0 0 100 100"
@@ -26,6 +26,7 @@ export default function OrbitalMap({ hubName, nodes }: OrbitalMapProps) {
           stroke="rgba(51, 65, 85, 0.4)"
           strokeWidth="0.3"
           strokeDasharray="1.5 1.5"
+          className="animate-[spin_90s_linear_infinite] origin-center"
         />
 
         <circle
@@ -35,6 +36,7 @@ export default function OrbitalMap({ hubName, nodes }: OrbitalMapProps) {
           stroke="rgba(59, 130, 246, 0.25)"
           strokeWidth="0.4"
           strokeDasharray="1 1"
+          className="animate-[spin_60s_linear_infinite_reverse] origin-center"
         />
 
         {nodes.map((node) => {
@@ -48,20 +50,20 @@ export default function OrbitalMap({ hubName, nodes }: OrbitalMapProps) {
               y2={node.y}
               stroke={
                 isHighlighted
-                  ? "rgba(59, 130, 246, 0.8)"
+                  ? "rgba(59, 130, 246, 0.9)"
                   : "rgba(51, 65, 85, 0.5)"
               }
-              strokeWidth={isHighlighted ? "0.8" : "0.4"}
-              strokeDasharray="1 1.5"
+              strokeWidth={isHighlighted ? "0.9" : "0.4"}
+              strokeDasharray={isHighlighted ? "none" : "1 1.5"}
               className="transition-all duration-300"
             />
           );
         })}
 
-        <circle cx="50" cy="10" r="0.6" fill="#60a5fa" opacity="0.6" />
-        <circle cx="90" cy="50" r="0.6" fill="#60a5fa" opacity="0.6" />
-        <circle cx="50" cy="90" r="0.6" fill="#60a5fa" opacity="0.6" />
-        <circle cx="10" cy="50" r="0.6" fill="#60a5fa" opacity="0.6" />
+        <circle cx="50" cy="10" r="0.7" fill="#60a5fa" opacity="0.7" className="animate-pulse" />
+        <circle cx="90" cy="50" r="0.7" fill="#60a5fa" opacity="0.7" className="animate-pulse" />
+        <circle cx="50" cy="90" r="0.7" fill="#60a5fa" opacity="0.7" className="animate-pulse" />
+        <circle cx="10" cy="50" r="0.7" fill="#60a5fa" opacity="0.7" className="animate-pulse" />
       </svg>
 
       <CentralHub hubName={hubName} />
