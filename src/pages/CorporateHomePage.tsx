@@ -4,6 +4,7 @@ import WhyTrustFoTech from "@/modules/marketing/components/WhyTrustFoTech";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import HeroCard from "@/modules/hero/components/HeroCard";
 import { ServicesSection } from "@/modules/pricing/components";
+import { IntegrationFeatureSection } from "@/modules/feature/components";
 
 export default function CorporateHomePage() {
   return (
@@ -11,8 +12,9 @@ export default function CorporateHomePage() {
       <CorporateNavbar />
       <main>
         <HeroCard />
-        <ServicesSection />
         <WhyTrustFoTech />
+        <ServicesSection />
+        <IntegrationFeatureSection />
         <CtaSection />
       </main>
       <CorporateFooter />
