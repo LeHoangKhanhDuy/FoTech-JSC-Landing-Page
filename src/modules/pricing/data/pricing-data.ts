@@ -7,8 +7,6 @@ import {
   ShieldCheck,
   BarChart3,
   Cloud,
-  Headphones,
-  GraduationCap,
   FileText,
   CalendarCheck,
   Pill,
@@ -26,35 +24,7 @@ import {
 import {
   ServiceItemData,
   WebsitePricingPackage,
-  ServiceBenefit,
 } from "@/modules/pricing/types/pricing-types";
-
-export const commonBenefits: ServiceBenefit[] = [
-  {
-    id: "b1",
-    title: "Triển khai nhanh chóng",
-    description: "Quy trình triển khai tối ưu. Bám sát tiến độ dự án",
-    icon: Zap,
-  },
-  {
-    id: "b2",
-    title: "Hỗ trợ 24/7",
-    description: "Đội ngũ chuyên gia luôn sẵn sàng giải đáp mọi thắc mắc",
-    icon: Headphones,
-  },
-  {
-    id: "b3",
-    title: "Đào tạo miễn phí",
-    description: "Đào tạo & chuyển giao miễn phí cho đội ngũ sử dụng",
-    icon: GraduationCap,
-  },
-  {
-    id: "b4",
-    title: "Cam kết chất lượng",
-    description: "Cam kết đồng hành và hỗ trợ dài hạn cùng doanh nghiệp",
-    icon: ShieldCheck,
-  },
-];
 
 export const servicesData: ServiceItemData[] = [
   {
@@ -77,7 +47,6 @@ export const servicesData: ServiceItemData[] = [
         "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
       buttonText: "Yêu cầu tư vấn & Báo giá",
     },
-    benefits: commonBenefits,
   },
   {
     id: "fohrm",
@@ -132,7 +101,6 @@ export const servicesData: ServiceItemData[] = [
       description: "Triển khai nhanh chóng – Dễ sử dụng – Hiệu quả vượt trội",
       buttonText: "Dùng thử miễn phí 14 ngày",
     },
-    benefits: commonBenefits,
   },
   {
     id: "troovn",
@@ -191,7 +159,6 @@ export const servicesData: ServiceItemData[] = [
         "Trải nghiệm nền tảng PropTech Troo.vn ngay hôm nay – Nhanh chóng & Tiện lợi",
       buttonText: "Truy cập Troo.vn ngay",
     },
-    benefits: commonBenefits,
   },
   {
     id: "focode",
@@ -247,7 +214,6 @@ export const servicesData: ServiceItemData[] = [
         "Khám phá ngay kho Source Code phong phú trên FoCode – Tiết kiệm thời gian & Tối ưu chi phí",
       buttonText: "Khám phá Chợ Source Code FoCode",
     },
-    benefits: commonBenefits,
   },
   {
     id: "fomed",
@@ -302,7 +268,6 @@ export const servicesData: ServiceItemData[] = [
       description: "Dễ dàng vận hành – Tuân thủ chuẩn y tế – Nâng tầm dịch vụ",
       buttonText: "Đăng ký trải nghiệm FoMed",
     },
-    benefits: commonBenefits,
   },
 ];
 

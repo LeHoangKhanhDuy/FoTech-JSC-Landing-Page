@@ -11,13 +11,6 @@ export interface ServiceHighlight {
   icon: LucideIcon;
 }
 
-export interface ServiceBenefit {
-  id: string;
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}
-
 export interface ServiceCTA {
   iconBadge: LucideIcon;
   title: string;
@@ -38,7 +31,6 @@ export interface ServiceItemData {
   highlights: ServiceHighlight[];
   features: string[];
   cta: ServiceCTA;
-  benefits: ServiceBenefit[];
 }
 
 export interface WebsitePricingPackage {

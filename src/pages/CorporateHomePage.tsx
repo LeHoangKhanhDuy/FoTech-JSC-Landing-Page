@@ -11,8 +11,8 @@ export default function CorporateHomePage() {
       <CorporateNavbar />
       <main>
         <HeroCard />
-        <WhyTrustFoTech />
         <ServicesSection />
+        <WhyTrustFoTech />
         <CtaSection />
       </main>
       <CorporateFooter />
