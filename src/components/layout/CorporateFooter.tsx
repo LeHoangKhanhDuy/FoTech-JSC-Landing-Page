@@ -1,158 +1,201 @@
-import { Facebook, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
+import { Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export default function CorporateFooter() {
   return (
     <footer
       id="contact"
-      className="border-t border-slate-200 bg-white pt-16 pb-12 dark:border-slate-800 dark:bg-slate-950"
+      className="relative border-t border-slate-800/80 bg-[#020817] text-slate-100 pt-16 pb-10 overflow-hidden"
     >
+      <div
+        className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(37,99,235,0.08),transparent_70%)]"
+        aria-hidden="true"
+      />
+
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <CorporateLogoMark />
-            <p className="mt-4 max-w-sm text-xs leading-relaxed text-slate-600 dark:text-slate-300 sm:text-sm">
-              <strong>FoTech</strong> Nền tảng chuyển đổi số B2B tích hợp AI
-              toàn diện cho doanh nghiệp Việt Nam.
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4 space-y-5">
+            <p className="max-w-sm text-sm leading-relaxed text-slate-300">
+              <strong className="text-blue-500 font-extrabold text-lg uppercase">
+                FoTech
+              </strong>{" "}
+              là giải pháp chuyển đổi số B2B hiện đại & trực quan giúp tối ưu
+              vận hành doanh nghiệp.
             </p>
 
-            <div className="mt-6 space-y-2 text-xs text-slate-500 dark:text-slate-400">
-              {/* <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-blue-600 shrink-0" aria-hidden="true" />
-                <span>Trụ sở chính: Tầng 8, Tòa nhà FoTech Building, TP. Hà Nội / TP. Hồ Chí Minh</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-600 shrink-0" aria-hidden="true" />
-                <span>Tổng đài tư vấn: 1900 6868 (8:00 - 18:00 T2-T7)</span>
-              </p> */}
-              <p className="flex items-center gap-2">
-                <Mail
-                  className="h-4 w-4 text-blue-600 shrink-0"
-                  aria-hidden="true"
-                />
-                <span>Email: contact@fotech.vn | sales@fotech.vn</span>
-              </p>
+            <div className="flex items-center gap-2.5 pt-1">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X (Twitter) FoTech"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:border-blue-500/50 hover:bg-slate-800 hover:text-blue-400 transition-all duration-300 shadow-sm"
+              >
+                <Twitter className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram FoTech"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:border-blue-500/50 hover:bg-slate-800 hover:text-blue-400 transition-all duration-300 shadow-sm"
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube FoTech"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:border-blue-500/50 hover:bg-slate-800 hover:text-blue-400 transition-all duration-300 shadow-sm"
+              >
+                <Youtube className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn FoTech"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:border-blue-500/50 hover:bg-slate-800 hover:text-blue-400 transition-all duration-300 shadow-sm"
+              >
+                <Linkedin className="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
 
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              Về chúng tôi
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Công ty
             </h4>
-            <ul className="mt-4 space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-slate-400">
               <li>
-                <a href="#why-trust" className="hover:text-blue-600 transition">
-                  Đội ngũ FoTech
+                <a
+                  href="#why-trust"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Về FoTech
                 </a>
               </li>
-              {/* <li>
-                <a href="#careers" className="hover:text-blue-600 transition">
-                  Tuyển dụng (We are hiring!)
+              <li className="flex items-center">
+                <a
+                  href="#careers"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Tuyển dụng
                 </a>
-              </li> */}
-              <li>
-                <a href="#news" className="hover:text-blue-600 transition">
-                  Tin tức & Sự kiện
-                </a>
-              </li>
-              <li>
-                <a href="#contact&support" className="hover:text-blue-600 transition">
-                  Liên hệ & Hỗ trợ
-                </a>
+                <span className="ml-2.5 px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-blue-950 text-blue-400 border border-blue-500/30">
+                  WE'RE HIRING
+                </span>
               </li>
             </ul>
           </div>
 
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              Sản Phẩm
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Sản phẩm
             </h4>
-            <ul className="mt-4 space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-slate-400">
               <li>
-                <Link to="/fohrm" className="hover:text-blue-600 transition">
-                  FoHRM (Quản trị Nhân sự)
+                <Link
+                  to="/fohrm"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  FoHRM (Quản trị Nhân sự AI)
                 </Link>
               </li>
               <li>
-                <a href="#troovn" className="hover:text-blue-600 transition">
-                  Troo.vn (Quản lý & Tìm kiếm Trọ)
+                <a
+                  href="#troovn"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Troo.vn (Tìm & Quản lý Trọ)
                 </a>
               </li>
               <li>
-                <a href="#fomed" className="hover:text-blue-600 transition">
+                <a
+                  href="#fomed"
+                  className="hover:text-blue-400 transition-colors"
+                >
                   FoMed (Quản lý Phòng khám)
                 </a>
               </li>
               <li>
-                <a href="#focode" className="hover:text-blue-600 transition">
-                  FoCode (Thương mại Điện tử)
+                <a
+                  href="#focode"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  FoCode (Sàn TMĐT)
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              Tài Nguyên
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Tài nguyên
             </h4>
-            <ul className="mt-4 space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-slate-400">
               <li>
-                <a href="#docs" className="hover:text-blue-600 transition">
-                  Tài liệu API Kỹ thuật
+                <a
+                  href="#why-trust"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Câu chuyện khách hàng
                 </a>
               </li>
               <li>
-                <a href="#help" className="hover:text-blue-600 transition">
-                  Hướng dẫn sử dụng
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              Pháp Lý & Bảo Mật
-            </h4>
-            <ul className="mt-4 space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
-              <li>
-                <a href="#terms" className="hover:text-blue-600 transition">
-                  Điều khoản dịch vụ
+                <a
+                  href="#integrations"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Tài liệu API & Docs
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="hover:text-blue-600 transition">
-                  Chính sách bảo mật
+                <a
+                  href="#faq"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Hỏi đáp thường gặp (FAQ)
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-6 text-center dark:border-slate-800/80 md:flex-row md:text-left">
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            © 2026 FoTech JSC. All rights reserved.
-          </p>
+        <div className="my-10 sm:my-14 text-center select-none overflow-hidden">
+          <span
+            className="block text-[13vw] sm:text-[14vw] font-black uppercase tracking-[0.14em] text-center leading-none text-transparent opacity-25"
+            style={{
+              WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.25)",
+              backgroundImage:
+                "linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)",
+              WebkitBackgroundClip: "text",
+            }}
+          >
+            FOTECH
+          </span>
+        </div>
 
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800/80 pt-6 text-xs text-slate-400 sm:flex-row">
+          <p>© {new Date().getFullYear()} FoTech JSC. All rights reserved.</p>
+
+          <div className="flex items-center gap-6 font-medium text-slate-400">
             <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook FoTech"
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-600 transition hover:border-blue-500 hover:text-blue-600 dark:border-slate-800 dark:text-slate-300"
+              href="#security"
+              className="hover:text-blue-400 transition-colors"
             >
-              <Facebook className="h-4 w-4" aria-hidden="true" />
+              Bảo mật
             </a>
-            {/* <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn FoTech"
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-600 transition hover:border-blue-500 hover:text-blue-600 dark:border-slate-800 dark:text-slate-300"
+            <a href="#terms" className="hover:text-blue-400 transition-colors">
+              Điều khoản dịch vụ
+            </a>
+            <a
+              href="#privacy"
+              className="hover:text-blue-400 transition-colors"
             >
-              <Linkedin className="h-4 w-4" aria-hidden="true" />
-            </a> */}
+              Chính sách bảo mật
+            </a>
           </div>
         </div>
       </div>
