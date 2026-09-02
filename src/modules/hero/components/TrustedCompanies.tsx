@@ -4,7 +4,7 @@ export default function TrustedCompanies() {
   const logos = [...brandLogos, ...brandLogos];
 
   return (
-    <div className="w-full bg-transparent">
+    <div className="w-full">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <p className="text-center text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
           Công nghệ lập trình & Framework hiện đại được ứng dụng
