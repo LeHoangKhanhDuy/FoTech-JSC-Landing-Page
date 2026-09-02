@@ -7,7 +7,6 @@ import {
   Stethoscope,
   ShoppingBag,
   Home,
-  ArrowRight,
   ArrowUpRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -91,7 +90,7 @@ export default function CorporateNavbar() {
     <>
       <header className="fixed inset-x-0 top-3 sm:top-4 z-50 px-4 sm:px-6 lg:px-8 pointer-events-none">
         <nav
-          className={`pointer-events-auto mx-auto flex h-16 sm:h-20 max-w-[1440px] items-center justify-between px-6 sm:px-8 rounded-2xl transition-all duration-300 ${
+          className={`pointer-events-auto mx-auto flex h-16 sm:h-20 max-w-[1380px] items-center justify-between px-6 sm:px-8 rounded-2xl transition-all duration-300 ${
             scrolled
               ? "border border-white/15 bg-[#061129]/95 shadow-[0_10px_40px_rgba(0,0,0,0.8)] backdrop-blur-2xl"
               : "border border-transparent bg-transparent shadow-none backdrop-blur-none"
@@ -129,17 +128,14 @@ export default function CorporateNavbar() {
               </button>
 
               {ecosystemOpen && (
-                <div className="absolute top-full -left-20 pt-4 w-[540px] z-50 animate-fade-in">
+                <div className="absolute top-12 -left-30 pt-4 w-[680px] z-50 animate-fade-in">
                   <div className="rounded-2xl border border-white/15 bg-[#071126]/98 p-5 shadow-2xl backdrop-blur-2xl">
-                    <div className="mb-3 px-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                      Hệ sinh thái sản phẩm FoTech
-                    </div>
                     <div className="grid grid-cols-2 gap-3.5">
                       {ecosystemProducts.map((prod) => {
                         const Icon = prod.icon;
 
                         const content = (
-                          <div className="group relative flex items-start gap-3 rounded-xl border border-slate-800/80 bg-slate-900/60 p-3 hover:border-blue-500/50 hover:bg-slate-800/90 transition-all duration-300 cursor-pointer shadow-sm">
+                          <div className="group relative flex items-start gap-3 rounded-xl hover:border-blue-500 transition-all duration-300 cursor-pointer shadow-sm">
                             <div
                               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${prod.color} text-white shadow-md group-hover:scale-105 transition-transform duration-300`}
                             >
@@ -181,20 +177,6 @@ export default function CorporateNavbar() {
                           </a>
                         );
                       })}
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-800/80 text-center">
-                      <a
-                        href="#solutions"
-                        onClick={() => setEcosystemOpen(false)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-300 hover:text-blue-400 transition-colors"
-                      >
-                        <span>Xem tất cả sản phẩm</span>
-                        <ArrowRight
-                          className="h-3.5 w-3.5"
-                          aria-hidden="true"
-                        />
-                      </a>
                     </div>
                   </div>
                 </div>
