@@ -11,8 +11,14 @@ export default function CtaSection() {
   }>({ isOpen: false, type: 'consulting' });
 
   return (
-    <section id="faq" className="relative py-20 md:py-28 bg-slate-950 text-slate-100 overflow-hidden border-t border-slate-900/80">
-      <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_30%_50%,rgba(37,99,235,0.08),transparent_60%)]" />
+    <section
+      id="faq"
+      className="relative py-20 md:py-28 bg-[#020817] text-slate-100 overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_30%_50%,rgba(37,99,235,0.08),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(79,70,229,0.06),transparent_35%)]"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">

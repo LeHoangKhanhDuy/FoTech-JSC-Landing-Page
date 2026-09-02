@@ -44,7 +44,7 @@ export default function IntegrationContent({
           </span>
         </StarBorder>
 
-        <div className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 text-xs font-semibold text-slate-200 backdrop-blur-md hover:border-slate-700 transition-colors">
+        <div className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-slate-800/80 bg-slate-900/40 px-4 py-3 text-xs font-semibold text-slate-200 backdrop-blur-md hover:border-blue-500/40 hover:bg-slate-900/70 transition-all duration-300">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />

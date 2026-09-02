@@ -36,8 +36,8 @@ export default function OrbitalNode({
       <div
         className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl border transition-all duration-300 backdrop-blur-md shadow-lg ${
           isActive || showTooltip
-            ? "border-blue-400 bg-blue-950/90 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.6)] scale-110"
-            : "border-slate-800/90 bg-slate-900/90 text-slate-300 hover:border-blue-500/60 hover:text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+            ? "border-blue-400 bg-blue-950/80 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.5)] scale-110"
+            : "border-slate-800/80 bg-slate-900/40 text-slate-300 hover:border-blue-500/50 hover:text-white hover:bg-slate-900/70 hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]"
         }`}
       >
         <Icon
