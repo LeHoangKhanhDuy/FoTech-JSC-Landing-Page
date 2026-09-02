@@ -107,7 +107,7 @@ export default function CorporateNavbar() {
             </a>
 
             <div
-              className="relative py-2"
+              className="relative py-3 -my-3 flex items-center"
               onMouseEnter={() => setEcosystemOpen(true)}
               onMouseLeave={() => setEcosystemOpen(false)}
             >
@@ -128,27 +128,27 @@ export default function CorporateNavbar() {
               </button>
 
               {ecosystemOpen && (
-                <div className="absolute top-12 -left-30 pt-4 w-[680px] z-50 animate-fade-in">
+                <div className="absolute top-full pt-2 -left-28 w-[640px] z-50 animate-fade-in">
                   <div className="rounded-2xl border border-white/15 bg-[#071126]/98 p-5 shadow-2xl backdrop-blur-2xl">
                     <div className="grid grid-cols-2 gap-3.5">
                       {ecosystemProducts.map((prod) => {
                         const Icon = prod.icon;
 
                         const content = (
-                          <div className="group relative flex items-start gap-3 rounded-xl hover:border-blue-500 transition-all duration-300 cursor-pointer shadow-sm">
+                          <div className="group relative flex items-center gap-3.5 rounded-xl border border-transparent bg-slate-900/40 p-3 hover:border-white/20 hover:bg-slate-800/90 transition-all duration-300 cursor-pointer shadow-sm">
                             <div
                               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${prod.color} text-white shadow-md group-hover:scale-105 transition-transform duration-300`}
                             >
                               <Icon className="h-5 w-5" aria-hidden="true" />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <span className="text-sm font-extrabold text-white group-hover:text-blue-400 transition-colors block">
+                              <span className="text-sm font-extrabold text-white group-hover:text-slate-100 transition-colors block">
                                 {prod.name}
                               </span>
                               <p className="text-xs font-semibold text-slate-300 mt-0.5">
                                 {prod.tagline}
                               </p>
-                              <p className="text-[11px] text-slate-400 mt-1 line-clamp-1">
+                              <p className="text-[11px] text-slate-400 mt-0.5 line-clamp-1">
                                 {prod.desc}
                               </p>
                             </div>
@@ -208,7 +208,6 @@ export default function CorporateNavbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
