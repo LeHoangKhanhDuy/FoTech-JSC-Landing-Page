@@ -10,7 +10,7 @@ export default function IntegrationFeatureSection() {
   return (
     <section
       id="integrations"
-      className="relative py-20 md:py-28 bg-[#030817] text-slate-100 overflow-hidden border-t border-slate-800/80"
+      className="relative py-20 md:py-28 bg-[#030817] text-slate-100 overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.08),transparent_40%),radial-gradient(circle_at_20%_70%,rgba(79,70,229,0.06),transparent_35%)]"
