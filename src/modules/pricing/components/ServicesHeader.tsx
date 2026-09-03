@@ -1,7 +1,7 @@
 export default function ServicesHeader() {
   return (
-    <div className="relative mx-auto mb-12 max-w-3xl text-center">
-      <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-64 w-[600px] -translate-x-1/2 opacity-20 dark:opacity-30 hidden sm:block">
+    <div className="relative mx-auto mb-10 max-w-4xl text-center animate-fade-in-up">
+      <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-64 w-[600px] -translate-x-1/2 opacity-20 hidden sm:block">
         <svg
           viewBox="0 0 600 200"
           fill="none"
@@ -32,10 +32,13 @@ export default function ServicesHeader() {
         </svg>
       </div>
 
-      {/* Main Heading H2 */}
-      <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[48px] lg:leading-[1.08]">
-        Giải pháp & Bảng giá dịch vụ
+      <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.15]">
+        Bảng giá thiết kế và Sản phẩm dịch vụ của <span className="text-blue-500">FOTECH</span>
       </h2>
+
+      <p className="mt-3.5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-medium">
+        Tùy biến theo đặc thù từng ngành để triển khai chiến lược vận hành hiệu quả
+      </p>
     </div>
   );
 }
