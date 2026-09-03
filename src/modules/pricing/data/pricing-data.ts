@@ -1,326 +1,124 @@
-import {
-  UsersRound,
-  Code2,
-  HeartPulse,
-  ShoppingCart,
-  Zap,
-  ShieldCheck,
-  BarChart3,
-  Cloud,
-  FileText,
-  CalendarCheck,
-  Pill,
-  TrendingUp,
-  Rocket,
-  Home,
-  Search,
-  FileCheck,
-  Calculator,
-  CreditCard,
-  ShoppingBag,
-  Download,
-  Layers,
-} from "lucide-react";
-import {
-  ServiceItemData,
-  WebsitePricingPackage,
-} from "@/modules/pricing/types/pricing-types";
+import { ServiceTabItemData } from '@/modules/pricing/types/pricing-types';
 
-export const servicesData: ServiceItemData[] = [
+export const servicesTabData: ServiceTabItemData[] = [
   {
-    id: "website",
-    name: "Thiết kế website",
-    description: "Bảng giá & gói dịch vụ thiết kế website",
-    icon: ShoppingCart,
-    accent: "silver",
-    badge: "Web Development Pricing",
-    title: "Thiết kế website theo nhu cầu",
-    titleHighlight: "doanh nghiệp hiện đại",
-    subtitle:
-      "Cung cấp các gói thiết kế website chuẩn SEO, giao diện UI/UX cao cấp, tương thích hoàn hảo trên mọi thiết bị với chi phí tối ưu nhất.",
-    highlights: [],
-    features: [],
-    cta: {
-      iconBadge: Rocket,
-      title: "Nhận báo giá thiết kế website chi tiết cho doanh nghiệp bạn?",
-      description:
-        "Tư vấn miễn phí – Thiết kế demo giao diện trước khi ký hợp đồng",
-      buttonText: "Yêu cầu tư vấn & Báo giá",
-    },
+    id: 'website',
+    tabLabel: 'Thiết kế Web',
+    title: 'Lĩnh vực Thiết kế Web',
+    subtitle: 'Giải pháp thiết kế Website B2B chuẩn SEO, UI/UX hiện đại tối ưu tỷ lệ chuyển đổi',
+    bullets: [
+      'Giao diện UI/UX độc quyền, chuẩn hóa nhận diện thương hiệu doanh nghiệp',
+      'Tối ưu tốc độ tải trang Core Web Vitals chuẩn Google & chuẩn SEO nâng cao',
+      'Tích hợp Chatbot AI, CMS quản trị thông minh & Form thu thập Lead tự động',
+      'Hệ thống bảo mật WAF đa tầng, chống DDoS & sao lưu dữ liệu tự động 24/7'
+    ],
+    brands: [
+      { name: 'FPT', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' },
+      { name: 'SWINBURNE', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' },
+      { name: 'DAI NAM', bgColor: 'bg-amber-950/80 border-amber-500/40', textColor: 'text-amber-400' }
+    ],
+    buttonText: 'Khám phá ngay',
+    badge: 'Website B2B Chuyên Nghiệp',
+    previewType: 'website'
   },
   {
-    id: "fohrm",
-    name: "FoHRM",
-    description: "Quản trị nhân sự thông minh",
-    icon: UsersRound,
-    accent: "blue",
-    badge: "FoHRM Platform",
-    title: "Quản trị nhân sự",
-    titleHighlight: "thông minh",
-    subtitle:
-      "FoHRM là nền tảng quản trị nhân sự toàn diện giúp doanh nghiệp tự động hóa quy trình nhân sự – tiền lương – chấm công, nâng cao hiệu suất và tối ưu nguồn lực.",
-    highlights: [
-      {
-        id: "h1",
-        title: "Tối ưu quy trình",
-        description: "Tự động hóa 80% quy trình nhân sự thủ công",
-        icon: Zap,
-      },
-      {
-        id: "h2",
-        title: "Bảo mật dữ liệu",
-        description: "Bảo mật theo chuẩn quốc tế ISO 27001 & GDPR",
-        icon: ShieldCheck,
-      },
-      {
-        id: "h3",
-        title: "Báo cáo thông minh",
-        description: "Dashboard trực quan theo thời gian thực",
-        icon: BarChart3,
-      },
-      {
-        id: "h4",
-        title: "Truy cập mọi nơi",
-        description: "Hoạt động ổn định trên nền tảng Cloud",
-        icon: Cloud,
-      },
+    id: 'fohrm',
+    tabLabel: 'Quản trị Nhân sự',
+    title: 'Lĩnh vực Quản trị Nhân sự (FoHRM)',
+    subtitle: 'Tự động hóa toàn bộ quy trình nhân sự, chấm công AI & tính lương chính xác',
+    bullets: [
+      'Chấm công thông minh AI nhận diện khuôn mặt FaceID & định vị GPS',
+      'Tự động hóa tính lương, thuế TNCN, bảo hiểm & phúc lợi nhân viên',
+      'Quản lý hồ sơ nhân sự tập trung, phê duyệt đơn từ trực tuyến 1-click',
+      'Hệ thống báo cáo HR Analytics trực quan hỗ trợ ban lãnh đạo ra quyết định'
     ],
-    features: [
-      "Quản lý hồ sơ nhân viên",
-      "Chấm công đa hình thức (FaceID/GPS)",
-      "Tính lương – thưởng – thuế TNCN",
-      "Quản lý tuyển dụng & Onboarding",
-      "Đánh giá hiệu suất (KPI/OKR)",
-      "Tự động hóa quy trình phê duyệt",
-      "Báo cáo HR Analytics thông minh",
-      "Phân quyền linh hoạt theo phòng ban",
+    brands: [
+      { name: 'VIETCOMBANK', bgColor: 'bg-blue-950/80 border-blue-500/40', textColor: 'text-blue-400' },
+      { name: 'VINHOMES', bgColor: 'bg-indigo-950/80 border-indigo-500/40', textColor: 'text-indigo-400' },
+      { name: 'MASAN', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' }
     ],
-    cta: {
-      iconBadge: Rocket,
-      title: "Sẵn sàng nâng cấp quản trị nhân sự của doanh nghiệp bạn?",
-      description: "Triển khai nhanh chóng – Dễ sử dụng – Hiệu quả vượt trội",
-      buttonText: "Dùng thử miễn phí 14 ngày",
-    },
+    buttonText: 'Khám phá ngay',
+    badge: 'FoHRM Platform AI',
+    previewType: 'fohrm'
   },
   {
-    id: "troovn",
-    name: "Troo.vn",
-    description: "Tìm kiếm & Quản lý phòng trọ",
-    icon: Home,
-    accent: "amber",
-    badge: "PropTech Platform",
-    title: "Nền tảng tìm kiếm & Quản lý trọ",
-    titleHighlight: "chính chủ",
-    subtitle:
-      "Troo.vn là giải pháp công nghệ PropTech thế hệ mới kết nối người thuê tìm phòng trọ chính chủ xác thực, đồng thời tự động hóa quy trình quản lý phòng, hợp đồng và tính tiền điện nước cho chủ nhà.",
-    highlights: [
-      {
-        id: "h1",
-        title: "Tìm phòng 360°",
-        description:
-          "Tìm kiếm phòng trọ chính chủ verified với hình ảnh thực tế",
-        icon: Search,
-      },
-      {
-        id: "h2",
-        title: "Hợp đồng điện tử",
-        description:
-          "Ký hợp đồng thuê nhà trực tuyến nhanh chóng & an toàn pháp lý",
-        icon: FileCheck,
-      },
-      {
-        id: "h3",
-        title: "Tự động chốt thu chi",
-        description:
-          "Tự động tính tiền điện nước, dịch vụ & gửi hóa đơn Zalo/App",
-        icon: Calculator,
-      },
-      {
-        id: "h4",
-        title: "Thanh toán QR Code",
-        description: "Thanh toán tiền phòng online, tự động gạch nợ minh bạch",
-        icon: CreditCard,
-      },
+    id: 'troovn',
+    tabLabel: 'Tìm phòng Trọ',
+    title: 'Lĩnh vực Tìm kiếm & Quản lý Trọ (Troo.vn)',
+    subtitle: 'Nền tảng PropTech số hóa quản lý nhà trọ, ký hợp đồng điện tử & tự động hóa điện nước',
+    bullets: [
+      'Tìm kiếm & đăng tin phòng trọ chính chủ 100% xác thực hình ảnh thực tế',
+      'Hợp đồng thuê nhà điện tử bảo mật, ký kết trực tuyến an toàn pháp lý',
+      'Tự động chốt số điện nước, tính tiền dịch vụ & gửi hóa đơn Zalo/App',
+      'Thanh toán mã QR Code linh hoạt, tự động gạch nợ & báo cáo doanh thu'
     ],
-    features: [
-      "Tìm kiếm phòng trọ chính chủ xác thực 100%",
-      "Bộ lọc thông minh theo giá, khu vực & tiện ích",
-      "Quản lý danh sách phòng & thông tin khách thuê",
-      "Tự động chốt số điện nước & xuất hóa đơn",
-      "Ký hợp đồng thuê nhà điện tử bảo mật",
-      "Tự động gửi thông báo tiền phòng qua Zalo/App",
-      "Báo cáo doanh thu & tỷ lệ lấp đầy phòng",
-      "Hỗ trợ chủ nhà đăng tin cho thuê miễn phí",
+    brands: [
+      { name: 'TROO.VN', bgColor: 'bg-amber-950/80 border-amber-500/40', textColor: 'text-amber-400' },
+      { name: 'DAT XANH', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' },
+      { name: 'SAVILLS', bgColor: 'bg-sky-950/80 border-sky-500/40', textColor: 'text-sky-400' }
     ],
-    cta: {
-      iconBadge: Home,
-      title: "Bạn đang tìm phòng trọ hoặc muốn tối ưu quản lý dãy trọ?",
-      description:
-        "Trải nghiệm nền tảng PropTech Troo.vn ngay hôm nay – Nhanh chóng & Tiện lợi",
-      buttonText: "Truy cập Troo.vn ngay",
-    },
+    buttonText: 'Khám phá ngay',
+    badge: 'Troo.vn PropTech Platform',
+    previewType: 'troovn'
   },
   {
-    id: "focode",
-    name: "FoCode",
-    description: "Sàn TMĐT mua bán Source Code",
-    icon: ShoppingBag,
-    accent: "emerald",
-    badge: "Source Code Marketplace",
-    title: "Sàn mua bán & Thương mại điện tử",
-    titleHighlight: "Source Code",
-    subtitle:
-      "FoCode là sàn thương mại điện tử chuyên cung cấp kho Source Code mẫu, Web App, Mobile App đóng gói sẵn và Template UI/UX chất lượng cao, giúp lập trình viên và doanh nghiệp tiết kiệm 80% thời gian phát triển.",
-    highlights: [
-      {
-        id: "h1",
-        title: "Kho Code Đa Dạng",
-        description: "1.000+ Source Code Web & App đã qua kiểm duyệt kỹ thuật",
-        icon: Layers,
-      },
-      {
-        id: "h2",
-        title: "Tải Ngay & Bàn Giao",
-        description: "Tự động bàn giao mã nguồn trọn gói ngay sau khi thanh toán",
-        icon: Download,
-      },
-      {
-        id: "h3",
-        title: "Kiểm Duyệt Chất Lượng",
-        description: "100% Source Code được test sạch bug, không chứa mã độc",
-        icon: ShieldCheck,
-      },
-      {
-        id: "h4",
-        title: "Tích Hợp Dễ Dàng",
-        description: "Mã nguồn chuẩn hóa Clean Code, kèm tài liệu hướng dẫn",
-        icon: Code2,
-      },
+    id: 'fomed',
+    tabLabel: 'Quản lý Phòng khám',
+    title: 'Lĩnh vực Quản lý Phòng khám (FoMed)',
+    subtitle: 'Số hóa bệnh án điện tử EMR, quản lý kho dược & lịch khám chuẩn Bộ Y tế',
+    bullets: [
+      'Bệnh án điện tử EMR số hóa toàn bộ lịch sử khám chữa bệnh an toàn',
+      'Quản lý lịch hẹn khám thông minh, giảm 90% thời gian chờ đợi bệnh nhân',
+      'Tự động cảnh báo tồn kho thuốc, hạn sử dụng & quản lý xuất nhập kho dược',
+      'Báo cáo tài chính doanh thu, hóa đơn điện tử & kết nối cổng BHYT'
     ],
-    features: [
-      "Mua bán Source Code Web App & Mobile App đóng gói sẵn",
-      "Kho Template UI/UX & Component System cao cấp",
-      "Tự động bàn giao mã nguồn trọn bộ 1-click ngay lập tức",
-      "100% mã nguồn được kiểm duyệt kỹ thuật không mã độc",
-      "Tài liệu hướng dẫn cài đặt & setup chi tiết (Documentation)",
-      "Hỗ trợ kỹ thuật & Cài đặt Demo trực tiếp từ tác giả",
-      "Chính sách hoàn tiền nếu Source Code không đúng mô tả",
-      "Cập nhật phiên bản phần mềm miễn phí trọn đời",
+    brands: [
+      { name: 'MEDLATEC', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' },
+      { name: 'TAM ANH', bgColor: 'bg-blue-950/80 border-blue-500/40', textColor: 'text-blue-400' },
+      { name: 'HOAN MY', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
     ],
-    cta: {
-      iconBadge: ShoppingBag,
-      title: "Bạn muốn mua Source Code chất lượng hoặc đăng bán mã nguồn?",
-      description:
-        "Khám phá ngay kho Source Code phong phú trên FoCode – Tiết kiệm thời gian & Tối ưu chi phí",
-      buttonText: "Khám phá Chợ Source Code FoCode",
-    },
+    buttonText: 'Khám phá ngay',
+    badge: 'FoMed Healthcare EMR',
+    previewType: 'fomed'
   },
   {
-    id: "fomed",
-    name: "FoMed",
-    description: "Giải pháp quản lý phòng khám",
-    icon: HeartPulse,
-    accent: "rose",
-    badge: "Healthcare Management",
-    title: "Giải pháp quản lý phòng khám",
-    titleHighlight: "toàn diện",
-    subtitle:
-      "FoMed là phần mềm quản lý phòng khám thông minh, số hóa hoàn toàn hồ sơ bệnh án điện tử (EMR), lịch hẹn khám, kho dược và doanh thu tài chính chuẩn Bộ Y tế.",
-    highlights: [
-      {
-        id: "h1",
-        title: "Bệnh án điện tử",
-        description: "Chuẩn hóa EMR theo quy định Bộ Y tế",
-        icon: FileText,
-      },
-      {
-        id: "h2",
-        title: "Đặt lịch thông minh",
-        description: "Giảm 90% thời gian chờ đợi của bệnh nhân",
-        icon: CalendarCheck,
-      },
-      {
-        id: "h3",
-        title: "Quản lý kho dược",
-        description: "Tự động cảnh báo tồn kho & hạn sử dụng",
-        icon: Pill,
-      },
-      {
-        id: "h4",
-        title: "Báo cáo tài chính",
-        description: "Thống kê doanh thu & chi phí theo ca trực",
-        icon: TrendingUp,
-      },
+    id: 'focode',
+    tabLabel: 'Sàn TMĐT',
+    title: 'Lĩnh vực Sàn Source Code (FoCode)',
+    subtitle: 'Chợ mua bán Source Code Web App, Mobile App & UI Kit đóng gói sẵn',
+    bullets: [
+      'Kho 1.000+ Source Code Web & Mobile App đã qua kiểm duyệt kỹ thuật',
+      'Tự động bàn giao mã nguồn trọn gói 1-click ngay sau khi thanh toán',
+      '100% mã nguồn Clean Code chuẩn hóa, test sạch bug & kèm tài liệu setup',
+      'Hỗ trợ kỹ thuật cài đặt trực tiếp và chính sách bảo hành mã nguồn'
     ],
-    features: [
-      "Quản lý hồ sơ bệnh án điện tử (EMR)",
-      "Lịch hẹn khám & Tiếp đón bệnh nhân",
-      "Kê đơn thuốc điện tử & In đơn thuốc",
-      "Quản lý nhập - xuất - tồn kho dược",
-      "Báo cáo doanh thu & Hoa hồng bác sĩ",
-      "Tích hợp BHYT & Cổng thanh toán",
-      "SMS / Zalo nhắc lịch khám tự động",
-      "Phân quyền bác sĩ, dược sĩ, lễ tân",
+    brands: [
+      { name: 'REACT', bgColor: 'bg-cyan-950/80 border-cyan-500/40', textColor: 'text-cyan-400' },
+      { name: 'FLUTTER', bgColor: 'bg-sky-950/80 border-sky-500/40', textColor: 'text-sky-400' },
+      { name: 'NODEJS', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
     ],
-    cta: {
-      iconBadge: HeartPulse,
-      title: "Số hóa phòng khám của bạn ngay hôm nay cùng FoMed?",
-      description: "Dễ dàng vận hành – Tuân thủ chuẩn y tế – Nâng tầm dịch vụ",
-      buttonText: "Đăng ký trải nghiệm FoMed",
-    },
-  },
-];
-
-export const websitePackagesData: WebsitePricingPackage[] = [
-  {
-    id: "starter-web",
-    name: "Starter Website",
-    target: "Cá nhân & Doanh nghiệp nhỏ",
-    price: "3.900.000đ",
-    description:
-      "Website giới thiệu sản phẩm/dịch vụ chuẩn SEO, giao diện mượt mà.",
-    features: [
-      "Thiết kế giao diện chuẩn Responsive",
-      "Tối ưu tốc độ tải trang (chuẩn Google)",
-      "Chuẩn hóa cấu trúc SEO Google",
-      "Tích hợp Form nhận báo giá / liên hệ",
-      "Bảo hành & Hỗ trợ 3 tháng",
-    ],
-    ctaText: "Chọn gói Starter",
+    buttonText: 'Khám phá ngay',
+    badge: 'FoCode Marketplace',
+    previewType: 'focode'
   },
   {
-    id: "business-web",
-    name: "Business Website",
-    target: "Doanh nghiệp vừa & nhỏ",
-    price: "10.900.000đ",
-    popular: true,
-    description:
-      "Giải pháp website nâng tầm thương hiệu, tối ưu tỷ lệ chuyển đổi.",
-    features: [
-      "Thiết kế UI/UX độc quyền cao cấp",
-      "Hệ thống quản trị tin tức & Blog",
-      "Chuẩn SEO nâng cao & Schema Data",
-      "Tích hợp Chatbot & Mạng xã hội",
-      "Tích hợp Tường lửa WAF & Bảo vệ Anti-DDoS",
-      "Bảo hành & Hỗ trợ 6 tháng",
+    id: 'custom',
+    tabLabel: 'Khác',
+    title: 'Lĩnh vực Giải pháp Tùy biến (Khác)',
+    subtitle: 'Phát triển hệ thống ERP/CRM, App Mobile & giải pháp chuyển đổi số theo yêu cầu',
+    bullets: [
+      'Phát triển ứng dụng Mobile (iOS/Android) & Web Application quy mô lớn',
+      'Tích hợp hệ thống phần mềm doanh nghiệp (ERP, CRM, POS, Payment Gateway)',
+      'Tư vấn kiến trúc Cloud Microservices, tối ưu hạ tầng Server & Database',
+      'Đội ngũ chuyên gia CNTT đồng hành chuyển giao quy trình kỹ thuật trọn gói'
     ],
-    ctaText: "Chọn gói Business",
-  },
-  {
-    id: "enterprise-app",
-    name: "Custom Web Application",
-    target: "Doanh nghiệp lớn & Tập đoàn",
-    price: "Liên hệ báo giá",
-    description:
-      "Phần mềm Web tùy biến cao, tích hợp hệ thống CRM/ERP mở rộng.",
-    features: [
-      "Lập trình Web App tính năng tùy biến",
-      "Tích hợp API hệ thống doanh nghiệp",
-      "Hệ thống phân quyền đa cấp bậc",
-      "Triển khai trên Cloud / VPS độc lập",
-      "Đào tạo & Chuyển giao quy trình",
-      "Bảo hành & Hỗ trợ 12 tháng",
+    brands: [
+      { name: 'TECHCOMBANK', bgColor: 'bg-red-950/80 border-red-500/40', textColor: 'text-red-400' },
+      { name: 'SHOPEE', bgColor: 'bg-orange-950/80 border-orange-500/40', textColor: 'text-orange-400' },
+      { name: 'GRAB', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
     ],
-    ctaText: "Liên hệ tư vấn",
-  },
+    buttonText: 'Khám phá ngay',
+    badge: 'Custom Enterprise System',
+    previewType: 'custom'
+  }
 ];
