@@ -1,5 +1,6 @@
 import { Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap, Globe, Layers, Users, Stethoscope, ShoppingBag, Code2, Home, Calculator } from 'lucide-react';
 import { ServiceTabItemData } from '@/modules/pricing/types/pricing-types';
+import StarBorder from '@/components/ui/StarBorder';
 
 interface ServiceTabCardProps {
   data: ServiceTabItemData;
@@ -289,14 +290,22 @@ export default function ServiceTabCard({
           </div>
 
           <div className="pt-2">
-            <button
+            <StarBorder
+              as="button"
               type="button"
               onClick={onOpenModal}
-              className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 inline-flex items-center gap-2.5 text-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              color="#93c5fd"
+              speed="4s"
+              backgroundColor="#2563eb"
+              textColor="#ffffff"
+              borderColor="#3b82f6"
+              className="cursor-pointer transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-lg shadow-blue-600/30"
             >
-              <span>{data.buttonText}</span>
-              <ArrowRight className="h-4 w-4 text-white" aria-hidden="true" />
-            </button>
+              <div className="inline-flex items-center gap-2.5 text-sm font-bold">
+                <span>{data.buttonText}</span>
+                <ArrowRight className="h-4 w-4 text-white" aria-hidden="true" />
+              </div>
+            </StarBorder>
           </div>
         </div>
       </div>
