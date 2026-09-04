@@ -11,10 +11,10 @@ export function ContactHeader({ type, title, subtitle }: ContactHeaderProps) {
   const modalTitle =
     title ||
     (type === "demo"
-      ? "Đặt Lịch Trải Nghiệm Demo 1:1"
+      ? "Đặt lịch trải nghiệm sản phẩm FoTech"
       : type === "trial"
-        ? "Bắt Đầu Dùng Thử Miễn Phí 14 Ngày"
-        : "Đăng Ký Tư Vấn Giải Pháp Doanh Nghiệp");
+        ? "Bắt đầu dùng thử miễn phí 14 ngày"
+        : "Đăng ký tư vấn giải pháp doanh nghiệp");
 
   const modalSubtitle =
     subtitle ||

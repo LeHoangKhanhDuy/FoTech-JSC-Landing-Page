@@ -13,8 +13,8 @@ export interface ContactModalProps {
 export interface ContactProductOption {
   id: string;
   name: string;
-  desc: string;
-  icon: LucideIcon;
+  desc?: string;
+  icon?: LucideIcon;
 }
 
 export interface ContactFormData {

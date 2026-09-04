@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, memo } from "react";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import toast from "react-hot-toast";
-
 import { ContactModalProps, ContactFormData } from "@/modules/contact/types";
 import { ContactHeader } from "@/modules/contact/components/ContactHeader";
 import { ContactFormFields } from "@/modules/contact/components/ContactFormFields";
@@ -14,7 +13,7 @@ const initialFormData: ContactFormData = {
   email: "",
   phone: "",
   company: "",
-  selectedProductId: "all",
+  selectedProductId: "",
 };
 
 export const ContactModal = memo(function ContactModal({
@@ -69,6 +68,16 @@ export const ContactModal = memo(function ContactModal({
       newErrors.phone = "Vui lòng nhập số điện thoại liên hệ";
     } else if (!/^[0-9+\s-]{9,15}$/.test(formData.phone.trim())) {
       newErrors.phone = "Số điện thoại không hợp lệ";
+    }
+
+    if (!formData.company.trim()) {
+      newErrors.company = "Vui lòng nhập tên doanh nghiệp";
+    } else if (formData.company.trim().length < 2) {
+      newErrors.company = "Tên doanh nghiệp phải có ít nhất 2 ký tự";
+    }
+
+    if (!formData.selectedProductId || !formData.selectedProductId.trim()) {
+      newErrors.selectedProductId = "Vui lòng chọn sản phẩm / giải pháp quan tâm";
     }
 
     setErrors(newErrors);
@@ -126,6 +135,7 @@ export const ContactModal = memo(function ContactModal({
 
               <ContactProductSelect
                 selectedProductId={formData.selectedProductId}
+                error={errors.selectedProductId}
                 onSelectProduct={(id) => handleFieldChange("selectedProductId", id)}
               />
 
