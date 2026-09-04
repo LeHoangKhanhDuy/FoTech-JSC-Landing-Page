@@ -15,7 +15,6 @@ export interface FAQSectionData {
   description: string;
   stats: FAQStatData[];
   buttonText: string;
-  availabilityNote: string;
   column1: FAQItemData[];
   column2: FAQItemData[];
 }

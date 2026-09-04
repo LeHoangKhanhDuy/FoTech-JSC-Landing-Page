@@ -175,6 +175,19 @@ summary,
   animation: slideInLeft 0.38s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float-bounce {
+  animation: floatUpDown 2.2s ease-in-out infinite;
+}
+
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
 }
