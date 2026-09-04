@@ -46,7 +46,7 @@ export default function FAQItem({ item, isOpen, onToggle, delayIndex = 0 }: FAQI
         }`}
       >
         <div className="overflow-hidden">
-          <p className="text-xs sm:text-sm leading-relaxed text-slate-300">{item.answer}</p>
+          <p className="text-xs sm:text-sm leading-relaxed text-justify text-slate-300">{item.answer}</p>
         </div>
       </div>
     </div>

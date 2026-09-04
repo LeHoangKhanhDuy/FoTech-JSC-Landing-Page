@@ -16,15 +16,19 @@ export default function FAQContactPanel({ data, onContactClick }: FAQContactPane
       </div>
 
       <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-white leading-[1.12]">
-        Questions that need a <span className="text-blue-500">human?</span>
+        Bạn cần hỗ trợ trực tiếp từ <span className="text-blue-500">FOTECH?</span>
       </h2>
 
-      <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-300">{data.description}</p>
+      <p className="mt-4 text-xs sm:text-sm leading-relaxed text-justify text-slate-300">
+        {data.description}
+      </p>
 
       <div className="my-8 pt-6 border-t border-slate-800/80 grid grid-cols-2 gap-4 divide-x divide-slate-800/80">
         {data.stats.map((stat, index) => (
-          <div key={index} className={index > 0 ? 'pl-4' : ''}>
-            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">{stat.value}</span>
+          <div key={index} className={index > 0 ? "pl-4" : ""}>
+            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+              {stat.value}
+            </span>
             <span className="mt-1 block text-[11px] font-semibold uppercase tracking-wider text-slate-400">
               {stat.label}
             </span>
@@ -44,13 +48,12 @@ export default function FAQContactPanel({ data, onContactClick }: FAQContactPane
       >
         <span className="flex items-center justify-between w-full px-2 gap-3">
           <span>{data.buttonText}</span>
-          <ArrowUpRight className="h-5 w-5 text-white shrink-0" aria-hidden="true" />
+          <ArrowUpRight
+            className="h-5 w-5 text-white shrink-0"
+            aria-hidden="true"
+          />
         </span>
       </StarBorder>
-
-      <p className="mt-4 text-[11px] font-medium text-slate-400 text-center sm:text-left">
-        {data.availabilityNote}
-      </p>
     </div>
   );
 }
