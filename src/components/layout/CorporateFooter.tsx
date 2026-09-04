@@ -1,6 +1,54 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Facebook } from "lucide-react";
 
+interface FooterLink {
+  label: string;
+  href?: string;
+  to?: string;
+  badge?: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const FOOTER_SECTIONS: FooterSection[] = [
+  {
+    title: "Công ty",
+    links: [
+      { label: "Về FoTech", href: "#why-trust" },
+      { label: "Tuyển dụng", href: "#careers", badge: "WE'RE HIRING" },
+    ],
+  },
+  {
+    title: "Liên hệ",
+    links: [
+      { label: "Hotline: 1900 xxxx", href: "tel:1900xxxx" },
+      { label: "Email: hi@fotech.vn", href: "mailto:hi@fotech.vn" },
+      { label: "Trụ sở chính: TP. Hồ Chí Minh", href: "#contact" },
+    ],
+  },
+  {
+    title: "Sản phẩm",
+    links: [
+      { label: "Thiết kế website", href: "#" },
+      { label: "FoHRM (Quản trị Nhân sự)", to: "/fohrm" },
+      { label: "Troo.vn (Tìm & Quản lý Trọ)", href: "#troovn" },
+      { label: "FoMed (Quản lý Phòng khám)", href: "#fomed" },
+      { label: "FoCode (Sàn TMĐT)", href: "#focode" },
+    ],
+  },
+  {
+    title: "Tài nguyên",
+    links: [
+      { label: "Câu chuyện khách hàng", href: "#why-trust" },
+      { label: "Tài liệu API & Docs", href: "#integrations" },
+      { label: "Hỏi đáp (FAQ)", href: "#faq" },
+    ],
+  },
+];
+
 export default function CorporateFooter() {
   return (
     <footer
@@ -25,130 +73,65 @@ export default function CorporateFooter() {
               </p>
 
               <div className="flex items-center gap-2.5 pt-1">
-                <a
-                  href="https://www.facebook.com/fotechvn"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook FoTech"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-sm"
-                >
-                  <Facebook className="h-4 w-4" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn FoTech"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-sm"
-                >
-                  <Linkedin className="h-4 w-4" aria-hidden="true" />
-                </a>
+                {[
+                  {
+                    icon: Facebook,
+                    href: "https://www.facebook.com/fotechvn",
+                    label: "Facebook",
+                  },
+                  {
+                    icon: Linkedin,
+                    href: "https://linkedin.com",
+                    label: "LinkedIn",
+                  },
+                ].map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${social.label} FoTech`}
+                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-sm"
+                  >
+                    <social.icon className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                ))}
               </div>
             </div>
 
-            <div className="lg:col-span-3">
-              <h4 className="text-md font-bold uppercase tracking-wider text-white">
-                Công ty
-              </h4>
-              <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-blue-100">
-                <li>
-                  <a
-                    href="#why-trust"
-                    className="hover:text-white transition-colors"
-                  >
-                    Về FoTech
-                  </a>
-                </li>
-                <li className="flex items-center">
-                  <a
-                    href="#careers"
-                    className="hover:text-white transition-colors"
-                  >
-                    Tuyển dụng
-                  </a>
-                  <span className="ml-2.5 px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-white/20 text-white border border-white/30">
-                    WE'RE HIRING
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="lg:col-span-3">
-              <h4 className="text-md font-bold uppercase tracking-wider text-white">
-                Sản phẩm
-              </h4>
-              <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-blue-100">
-                <li>
-                  <Link
-                    to="#"
-                    className="hover:text-white transition-colors"
-                  >
-                    Thiết kế website
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/fohrm"
-                    className="hover:text-white transition-colors"
-                  >
-                    FoHRM (Quản trị Nhân sự AI)
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="#troovn"
-                    className="hover:text-white transition-colors"
-                  >
-                    Troo.vn (Tìm & Quản lý Trọ)
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#fomed"
-                    className="hover:text-white transition-colors"
-                  >
-                    FoMed (Quản lý Phòng khám)
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#focode"
-                    className="hover:text-white transition-colors"
-                  >
-                    FoCode (Sàn TMĐT)
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="lg:col-span-2">
-              <h4 className="text-md font-bold uppercase tracking-wider text-white">
-                Tài nguyên
-              </h4>
-              <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-blue-100">
-                <li>
-                  <a
-                    href="#why-trust"
-                    className="hover:text-white transition-colors"
-                  >
-                    Câu chuyện khách hàng
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#integrations"
-                    className="hover:text-white transition-colors"
-                  >
-                    Tài liệu API & Docs
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="hover:text-white transition-colors">
-                    Hỏi đáp thường gặp (FAQ)
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {FOOTER_SECTIONS.map((section, idx) => (
+              <div key={idx} className="lg:col-span-2">
+                <h4 className="text-md font-bold uppercase tracking-wider text-white">
+                  {section.title}
+                </h4>
+                <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-blue-100">
+                  {section.links.map((link, linkIdx) => (
+                    <li key={linkIdx} className="flex items-center">
+                      {link.to ? (
+                        <Link
+                          to={link.to}
+                          className="hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href || "#"}
+                          className="hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      )}
+                      {link.badge && (
+                        <span className="ml-2.5 px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-white/20 text-white border border-white/30">
+                          {link.badge}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="mt-12 sm:mt-16 overflow-hidden h-[10.5vw] sm:h-[11.5vw] flex items-start justify-center select-none pointer-events-none -mb-px">
@@ -169,18 +152,17 @@ export default function CorporateFooter() {
             <p>© {new Date().getFullYear()} FoTech JSC. All rights reserved.</p>
 
             <div className="flex items-center gap-6 font-medium text-blue-100/90">
-              <a
-                href="#security"
-                className="hover:text-white transition-colors"
-              >
-                Bảo mật
-              </a>
-              <a href="#terms" className="hover:text-white transition-colors">
-                Điều khoản dịch vụ
-              </a>
-              <a href="#privacy" className="hover:text-white transition-colors">
-                Chính sách bảo mật
-              </a>
+              {["Bảo mật", "Điều khoản dịch vụ", "Chính sách bảo mật"].map(
+                (text, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="hover:text-white transition-colors"
+                  >
+                    {text}
+                  </a>
+                ),
+              )}
             </div>
           </div>
         </div>
