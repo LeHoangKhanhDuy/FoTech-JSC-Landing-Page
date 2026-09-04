@@ -23,7 +23,7 @@ export default function IntegrationContent({
         <span className="text-blue-500">{data.titleHighlight}</span>
       </h2>
 
-      <p className="text-sm sm:text-base leading-relaxed text-slate-300">
+      <p className="text-sm sm:text-base leading-relaxed text-justify text-slate-300">
         {data.subtitle}
       </p>
 
