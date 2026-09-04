@@ -111,24 +111,24 @@ summary,
 }
 
 @keyframes slideInRight {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(45px);
+    transform: translate3d(32px, 0, 0);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideInLeft {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(-45px);
+    transform: translate3d(-32px, 0, 0);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -168,11 +168,11 @@ summary,
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideInRight 0.38s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideInLeft 0.38s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
 .animate-pulse-glow {

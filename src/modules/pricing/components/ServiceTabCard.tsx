@@ -21,12 +21,14 @@ export default function ServiceTabCard({
 
   return (
     <div
-      key={data.id}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`rounded-3xl border border-slate-800/80 bg-slate-900/40 p-6 sm:p-10 backdrop-blur-md shadow-2xl shadow-blue-950/20 max-w-6xl mx-auto ${slideAnimationClass}`}
+      className="rounded-3xl border border-slate-800/80 bg-slate-900/40 p-6 sm:p-10 backdrop-blur-md shadow-2xl shadow-blue-950/20 max-w-6xl mx-auto overflow-hidden relative"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div
+        key={data.id}
+        className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center will-change-transform ${slideAnimationClass}`}
+      >
         <div className="lg:col-span-6 relative flex justify-center items-center">
           <div className="absolute -inset-4 rounded-3xl bg-blue-600/15 blur-2xl pointer-events-none" />
 
@@ -43,7 +45,7 @@ export default function ServiceTabCard({
             </div>
 
             {data.previewType === 'website' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-blue-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -74,7 +76,7 @@ export default function ServiceTabCard({
             )}
 
             {data.previewType === 'fohrm' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-indigo-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -107,7 +109,7 @@ export default function ServiceTabCard({
             )}
 
             {data.previewType === 'troovn' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-amber-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -140,7 +142,7 @@ export default function ServiceTabCard({
             )}
 
             {data.previewType === 'fomed' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-rose-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -173,7 +175,7 @@ export default function ServiceTabCard({
             )}
 
             {data.previewType === 'focode' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-emerald-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -206,7 +208,7 @@ export default function ServiceTabCard({
             )}
 
             {data.previewType === 'custom' && (
-              <div className="space-y-3 animate-fade-in">
+              <div className="space-y-3">
                 <div className="h-28 rounded-xl bg-gradient-to-br from-amber-900/40 to-slate-900/80 border border-slate-800/80 p-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">

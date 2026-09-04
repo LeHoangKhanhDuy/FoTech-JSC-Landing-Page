@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import ContactModal from '@/modules/contact/components/ContactModal';
 import ServicesHeader from '@/modules/pricing/components/ServicesHeader';
 import ServiceTabNav from '@/modules/pricing/components/ServiceTabNav';
@@ -9,11 +9,17 @@ import { ServiceId } from '@/modules/pricing/types/pricing-types';
 export default function ServicesSection() {
   const [activeTabId, setActiveTabId] = useState<ServiceId>('website');
   const [slideDirection, setSlideDirection] = useState<'right' | 'left'>('right');
-  const [isPaused, setIsPaused] = useState(false);
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: 'demo' | 'trial' | 'consulting';
   }>({ isOpen: false, type: 'consulting' });
+
+  const isHoveredRef = useRef(false);
+  const isModalOpenRef = useRef(false);
+
+  useEffect(() => {
+    isModalOpenRef.current = modalState.isOpen;
+  }, [modalState.isOpen]);
 
   const advanceToNextTab = useCallback(() => {
     setActiveTabId((currentId) => {
@@ -25,22 +31,40 @@ export default function ServicesSection() {
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
-
-    const timer = setInterval(() => {
-      advanceToNextTab();
+    const interval = setInterval(() => {
+      if (
+        !isHoveredRef.current &&
+        !isModalOpenRef.current &&
+        typeof document !== 'undefined' &&
+        document.visibilityState === 'visible'
+      ) {
+        advanceToNextTab();
+      }
     }, 5000);
 
-    return () => clearInterval(timer);
-  }, [isPaused, advanceToNextTab]);
+    const handleWindowBlurOrLeave = () => {
+      isHoveredRef.current = false;
+    };
+
+    window.addEventListener('blur', handleWindowBlurOrLeave);
+    document.addEventListener('visibilitychange', handleWindowBlurOrLeave);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('blur', handleWindowBlurOrLeave);
+      document.removeEventListener('visibilitychange', handleWindowBlurOrLeave);
+    };
+  }, [advanceToNextTab]);
 
   const activeTabData =
     servicesTabData.find((tab) => tab.id === activeTabId) || servicesTabData[0];
 
   const handleSelectTab = (newId: ServiceId) => {
     if (newId === activeTabId) return;
+
     const currentIndex = servicesTabData.findIndex((tab) => tab.id === activeTabId);
     const newIndex = servicesTabData.findIndex((tab) => tab.id === newId);
+
     const dir = newIndex >= currentIndex ? 'right' : 'left';
     setSlideDirection(dir);
     setActiveTabId(newId);
@@ -49,7 +73,7 @@ export default function ServicesSection() {
   return (
     <section
       id="solutions"
-      className="relative py-16 md:py-24 overflow-hidden bg-[#020817] text-white border-t border-slate-800/80 animate-fade-in-up"
+      className="relative py-16 md:py-24 overflow-hidden bg-[#020817] text-white animate-fade-in-up"
     >
       <div
         className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.08),transparent_40%),radial-gradient(circle_at_20%_70%,rgba(79,70,229,0.06),transparent_35%)]"
@@ -63,16 +87,24 @@ export default function ServicesSection() {
           tabs={servicesTabData}
           activeTabId={activeTabId}
           onSelectTab={handleSelectTab}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          onMouseEnter={() => {
+            isHoveredRef.current = true;
+          }}
+          onMouseLeave={() => {
+            isHoveredRef.current = false;
+          }}
         />
 
         <ServiceTabCard
           data={activeTabData}
           slideDirection={slideDirection}
           onOpenModal={() => setModalState({ isOpen: true, type: 'consulting' })}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          onMouseEnter={() => {
+            isHoveredRef.current = true;
+          }}
+          onMouseLeave={() => {
+            isHoveredRef.current = false;
+          }}
         />
       </div>
 

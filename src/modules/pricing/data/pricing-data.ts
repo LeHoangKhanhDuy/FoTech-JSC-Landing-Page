@@ -1,124 +1,212 @@
-import { ServiceTabItemData } from '@/modules/pricing/types/pricing-types';
+import { ServiceTabItemData } from "@/modules/pricing/types/pricing-types";
 
 export const servicesTabData: ServiceTabItemData[] = [
   {
-    id: 'website',
-    tabLabel: 'Thiết kế Web',
-    title: 'Lĩnh vực Thiết kế Web',
-    subtitle: 'Giải pháp thiết kế Website B2B chuẩn SEO, UI/UX hiện đại tối ưu tỷ lệ chuyển đổi',
+    id: "website",
+    tabLabel: "Thiết kế Web",
+    title: "Giải pháp Thiết kế Web Doanh nghiệp",
+    subtitle:
+      "Nền tảng Website chuẩn SEO, UI/UX hiện đại tối ưu tỷ lệ chuyển đổi cho mô hình B2B & B2C.",
     bullets: [
-      'Giao diện UI/UX độc quyền, chuẩn hóa nhận diện thương hiệu doanh nghiệp',
-      'Tối ưu tốc độ tải trang Core Web Vitals chuẩn Google & chuẩn SEO nâng cao',
-      'Tích hợp Chatbot AI, CMS quản trị thông minh & Form thu thập Lead tự động',
-      'Hệ thống bảo mật WAF đa tầng, chống DDoS & sao lưu dữ liệu tự động 24/7'
+      "Thiết kế giao diện độc quyền, bám sát bộ nhận diện thương hiệu doanh nghiệp",
+      "Tối ưu tốc độ tải trang (Core Web Vitals) và cấu trúc chuẩn SEO Google",
+      "Tích hợp Chatbot AI, CMS quản trị trực quan và luồng thu thập Lead tự động",
+      "Triển khai hạ tầng bảo mật WAF đa tầng, chống DDoS và sao lưu dữ liệu 24/7",
     ],
     brands: [
-      { name: 'FPT', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' },
-      { name: 'SWINBURNE', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' },
-      { name: 'DAI NAM', bgColor: 'bg-amber-950/80 border-amber-500/40', textColor: 'text-amber-400' }
+      {
+        name: "REACT.JS",
+        bgColor: "bg-slate-950/80 border-slate-500/40",
+        textColor: "text-slate-100",
+      },
+      {
+        name: "LARAVEL",
+        bgColor: "bg-slate-950/80 border-slate-500/40",
+        textColor: "text-slate-100",
+      },
+      {
+        name: "TYPESCRIPT",
+        bgColor: "bg-slate-950/80 border-slate-500/40",
+        textColor: "text-slate-100",
+      },
+      {
+        name: "TAILWIND CSS",
+        bgColor: "bg-slate-950/80 border-slate-500/40",
+        textColor: "text-slate-100",
+      },
+      {
+        name: "...",
+        bgColor: "bg-zinc-950/80 border-zinc-500/40",
+        textColor: "text-zinc-300",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'Website B2B Chuyên Nghiệp',
-    previewType: 'website'
+    buttonText: "Khám phá ngay",
+    badge: "Website B2B Chuyên Nghiệp",
+    previewType: "website",
   },
   {
-    id: 'fohrm',
-    tabLabel: 'Quản trị Nhân sự',
-    title: 'Lĩnh vực Quản trị Nhân sự (FoHRM)',
-    subtitle: 'Tự động hóa toàn bộ quy trình nhân sự, chấm công AI & tính lương chính xác',
+    id: "fohrm",
+    tabLabel: "Quản trị Nhân sự",
+    title: "Nền tảng Quản trị Nhân sự (FoHRM)",
+    subtitle:
+      "Tự động hóa luồng vận hành nhân sự: Chấm công đa phương thức, tính lương và đánh giá hiệu suất.",
     bullets: [
-      'Chấm công thông minh AI nhận diện khuôn mặt FaceID & định vị GPS',
-      'Tự động hóa tính lương, thuế TNCN, bảo hiểm & phúc lợi nhân viên',
-      'Quản lý hồ sơ nhân sự tập trung, phê duyệt đơn từ trực tuyến 1-click',
-      'Hệ thống báo cáo HR Analytics trực quan hỗ trợ ban lãnh đạo ra quyết định'
+      "Chấm công linh hoạt qua định vị GPS, IP WiFi và nhận diện khuôn mặt (FaceID)",
+      "Hệ thống tự động hóa bảng lương, quản lý bảo hiểm và thuế TNCN chuẩn xác",
+      "Số hóa hồ sơ nhân sự, phê duyệt đơn từ trực tuyến nhanh chóng chỉ với 1 chạm",
+      "Dashboard HR Analytics cung cấp báo cáo realtime, hỗ trợ quyết định chiến lược",
     ],
     brands: [
-      { name: 'VIETCOMBANK', bgColor: 'bg-blue-950/80 border-blue-500/40', textColor: 'text-blue-400' },
-      { name: 'VINHOMES', bgColor: 'bg-indigo-950/80 border-indigo-500/40', textColor: 'text-indigo-400' },
-      { name: 'MASAN', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' }
+      {
+        name: "AWS CLOUD",
+        bgColor: "bg-orange-950/80 border-orange-500/40",
+        textColor: "text-orange-400",
+      },
+      {
+        name: "POSTGRESQL",
+        bgColor: "bg-blue-950/80 border-blue-500/40",
+        textColor: "text-blue-400",
+      },
+      {
+        name: "REDIS CACHE",
+        bgColor: "bg-red-950/80 border-red-500/40",
+        textColor: "text-red-400",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'FoHRM Platform AI',
-    previewType: 'fohrm'
+    buttonText: "Khám phá ngay",
+    badge: "FoHRM Platform AI",
+    previewType: "fohrm",
   },
   {
-    id: 'troovn',
-    tabLabel: 'Tìm phòng Trọ',
-    title: 'Lĩnh vực Tìm kiếm & Quản lý Trọ (Troo.vn)',
-    subtitle: 'Nền tảng PropTech số hóa quản lý nhà trọ, ký hợp đồng điện tử & tự động hóa điện nước',
+    id: "troovn",
+    tabLabel: "Quản lý Phòng trọ",
+    title: "Hệ sinh thái Quản lý Trọ (Troo.vn)",
+    subtitle:
+      "Giải pháp PropTech toàn diện giúp số hóa quy trình quản lý nhà trọ và hợp đồng cho thuê.",
     bullets: [
-      'Tìm kiếm & đăng tin phòng trọ chính chủ 100% xác thực hình ảnh thực tế',
-      'Hợp đồng thuê nhà điện tử bảo mật, ký kết trực tuyến an toàn pháp lý',
-      'Tự động chốt số điện nước, tính tiền dịch vụ & gửi hóa đơn Zalo/App',
-      'Thanh toán mã QR Code linh hoạt, tự động gạch nợ & báo cáo doanh thu'
+      "Hệ thống tìm kiếm thông minh với 100% tin đăng được xác thực hình ảnh thực tế",
+      "Số hóa hợp đồng thuê nhà, hỗ trợ ký kết điện tử an toàn và chuẩn pháp lý",
+      "Tự động chốt chỉ số điện nước, tính toán chi phí và gửi hóa đơn qua Zalo",
+      "Tích hợp thanh toán mã QR tự động gạch nợ và đối soát doanh thu chặt chẽ",
     ],
     brands: [
-      { name: 'TROO.VN', bgColor: 'bg-amber-950/80 border-amber-500/40', textColor: 'text-amber-400' },
-      { name: 'DAT XANH', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' },
-      { name: 'SAVILLS', bgColor: 'bg-sky-950/80 border-sky-500/40', textColor: 'text-sky-400' }
+      {
+        name: "ZALO ZNS",
+        bgColor: "bg-blue-950/80 border-blue-500/40",
+        textColor: "text-blue-400",
+      },
+      {
+        name: "SEPAY API",
+        bgColor: "bg-emerald-950/80 border-emerald-500/40",
+        textColor: "text-emerald-400",
+      },
+      {
+        name: "VIETQR",
+        bgColor: "bg-red-950/80 border-red-500/40",
+        textColor: "text-red-400",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'Troo.vn PropTech Platform',
-    previewType: 'troovn'
+    buttonText: "Khám phá ngay",
+    badge: "Troo.vn PropTech Platform",
+    previewType: "troovn",
   },
   {
-    id: 'fomed',
-    tabLabel: 'Quản lý Phòng khám',
-    title: 'Lĩnh vực Quản lý Phòng khám (FoMed)',
-    subtitle: 'Số hóa bệnh án điện tử EMR, quản lý kho dược & lịch khám chuẩn Bộ Y tế',
+    id: "fomed",
+    tabLabel: "Quản lý Phòng khám",
+    title: "Giải pháp Quản lý Phòng khám (FoMed)",
+    subtitle:
+      "Hệ thống số hóa quy trình y tế: Quản lý bệnh án EMR, kho dược và lịch hẹn chuẩn Bộ Y tế.",
     bullets: [
-      'Bệnh án điện tử EMR số hóa toàn bộ lịch sử khám chữa bệnh an toàn',
-      'Quản lý lịch hẹn khám thông minh, giảm 90% thời gian chờ đợi bệnh nhân',
-      'Tự động cảnh báo tồn kho thuốc, hạn sử dụng & quản lý xuất nhập kho dược',
-      'Báo cáo tài chính doanh thu, hóa đơn điện tử & kết nối cổng BHYT'
+      "Số hóa toàn diện bệnh án điện tử (EMR), lưu trữ lịch sử khám chữa bệnh bảo mật",
+      "Điều phối lịch hẹn thông minh, tối ưu luồng bệnh nhân và giảm thời gian chờ đợi",
+      "Kiểm soát chặt chẽ quy trình xuất nhập kho dược, tự động cảnh báo thuốc cận date",
+      "Quản lý doanh thu minh bạch, hỗ trợ xuất hóa đơn điện tử và liên thông dữ liệu",
     ],
     brands: [
-      { name: 'MEDLATEC', bgColor: 'bg-rose-950/80 border-rose-500/40', textColor: 'text-rose-400' },
-      { name: 'TAM ANH', bgColor: 'bg-blue-950/80 border-blue-500/40', textColor: 'text-blue-400' },
-      { name: 'HOAN MY', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
+      {
+        name: "ISO 27001",
+        bgColor: "bg-slate-950/80 border-slate-500/40",
+        textColor: "text-slate-300",
+      },
+      {
+        name: "HIPAA READY",
+        bgColor: "bg-blue-950/80 border-blue-500/40",
+        textColor: "text-blue-400",
+      },
+      {
+        name: "E-INVOICE",
+        bgColor: "bg-amber-950/80 border-amber-500/40",
+        textColor: "text-amber-400",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'FoMed Healthcare EMR',
-    previewType: 'fomed'
+    buttonText: "Khám phá ngay",
+    badge: "FoMed Healthcare EMR",
+    previewType: "fomed",
   },
   {
-    id: 'focode',
-    tabLabel: 'Sàn TMĐT',
-    title: 'Lĩnh vực Sàn Source Code (FoCode)',
-    subtitle: 'Chợ mua bán Source Code Web App, Mobile App & UI Kit đóng gói sẵn',
+    id: "focode",
+    tabLabel: "Sàn Source Code",
+    title: "Chợ Giao dịch Mã nguồn (FoCode)",
+    subtitle:
+      "Nền tảng phân phối Source Code, Mobile App & UI Kit chất lượng cao cho cộng đồng lập trình.",
     bullets: [
-      'Kho 1.000+ Source Code Web & Mobile App đã qua kiểm duyệt kỹ thuật',
-      'Tự động bàn giao mã nguồn trọn gói 1-click ngay sau khi thanh toán',
-      '100% mã nguồn Clean Code chuẩn hóa, test sạch bug & kèm tài liệu setup',
-      'Hỗ trợ kỹ thuật cài đặt trực tiếp và chính sách bảo hành mã nguồn'
+      "Kho tài nguyên đa dạng với hàng ngàn mã nguồn đã qua kiểm duyệt kỹ thuật nghiêm ngặt",
+      "Hệ thống thanh toán tự động, bàn giao mã nguồn 1-click ngay tức thì",
+      "Cam kết chất lượng Clean Code, cấu trúc chuẩn hóa kèm tài liệu triển khai chi tiết",
+      "Chính sách bảo hành rõ ràng, hỗ trợ kỹ thuật cài đặt trong suốt quá trình sử dụng",
     ],
     brands: [
-      { name: 'REACT', bgColor: 'bg-cyan-950/80 border-cyan-500/40', textColor: 'text-cyan-400' },
-      { name: 'FLUTTER', bgColor: 'bg-sky-950/80 border-sky-500/40', textColor: 'text-sky-400' },
-      { name: 'NODEJS', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
+      {
+        name: "REACT NATIVE",
+        bgColor: "bg-cyan-950/80 border-cyan-500/40",
+        textColor: "text-cyan-400",
+      },
+      {
+        name: "FLUTTER",
+        bgColor: "bg-sky-950/80 border-sky-500/40",
+        textColor: "text-sky-400",
+      },
+      {
+        name: "LARAVEL",
+        bgColor: "bg-rose-950/80 border-rose-500/40",
+        textColor: "text-rose-400",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'FoCode Marketplace',
-    previewType: 'focode'
+    buttonText: "Khám phá ngay",
+    badge: "FoCode Marketplace",
+    previewType: "focode",
   },
   {
-    id: 'custom',
-    tabLabel: 'Khác',
-    title: 'Lĩnh vực Giải pháp Tùy biến (Khác)',
-    subtitle: 'Phát triển hệ thống ERP/CRM, App Mobile & giải pháp chuyển đổi số theo yêu cầu',
+    id: "custom",
+    tabLabel: "Phần mềm Tùy chỉnh",
+    title: "Phát triển Hệ thống Tùy biến",
+    subtitle:
+      "Tư vấn và phát triển giải pháp phần mềm riêng biệt (ERP, CRM) giải quyết bài toán đặc thù.",
     bullets: [
-      'Phát triển ứng dụng Mobile (iOS/Android) & Web Application quy mô lớn',
-      'Tích hợp hệ thống phần mềm doanh nghiệp (ERP, CRM, POS, Payment Gateway)',
-      'Tư vấn kiến trúc Cloud Microservices, tối ưu hạ tầng Server & Database',
-      'Đội ngũ chuyên gia CNTT đồng hành chuyển giao quy trình kỹ thuật trọn gói'
+      "Thiết kế và phát triển ứng dụng Mobile, Web App nghiệp vụ phức tạp quy mô lớn",
+      "Tích hợp sâu rộng với hệ thống sẵn có (ERP, POS, Cổng thanh toán, Logistics)",
+      "Tư vấn thiết kế kiến trúc Microservices, đảm bảo khả năng chịu tải và mở rộng hệ thống",
+      "Đội ngũ kỹ sư đồng hành sát sao từ khâu phân tích, triển khai đến chuyển giao vận hành",
     ],
     brands: [
-      { name: 'TECHCOMBANK', bgColor: 'bg-red-950/80 border-red-500/40', textColor: 'text-red-400' },
-      { name: 'SHOPEE', bgColor: 'bg-orange-950/80 border-orange-500/40', textColor: 'text-orange-400' },
-      { name: 'GRAB', bgColor: 'bg-emerald-950/80 border-emerald-500/40', textColor: 'text-emerald-400' }
+      {
+        name: "MICROSERVICES",
+        bgColor: "bg-indigo-950/80 border-indigo-500/40",
+        textColor: "text-indigo-400",
+      },
+      {
+        name: "DOCKER",
+        bgColor: "bg-blue-950/80 border-blue-500/40",
+        textColor: "text-blue-400",
+      },
+      {
+        name: "KUBERNETES",
+        bgColor: "bg-blue-900/80 border-blue-500/40",
+        textColor: "text-blue-300",
+      },
     ],
-    buttonText: 'Khám phá ngay',
-    badge: 'Custom Enterprise System',
-    previewType: 'custom'
-  }
+    buttonText: "Nhận tư vấn ngay",
+    badge: "Custom Enterprise System",
+    previewType: "custom",
+  },
 ];
