@@ -26,7 +26,6 @@ export default function HeroCard() {
       id="hero"
       className="relative flex min-h-screen w-full flex-col justify-between items-center overflow-hidden pt-20 pb-6 bg-white text-slate-900 text-center"
     >
-      {/* Background Hero Image - Original Sharpness */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <img
           src={backgroundHero}
@@ -38,7 +37,6 @@ export default function HeroCard() {
         />
       </div>
 
-      {/* Light Rays Effect - Fixed Light Mode Blue Glow */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <LightRays
           raysOrigin="top-center"
