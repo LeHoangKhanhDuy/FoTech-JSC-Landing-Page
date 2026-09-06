@@ -1,0 +1,21 @@
+{
+  "name": "FoTech Ecosystem - Chuyển đổi số & Quản trị AI",
+  "short_name": "FoTech",
+  "description": "Hệ sinh thái phần mềm quản trị doanh nghiệp và nhân sự úng dụng AI thế hệ mới.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020817",
+  "theme_color": "#020817",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/FoTech_Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
