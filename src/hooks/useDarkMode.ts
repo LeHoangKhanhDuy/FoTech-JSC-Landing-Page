@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
+import { useTheme } from '@/hooks/useTheme';
 
-const storageKey = 'fotalent-theme';
+export { useTheme };
 
 export function useDarkMode() {
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-    window.localStorage.setItem(storageKey, 'dark');
-  }, []);
-
-  return { isDark: true, toggleDarkMode: () => {} };
+  const { theme, toggleTheme } = useTheme();
+  return {
+    isDark: theme === 'dark',
+    toggleDarkMode: toggleTheme,
+  };
 }
+

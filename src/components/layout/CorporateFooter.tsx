@@ -53,7 +53,7 @@ export default function CorporateFooter() {
   return (
     <footer
       id="contact"
-      className="relative bg-[#020817] pt-10 pb-10 sm:pb-14 overflow-hidden"
+      className="relative dark:bg-[#020817] pt-10 pb-10 sm:pb-14 overflow-hidden transition-colors duration-300"
     >
       <div className="mx-auto max-w-8xl px-3 sm:px-6 lg:px-8">
         <div className="relative rounded-[36px] sm:rounded-[48px] lg:rounded-[56px] bg-blue-600 text-white pt-14 sm:pt-16 px-6 sm:px-10 lg:px-14 shadow-2xl overflow-hidden">
