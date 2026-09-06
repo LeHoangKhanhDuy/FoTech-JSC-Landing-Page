@@ -9,27 +9,27 @@ interface FAQContactPanelProps {
 
 export default function FAQContactPanel({ data, onContactClick }: FAQContactPanelProps) {
   return (
-    <div className="lg:sticky lg:top-28 rounded-3xl border border-slate-800/80 bg-slate-900/40 p-7 sm:p-9 shadow-xl shadow-blue-950/20 backdrop-blur-md transition-all duration-500 hover:border-blue-500/40 animate-fade-in-up">
-      <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-950/60 px-3.5 py-1.5 text-xs font-bold text-blue-400 backdrop-blur-md mb-6">
-        <HelpCircle className="h-3.5 w-3.5 text-blue-400" aria-hidden="true" />
+    <div className="lg:sticky lg:top-28 rounded-3xl border border-slate-200/80 bg-slate-50/70 p-7 sm:p-9 shadow-xl shadow-slate-200/50 dark:border-slate-800/80 dark:bg-slate-900/40 dark:shadow-xl dark:shadow-blue-950/20 backdrop-blur-md transition-all duration-500 hover:border-blue-500/40 animate-fade-in-up">
+      <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1.5 text-xs font-bold text-blue-600 dark:border-blue-500/30 dark:bg-blue-950/60 dark:text-blue-400 backdrop-blur-md mb-6">
+        <HelpCircle className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
         <span className="uppercase tracking-wider">{data.badge}</span>
       </div>
 
-      <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-white leading-[1.12]">
-        Bạn cần hỗ trợ trực tiếp từ <span className="text-blue-500">FOTECH?</span>
+      <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+        Bạn cần hỗ trợ trực tiếp từ <span className="text-blue-600 dark:text-blue-500">FOTECH?</span>
       </h2>
 
-      <p className="mt-4 text-xs sm:text-sm leading-relaxed text-justify text-slate-300">
+      <p className="mt-4 text-xs sm:text-sm leading-relaxed text-justify text-slate-600 dark:text-slate-300">
         {data.description}
       </p>
 
-      <div className="my-8 pt-6 border-t border-slate-800/80 grid grid-cols-2 gap-4 divide-x divide-slate-800/80">
+      <div className="my-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-2 gap-4 divide-x divide-slate-200 dark:divide-slate-800/80">
         {data.stats.map((stat, index) => (
           <div key={index} className={index > 0 ? "pl-4" : ""}>
-            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               {stat.value}
             </span>
-            <span className="mt-1 block text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+            <span className="mt-1 block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               {stat.label}
             </span>
           </div>
