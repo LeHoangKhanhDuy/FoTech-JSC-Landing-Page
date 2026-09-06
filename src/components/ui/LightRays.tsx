@@ -142,19 +142,24 @@ const LightRays: React.FC<LightRaysProps> = ({
     const initializeWebGL = async () => {
       if (!containerRef.current) return;
 
-      await new Promise(resolve => setTimeout(resolve, 10));
+      const isMobile =
+        typeof window !== "undefined" &&
+        (window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches);
+      if (isMobile) return;
+
+      await new Promise((resolve) => setTimeout(resolve, 60));
 
       if (!containerRef.current) return;
 
       const renderer = new Renderer({
-        dpr: Math.min(window.devicePixelRatio, 2),
-        alpha: true
+        dpr: 1,
+        alpha: true,
       });
       rendererRef.current = renderer;
 
       const gl = renderer.gl;
-      gl.canvas.style.width = '100%';
-      gl.canvas.style.height = '100%';
+      gl.canvas.style.width = "100%";
+      gl.canvas.style.height = "100%";
 
       while (containerRef.current.firstChild) {
         containerRef.current.removeChild(containerRef.current.firstChild);
@@ -306,7 +311,7 @@ void main() {
       const updatePlacement = () => {
         if (!containerRef.current || !renderer) return;
 
-        renderer.dpr = Math.min(window.devicePixelRatio, 2);
+        renderer.dpr = 1;
 
         const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
         renderer.setSize(wCSS, hCSS);
@@ -463,7 +468,9 @@ void main() {
     <div
       ref={containerRef}
       className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
-    />
+    >
+      <div className="md:hidden absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none" />
+    </div>
   );
 };
 

@@ -1,9 +1,10 @@
-import { useState } from "react";
-import ContactModal from "@/modules/contact/components/ContactModal";
+import { useState, lazy, Suspense } from "react";
 import HeroContent from "@/modules/hero/components/HeroContent";
 import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import HeroStats from "@/modules/hero/components/HeroStats";
 import LightRays from "@/components/ui/LightRays";
+
+const ContactModal = lazy(() => import("@/modules/contact/components/ContactModal"));
 
 export default function HeroCard() {
   const [modalState, setModalState] = useState<{
@@ -63,11 +64,15 @@ export default function HeroCard() {
         </div>
       </div>
 
-      <ContactModal
-        isOpen={modalState.isOpen}
-        onClose={() => setModalState({ ...modalState, isOpen: false })}
-        type={modalState.type}
-      />
+      {modalState.isOpen && (
+        <Suspense fallback={null}>
+          <ContactModal
+            isOpen={modalState.isOpen}
+            onClose={() => setModalState({ ...modalState, isOpen: false })}
+            type={modalState.type}
+          />
+        </Suspense>
+      )}
     </section>
   );
 }
