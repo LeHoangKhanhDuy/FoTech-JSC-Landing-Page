@@ -2,7 +2,7 @@ import FoTechLogo from "@/assets/FoTech_Logo.png";
 
 export function HowItWorksCenterArch() {
   return (
-    <div className="lg:col-span-4 relative h-[480px] sm:h-[510px] rounded-t-full border border-slate-800/80 bg-gradient-to-b from-slate-900/90 via-slate-900/40 to-slate-950/90 overflow-hidden flex flex-col items-center justify-center p-6 shadow-2xl backdrop-blur-xl">
+    <div className="lg:col-span-4 relative h-[480px] sm:h-[510px] rounded-t-[240px] rounded-b-2xl border border-slate-800/80 bg-gradient-to-b from-slate-900/90 via-slate-900/40 to-slate-950/90 overflow-hidden flex flex-col items-center justify-center p-6 shadow-2xl backdrop-blur-xl">
       <div className="absolute -top-10 w-72 h-72 rounded-full bg-blue-600/15 blur-3xl pointer-events-none" />
       <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-slate-800/80 flex items-center justify-center">
         <div className="absolute inset-0 rounded-full border border-dashed border-slate-700/40 animate-[spin_60s_linear_infinite]" />
