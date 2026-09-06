@@ -112,22 +112,22 @@ summary,
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate3d(0, 10px, 0);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 16px, 0);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
@@ -164,57 +164,53 @@ summary,
 
 @keyframes floatCard {
   0%, 100% {
-    transform: translate3d(0, 0px, 0);
+    transform: translateY(0px);
   }
   50% {
-    transform: translate3d(0, -8px, 0);
+    transform: translateY(-8px);
   }
 }
 
 @keyframes marquee {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-50%);
   }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity;
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-in-right {
   animation: slideInRight 0.38s cubic-bezier(0.25, 1, 0.5, 1) both;
-  will-change: transform, opacity;
 }
 
 .animate-slide-in-left {
   animation: slideInLeft 0.38s cubic-bezier(0.25, 1, 0.5, 1) both;
-  will-change: transform, opacity;
 }
 
 @keyframes floatUpDown {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
   }
 }
 
-.animate-float {
-  animation: floatUpDown 4s ease-in-out infinite;
+.animate-float-bounce {
+  animation: floatUpDown 2.2s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 .animate-float-card {
@@ -222,31 +218,13 @@ summary,
 }
 
 .logo-marquee {
-  animation: marquee 35s linear infinite;
-  will-change: transform;
+  animation: marquee 30s linear infinite;
 }
 
-.glass-card {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card-hover:hover {
-  background: rgba(15, 23, 42, 0.8);
-  border-color: rgba(59, 130, 246, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
-}
-
-/* Custom Scrollbar */
+/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -255,7 +233,7 @@ summary,
 
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -272,22 +250,22 @@ summary,
 
 @keyframes star-movement-bottom {
   0% {
-    transform: translate3d(0%, 0%, 0);
+    transform: translate(0%, 0%);
     opacity: 1;
   }
   100% {
-    transform: translate3d(-100%, 0%, 0);
+    transform: translate(-100%, 0%);
     opacity: 0;
   }
 }
 
 @keyframes star-movement-top {
   0% {
-    transform: translate3d(0%, 0%, 0);
+    transform: translate(0%, 0%);
     opacity: 1;
   }
   100% {
-    transform: translate3d(100%, 0%, 0);
+    transform: translate(100%, 0%);
     opacity: 0;
   }
 }
@@ -297,7 +275,6 @@ summary,
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  will-change: transform, opacity;
 }
 
 .animate-star-movement-top {
@@ -305,7 +282,6 @@ summary,
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  will-change: transform, opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {
