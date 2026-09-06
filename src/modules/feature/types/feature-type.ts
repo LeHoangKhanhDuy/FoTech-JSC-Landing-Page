@@ -5,9 +5,9 @@ export interface IntegrationNode {
   label: string;
   sublabel?: string;
   icon: LucideIcon;
-  angle: number; // in degrees (0 = top, 60, 120, 180, 240, 300)
-  x: number; // percentage (0 - 100)
-  y: number; // percentage (0 - 100)
+  angle: number; 
+  x: number;
+  y: number; 
   status?: 'active' | 'synced' | 'pending';
   description: string;
 }
@@ -18,7 +18,6 @@ export interface IntegrationFeatureData {
   titleHighlight: string;
   subtitle: string;
   ctaText: string;
-  statusBadge: string;
   hubName: string;
   nodes: IntegrationNode[];
 }

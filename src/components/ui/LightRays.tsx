@@ -260,15 +260,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     fragColor.rgb = mix(vec3(gray), fragColor.rgb, saturation);
   }
 
-  fragColor.rgb *= raysColor;
-
-  if (lightMode > 0.5) {
-    vec3 mapped = vec3(1.0) - exp(-max(fragColor.rgb, vec3(0.0)) * 1.35);
-    float energy = clamp(max(mapped.r, max(mapped.g, mapped.b)), 0.0, 1.0);
-    vec3 hue = mapped / max(energy, 0.0001);
-    vec3 ink = mix(hue * 0.25, hue * 0.72, energy);
-    fragColor = vec4(mix(vec3(1.0), ink, energy), 1.0);
-  }
+  float rayIntensity = clamp((rays1.x * 0.6 + rays2.x * 0.4) * (0.3 + brightness * 0.7), 0.0, 1.0);
+  fragColor = vec4(raysColor, rayIntensity * 0.75);
 }
 
 void main() {
@@ -468,9 +461,7 @@ void main() {
     <div
       ref={containerRef}
       className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
-    >
-      <div className="md:hidden absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none" />
-    </div>
+    />
   );
 };
 

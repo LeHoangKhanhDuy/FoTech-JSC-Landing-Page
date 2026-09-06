@@ -17,7 +17,7 @@ export default function CorporateLogoMark() {
       onClick={handleClick}
       className="group flex items-center gap-3 outline-none focus:outline-none"
     >
-      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-50 p-1 shadow-sm transition-transform group-hover:scale-105 dark:bg-slate-900">
+      <div className="relative flex h-12 w-12 shrink-0 items-center justify-center transition-transform group-hover:scale-105">
         <img
           src={FoTechLogo}
           alt="FoTech Logo"
@@ -25,10 +25,10 @@ export default function CorporateLogoMark() {
         />
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-extrabold tracking-tight text-blue-600 dark:text-blue-500">
+        <span className="text-xl font-extrabold tracking-tight text-blue-600">
           FoTech
         </span>
-        <span className="mt-1 text-[11px] font-medium tracking-wide text-slate-500 dark:text-slate-400">
+        <span className="mt-1 text-[11px] font-medium tracking-wide text-slate-500">
           Enterprise Ecosystem
         </span>
       </div>
