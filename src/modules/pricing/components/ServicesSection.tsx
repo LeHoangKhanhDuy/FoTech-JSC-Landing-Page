@@ -73,10 +73,10 @@ export default function ServicesSection() {
   return (
     <section
       id="solutions"
-      className="relative py-16 md:py-24 overflow-hidden bg-[#020817] text-white animate-fade-in-up"
+      className="relative py-16 md:py-24 overflow-hidden bg-slate-50/60 dark:bg-[#020817] text-slate-900 dark:text-white transition-colors duration-300 animate-fade-in-up"
     >
       <div
-        className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.08),transparent_40%),radial-gradient(circle_at_20%_70%,rgba(79,70,229,0.06),transparent_35%)]"
+        className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.05),transparent_40%),radial-gradient(circle_at_20%_70%,rgba(79,70,229,0.04),transparent_35%)] dark:bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.08),transparent_40%),radial-gradient(circle_at_20%_70%,rgba(79,70,229,0.06),transparent_35%)]"
         aria-hidden="true"
       />
 
