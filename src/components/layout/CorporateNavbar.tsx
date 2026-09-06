@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import {
   Menu,
   X,
@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
-import ContactModal from "@/modules/contact/components/ContactModal";
+
+const ContactModal = lazy(() => import("@/modules/contact/components/ContactModal"));
 
 const ecosystemProducts = [
   {
@@ -333,11 +334,15 @@ export default function CorporateNavbar() {
         </div>
       </div>
 
-      <ContactModal
-        isOpen={modalState.isOpen}
-        onClose={() => setModalState({ ...modalState, isOpen: false })}
-        type={modalState.type}
-      />
+      {modalState.isOpen && (
+        <Suspense fallback={null}>
+          <ContactModal
+            isOpen={modalState.isOpen}
+            onClose={() => setModalState({ ...modalState, isOpen: false })}
+            type={modalState.type}
+          />
+        </Suspense>
+      )}
     </>
   );
 }
