@@ -1,18 +1,13 @@
-import { useState } from "react";
-import ContactModal from "@/modules/contact/components/ContactModal";
 import { howItWorksSteps } from "@/modules/marketing/data/howItWorksData";
 import { HowItWorksHeader } from "@/modules/marketing/components/HowItWorksHeader";
 import { HowItWorksCard } from "@/modules/marketing/components/HowItWorksCard";
 import { HowItWorksCenterArch } from "@/modules/marketing/components/HowItWorksCenterArch";
 
 export default function WhyTrustFoTech() {
-  const [activeStep, setActiveStep] = useState<number>(0);
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <section
       id="why-trust"
-      className="relative py-20 md:py-28 bg-[#020817] text-slate-100 overflow-hidden transition-colors duration-300"
+      className="relative py-20 md:py-28 bg-[#020817] text-slate-100 border-t border-slate-800/80 overflow-hidden transition-colors duration-300"
     >
       <div
         className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_70%_50%_at_50%_20%,rgba(37,99,235,0.08),transparent_60%)]"
@@ -28,8 +23,6 @@ export default function WhyTrustFoTech() {
               <HowItWorksCard
                 key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
-                isActive={activeStep === idx}
-                onSelect={() => setActiveStep(idx)}
               />
             ))}
           </div>
@@ -41,21 +34,11 @@ export default function WhyTrustFoTech() {
               <HowItWorksCard
                 key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
-                isActive={activeStep === idx}
-                onSelect={() => setActiveStep(idx)}
               />
             ))}
           </div>
         </div>
       </div>
-
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        type="consulting"
-        title="Đăng Ký Tư Vấn Quy Trình Chuyển Đổi Số"
-        subtitle="Để lại thông tin, chuyên gia FoTech sẽ liên hệ hỗ trợ lộ trình chi tiết trong vòng 15 phút."
-      />
     </section>
   );
 }
