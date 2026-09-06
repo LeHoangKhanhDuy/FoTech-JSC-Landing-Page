@@ -3,6 +3,7 @@ import HeroContent from "@/modules/hero/components/HeroContent";
 import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import HeroStats from "@/modules/hero/components/HeroStats";
 import LightRays from "@/components/ui/LightRays";
+import backgroundHero from "@/assets/backgroundHero.png";
 
 const ContactModal = lazy(() => import("@/modules/contact/components/ContactModal"));
 
@@ -23,15 +24,26 @@ export default function HeroCard() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen w-full flex-col justify-between items-center overflow-hidden pt-20 pb-6 bg-slate-950 text-center"
+      className="relative flex min-h-screen w-full flex-col justify-between items-center overflow-hidden pt-20 pb-6 bg-white text-slate-900 text-center"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.18),rgba(255,255,255,0))] pointer-events-none z-0" />
-      <div className="absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.12),transparent_70%)] pointer-events-none z-0" />
+      {/* Background Hero Image - Original Sharpness */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <img
+          src={backgroundHero}
+          alt=""
+          className="w-full h-full object-cover object-center"
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </div>
 
+      {/* Light Rays Effect - Fixed Light Mode Blue Glow */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <LightRays
           raysOrigin="top-center"
-          raysColor="#ffffff"
+          raysColor="#2563eb"
+          lightMode={true}
           raysSpeed={1.2}
           lightSpread={0.8}
           rayLength={3.5}
@@ -39,7 +51,7 @@ export default function HeroCard() {
           mouseInfluence={0.15}
           noiseAmount={0.05}
           distortion={0.1}
-          className="w-full h-full opacity-80"
+          className="w-full h-full opacity-70"
           pulsating={false}
           fadeDistance={1}
           saturation={1}
