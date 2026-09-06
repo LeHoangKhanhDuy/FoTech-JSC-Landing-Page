@@ -15,7 +15,6 @@ export const integrationFeatureData: IntegrationFeatureData = {
   subtitle:
     "Xóa bỏ rào cản phòng ban. FoTech Hub kết nối xuyên suốt luồng công việc từ Quản trị nhân sự, Vận hành phòng khám đến Sàn thương mại. Mọi dữ liệu được tự động hóa, cập nhật theo thời gian thực để giúp ban lãnh đạo ra quyết định tức thì",
   ctaText: "Trải nghiệm FoTech Hub",
-  statusBadge: "Đồng bộ dữ liệu Real-time 24/7",
   hubName: "FOTECH HUB",
   nodes: [
     {
