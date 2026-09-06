@@ -24,7 +24,7 @@ const statsData: HeroStatItem[] = [
 
 export default function HeroStats() {
   return (
-    <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+    <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
       <div className="rounded-2xl border border-slate-800/80 bg-slate-900/40 py-5 backdrop-blur-sm shadow-xl shadow-blue-950/20 transition-all duration-500 hover:shadow-blue-500/10">
         <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800/80 text-center">
           {statsData.map((stat, idx) => (
