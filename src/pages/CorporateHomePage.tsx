@@ -9,7 +9,7 @@ import SEO from "@/components/common/SEO";
 
 export default function CorporateHomePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <SEO
         title="FoTech - Nền tảng Chuyển đổi số & Quản trị Doanh nghiệp AI Hàng Đầu"
         description="Hệ sinh thái giải pháp số toàn diện từ FoTech: FoHRM (Quản trị Nhân sự & Tính lương AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech thông minh). Tối ưu vận hành doanh nghiệp 2026."
