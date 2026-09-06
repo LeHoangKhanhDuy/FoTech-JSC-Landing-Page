@@ -108,7 +108,7 @@ const fohrmSchema = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#020817] text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white dark:bg-[#020817] text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <SEO
         title="FoHRM - Phần mềm Quản trị Nhân sự & Tính lương Tự động AI 2026"
         description="Giải pháp quản lý nhân sự HRM thông minh tích hợp trợ lý AI FINA, chấm công FaceID đa điểm, tính lương tự động 1-click, chi lương Bank API và tuân thủ 100% Luật lao động Việt Nam 2026."

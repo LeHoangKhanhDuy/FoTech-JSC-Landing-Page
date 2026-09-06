@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi" class="dark">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,15 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="theme-color" content="#020817" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://fotech.vn/" />
+
+    <!-- Icons & Manifest -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/FoTech_Logo.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Facebook / Zalo / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fotech.vn/" />
     <meta
@@ -39,6 +43,8 @@
     />
     <meta property="og:site_name" content="FoTech Ecosystem" />
     <meta property="og:locale" content="vi_VN" />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -50,6 +56,8 @@
     />
     <meta name="twitter:image" content="https://fotech.vn/og-image.png" />
     <meta name="twitter:site" content="@FoTechVN" />
+
+    <!-- Performance: Resource Hints & Non-blocking Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -70,13 +78,20 @@
       />
     </noscript>
 
+    <!-- Theme Initializer (Default: Light Mode) -->
     <script>
       (function () {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("fotalent-theme", "dark");
+        var stored =
+          localStorage.getItem("fotech-theme") || localStorage.getItem("fotalent-theme");
+        if (stored === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
       })();
     </script>
 
+    <!-- Schema.org Structured Data (Organization, WebSite, SoftwareApplication) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -142,7 +157,7 @@
       }
     </script>
   </head>
-  <body class="bg-slate-950 text-slate-100 antialiased font-sans">
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased font-sans transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
