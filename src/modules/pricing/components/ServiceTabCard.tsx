@@ -100,7 +100,7 @@ function ServiceTabCard({
                 <div
                   key={idx}
                   title={brand.name}
-                  className="group relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-2 shadow-xs hover:border-blue-500/60 hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+                  className="group relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white dark:bg-slate-900 p-2 shadow-[0_0_15px_3px_rgba(0,0,0,0.1)] hover:border-blue-500/60 hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
                 >
                   <img
                     src={brand.logo}
