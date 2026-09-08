@@ -1,4 +1,23 @@
 import { ServiceTabItemData } from "@/modules/pricing/types/pricing-types";
+import reactLogo from "@/assets/reacticon.png";
+import htmlLogo from "@/assets/HTML5_logo_and_wordmark.svg.png";
+import cssLogo from "@/assets/CSS3_logo_and_wordmark.svg.png";
+import tsLogo from "@/assets/Typescript_logo_2020.svg.png";
+import laravelLogo from "@/assets/Laravel.svg.png";
+import dotnetLogo from "@/assets/.netlogo.png";
+import phpLogo from "@/assets/PHP-logo.svg.png";
+import csharpLogo from "@/assets/Csharp_Logo.png";
+
+const tech = {
+  react: { name: "React", logo: reactLogo },
+  html: { name: "HTML5", logo: htmlLogo },
+  css: { name: "CSS3", logo: cssLogo },
+  ts: { name: "TypeScript", logo: tsLogo },
+  laravel: { name: "Laravel", logo: laravelLogo },
+  dotnet: { name: ".NET", logo: dotnetLogo },
+  php: { name: "PHP", logo: phpLogo },
+  csharp: { name: "C#", logo: csharpLogo },
+};
 
 export const servicesTabData: ServiceTabItemData[] = [
   {
@@ -14,31 +33,12 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Triển khai hạ tầng bảo mật WAF đa tầng, chống tấn công DDoS và sao lưu 24/7",
     ],
     brands: [
-      {
-        name: "NEXT.JS",
-        bgColor: "bg-black/90 border-slate-500/40",
-        textColor: "text-white",
-      },
-      {
-        name: "REACT.JS",
-        bgColor: "bg-slate-950/80 border-slate-500/40",
-        textColor: "text-blue-400",
-      },
-      {
-        name: "LARAVEL",
-        bgColor: "bg-slate-950/80 border-slate-500/40",
-        textColor: "text-red-500",
-      },
-      {
-        name: "TYPESCRIPT",
-        bgColor: "bg-slate-950/80 border-slate-500/40",
-        textColor: "text-blue-500",
-      },
-      {
-        name: "TAILWIND CSS",
-        bgColor: "bg-zinc-950/80 border-zinc-500/40",
-        textColor: "text-cyan-400",
-      },
+      tech.react,
+      tech.html,
+      tech.css,
+      tech.ts,
+      tech.laravel,
+      tech.dotnet,
     ],
     buttonText: "Khám phá giải pháp",
     badge: "Website B2B Chuyên Nghiệp",
@@ -57,21 +57,10 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Dashboard HR Analytics cung cấp báo cáo theo thời gian thực, hỗ trợ ban lãnh đạo ra quyết định",
     ],
     brands: [
-      {
-        name: "AWS CLOUD",
-        bgColor: "bg-orange-950/80 border-orange-500/40",
-        textColor: "text-orange-400",
-      },
-      {
-        name: "POSTGRESQL",
-        bgColor: "bg-blue-950/80 border-blue-500/40",
-        textColor: "text-blue-400",
-      },
-      {
-        name: "REDIS CACHE",
-        bgColor: "bg-red-950/80 border-red-500/40",
-        textColor: "text-red-400",
-      },
+      tech.react,
+      tech.ts,
+      tech.laravel,
+      tech.php,
     ],
     buttonText: "Trải nghiệm FoHRM",
     badge: "FoHRM Platform AI",
@@ -90,21 +79,9 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Tích hợp thanh toán VietQR, tự động gạch nợ và đối soát doanh thu chặt chẽ",
     ],
     brands: [
-      {
-        name: "ZALO ZNS",
-        bgColor: "bg-blue-950/80 border-blue-500/40",
-        textColor: "text-blue-400",
-      },
-      {
-        name: "SEPAY API",
-        bgColor: "bg-emerald-950/80 border-emerald-500/40",
-        textColor: "text-emerald-400",
-      },
-      {
-        name: "VIETQR",
-        bgColor: "bg-red-950/80 border-red-500/40",
-        textColor: "text-red-400",
-      },
+      tech.react,
+      tech.laravel,
+      tech.php,
     ],
     buttonText: "Khám phá Troo.vn",
     badge: "Troo.vn PropTech Platform",
@@ -123,21 +100,10 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Quản lý tài chính minh bạch, hỗ trợ xuất hóa đơn điện tử và liên thông dữ liệu chuẩn Bộ Y tế",
     ],
     brands: [
-      {
-        name: "ISO 27001",
-        bgColor: "bg-slate-950/80 border-slate-500/40",
-        textColor: "text-slate-300",
-      },
-      {
-        name: "HIPAA COMPLIANT",
-        bgColor: "bg-blue-950/80 border-blue-500/40",
-        textColor: "text-blue-400",
-      },
-      {
-        name: "E-INVOICE",
-        bgColor: "bg-amber-950/80 border-amber-500/40",
-        textColor: "text-amber-400",
-      },
+      tech.react,
+      tech.ts,
+      tech.dotnet,
+      tech.csharp,
     ],
     buttonText: "Triển khai FoMed",
     badge: "FoMed Healthcare EMR",
@@ -156,21 +122,10 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Chính sách bảo hành minh bạch, đội ngũ kỹ thuật đồng hành hỗ trợ cài đặt tận tình",
     ],
     brands: [
-      {
-        name: "REACT NATIVE",
-        bgColor: "bg-cyan-950/80 border-cyan-500/40",
-        textColor: "text-cyan-400",
-      },
-      {
-        name: "FLUTTER",
-        bgColor: "bg-sky-950/80 border-sky-500/40",
-        textColor: "text-sky-400",
-      },
-      {
-        name: "LARAVEL",
-        bgColor: "bg-rose-950/80 border-rose-500/40",
-        textColor: "text-rose-400",
-      },
+      tech.react,
+      tech.ts,
+      tech.laravel,
+      tech.php,
     ],
     buttonText: "Truy cập FoCode",
     badge: "FoCode Marketplace",
@@ -189,21 +144,12 @@ export const servicesTabData: ServiceTabItemData[] = [
       "Đội ngũ chuyên gia đồng hành sát sao từ khâu khảo sát, phân tích đến chuyển giao vận hành",
     ],
     brands: [
-      {
-        name: "MICROSERVICES",
-        bgColor: "bg-indigo-950/80 border-indigo-500/40",
-        textColor: "text-indigo-400",
-      },
-      {
-        name: "DOCKER",
-        bgColor: "bg-blue-950/80 border-blue-500/40",
-        textColor: "text-blue-400",
-      },
-      {
-        name: "KUBERNETES",
-        bgColor: "bg-blue-900/80 border-blue-500/40",
-        textColor: "text-blue-300",
-      },
+      tech.react,
+      tech.html,
+      tech.css,
+      tech.ts,
+      tech.laravel,
+      tech.dotnet,
     ],
     buttonText: "Nhận tư vấn ngay",
     badge: "Custom Enterprise System",
