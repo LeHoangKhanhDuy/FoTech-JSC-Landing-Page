@@ -21,7 +21,7 @@ export default function ServiceTabNav({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 rounded-2xl bg-slate-200/80 p-2 dark:bg-slate-900/60 dark:border-slate-800/80 backdrop-blur-md">
+      <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 rounded-2xl bg-white p-2 dark:bg-slate-900/60 dark:border-slate-800/80 backdrop-blur-md">
         {tabs.map((tab) => {
           const isActive = tab.id === activeTabId;
 
