@@ -320,7 +320,15 @@ void main() {
         uniforms.rayDir.value = dir;
       };
 
+      let isIntersecting = true;
+      let observer: IntersectionObserver | null = null;
+
       const loop = (t: number) => {
+        if (!isIntersecting) {
+          animationIdRef.current = null;
+          return;
+        }
+
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
@@ -345,11 +353,28 @@ void main() {
         }
       };
 
+      if (typeof IntersectionObserver !== 'undefined' && containerRef.current) {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            isIntersecting = entry.isIntersecting;
+            if (isIntersecting && !animationIdRef.current) {
+              animationIdRef.current = requestAnimationFrame(loop);
+            }
+          },
+          { threshold: 0.02 }
+        );
+        observer.observe(containerRef.current);
+      }
+
       window.addEventListener('resize', updatePlacement);
       updatePlacement();
       animationIdRef.current = requestAnimationFrame(loop);
 
       cleanupFunctionRef.current = () => {
+        if (observer) {
+          observer.disconnect();
+        }
+
         if (animationIdRef.current) {
           cancelAnimationFrame(animationIdRef.current);
           animationIdRef.current = null;

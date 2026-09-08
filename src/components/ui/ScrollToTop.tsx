@@ -23,37 +23,35 @@ export default function ScrollToTop() {
     if (isClicked) return;
     setIsClicked(true);
 
-    setTimeout(() => {
-      const lenis = (
-        window as unknown as {
-          __lenis?: {
-            scrollTo: (
-              target: number,
-              options?: {
-                duration?: number;
-                easing?: (t: number) => number;
-              }
-            ) => void;
-          };
-        }
-      ).__lenis;
-
-      if (lenis) {
-        lenis.scrollTo(0, {
-          duration: 1.6,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        });
-      } else {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
+    const lenis = (
+      window as unknown as {
+        __lenis?: {
+          scrollTo: (
+            target: number,
+            options?: {
+              duration?: number;
+              easing?: (t: number) => number;
+            }
+          ) => void;
+        };
       }
+    ).__lenis;
 
-      setTimeout(() => {
-        setIsClicked(false);
-      }, 1000);
-    }, 150);
+    if (lenis) {
+      lenis.scrollTo(0, {
+        duration: 1.4,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 1000);
   };
 
   return (

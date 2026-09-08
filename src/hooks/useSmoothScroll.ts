@@ -1,46 +1,27 @@
 import { useEffect } from 'react';
-import type Lenis from 'lenis';
+import Lenis from 'lenis';
 
 export function useSmoothScroll() {
   useEffect(() => {
-    const isMobile =
-      typeof window !== 'undefined' &&
-      (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+    const lenis = new Lenis({
+      lerp: 0.1,
+      duration: 1.2,
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+      syncTouch: false,
+      autoRaf: true,
+      autoToggle: true,
+      allowNestedScroll: true,
+      autoResize: true,
+      anchors: {
+        offset: -80,
+        duration: 1.4,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      },
+    });
 
-    if (isMobile) {
-      document.documentElement.style.scrollBehavior = 'smooth';
-      return;
-    }
-
-    let lenisInstance: Lenis | null = null;
-    let rafId: number;
-
-    const initLenis = async () => {
-      const { default: LenisConstructor } = await import('lenis');
-      document.documentElement.style.scrollBehavior = 'auto';
-
-      lenisInstance = new LenisConstructor({
-        lerp: 0.085,
-        wheelMultiplier: 0.9,
-        touchMultiplier: 1.5,
-        smoothWheel: true,
-        syncTouch: false,
-        infinite: false,
-        autoResize: true,
-      });
-
-      (window as unknown as { __lenis?: Lenis }).__lenis = lenisInstance;
-
-      function raf(time: number) {
-        if (lenisInstance) {
-          lenisInstance.raf(time);
-          rafId = requestAnimationFrame(raf);
-        }
-      }
-      rafId = requestAnimationFrame(raf);
-    };
-
-    initLenis();
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -56,15 +37,11 @@ export function useSmoothScroll() {
           const targetElement = document.querySelector(anchor.hash);
           if (targetElement) {
             e.preventDefault();
-            if (lenisInstance) {
-              lenisInstance.scrollTo(targetElement as HTMLElement, {
-                offset: -80,
-                duration: 1.4,
-                easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-              });
-            } else {
-              targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
+            lenis.scrollTo(targetElement as HTMLElement, {
+              offset: -80,
+              duration: 1.4,
+              easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            });
           }
         } catch (err) {
           console.debug('Smooth scroll fallback error:', err);
@@ -75,12 +52,9 @@ export function useSmoothScroll() {
     document.addEventListener('click', handleAnchorClick);
 
     return () => {
-      if (rafId) cancelAnimationFrame(rafId);
       document.removeEventListener('click', handleAnchorClick);
-      if (lenisInstance) {
-        lenisInstance.destroy();
-        delete (window as unknown as { __lenis?: Lenis }).__lenis;
-      }
+      lenis.destroy();
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
     };
   }, []);
 }
