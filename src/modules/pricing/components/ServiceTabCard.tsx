@@ -367,14 +367,23 @@ export default function ServiceTabCard({
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2.5">
               Ngôn ngữ & Frameworks:
             </span>
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               {data.brands.map((brand, idx) => (
-                <span
+                <div
                   key={idx}
-                  className={`px-3 py-1.5 rounded-lg border text-xs font-extrabold tracking-wide ${brand.bgColor} ${brand.textColor}`}
+                  title={brand.name}
+                  className="group relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-2 shadow-xs hover:border-blue-500/60 hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
                 >
-                  {brand.name}
-                </span>
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="pointer-events-none absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2 py-0.5 text-[10px] font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 dark:bg-slate-100 dark:text-slate-900 z-20">
+                    {brand.name}
+                  </span>
+                </div>
               ))}
             </div>
           </div>

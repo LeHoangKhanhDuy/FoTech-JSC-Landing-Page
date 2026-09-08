@@ -2,6 +2,7 @@ export type ServiceId = 'website' | 'fohrm' | 'troovn' | 'fomed' | 'focode' | 'c
 
 export interface ServicePartnerBrand {
   name: string;
+  logo: string;
   badgeText?: string;
   bgColor?: string;
   textColor?: string;
