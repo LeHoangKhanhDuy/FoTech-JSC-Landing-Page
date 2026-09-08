@@ -365,7 +365,7 @@ export default function ServiceTabCard({
 
           <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2.5">
-              Thương hiệu tin dùng:
+              Ngôn ngữ & Frameworks:
             </span>
             <div className="flex flex-wrap items-center gap-2.5">
               {data.brands.map((brand, idx) => (
