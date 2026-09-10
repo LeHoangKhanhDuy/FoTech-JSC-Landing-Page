@@ -10,11 +10,14 @@ export interface FAQStatData {
 }
 
 export interface FAQSectionData {
-  badge: string;
   title: string;
-  description: string;
-  stats: FAQStatData[];
-  buttonText: string;
-  column1: FAQItemData[];
-  column2: FAQItemData[];
+  subtitle?: string;
+  ctaText?: string;
+  items: FAQItemData[];
+  badge?: string;
+  description?: string;
+  stats?: FAQStatData[];
+  buttonText?: string;
+  column1?: FAQItemData[];
+  column2?: FAQItemData[];
 }

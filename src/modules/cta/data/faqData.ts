@@ -1,8 +1,89 @@
-import { FAQSectionData } from "@/modules/cta/types/faqTypes";
+import { FAQItemData, FAQSectionData } from "@/modules/cta/types/faqTypes";
+
+export const faqItems: FAQItemData[] = [
+  {
+    id: "faq-1",
+    question: "Doanh nghiệp của chúng tôi có thể bắt đầu triển khai nhanh như thế nào?",
+    answer:
+      "Hầu hết các doanh nghiệp có thể hoàn tất khởi tạo và bắt đầu vận hành trong vòng 24 - 48 giờ. Đội ngũ kỹ sư của FoTech sẽ trực tiếp đồng hành khảo sát, kết nối hệ thống, chuyển giao dữ liệu và đào tạo nhân sự trọn gói.",
+  },
+  {
+    id: "faq-2",
+    question: "Hệ sinh thái FoTech hỗ trợ những tích hợp nào?",
+    answer:
+      "FoTech hỗ trợ tích hợp mở qua API với các hệ thống phổ biến: máy chấm công AI/FaceID, cổng thanh toán (VNPay, ZaloPay, MoMo, thẻ quốc tế), hóa đơn điện tử, thông báo Zalo ZNS, Telegram Bot và các phần mềm ERP kế toán hiện có.",
+  },
+  {
+    id: "faq-3",
+    question: "Tất cả các gói dịch vụ có bao gồm hỗ trợ chuyên gia trực tiếp không?",
+    answer:
+      "Chắc chắn có. FoTech cam kết chuẩn SLA phản hồi dưới 15 phút với đội ngũ hỗ trợ kỹ thuật tận tâm 24/7 qua hotline và nhóm hỗ trợ riêng biệt (Zalo/Telegram). Đối với khách hàng Enterprise, chúng tôi hỗ trợ kỹ thuật On-site trực tiếp tại văn phòng.",
+  },
+  {
+    id: "faq-4",
+    question: "Có yêu cầu quy mô nhân sự tối thiểu để áp dụng không?",
+    answer:
+      "Hoàn toàn không có giới hạn tối thiểu. Dù doanh nghiệp của bạn là nhóm khởi nghiệp từ 5 - 10 người hay chuỗi tập đoàn trên 5.000 nhân sự, kiến trúc Cloud-native của FoTech đều mở rộng mượt mà và tối ưu chi phí theo đúng nhu cầu sử dụng.",
+  },
+  {
+    id: "faq-5",
+    question: "Hình thức dùng thử và chu kỳ thanh toán được quy định ra sao?",
+    answer:
+      "Chúng tôi cung cấp gói trải nghiệm thử miễn phí lên đến 14 ngày đầy đủ tính năng để doanh nghiệp đánh giá thực tế. Doanh nghiệp có thể linh hoạt chọn thanh toán theo tháng hoặc theo năm với chiết khấu ưu đãi và xuất hóa đơn VAT đầy đủ.",
+  },
+  {
+    id: "faq-6",
+    question: "Nếu doanh nghiệp có quy trình đặc thù, FoTech có nhận may đo (Customize) không?",
+    answer:
+      "Đây là năng lực cốt lõi của FoTech. Đội ngũ kỹ sư R&D sẵn sàng khảo sát bài toán thực tế và lập trình các module tính năng may đo (Customization) tích hợp sâu vào hệ thống gốc, đáp ứng chuẩn xác 100% nghiệp vụ của doanh nghiệp bạn.",
+  },
+];
+
+export const englishFaqItems: FAQItemData[] = [
+  {
+    id: "faq-en-1",
+    question: "How quickly can my team get started?",
+    answer:
+      "Most teams are up and running in under an hour. Sign up, connect your workspace, and import your data, we'll handle the rest.",
+  },
+  {
+    id: "faq-en-2",
+    question: "What integrations do you offer?",
+    answer:
+      "We integrate with all major platforms including FaceID timekeeping, payment gateways (VNPay, ZaloPay, MoMo), e-invoicing, Zalo ZNS, Telegram, and accounting ERPs via secure Open APIs.",
+  },
+  {
+    id: "faq-en-3",
+    question: "Does every plan include human support?",
+    answer:
+      "Yes, 24/7 dedicated human support is included across all plans with an SLA under 15 minutes, plus on-site engineering support for Enterprise tiers.",
+  },
+  {
+    id: "faq-en-4",
+    question: "Is there a minimum team size?",
+    answer:
+      "No minimum team size required. Whether you're a team of 5 or 5,000+, our cloud-native platform scales seamlessly with your business needs.",
+  },
+  {
+    id: "faq-en-5",
+    question: "Which currencies and billing cycles are supported?",
+    answer:
+      "We support VND, USD, and major currencies with flexible monthly and annual billing cycles, accompanied by official VAT electronic invoices.",
+  },
+  {
+    id: "faq-en-6",
+    question: "Can I switch between monthly and annual billing?",
+    answer:
+      "Yes, you can upgrade, downgrade, or switch between billing cycles anytime from your account dashboard with prorated adjustments.",
+  },
+];
 
 export const faqData: FAQSectionData = {
+  title: "Các câu hỏi thường gặp",
+  subtitle: "Bạn không tìm thấy điều mình đang tìm kiếm?",
+  ctaText: "Liên hệ chúng tôi",
+  items: faqItems,
   badge: "HỖ TRỢ & GIẢI ĐÁP",
-  title: "Bạn còn vướng mắc? Hãy để chuyên gia hỗ trợ",
   description:
     "Các câu hỏi dưới đây giải đáp những thắc mắc cơ bản nhất. Đối với yêu cầu tư vấn lộ trình chuyển đổi số, báo giá Enterprise hay kiểm tra bảo mật, hãy gửi thông tin để đội ngũ FoTech đồng hành cùng bạn.",
   stats: [
@@ -16,63 +97,6 @@ export const faqData: FAQSectionData = {
     },
   ],
   buttonText: "Gửi yêu cầu tư vấn",
-  column1: [
-    {
-      id: "faq-1",
-      question:
-        "FoTech có tư vấn lộ trình triển khai phần mềm cho doanh nghiệp không?",
-      answer:
-        "Chắc chắn rồi. Đội ngũ chuyên gia của chúng tôi sẽ khảo sát quy trình thực tế, lập roadmap triển khai theo từng giai đoạn (chạy thử nghiệm Pilot, áp dụng từng phòng ban và mở rộng toàn công ty) để đảm bảo không làm gián đoạn vận hành.",
-    },
-    {
-      id: "faq-2",
-      question:
-        "Quy trình tư vấn, dùng thử và ký kết hợp đồng diễn ra như thế nào?",
-      answer:
-        "Quy trình được chuẩn hóa và minh bạch: Tiếp nhận yêu cầu -> Khảo sát & Demo giải pháp -> Cung cấp tài khoản dùng thử -> Thống nhất báo giá -> Ký kết hợp đồng điện tử -> Bàn giao & Đào tạo.",
-    },
-    {
-      id: "faq-3",
-      question:
-        "Đội ngũ nhân sự của chúng tôi có được đào tạo cách sử dụng hệ thống không?",
-      answer:
-        "Có. FoTech cung cấp tài liệu HDSD chi tiết, video trực quan và tổ chức các buổi Training trực tiếp (On-site hoặc Online) cho toàn bộ nhân sự liên quan. Chúng tôi cũng hỗ trợ onboarding cho nhân sự mới của bạn sau này.",
-    },
-    {
-      id: "faq-4",
-      question:
-        "Chính sách bảo hành và hỗ trợ kỹ thuật sau triển khai như thế nào?",
-      answer:
-        "Chúng tôi cam kết SLA phản hồi dưới 15 phút qua kênh hỗ trợ riêng biệt (Zalo/Telegram, Hotline). Hệ thống được bảo trì, sao lưu dữ liệu tự động 24/7 và cập nhật tính năng mới hoàn toàn miễn phí.",
-    },
-  ],
-  column2: [
-    {
-      id: "faq-5",
-      question:
-        "Chúng tôi có thể trải nghiệm thử nền tảng trước khi quyết định mua không?",
-      answer:
-        "Hoàn toàn được. FoTech cung cấp các gói dùng thử lên đến 14 ngày với đầy đủ tính năng cho các sản phẩm như FoHRM, FoMed, hay Troo.vn để doanh nghiệp đánh giá chính xác mức độ phù hợp trước khi đầu tư.",
-    },
-    {
-      id: "faq-6",
-      question: "FoTech có hỗ trợ xử lý kỹ thuật trực tiếp (On-site) không?",
-      answer:
-        "Có. Đối với các hệ thống Enterprise hoặc khi có sự cố hạ tầng đặc thù, mạng lưới kỹ sư của FoTech tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng luôn sẵn sàng có mặt trực tiếp tại văn phòng của khách hàng để xử lý.",
-    },
-    {
-      id: "faq-7",
-      question:
-        "Nếu doanh nghiệp có nghiệp vụ đặc thù, FoTech có nhận lập trình riêng (Customize) không?",
-      answer:
-        "Đây là thế mạnh của chúng tôi. Đội ngũ R&D sẽ tiếp nhận bài toán, đánh giá tính khả thi và phát triển các module tính năng may đo (Customization) tích hợp sâu vào hệ thống gốc để đáp ứng đúng 100% nghiệp vụ của bạn.",
-    },
-    {
-      id: "faq-8",
-      question:
-        "Hệ thống có dễ dàng nâng cấp khi quy mô nhân sự và dữ liệu công ty tăng lên?",
-      answer:
-        "Hệ thống được thiết kế theo kiến trúc Microservices trên nền tảng Cloud. Việc nâng cấp dung lượng lưu trữ, mở rộng số lượng tài khoản hay băng thông được thực hiện ngay tức thì mà không cần dừng hệ thống.",
-    },
-  ],
+  column1: faqItems.slice(0, 3),
+  column2: faqItems.slice(3, 6),
 };
