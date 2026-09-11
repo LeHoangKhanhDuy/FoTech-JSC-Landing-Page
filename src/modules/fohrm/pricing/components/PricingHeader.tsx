@@ -1,19 +1,18 @@
-import type { CSSProperties } from 'react';
-import { Zap } from 'lucide-react';
+import { Zap } from "lucide-react";
 
 interface PricingHeaderProps {
   badge: string;
   title: string;
   subtitle: string;
   className?: string;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
 }
 
 export default function PricingHeader({
   badge,
   title,
   subtitle,
-  className = '',
+  className = "",
   style,
 }: PricingHeaderProps) {
   return (
@@ -23,7 +22,7 @@ export default function PricingHeader({
         <span className="uppercase tracking-wider">{badge}</span>
       </div>
 
-      <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
+      <h2 className="mt-2 font-extrabold tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl leading-tight">
         {title}
       </h2>
 

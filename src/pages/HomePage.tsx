@@ -4,7 +4,6 @@ import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
 import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
 import SolutionSection from "@/components/sections/fohrm/SolutionSection";
 import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
-import FaqSection from "@/components/sections/fohrm/FaqSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import SEO from "@/components/common/SEO";
@@ -122,7 +121,6 @@ export default function HomePage() {
         <BenefitsSection />
         <SolutionSection />
         <PricingSection />
-        <FaqSection />
         <CtaSection />
       </main>
       <CorporateFooter />

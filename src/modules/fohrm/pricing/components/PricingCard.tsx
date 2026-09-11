@@ -22,6 +22,11 @@ function PricingCard({
 }: PricingCardProps) {
   const currentPrice = isYearly ? plan.annualPrice : plan.monthlyPrice;
   const isContact = currentPrice === 'Liên hệ';
+  const currentPeriod = isContact
+    ? plan.period
+    : isYearly
+      ? (plan.annualPeriod ?? plan.period.replace('/tháng', '/năm'))
+      : plan.period;
 
   return (
     <div
@@ -69,7 +74,7 @@ function PricingCard({
             {currentPrice}
           </span>
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-            {plan.period}
+            {currentPeriod}
           </span>
         </div>
 

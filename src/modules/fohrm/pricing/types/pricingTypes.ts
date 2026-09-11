@@ -8,6 +8,7 @@ export interface PricingPlan {
   monthlyPrice: string;
   annualPrice: string;
   period: string;
+  annualPeriod?: string;
   features: string[];
   subfeaturesHeading?: string;
   highlighted: boolean;
