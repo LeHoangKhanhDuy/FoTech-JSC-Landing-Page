@@ -69,17 +69,17 @@ export const BENTO_SYNC_STATS = {
 };
 
 export const BENTO_CONTENT = {
-  badge: 'Hệ Sinh Thái Mở',
-  sectionTitle: 'Trung Tâm Điều Phối Dữ Liệu Nhân Sự Master Data',
-  headline: 'Tích hợp liền mạch mọi nền tảng',
+  badge: "Hệ Sinh Thái Mở",
+  sectionTitle: "Trung Tâm Điều Phối Dữ Liệu Nhân Sự Master Data",
+  headline: "Tích hợp liền mạch mọi nền tảng",
   description:
-    'Kết nối mượt mà với máy chấm công, API Ngân hàng và các phần mềm nội bộ sẵn có. Dữ liệu nhân sự tự động luân chuyển xuyên suốt mà không cần nhập liệu thủ công.',
+    "Kết nối mượt mà với máy chấm công, API Ngân hàng và các phần mềm nội bộ sẵn có. Dữ liệu nhân sự tự động luân chuyển xuyên suốt mà không cần nhập liệu thủ công.",
   painPointHighlight:
-    'Đánh thẳng vào nỗi đau lớn nhất của kế toán và HR: Chấm dứt hoàn toàn việc xuất/nhập file Excel thủ công giữa các phần mềm khác nhau (loại bỏ triệt để Data Silos).',
+    "Đánh thẳng vào nỗi đau lớn nhất của kế toán và HR: Chấm dứt hoàn toàn việc xuất/nhập file Excel thủ công giữa các phần mềm khác nhau (loại bỏ triệt để Data Silos).",
   features: [
-    'Không còn nhập liệu Excel thủ công',
-    'Chấm công FaceID real-time tự động đổ về bảng công',
-    'Chi lương hàng loạt qua Bank API chỉ với 1 click',
-    'Tự động hạch toán chi phí lương sang MISA / FAST',
+    "Không còn nhập liệu Excel thủ công",
+    "Chấm công FaceID real-time tự động đổ về bảng công",
+    "Chi lương hàng loạt qua Bank API chỉ với 1 click",
+    "Quản lý định danh và Đăng nhập một lần (SSO)",
   ],
 };

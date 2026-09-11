@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { BENTO_SYNC_STATS } from '@/modules/fohrm/bento/data/bentoData';
 
-export const SyncProgressBar: React.FC = () => {
+interface SyncProgressBarProps {
+  recordsText?: string;
+}
+
+export const SyncProgressBar: React.FC<SyncProgressBarProps> = ({
+  recordsText = BENTO_SYNC_STATS.records,
+}) => {
   const [progress, setProgress] = useState(45);
 
   useEffect(() => {
@@ -28,7 +34,7 @@ export const SyncProgressBar: React.FC = () => {
         </div>
 
         <span className="text-[11px] sm:text-xs font-mono font-medium text-slate-400 select-none">
-          {BENTO_SYNC_STATS.records}
+          {recordsText}
         </span>
       </div>
 
