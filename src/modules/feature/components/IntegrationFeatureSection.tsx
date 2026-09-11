@@ -3,12 +3,15 @@ import { integrationFeatureData } from '@/modules/feature/data/integrationNodes'
 import IntegrationContent from '@/modules/feature/components/IntegrationContent';
 import OrbitalMap from '@/modules/feature/components/OrbitalMap';
 import ContactModal from '@/modules/contact/components/ContactModal';
+import { useIntegrationAnimation } from '@/modules/feature/hooks/useIntegrationAnimation';
 
 export default function IntegrationFeatureSection() {
   const [modalOpen, setModalOpen] = useState(false);
+  const { sectionRef, isInView } = useIntegrationAnimation();
 
   return (
     <section
+      ref={sectionRef}
       id="integrations"
       className="relative py-20 md:py-28 bg-slate-50 dark:bg-[#030817] text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300"
     >
@@ -21,15 +24,21 @@ export default function IntegrationFeatureSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <div className="lg:col-span-6 flex justify-center lg:justify-start">
             <IntegrationContent
+              key={isInView ? 'content-in' : 'content-out'}
               data={integrationFeatureData}
               onConnect={() => setModalOpen(true)}
+              className={isInView ? 'animate-hero-left' : 'opacity-0'}
+              style={isInView ? { animationDelay: '0.5s' } : undefined}
             />
           </div>
 
           <div className="lg:col-span-6 flex justify-center items-center">
             <OrbitalMap
+              key={isInView ? 'orbital-in' : 'orbital-out'}
               hubName={integrationFeatureData.hubName}
               nodes={integrationFeatureData.nodes}
+              className={isInView ? 'animate-hero-fade-in' : 'opacity-0'}
+              style={isInView ? { animationDelay: '0.6s' } : undefined}
             />
           </div>
         </div>

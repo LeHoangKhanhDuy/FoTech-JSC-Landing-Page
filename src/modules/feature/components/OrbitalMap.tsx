@@ -6,15 +6,22 @@ import OrbitalNode from "@/modules/feature/components/OrbitalNode";
 interface OrbitalMapProps {
   hubName: string;
   nodes: IntegrationNode[];
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export default function OrbitalMap({ hubName, nodes }: OrbitalMapProps) {
+export default function OrbitalMap({
+  hubName,
+  nodes,
+  className = "",
+  style,
+}: OrbitalMapProps) {
   const [activeNodeId, setActiveNodeId] = useState<string | null>(null);
 
   return (
     <div
-      className="relative w-full aspect-square max-w-[520px] mx-auto flex items-center justify-center select-none animate-fade-in-up"
-      style={{ animationDelay: "0.2s" }}
+      style={style}
+      className={`relative w-full aspect-square max-w-[520px] mx-auto flex items-center justify-center select-none ${className}`}
     >
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
