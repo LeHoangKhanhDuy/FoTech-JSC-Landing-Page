@@ -1,14 +1,18 @@
 export type BillingCycle = 'monthly' | 'yearly';
 
+export interface PriceDetails {
+  price: string;
+  period: string;
+  billingNote: string;
+}
+
 export interface PricingPlan {
   id: string;
   name: string;
   badge?: string;
   description: string;
-  monthlyPrice: string;
-  annualPrice: string;
-  period: string;
-  annualPeriod?: string;
+  monthly: PriceDetails;
+  annual: PriceDetails;
   features: string[];
   subfeaturesHeading?: string;
   highlighted: boolean;
