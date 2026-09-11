@@ -13,7 +13,6 @@ export const BentoIntegrationsCard: React.FC<BentoIntegrationsCardProps> = ({
 }) => {
   const {
     activeNodeId,
-    syncCount,
     handleNodeMouseEnter,
     handleNodeMouseLeave,
     handleNodeClick,
@@ -32,7 +31,6 @@ export const BentoIntegrationsCard: React.FC<BentoIntegrationsCardProps> = ({
           onNodeMouseEnter={handleNodeMouseEnter}
           onNodeMouseLeave={handleNodeMouseLeave}
           onNodeClick={handleNodeClick}
-          syncRecords={`1.${syncCount} hồ sơ`}
         />
       </div>
 
