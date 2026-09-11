@@ -3,7 +3,7 @@ import Hero from "@/modules/fohrm/hero/components";
 import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
 import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
 import SolutionSection from "@/components/sections/fohrm/SolutionSection";
-import PricingSection from "@/components/sections/fohrm/PricingSection";
+import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
 import FaqSection from "@/components/sections/fohrm/FaqSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import CtaSection from "@/modules/cta/components/CtaSection";
