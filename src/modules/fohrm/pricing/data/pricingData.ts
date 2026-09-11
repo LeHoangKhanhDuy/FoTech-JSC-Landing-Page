@@ -18,8 +18,8 @@ export const pricingData: PricingSectionData = {
       name: 'Starter',
       badge: 'Cá nhân & Đội nhóm',
       description: 'Phù hợp doanh nghiệp dưới 30 nhân sự bắt đầu số hóa chấm công & nghỉ phép.',
-      monthlyPrice: '15.000đ',
-      annualPrice: '12.000đ',
+      monthlyPrice: '29.000đ',
+      annualPrice: '276.000đ',
       period: '/nhân sự /tháng',
       features: [
         'Chấm công GPS, QR & Wifi đa điểm',
@@ -37,8 +37,8 @@ export const pricingData: PricingSectionData = {
       name: 'Growth',
       badge: 'Phổ biến nhất 🔥',
       description: 'Tối ưu cho doanh nghiệp tăng trưởng cần tự động hóa Payroll & Trợ lý AI.',
-      monthlyPrice: '35.000đ',
-      annualPrice: '28.000đ',
+      monthlyPrice: '49.000đ',
+      annualPrice: '468.000đ',
       period: '/nhân sự /tháng',
       subfeaturesHeading: 'Tất cả tính năng của gói Starter, cộng thêm:',
       features: [
