@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import Hero from "@/modules/fohrm/hero/components";
+import BentoSection from "@/modules/fohrm/bento/components/BentoSection";
 import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
 import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
 import SolutionSection from "@/components/sections/fohrm/SolutionSection";
@@ -140,6 +141,7 @@ export default function FoHRMHomePage() {
       <CorporateNavbar />
       <main>
         <Hero />
+        <BentoSection />
         <FeaturesSection />
         <BenefitsSection />
         <SolutionSection />
