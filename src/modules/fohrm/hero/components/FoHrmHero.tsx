@@ -4,13 +4,12 @@ import { FoHrmHeroProps } from "@/modules/fohrm/hero/types";
 import {
   HERO_RATING,
   HERO_TRUST_ITEMS,
-  HERO_PARTNER_LOGOS,
 } from "@/modules/fohrm/hero/data/heroData";
 import { useHeroEmailCta } from "@/modules/fohrm/hero/hooks/useHeroEmailCta";
 import { HeroRatingBadge } from "@/modules/fohrm/hero/components/HeroRatingBadge";
 import { HeroEmailCta } from "@/modules/fohrm/hero/components/HeroEmailCta";
 import { HeroVisual } from "@/modules/fohrm/hero/components/HeroVisual";
-import { HeroLogoTicker } from "@/modules/fohrm/hero/components/HeroLogoTicker";
+import { TrustedCompanies } from "@/modules/fohrm/hero/components/TrustedCompanies";
 
 export const FoHrmHero = memo(function FoHrmHero({
   className = "",
@@ -80,10 +79,7 @@ export const FoHrmHero = memo(function FoHrmHero({
         </div>
 
         <div className="mt-14 sm:mt-18 lg:mt-22">
-          <HeroLogoTicker
-            heading="Hơn 500+ doanh nghiệp đã tiết kiệm hàng nghìn giờ vận hành cùng FoHRM"
-            partners={HERO_PARTNER_LOGOS}
-          />
+          <TrustedCompanies />
         </div>
       </div>
 
