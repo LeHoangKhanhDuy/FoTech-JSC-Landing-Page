@@ -7,17 +7,26 @@ interface FAQItemProps {
   isOpen: boolean;
   onToggle: () => void;
   delayIndex?: number;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-function FAQItem({ item, isOpen, onToggle, delayIndex = 0 }: FAQItemProps) {
+function FAQItem({
+  item,
+  isOpen,
+  onToggle,
+  delayIndex = 0,
+  className = '',
+  style,
+}: FAQItemProps) {
   return (
     <div
-      className={`group rounded-2xl border transition-all duration-300 overflow-hidden animate-fade-in-up ${
+      style={style ?? { animationDelay: `${delayIndex * 0.05}s` }}
+      className={`group rounded-2xl border transition-all duration-300 overflow-hidden ${
         isOpen
           ? 'border-blue-500/40 bg-white shadow-md shadow-blue-500/5 dark:border-white/20 dark:bg-white/[0.06] dark:shadow-xl dark:shadow-blue-950/20'
           : 'border-slate-200/90 bg-slate-50/70 hover:border-slate-300 hover:bg-slate-100/70 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20 dark:hover:bg-white/[0.05]'
-      }`}
-      style={{ animationDelay: `${delayIndex * 0.05}s` }}
+      } ${className}`}
     >
       <button
         type="button"

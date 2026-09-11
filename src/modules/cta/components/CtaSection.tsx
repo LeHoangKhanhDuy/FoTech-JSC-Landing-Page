@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { faqData } from '@/modules/cta/data/faqData';
 import FAQItem from '@/modules/cta/components/FAQItem';
 import ContactModal from '@/modules/contact/components/ContactModal';
+import { useCtaAnimation } from '@/modules/cta/hooks/useCtaAnimation';
 
 export default function CtaSection() {
   const [modalState, setModalState] = useState<{
@@ -10,6 +11,7 @@ export default function CtaSection() {
   }>({ isOpen: false, type: 'consulting' });
 
   const [openId, setOpenId] = useState<string | null>(faqData.items[0]?.id || null);
+  const { sectionRef, isInView } = useCtaAnimation();
 
   const handleToggle = (id: string) => {
     setOpenId((prevId) => (prevId === id ? null : id));
@@ -17,6 +19,7 @@ export default function CtaSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="faq"
       className="relative py-18 bg-white dark:bg-[#020817] text-slate-900 dark:text-slate-100 overflow-hidden transition-colors duration-300"
     >
@@ -26,7 +29,11 @@ export default function CtaSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
+        <div
+          key={isInView ? 'cta-header-in' : 'cta-header-out'}
+          className={`text-center mb-10 sm:mb-12 ${isInView ? 'animate-hero-up' : 'opacity-0'}`}
+          style={isInView ? { animationDelay: '0.4s' } : undefined}
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
             {faqData.title}
           </h2>
@@ -47,11 +54,17 @@ export default function CtaSection() {
         <div className="max-w-3xl mx-auto space-y-3 sm:space-y-3.5">
           {faqData.items.map((item, idx) => (
             <FAQItem
-              key={item.id}
+              key={isInView ? `${item.id}-in` : `${item.id}-out`}
               item={item}
               isOpen={openId === item.id}
               onToggle={() => handleToggle(item.id)}
               delayIndex={idx}
+              className={isInView ? 'animate-hero-up' : 'opacity-0'}
+              style={
+                isInView
+                  ? { animationDelay: `${0.3 + idx * 0.2}s` }
+                  : undefined
+              }
             />
           ))}
         </div>

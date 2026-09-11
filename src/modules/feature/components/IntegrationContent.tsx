@@ -5,14 +5,21 @@ import { IntegrationFeatureData } from "@/modules/feature/types/feature-type";
 interface IntegrationContentProps {
   data: IntegrationFeatureData;
   onConnect?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function IntegrationContent({
   data,
   onConnect,
+  className = "",
+  style,
 }: IntegrationContentProps) {
   return (
-    <div className="flex flex-col items-start text-left space-y-6 max-w-xl animate-fade-in-up">
+    <div
+      style={style}
+      className={`flex flex-col items-start text-left space-y-6 max-w-xl ${className}`}
+    >
       <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1.5 text-xs font-bold text-blue-600 backdrop-blur-md hover:border-blue-400 dark:border-blue-500/30 dark:bg-blue-950/60 dark:text-blue-400 transition-colors">
         <Share2 className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
         <span className="uppercase tracking-wider">{data.badge}</span>
