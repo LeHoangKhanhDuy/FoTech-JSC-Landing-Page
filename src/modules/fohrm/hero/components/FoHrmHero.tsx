@@ -42,12 +42,15 @@ export const FoHrmHero = memo(function FoHrmHero({
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="animate-hero-left" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="w-full flex justify-center sm:justify-start animate-hero-left"
+              style={{ animationDelay: "0.3s" }}
+            >
               <HeroRatingBadge rating={HERO_RATING} />
             </div>
 
             <h1
-              className="mt-6 font-extrabold tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.12] animate-hero-left"
+              className="mt-6 w-full text-center sm:text-left font-extrabold tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.12] animate-hero-left"
               style={{ animationDelay: "0.4s" }}
             >
               Giải phóng bộ máy nhân sự.

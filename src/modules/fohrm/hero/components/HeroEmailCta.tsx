@@ -53,7 +53,7 @@ export const HeroEmailCta = memo(function HeroEmailCta({
         )}
       </form>
 
-      <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <div className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-x-4 sm:gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
         {trustItems.map((item) => (
           <div key={item.id} className="inline-flex items-center gap-1.5">
             <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400 shrink-0" aria-hidden="true" />
