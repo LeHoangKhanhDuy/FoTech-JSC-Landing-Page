@@ -1,20 +1,12 @@
-import { useState, useEffect, useCallback, memo } from "react";
+import { memo } from "react";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
-import toast from "react-hot-toast";
-import { ContactModalProps, ContactFormData } from "@/modules/contact/types";
+import { ContactModalProps } from "@/modules/contact/types";
 import { ContactHeader } from "@/modules/contact/components/ContactHeader";
 import { ContactFormFields } from "@/modules/contact/components/ContactFormFields";
 import { ContactProductSelect } from "@/modules/contact/components/ContactProductSelect";
 import { ContactSuccessView } from "@/modules/contact/components/ContactSuccessView";
-
-const initialFormData: ContactFormData = {
-  fullName: "",
-  email: "",
-  phone: "",
-  company: "",
-  selectedProductId: "",
-};
+import { useContactModal } from "@/modules/contact/hooks/useContactModal";
 
 export const ContactModal = memo(function ContactModal({
   isOpen,
@@ -23,85 +15,17 @@ export const ContactModal = memo(function ContactModal({
   subtitle,
   type = "consulting",
 }: ContactModalProps) {
-  const [formData, setFormData] = useState<ContactFormData>(initialFormData);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  const handleFieldChange = useCallback(
-    (field: keyof ContactFormData, value: string) => {
-      setFormData((prev) => ({ ...prev, [field]: value }));
-      setErrors((prev) => (prev[field] ? { ...prev, [field]: "" } : prev));
-    },
-    []
-  );
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    isSuccess,
+    handleFieldChange,
+    handleSubmit,
+    handleReset,
+  } = useContactModal({ isOpen, onClose });
 
   if (!isOpen) return null;
-
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
-
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = "Vui lòng nhập họ và tên người đại diện";
-    } else if (formData.fullName.trim().length < 2) {
-      newErrors.fullName = "Họ và tên phải có ít nhất 2 ký tự";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Vui lòng nhập email làm việc";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      newErrors.email = "Email không hợp lệ (Ví dụ: name@company.com)";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Vui lòng nhập số điện thoại liên hệ";
-    } else if (!/^[0-9+\s-]{9,15}$/.test(formData.phone.trim())) {
-      newErrors.phone = "Số điện thoại không hợp lệ";
-    }
-
-    if (!formData.company.trim()) {
-      newErrors.company = "Vui lòng nhập tên doanh nghiệp";
-    } else if (formData.company.trim().length < 2) {
-      newErrors.company = "Tên doanh nghiệp phải có ít nhất 2 ký tự";
-    }
-
-    if (!formData.selectedProductId || !formData.selectedProductId.trim()) {
-      newErrors.selectedProductId = "Vui lòng chọn sản phẩm / giải pháp quan tâm";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      toast.success("Đăng ký thành công! Đội ngũ FoTech sẽ hỗ trợ bạn ngay.");
-    }, 400);
-  };
-
-  const handleReset = () => {
-    setIsSuccess(false);
-    setErrors({});
-    setFormData(initialFormData);
-    onClose();
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
