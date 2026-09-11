@@ -4,7 +4,7 @@ export const pricingData: PricingSectionData = {
   badge: "BẢNG GIÁ MINH BẠCH",
   title: "Linh Hoạt Theo Quy Mô Doanh Nghiệp",
   subtitle:
-    "Không chi phí ẩn. Chọn gói giải pháp phù hợp hôm nay và mở rộng theo tốc độ phát triển của bạn.",
+    "Không chi phí ẩn. Chọn gói giải pháp phù hợp cho doanh nghiệp của bạn",
   freeTrial: {
     title: "Dùng thử miễn phí",
     badge: "14 NGÀY",

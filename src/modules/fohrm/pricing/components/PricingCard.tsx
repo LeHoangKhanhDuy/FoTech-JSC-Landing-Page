@@ -28,10 +28,17 @@ function PricingCard({
       style={style}
       className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-8 transition-all duration-300 ${
         plan.highlighted
-          ? 'border-2 border-blue-600/80 bg-white shadow-2xl shadow-blue-600/10 dark:border-blue-500/50 dark:bg-[radial-gradient(ellipse_at_bottom,rgba(37,99,235,0.22)_0%,rgba(7,18,37,0.95)_70%)] dark:shadow-2xl dark:shadow-blue-950/40 lg:scale-[1.03] z-10'
-          : 'border border-slate-100/90 bg-white/90 shadow-sm hover:shadow-md hover:border-slate-300 dark:border-white/10 dark:bg-slate-900/60 dark:shadow-xl dark:shadow-black/20 dark:hover:border-white/20'
+          ? 'border-2 border-blue-600 bg-[radial-gradient(ellipse_at_bottom,rgba(37,99,235,0.16)_0%,rgba(238,245,255,0.85)_40%,#ffffff_75%)] shadow-2xl shadow-blue-500/20 dark:border-blue-500/50 dark:bg-[radial-gradient(ellipse_at_bottom,rgba(37,99,235,0.25)_0%,rgba(7,18,37,0.95)_70%)] dark:shadow-2xl dark:shadow-blue-950/40 lg:scale-[1.03] z-10'
+          : 'border border-slate-200/90 bg-white/90 shadow-sm hover:shadow-md hover:border-slate-300 dark:border-white/10 dark:bg-slate-900/60 dark:shadow-xl dark:shadow-black/20 dark:hover:border-white/20'
       } ${className}`}
     >
+      {plan.highlighted && (
+        <div
+          className="absolute -inset-1 -z-10 rounded-[28px] bg-gradient-to-b from-blue-400/15 via-blue-500/20 to-blue-600/30 blur-xl pointer-events-none opacity-80 dark:opacity-90"
+          aria-hidden="true"
+        />
+      )}
+
       {plan.highlighted && plan.badge && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
           <span className="inline-flex items-center gap-1 rounded-full bg-blue-600 px-4 py-1 text-xs font-extrabold text-white shadow-md shadow-blue-500/40 tracking-wide whitespace-nowrap">
