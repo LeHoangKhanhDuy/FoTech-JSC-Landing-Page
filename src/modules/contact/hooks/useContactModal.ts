@@ -14,10 +14,21 @@ export const initialContactFormData: ContactFormData = {
 interface UseContactModalOptions {
   isOpen: boolean;
   onClose: () => void;
+  initialEmail?: string;
+  defaultProductId?: string;
 }
 
-export function useContactModal({ isOpen, onClose }: UseContactModalOptions) {
-  const [formData, setFormData] = useState<ContactFormData>(initialContactFormData);
+export function useContactModal({
+  isOpen,
+  onClose,
+  initialEmail,
+  defaultProductId,
+}: UseContactModalOptions) {
+  const [formData, setFormData] = useState<ContactFormData>(() => ({
+    ...initialContactFormData,
+    email: initialEmail || "",
+    selectedProductId: defaultProductId || "",
+  }));
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -25,13 +36,20 @@ export function useContactModal({ isOpen, onClose }: UseContactModalOptions) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      if (initialEmail !== undefined || defaultProductId !== undefined) {
+        setFormData((prev) => ({
+          ...prev,
+          ...(initialEmail !== undefined ? { email: initialEmail } : {}),
+          ...(defaultProductId !== undefined ? { selectedProductId: defaultProductId } : {}),
+        }));
+      }
     } else {
       document.body.style.overflow = "";
     }
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, initialEmail, defaultProductId]);
 
   const handleFieldChange = useCallback(
     (field: keyof ContactFormData, value: string) => {

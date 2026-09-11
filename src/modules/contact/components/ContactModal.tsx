@@ -14,6 +14,8 @@ export const ContactModal = memo(function ContactModal({
   title,
   subtitle,
   type = "consulting",
+  initialEmail,
+  defaultProductId,
 }: ContactModalProps) {
   const {
     formData,
@@ -23,7 +25,7 @@ export const ContactModal = memo(function ContactModal({
     handleFieldChange,
     handleSubmit,
     handleReset,
-  } = useContactModal({ isOpen, onClose });
+  } = useContactModal({ isOpen, onClose, initialEmail, defaultProductId });
 
   if (!isOpen) return null;
 
