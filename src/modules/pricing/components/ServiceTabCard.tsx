@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { ServiceTabItemData } from '@/modules/pricing/types/pricing-types';
 import StarBorder from '@/components/ui/StarBorder';
 import ServiceMockPreview from '@/modules/pricing/components/ServiceMockPreview';
@@ -82,7 +82,7 @@ function ServiceTabCard({
                 key={idx}
                 className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200"
               >
-                <Sparkles
+                <Check
                   className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
