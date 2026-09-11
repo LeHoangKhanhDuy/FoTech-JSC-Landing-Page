@@ -2,11 +2,16 @@ import { HowItWorksStepItem } from "@/modules/marketing/types";
 
 interface HowItWorksCardProps {
   step: HowItWorksStepItem;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export function HowItWorksCard({ step }: HowItWorksCardProps) {
+export function HowItWorksCard({ step, className = "", style }: HowItWorksCardProps) {
   return (
-    <div className="group relative rounded-[28px] p-7 sm:p-8 bg-white border border-slate-100/80 text-slate-900 shadow-sm hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 dark:bg-slate-900/70 dark:border-slate-800/90 dark:text-white backdrop-blur-md transition-all duration-300">
+    <div
+      style={style}
+      className={`group relative rounded-[28px] p-7 sm:p-8 bg-white border border-slate-100/80 text-slate-900 shadow-sm hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 dark:bg-slate-900/70 dark:border-slate-800/90 dark:text-white backdrop-blur-md transition-all duration-300 ${className}`}
+    >
       <div className="flex items-start justify-between mb-6">
         <span className="font-serif italic text-4xl sm:text-5xl font-light tracking-tight select-none text-slate-300/90 group-hover:text-blue-600 dark:text-slate-500 dark:group-hover:text-blue-400 transition-colors">
           {step.number}

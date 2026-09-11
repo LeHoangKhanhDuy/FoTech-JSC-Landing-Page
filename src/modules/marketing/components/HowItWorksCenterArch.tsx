@@ -1,8 +1,19 @@
 import FoTechLogo from "@/assets/FoTech_Logo.png";
 
-export function HowItWorksCenterArch() {
+interface HowItWorksCenterArchProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function HowItWorksCenterArch({
+  className = "",
+  style,
+}: HowItWorksCenterArchProps = {}) {
   return (
-    <div className="lg:col-span-4 relative h-full min-h-[460px] sm:min-h-[500px] rounded-[28px] bg-gradient-to-b from-[#0d214d] via-[#091738] to-[#030919] shadow-2xl shadow-blue-950/50 backdrop-blur-xl overflow-hidden flex flex-col items-center justify-center p-6 transition-all duration-300">
+    <div
+      style={style}
+      className={`lg:col-span-4 relative h-full min-h-[460px] sm:min-h-[500px] rounded-[28px] bg-gradient-to-b from-[#0d214d] via-[#091738] to-[#030919] shadow-2xl shadow-blue-950/50 backdrop-blur-xl overflow-hidden flex flex-col items-center justify-center p-6 transition-all duration-300 ${className}`}
+    >
       <div className="absolute -top-12 w-80 h-80 rounded-full bg-blue-500/30 blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.35)_0%,rgba(37,99,235,0.15)_50%,transparent_80%)] pointer-events-none" />
       <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-blue-500/40 flex items-center justify-center">

@@ -2,7 +2,11 @@ import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { servicesTabData } from '@/modules/pricing/data/pricing-data';
 import { ServiceId } from '@/modules/pricing/types/pricing-types';
 
-export function useServicesSection() {
+interface UseServicesSectionOptions {
+  enabled?: boolean;
+}
+
+export function useServicesSection({ enabled = true }: UseServicesSectionOptions = {}) {
   const [activeTabId, setActiveTabId] = useState<ServiceId>('website');
   const [slideDirection, setSlideDirection] = useState<'right' | 'left'>('right');
   const [modalState, setModalState] = useState<{
@@ -27,6 +31,8 @@ export function useServicesSection() {
   }, []);
 
   useEffect(() => {
+    if (!enabled) return;
+
     const interval = setInterval(() => {
       if (
         !isHoveredRef.current &&
@@ -50,7 +56,7 @@ export function useServicesSection() {
       window.removeEventListener('blur', handleWindowBlurOrLeave);
       document.removeEventListener('visibilitychange', handleWindowBlurOrLeave);
     };
-  }, [advanceToNextTab]);
+  }, [enabled, advanceToNextTab]);
 
   const activeTabData = useMemo(() => {
     return servicesTabData.find((tab) => tab.id === activeTabId) || servicesTabData[0];

@@ -1,8 +1,16 @@
 import { Sparkles } from "lucide-react";
 
-export function HowItWorksHeader() {
+interface HowItWorksHeaderProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function HowItWorksHeader({
+  className = "",
+  style,
+}: HowItWorksHeaderProps = {}) {
   return (
-    <div className="max-w-2xl mb-12 sm:mb-16">
+    <div style={style} className={`max-w-2xl mb-12 sm:mb-16 ${className}`}>
       <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-600 mb-3.5 backdrop-blur-md dark:border-blue-500/20 dark:bg-blue-950/40 dark:text-blue-400">
         <Sparkles className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
         <span>Quy trình triển khai 4 bước</span>
