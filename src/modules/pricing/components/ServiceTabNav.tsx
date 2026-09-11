@@ -22,8 +22,7 @@ export default function ServiceTabNav({
   return (
     <div
       style={style}
-      className={`w-full overflow-x-auto py-2 px-4 sm:px-0 flex justify-start sm:justify-center mb-8 sm:mb-10 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${className}`}
-      data-lenis-prevent
+      className={`w-full overflow-x-auto py-2 px-4 sm:px-0 flex justify-start sm:justify-center mb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

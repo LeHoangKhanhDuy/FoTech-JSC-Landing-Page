@@ -41,10 +41,10 @@ export default function ServicesHeader({
       </div>
 
       <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-[46px] leading-[1.15]">
-        Bảng giá thiết kế và Sản phẩm dịch vụ của <span className="text-blue-600 dark:text-blue-500">FOTECH</span>
+        Bảng giá và Sản phẩm của <span className="text-blue-600 dark:text-blue-500">FOTECH</span>
       </h2>
 
-      <p className="mt-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-medium">
+      <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-medium">
         Tùy biến theo đặc thù từng ngành để triển khai chiến lược vận hành hiệu quả
       </p>
     </div>

@@ -26,11 +26,11 @@ function ServiceTabCard({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="rounded-3xl bg-white/95 p-6 sm:p-10 backdrop-blur-md shadow-xl shadow-slate-200/50 dark:border-slate-800/80 dark:bg-slate-900/40 dark:shadow-2xl dark:shadow-blue-950/20 max-w-6xl mx-auto overflow-hidden relative"
+      className="rounded-3xl bg-white p-6 shadow-xl shadow-slate-200/50 dark:border-slate-800/80 dark:bg-slate-900/60 dark:shadow-2xl dark:shadow-blue-950/20 max-w-6xl mx-auto overflow-hidden relative"
     >
       <div
         key={data.id}
-        className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center will-change-transform ${slideAnimationClass}`}
+        className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transform-gpu ${slideAnimationClass}`}
       >
         <div className="lg:col-span-6 relative flex justify-center items-center">
           <div className="absolute -inset-4 rounded-3xl bg-blue-600/10 dark:bg-blue-600/15 blur-2xl pointer-events-none" />

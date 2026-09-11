@@ -19,7 +19,7 @@ export default function ServicesSection() {
     handleCloseModal,
     handleMouseEnter,
     handleMouseLeave,
-  } = useServicesSection();
+  } = useServicesSection({ enabled: isInView });
 
   return (
     <section
@@ -51,7 +51,7 @@ export default function ServicesSection() {
         />
 
         <div
-          key={isInView ? `card-wrap-in-${activeTabId}` : 'card-wrap-out'}
+          key={isInView ? 'srv-card-in' : 'srv-card-out'}
           className={isInView ? 'animate-hero-right' : 'opacity-0'}
           style={isInView ? { animationDelay: '0.6s' } : undefined}
         >
