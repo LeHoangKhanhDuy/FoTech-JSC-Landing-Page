@@ -15,16 +15,16 @@ export const HERO_TRUST_ITEMS: HeroTrustItem[] = [
 ];
 
 export const HERO_PARTNER_LOGOS: HeroPartnerLogo[] = [
-  { id: "fotech", name: "FoTech", highlight: true },
-  { id: "focode", name: "FoCode" },
-  { id: "fopos", name: "FoPOS" },
-  { id: "fomed", name: "FoMed" },
-  { id: "foedu", name: "FoEdu" },
-  { id: "fina", name: "FINA AI", highlight: true },
-  { id: "techcombank", name: "Techcombank" },
-  { id: "mbbank", name: "MB Bank" },
-  { id: "vietcombank", name: "Vietcombank" },
-  { id: "vng", name: "VNG Cloud" },
-  { id: "fpt", name: "FPT Telecom" },
-  { id: "viettel", name: "Viettel Solutions" },
+  { id: "reactjs", name: "React.js", highlight: true },
+  { id: "typescript", name: "TypeScript" },
+  { id: "c#", name: "C#" },
+  { id: "asp", name: "ASP.NET Core" },
+  { id: "laravel", name: "Laravel" },
+  { id: "finaai", name: "FINA AI", highlight: true },
+  { id: "php", name: "PHP" },
+  { id: "docker", name: "Docker" },
+  { id: "azure", name: "Azure" },
+  { id: "sqlserver", name: "SQL Server" },
+  { id: "tailwind", name: "Tailwind CSS" },
+  { id: "nextjs", name: "Next.js" },
 ];

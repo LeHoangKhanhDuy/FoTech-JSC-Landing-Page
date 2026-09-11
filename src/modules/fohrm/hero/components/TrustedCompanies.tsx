@@ -9,7 +9,7 @@ export interface TrustedCompaniesProps {
 }
 
 export const TrustedCompanies = memo(function TrustedCompanies({
-  heading = "Hơn 500+ doanh nghiệp đã tiết kiệm hàng nghìn giờ vận hành cùng FoHRM",
+  heading = "Hơn 20+ doanh nghiệp đã tin dùng FoHRM",
   partners = HERO_PARTNER_LOGOS,
   className = "",
 }: TrustedCompaniesProps) {
