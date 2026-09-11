@@ -1,6 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import HeroContent from "@/modules/hero/components/HeroContent";
-import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
+import TechnologyUsed from "@/modules/hero/components/TechnologyUsed";
 import HeroStats from "@/modules/hero/components/HeroStats";
 import LightRays from "@/components/ui/LightRays";
 import backgroundHero from "@/assets/backgroundHero.png";
@@ -66,7 +66,7 @@ export default function HeroCard() {
 
         <div className="w-full max-w-4xl mx-auto py-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
           <div className="w-28 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mx-auto rounded-full mb-5 opacity-75 shadow-sm shadow-blue-500/50" />
-          <TrustedCompanies />
+          <TechnologyUsed />
         </div>
 
         <div className="w-full py-2">

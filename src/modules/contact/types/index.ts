@@ -8,7 +8,10 @@ export interface ContactModalProps {
   title?: string;
   subtitle?: string;
   type?: ContactModalType;
+  initialEmail?: string;
+  defaultProductId?: string;
 }
+
 
 export interface ContactProductOption {
   id: string;
