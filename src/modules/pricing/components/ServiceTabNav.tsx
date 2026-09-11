@@ -6,6 +6,8 @@ interface ServiceTabNavProps {
   onSelectTab: (id: ServiceId) => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function ServiceTabNav({
@@ -14,10 +16,13 @@ export default function ServiceTabNav({
   onSelectTab,
   onMouseEnter,
   onMouseLeave,
+  className = "",
+  style,
 }: ServiceTabNavProps) {
   return (
     <div
-      className="w-full overflow-x-auto py-2 px-4 sm:px-0 flex justify-start sm:justify-center mb-8 sm:mb-10 animate-fade-in-up [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      style={style}
+      className={`w-full overflow-x-auto py-2 px-4 sm:px-0 flex justify-start sm:justify-center mb-8 sm:mb-10 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${className}`}
       data-lenis-prevent
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

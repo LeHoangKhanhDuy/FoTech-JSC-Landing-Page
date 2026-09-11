@@ -1,6 +1,14 @@
-export default function ServicesHeader() {
+interface ServicesHeaderProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export default function ServicesHeader({
+  className = "",
+  style,
+}: ServicesHeaderProps = {}) {
   return (
-    <div className="relative mx-auto mb-10 max-w-4xl text-center animate-fade-in-up">
+    <div style={style} className={`relative mx-auto mb-10 max-w-4xl text-center ${className}`}>
       <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-64 w-[600px] -translate-x-1/2 opacity-20 hidden sm:block">
         <svg
           viewBox="0 0 600 200"
