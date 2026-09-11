@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ThemeContext, type Theme } from './theme-context';
+import { ThemeContext, type Theme } from '@/contexts/theme-context';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
+      if (window.location.pathname.startsWith('/fohrm')) {
+        return 'dark';
+      }
       const stored =
         localStorage.getItem('fotech-theme') || localStorage.getItem('fotalent-theme');
       if (stored === 'dark' || stored === 'light') {

@@ -19,13 +19,9 @@
     />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://fotech.vn/" />
-
-    <!-- Icons & Manifest -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/FoTech_Logo.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Open Graph / Facebook / Zalo / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fotech.vn/" />
     <meta
@@ -43,8 +39,6 @@
     />
     <meta property="og:site_name" content="FoTech Ecosystem" />
     <meta property="og:locale" content="vi_VN" />
-
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -56,8 +50,6 @@
     />
     <meta name="twitter:image" content="https://fotech.vn/og-image.png" />
     <meta name="twitter:site" content="@FoTechVN" />
-
-    <!-- Performance: Resource Hints & Non-blocking Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,9 +70,13 @@
       />
     </noscript>
 
-    <!-- Theme Initializer (Default: Light Mode) -->
     <script>
       (function () {
+        var isFoHRM = window.location.pathname.startsWith("/fohrm");
+        if (isFoHRM) {
+          document.documentElement.classList.add("dark");
+          return;
+        }
         var stored =
           localStorage.getItem("fotech-theme") || localStorage.getItem("fotalent-theme");
         if (stored === "dark") {
@@ -91,7 +87,6 @@
       })();
     </script>
 
-    <!-- Schema.org Structured Data (Organization, WebSite, SoftwareApplication) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

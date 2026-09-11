@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import Hero from "@/modules/fohrm/hero/components";
 import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
@@ -7,6 +8,7 @@ import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import SEO from "@/components/common/SEO";
+import { useTheme } from "@/hooks/useTheme";
 
 const fohrmSchema = {
   "@context": "https://schema.org",
@@ -104,7 +106,28 @@ const fohrmSchema = {
   ],
 };
 
-export default function HomePage() {
+export default function FoHRMHomePage() {
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme("dark");
+
+    const lenis = (
+      window as unknown as {
+        __lenis?: {
+          scrollTo: (target: number, options?: { immediate?: boolean }) => void;
+        };
+      }
+    ).__lenis;
+
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [setTheme]);
+
   return (
     <div className="min-h-screen bg-white dark:bg-[#020817] text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <SEO
