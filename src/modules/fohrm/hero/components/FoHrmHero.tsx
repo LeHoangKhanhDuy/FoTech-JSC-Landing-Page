@@ -41,10 +41,15 @@ export const FoHrmHero = memo(function FoHrmHero({
 
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5 flex flex-col items-start animate-fade-in-up">
-            <HeroRatingBadge rating={HERO_RATING} />
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <div className="animate-hero-left" style={{ animationDelay: "0.3s" }}>
+              <HeroRatingBadge rating={HERO_RATING} />
+            </div>
 
-            <h1 className="mt-6 font-extrabold tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.12]">
+            <h1
+              className="mt-6 font-extrabold tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.12] animate-hero-left"
+              style={{ animationDelay: "0.4s" }}
+            >
               Giải phóng bộ máy nhân sự.
               <br />
               <span className="bg-blue-600 bg-clip-text text-transparent">
@@ -52,14 +57,20 @@ export const FoHrmHero = memo(function FoHrmHero({
               </span>
             </h1>
 
-            <p className="mt-5 text-base text-justify leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg max-w-xl">
+            <p
+              className="mt-5 text-base text-justify leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg max-w-xl animate-hero-left"
+              style={{ animationDelay: "0.5s" }}
+            >
               Nền tảng quản trị nhân sự thiết kế riêng cho doanh nghiệp hiện
               đại. Xử lý triệt để bài toán chấm công đa ca kíp, tự động hóa bảng
               lương động tuân thủ chặt chẽ pháp luật, cùng trợ lý AI FINA giúp
               số hóa toàn diện hệ thống vận hành.
             </p>
 
-            <div className="mt-8 w-full">
+            <div
+              className="mt-8 w-full animate-hero-left"
+              style={{ animationDelay: "0.6s" }}
+            >
               <HeroEmailCta
                 email={email}
                 emailError={emailError}
@@ -71,14 +82,17 @@ export const FoHrmHero = memo(function FoHrmHero({
           </div>
 
           <div
-            className="lg:col-span-7 relative animate-fade-in-up"
-            style={{ animationDelay: "0.15s" }}
+            className="lg:col-span-7 relative animate-hero-right"
+            style={{ animationDelay: "0.7s" }}
           >
             <HeroVisual />
           </div>
         </div>
 
-        <div className="mt-14 sm:mt-18 lg:mt-22">
+        <div
+          className="mt-14 sm:mt-18 lg:mt-22 animate-fade-in-up"
+          style={{ animationDelay: "0.8s" }}
+        >
           <TrustedCompanies />
         </div>
       </div>
