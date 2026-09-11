@@ -57,19 +57,28 @@ export default function HeroCard() {
       </div>
 
       <div className="relative z-10 flex-1 flex flex-col justify-evenly items-center w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 py-2">
-        <div className="w-full max-w-4xl mx-auto py-2">
+        <div
+          className="w-full max-w-4xl mx-auto py-2 animate-hero-down"
+          style={{ animationDelay: '0.3s' }}
+        >
           <HeroContent
             onOpenTrial={handleOpenTrial}
             onOpenConsulting={handleOpenConsulting}
           />
         </div>
 
-        <div className="w-full max-w-4xl mx-auto py-2 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+        <div
+          className="w-full max-w-4xl mx-auto py-2 animate-hero-down"
+          style={{ animationDelay: '0.4s' }}
+        >
           <div className="w-28 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 mx-auto rounded-full mb-5 opacity-75 shadow-sm shadow-blue-500/50" />
           <TechnologyUsed />
         </div>
 
-        <div className="w-full py-2">
+        <div
+          className="w-full py-2 animate-hero-up"
+          style={{ animationDelay: '0.5s' }}
+        >
           <HeroStats />
         </div>
       </div>

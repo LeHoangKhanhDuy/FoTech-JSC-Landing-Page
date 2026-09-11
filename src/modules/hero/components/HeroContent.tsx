@@ -4,11 +4,13 @@ import StarBorder from "@/components/ui/StarBorder";
 interface HeroContentProps {
   onOpenTrial?: () => void;
   onOpenConsulting?: () => void;
+  className?: string;
 }
 
 export default function HeroContent({
   onOpenTrial,
   onOpenConsulting,
+  className = "",
 }: HeroContentProps) {
   const handleTrial = () => {
     if (onOpenTrial) {
@@ -29,7 +31,7 @@ export default function HeroContent({
   };
 
   return (
-    <div className="mx-auto max-w-4xl text-center animate-fade-in-up flex flex-col items-center justify-center">
+    <div className={`mx-auto max-w-4xl text-center flex flex-col items-center justify-center ${className}`}>
       <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.12]">
         Hệ sinh thái giải pháp số{" "}
         <span className="text-blue-600">
