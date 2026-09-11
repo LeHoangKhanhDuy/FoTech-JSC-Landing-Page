@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { FreeTrialData } from '@/modules/fohrm/pricing/types/pricingTypes';
+import StarBorder from '@/components/ui/StarBorder';
 
 interface FreeTrialCardProps {
   data: FreeTrialData;
@@ -36,14 +37,22 @@ export default function FreeTrialCard({
           </p>
         </div>
 
-        <button
+        <StarBorder
+          as="button"
           type="button"
           onClick={onGetStarted}
-          className="inline-flex items-center justify-center gap-1.5 shrink-0 rounded-full bg-blue-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 hover:bg-blue-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95"
+          color="#93c5fd"
+          speed="4s"
+          backgroundColor="#2563eb"
+          textColor="#ffffff"
+          borderColor="#3b82f6"
+          className="shrink-0 cursor-pointer transition-transform hover:scale-105 active:scale-95 shadow-md shadow-blue-600/20"
         >
-          <span>{data.buttonText}</span>
-          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-        </button>
+          <span className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold">
+            <span>{data.buttonText}</span>
+            <ArrowRight className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+          </span>
+        </StarBorder>
       </div>
     </div>
   );

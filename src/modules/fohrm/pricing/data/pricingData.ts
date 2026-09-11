@@ -29,8 +29,8 @@ export const pricingData: PricingSectionData = {
         billingNote: "Thanh toán linh hoạt từng tháng",
       },
       features: [
-        "+20.000 đ /nhân sự thêm",
         "Sẵn 10 tài khoản nhân sự đầu tiên",
+        "+20.000 đ /nhân sự thêm",
         "Chấm công GPS, QR Code & Wi-Fi đa điểm",
         "Quản lý đơn từ & Quỹ phép năm tự động",
         "Bảng công linh hoạt cho nhân viên part-time / ca xoay",
@@ -58,8 +58,8 @@ export const pricingData: PricingSectionData = {
         billingNote: "Thanh toán linh hoạt từng tháng",
       },
       features: [
-        "+36.000 đ /nhân sự thêm",
         "Toàn bộ tính năng Starter + Sẵn 50 tài khoản nhân sự",
+        "+36.000 đ /nhân sự thêm",
         "Chấm công AI FaceID chống gian lận",
         "Bảng tổng lương (Master Payroll) cột động tùy biến",
         "Tự động trích nộp BHXH (10.5% & 23.5%) & Thuế TNCN lũy tiến 2026",

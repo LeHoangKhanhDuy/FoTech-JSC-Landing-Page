@@ -2,6 +2,7 @@ import { memo, type CSSProperties } from 'react';
 import { Check } from 'lucide-react';
 import { PricingPlan } from '@/modules/fohrm/pricing/types/pricingTypes';
 import PricingToggle from '@/modules/fohrm/pricing/components/PricingToggle';
+import StarBorder from '@/components/ui/StarBorder';
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -124,17 +125,29 @@ function PricingCard({
       </div>
 
       <div className="mt-8 pt-2">
-        <button
-          type="button"
-          onClick={() => onSelectPlan(plan.modalType)}
-          className={`w-full rounded-full py-3 px-5 text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${
-            plan.highlighted
-              ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25 hover:bg-blue-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100'
-              : 'bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 border border-slate-200/80 dark:border-white/10'
-          }`}
-        >
-          {plan.buttonText}
-        </button>
+        {plan.highlighted ? (
+          <StarBorder
+            as="button"
+            type="button"
+            onClick={() => onSelectPlan(plan.modalType)}
+            color="#93c5fd"
+            speed="4s"
+            backgroundColor="#2563eb"
+            textColor="#ffffff"
+            borderColor="#3b82f6"
+            className="w-full cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-blue-600/25"
+          >
+            <span className="text-xs sm:text-sm font-bold">{plan.buttonText}</span>
+          </StarBorder>
+        ) : (
+          <button
+            type="button"
+            onClick={() => onSelectPlan(plan.modalType)}
+            className="w-full rounded-full py-3 px-5 text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer hover:scale-[1.02] active:scale-[0.98] bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 border border-slate-200/80 dark:border-white/10"
+          >
+            {plan.buttonText}
+          </button>
+        )}
       </div>
     </div>
   );
