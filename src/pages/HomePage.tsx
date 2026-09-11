@@ -1,12 +1,11 @@
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
-import Hero from "@/components/sections/fohrm/Hero";
+import Hero from "@/modules/fohrm/hero/components";
 import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
 import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
 import SolutionSection from "@/components/sections/fohrm/SolutionSection";
 import PricingSection from "@/components/sections/fohrm/PricingSection";
 import FaqSection from "@/components/sections/fohrm/FaqSection";
 import CorporateFooter from "@/components/layout/CorporateFooter";
-import TrustedCompanies from "@/modules/hero/components/TrustedCompanies";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import SEO from "@/components/common/SEO";
 
@@ -119,7 +118,6 @@ export default function HomePage() {
       <CorporateNavbar />
       <main>
         <Hero />
-        <TrustedCompanies />
         <FeaturesSection />
         <BenefitsSection />
         <SolutionSection />
