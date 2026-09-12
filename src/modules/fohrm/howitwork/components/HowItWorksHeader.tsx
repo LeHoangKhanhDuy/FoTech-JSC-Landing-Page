@@ -8,12 +8,13 @@ export function HowItWorksHeader() {
         Quy Trình Tự Động Hóa 4 Bước
       </span>
 
-      <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
-        Vận Hành Nhân Sự & Tính Lương Tự Động Liền Mạch
+      <h2 className="mt-4 font-black tracking-tight text-slate-900 dark:text-white text-2xl sm:text-3xl lg:text-4xl">
+        Vận Hành Nhân Sự & Tính Lương Tự Động
       </h2>
 
       <p className="mt-4 text-base text-slate-600 dark:text-slate-300 sm:text-lg leading-relaxed">
-        Khám phá quy trình khép kín tối tân của FoHRM: Từ điểm danh nhận diện khuôn mặt FaceID AI, phân ca linh hoạt, tính lương tự động đến chi trả 1-click qua Bank API.
+        Khám phá quy trình khép kín tối tân của FoHRM: Đa dạng phương thức chấm công, phân ca linh hoạt, tính lương tự động đến chi trả
+        1-click qua Bank API
       </p>
     </div>
   );
