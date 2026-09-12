@@ -1,4 +1,6 @@
-import type { StepData } from '../types/howItWorkTypes';
+import type { StepData } from '@/modules/fohrm/howitwork/types/howItWorkTypes';
+import fohrmImg1 from '@/assets/fohrmIMG1.png';
+import fohrmImg2 from '@/assets/fohrmIMG2.png';
 
 export const HOW_IT_WORKS_STEPS: StepData[] = [
   {
@@ -14,7 +16,8 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Đồng bộ dữ liệu chấm công thời gian thực (Real-time Cloud Sync)',
     ],
     accentColor: '#2563eb', // Blue
-    visualType: 'faceid',
+    image: fohrmImg1,
+    imageAlt: 'FoHRM - Chấm công thông minh, đơn giản, chính xác, hiệu quả',
     metrics: [
       { label: 'Tốc độ nhận diện', value: '0.2s', trend: 'Tức thời' },
       { label: 'Độ chuẩn xác', value: '99.8%', trend: 'Anti-spoofing' },
@@ -34,7 +37,8 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Duyệt đơn từ thông minh 1-click trực tiếp trên Mobile App & Zalo OA',
     ],
     accentColor: '#06b6d4', // Cyan
-    visualType: 'fina_ai',
+    image: fohrmImg2,
+    imageAlt: 'FINA AI - Trợ lý nhân sự thông minh, đồng hành cùng bộ phận nhân sự',
     metrics: [
       { label: 'Thời gian duyệt đơn', value: '< 5s', trend: 'Tự động' },
       { label: 'Tự động hóa tác vụ', value: '90%', trend: 'Tiết kiệm 80h/tháng' },
@@ -54,7 +58,8 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Xuất phiếu lương điện tử mã hóa mật khẩu OTP gửi riêng từng nhân sự',
     ],
     accentColor: '#f59e0b', // Amber/Orange
-    visualType: 'payroll',
+    image: fohrmImg1,
+    imageAlt: 'FoHRM - Bảng tính lương tự động chuẩn Luật Lao động 2026',
     metrics: [
       { label: 'Tốc độ chốt lương', value: '3 phút', trend: 'Nhanh gấp 10 lần' },
       { label: 'Tỷ lệ chính xác', value: '100%', trend: 'Chuẩn luật' },
@@ -74,7 +79,8 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Tự động hạch toán bút toán chi phí nhân công sang phần mềm kế toán',
     ],
     accentColor: '#10b981', // Emerald
-    visualType: 'bank_api',
+    image: fohrmImg2,
+    imageAlt: 'FoHRM - Chi trả lương Open Banking API & đồng bộ kế toán MISA/FAST',
     metrics: [
       { label: 'Tốc độ giải ngân', value: '30s', trend: 'Hàng loạt' },
       { label: 'Kết nối ngân hàng', value: '4+ Big Banks', trend: 'Open API' },

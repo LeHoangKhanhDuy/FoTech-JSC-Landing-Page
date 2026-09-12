@@ -1,5 +1,3 @@
-export type StepVisualType = 'faceid' | 'fina_ai' | 'payroll' | 'bank_api';
-
 export interface StepMetric {
   label: string;
   value: string;
@@ -14,7 +12,8 @@ export interface StepData {
   description: string;
   highlights: string[];
   accentColor: string;
-  visualType: StepVisualType;
+  image: string;
+  imageAlt?: string;
   metrics?: StepMetric[];
 }
 
