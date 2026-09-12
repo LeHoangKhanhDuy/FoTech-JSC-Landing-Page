@@ -19,7 +19,7 @@ export const BentoIntegrationsCard: React.FC<BentoIntegrationsCardProps> = ({
   } = useBentoHub(isInView);
 
   return (
-    <div className="group relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-white dark:bg-[#070a12] border border-slate-200/80 dark:border-white/10 p-4 sm:p-7 lg:p-8 shadow-xl shadow-slate-900/5 dark:shadow-2xl dark:shadow-blue-950/25 transition-all duration-300 hover:border-blue-500/40 dark:hover:border-blue-500/30">
+    <div className="group relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-white dark:bg-[#070a12] border border-slate-200/80 dark:border-white/10 p-4 sm:p-7 lg:p-8 shadow-xl shadow-slate-900/5 dark:shadow-2xl dark:shadow-blue-950/25 transition-all duration-300">
       <div
         className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-blue-500/10 dark:bg-blue-600/15 blur-[80px] rounded-full pointer-events-none"
         aria-hidden="true"
