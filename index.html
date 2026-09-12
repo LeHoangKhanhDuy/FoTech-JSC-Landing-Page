@@ -74,7 +74,13 @@
       (function () {
         var isFoHRM = window.location.pathname.startsWith("/fohrm");
         if (isFoHRM) {
-          document.documentElement.classList.add("dark");
+          var fohrmStored =
+            localStorage.getItem("fohrm-theme") || localStorage.getItem("fotech-theme");
+          if (fohrmStored === "light") {
+            document.documentElement.classList.remove("dark");
+          } else {
+            document.documentElement.classList.add("dark");
+          }
           return;
         }
         var stored =
