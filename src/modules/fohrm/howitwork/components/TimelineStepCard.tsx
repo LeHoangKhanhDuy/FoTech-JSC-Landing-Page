@@ -11,13 +11,13 @@ export function TimelineStepCard({
     <motion.div
       initial={{ opacity: 0, x: isReversed ? 25 : -25 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 1, ease: 'easeOut' }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       className={`relative flex flex-col justify-center ${
-        isReversed ? 'md:text-left' : 'md:text-left'
+        isReversed ? "md:text-left" : "md:text-left"
       }`}
     >
-      <div className="inline-flex items-center gap-2 self-start rounded-full border border-blue-500/20 bg-blue-50/90 px-3.5 py-1 text-xs font-bold text-blue-600 dark:border-blue-500/30 dark:bg-blue-950/60 dark:text-blue-400">
+      <div className="inline-flex items-center gap-2 self-start rounded-full border border-blue-500 bg-blue-50/90 px-3.5 py-1 text-xs font-bold text-blue-600 dark:border-blue-500/30 dark:bg-blue-950/60 dark:text-blue-400">
         <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
         <span>{step.badge}</span>
       </div>
@@ -38,7 +38,9 @@ export function TimelineStepCard({
           >
             <Check
               className={`h-4 w-4 shrink-0 mt-0.5 transition-colors duration-300 ${
-                isActive ? 'text-blue-600 dark:text-cyan-400' : 'text-emerald-500'
+                isActive
+                  ? "text-blue-600 dark:text-cyan-400"
+                  : "text-emerald-500"
               }`}
               aria-hidden="true"
             />

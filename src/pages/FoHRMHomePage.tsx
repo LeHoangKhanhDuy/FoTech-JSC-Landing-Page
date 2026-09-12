@@ -3,8 +3,6 @@ import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import Hero from "@/modules/fohrm/hero/components";
 import BentoSection from "@/modules/fohrm/bento/components/BentoSection";
 import HowItWorksSection from "@/modules/fohrm/howitwork/components/HowItWorksSection";
-import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
-import SolutionSection from "@/components/sections/fohrm/SolutionSection";
 import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import CtaSection from "@/modules/cta/components/CtaSection";
@@ -143,8 +141,6 @@ export default function FoHRMHomePage() {
         <Hero />
         <BentoSection />
         <HowItWorksSection />
-        <BenefitsSection />
-        <SolutionSection />
         <PricingSection />
         <CtaSection />
       </main>

@@ -13,7 +13,7 @@ export function HowItWorksSection({ className = '' }: HowItWorksSectionProps) {
   return (
     <section
       id="features"
-      className={`relative py-24 bg-slate-50/70 dark:bg-slate-900/60 overflow-hidden ${className}`}
+      className={`relative py-24 bg-white dark:bg-[#020817] overflow-hidden ${className}`}
     >
       <div
         aria-hidden="true"
