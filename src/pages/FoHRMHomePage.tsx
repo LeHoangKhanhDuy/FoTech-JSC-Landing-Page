@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import Hero from "@/modules/fohrm/hero/components";
 import BentoSection from "@/modules/fohrm/bento/components/BentoSection";
-import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
+import HowItWorksSection from "@/modules/fohrm/howitwork/components/HowItWorksSection";
 import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
 import SolutionSection from "@/components/sections/fohrm/SolutionSection";
 import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
@@ -142,7 +142,7 @@ export default function FoHRMHomePage() {
       <main>
         <Hero />
         <BentoSection />
-        <FeaturesSection />
+        <HowItWorksSection />
         <BenefitsSection />
         <SolutionSection />
         <PricingSection />
