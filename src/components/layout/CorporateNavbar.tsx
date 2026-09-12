@@ -87,11 +87,7 @@ export default function CorporateNavbar() {
     };
   }, [isOpen]);
 
-  const navLinkClass = `text-sm font-semibold transition-colors ${
-    scrolled
-      ? "text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-white"
-      : "text-slate-700 hover:text-blue-600"
-  }`;
+  const navLinkClass = `text-sm font-semibold transition-colors text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-white`;
 
   return (
     <>

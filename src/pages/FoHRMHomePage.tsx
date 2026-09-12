@@ -108,6 +108,7 @@ export default function FoHRMHomePage() {
   const hasInitializedRef = useRef(false);
 
   useEffect(() => {
+    document.documentElement.classList.add('dark');
     if (hasInitializedRef.current) return;
     hasInitializedRef.current = true;
 
