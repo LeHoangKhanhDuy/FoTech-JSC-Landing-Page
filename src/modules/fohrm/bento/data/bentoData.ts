@@ -66,7 +66,7 @@ export const BENTO_CENTER_NODE = {
 };
 
 export const BENTO_SYNC_STATS = {
-  status: 'Đang đồng bộ 4 hệ thống',
+  status: 'Đang đồng bộ hệ thống',
   records: '1.250 hồ sơ',
 };
 

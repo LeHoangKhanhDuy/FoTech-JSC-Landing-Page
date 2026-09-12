@@ -1,15 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import CorporateNavbar from "@/components/layout/CorporateNavbar";
 import Hero from "@/modules/fohrm/hero/components";
 import BentoSection from "@/modules/fohrm/bento/components/BentoSection";
-import FeaturesSection from "@/components/sections/fohrm/FeaturesSection";
-import BenefitsSection from "@/components/sections/fohrm/BenefitsSection";
-import SolutionSection from "@/components/sections/fohrm/SolutionSection";
+import HowItWorksSection from "@/modules/fohrm/howitwork/components/HowItWorksSection";
 import PricingSection from "@/modules/fohrm/pricing/components/FoHrmPricing";
 import CorporateFooter from "@/components/layout/CorporateFooter";
 import CtaSection from "@/modules/cta/components/CtaSection";
 import SEO from "@/components/common/SEO";
-import { useTheme } from "@/hooks/useTheme";
 
 const fohrmSchema = {
   "@context": "https://schema.org",
@@ -108,10 +105,12 @@ const fohrmSchema = {
 };
 
 export default function FoHRMHomePage() {
-  const { setTheme } = useTheme();
+  const hasInitializedRef = useRef(false);
 
   useEffect(() => {
-    setTheme("dark");
+    document.documentElement.classList.add('dark');
+    if (hasInitializedRef.current) return;
+    hasInitializedRef.current = true;
 
     const lenis = (
       window as unknown as {
@@ -127,7 +126,7 @@ export default function FoHRMHomePage() {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-  }, [setTheme]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#020817] text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
@@ -142,9 +141,7 @@ export default function FoHRMHomePage() {
       <main>
         <Hero />
         <BentoSection />
-        <FeaturesSection />
-        <BenefitsSection />
-        <SolutionSection />
+        <HowItWorksSection />
         <PricingSection />
         <CtaSection />
       </main>
