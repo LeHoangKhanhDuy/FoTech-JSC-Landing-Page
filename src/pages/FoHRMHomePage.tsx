@@ -112,14 +112,11 @@ export default function FoHRMHomePage() {
   const hasInitializedRef = useRef(false);
 
   useEffect(() => {
-    // Chỉ kích hoạt khi vừa truy cập/mount trang lần đầu
     if (hasInitializedRef.current) return;
     hasInitializedRef.current = true;
 
-    // Mode mặc định của trang FoHRM là dark mode khi vừa truy cập trang
     setTheme("dark");
 
-    // Đảm bảo cuộn lên đầu trang ngay khi vừa truy cập FoHRM
     const lenis = (
       window as unknown as {
         __lenis?: {

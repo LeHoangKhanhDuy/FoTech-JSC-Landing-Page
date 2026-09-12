@@ -20,7 +20,7 @@ export const IntegrationsHubGraphic: React.FC<IntegrationsHubGraphicProps> = ({
 
   return (
     <div
-      className="relative w-full h-[360px] overflow-hidden rounded-2xl bg-[#090c13] border border-white/[0.08] shadow-inner select-none"
+      className="relative w-full h-[360px] overflow-hidden rounded-2xl bg-slate-50/90 dark:bg-[#090c13] border border-slate-200/80 dark:border-white/[0.08] shadow-inner select-none transition-colors duration-300"
       aria-label="Đồ họa Hub Tích hợp Dữ liệu FoHRM"
     >
       <CurvedConnectors activeNodeId={activeNodeId} />
@@ -44,13 +44,15 @@ export const IntegrationsHubGraphic: React.FC<IntegrationsHubGraphicProps> = ({
                 title={`${node.label}: ${node.sublabel}`}
                 className={`group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full border transition-all duration-300 text-[10px] sm:text-xs md:text-sm font-medium whitespace-nowrap shadow-lg cursor-pointer ${
                   isHovered
-                    ? 'bg-slate-800 border-blue-400/80 text-white shadow-blue-500/25 scale-105 ring-2 ring-blue-500/20'
-                    : 'bg-[#121622]/90 hover:bg-[#191f30] border-white/10 hover:border-white/20 text-slate-200 shadow-black/50'
+                    ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-blue-500/25 scale-105 ring-2 ring-blue-500/20 dark:bg-slate-800 dark:border-blue-400/80 dark:text-white dark:shadow-blue-500/25'
+                    : 'bg-white hover:bg-slate-50 border-slate-200/90 hover:border-slate-300 text-slate-700 shadow-slate-900/5 dark:bg-[#121622]/90 dark:hover:bg-[#191f30] dark:border-white/10 dark:hover:border-white/20 dark:text-slate-200 dark:shadow-black/50'
                 }`}
               >
                 <NodeIcon
                   className={`h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0 transition-colors ${
-                    isHovered ? 'text-blue-400' : 'text-slate-400 group-hover:text-slate-200'
+                    isHovered
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'text-slate-400 group-hover:text-slate-600 dark:text-slate-400 dark:group-hover:text-slate-200'
                   }`}
                   aria-hidden="true"
                 />
