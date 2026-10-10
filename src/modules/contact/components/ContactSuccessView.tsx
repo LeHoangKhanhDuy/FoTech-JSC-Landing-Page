@@ -19,7 +19,7 @@ export function ContactSuccessView({
         Đăng Ký Thành Công!
       </h3>
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-        Cảm ơn bạn đã quan tâm đến giải pháp của <strong>FoTech JSC</strong>.
+        Cảm ơn bạn đã quan tâm đến giải pháp của <strong>FoTech Solutions</strong>.
         Chuyên viên tư vấn sẽ liên hệ tới email{" "}
         <span className="font-semibold text-blue-600 dark:text-blue-400">
           {email || "của bạn"}

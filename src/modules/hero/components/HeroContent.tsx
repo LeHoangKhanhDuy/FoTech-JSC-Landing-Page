@@ -16,7 +16,7 @@ export default function HeroContent({
     if (onOpenTrial) {
       onOpenTrial();
     } else {
-      const elem = document.getElementById("ecosystem");
+      const elem = document.getElementById("solutions");
       elem?.scrollIntoView({ behavior: "smooth" });
     }
   };

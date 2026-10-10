@@ -1,4 +1,4 @@
-import { Check, Sparkles } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { TimelineStepCardProps } from '@/modules/fohrm/howitwork/types/howItWorkTypes';
 
@@ -18,7 +18,6 @@ export function TimelineStepCard({
       }`}
     >
       <div className="inline-flex items-center gap-2 self-start rounded-full border border-blue-500 bg-blue-50/90 px-3.5 py-1 text-xs font-bold text-blue-600 dark:border-blue-500/30 dark:bg-blue-950/60 dark:text-blue-400">
-        <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
         <span>{step.badge}</span>
       </div>
 

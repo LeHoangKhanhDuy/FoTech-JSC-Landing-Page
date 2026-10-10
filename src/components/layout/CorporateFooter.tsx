@@ -17,34 +17,38 @@ const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Công ty",
     links: [
-      { label: "Về FoTech", href: "#why-trust" },
-      { label: "Tuyển dụng", href: "#careers", badge: "WE'RE HIRING" },
+      { label: "Về FoTech", href: "/#why-trust" },
+      {
+        label: "Tuyển dụng",
+        href: "mailto:hi@fotech.vn?subject=Ung%20tuyen%20FoTech",
+        badge: "WE'RE HIRING",
+      },
     ],
   },
   {
     title: "Liên hệ",
     links: [
-      { label: "Hotline: 1900 xxxx", href: "tel:1900xxxx" },
+      { label: "Hotline: 1900 xxxx" },
       { label: "Email: hi@fotech.vn", href: "mailto:hi@fotech.vn" },
-      { label: "Trụ sở chính: TP. Hồ Chí Minh", href: "#contact" },
+      { label: "Trụ sở chính: TP. Hồ Chí Minh", href: "/#contact" },
     ],
   },
   {
     title: "Sản phẩm",
     links: [
-      { label: "Thiết kế website", href: "#" },
+      { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
       { label: "FoHRM (Quản trị Nhân sự)", to: "/fohrm" },
-      { label: "Troo.vn (Tìm & Quản lý Trọ)", href: "#troovn" },
-      { label: "FoMed (Quản lý Phòng khám)", href: "#fomed" },
-      { label: "FoCode (Sàn TMĐT)", href: "#focode" },
+      { label: "Troo.vn (Tìm & Quản lý Trọ)", href: "/?service=troovn#solutions" },
+      { label: "FoMed (Quản lý Phòng khám)", href: "/?service=fomed#solutions" },
+      { label: "FoCode (Sàn TMĐT)", href: "/?service=focode#solutions" },
     ],
   },
   {
     title: "Tài nguyên",
     links: [
-      { label: "Câu chuyện khách hàng", href: "#why-trust" },
-      { label: "Tài liệu API & Docs", href: "#integrations" },
-      { label: "Hỏi đáp (FAQ)", href: "#faq" },
+      { label: "Câu chuyện khách hàng", href: "/#why-trust" },
+      { label: "Tài liệu API & Docs", href: "/#integrations" },
+      { label: "Hỏi đáp (FAQ)", href: "/#faq" },
     ],
   },
 ];
@@ -107,20 +111,22 @@ export default function CorporateFooter() {
                 <ul className="mt-4 space-y-2.5 text-xs sm:text-sm font-medium text-blue-100">
                   {section.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="flex items-center">
-                      {link.to ? (
+                      {link.to || link.href?.startsWith("/") ? (
                         <Link
-                          to={link.to}
+                          to={link.to || link.href!}
                           className="hover:text-white transition-colors"
                         >
                           {link.label}
                         </Link>
-                      ) : (
+                      ) : link.href ? (
                         <a
-                          href={link.href || "#"}
+                          href={link.href}
                           className="hover:text-white transition-colors"
                         >
                           {link.label}
                         </a>
+                      ) : (
+                        <span>{link.label}</span>
                       )}
                       {link.badge && (
                         <span className="ml-2.5 px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-white/20 text-white border border-white/30">
@@ -149,18 +155,17 @@ export default function CorporateFooter() {
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/20 py-6 text-xs text-blue-100/90 sm:flex-row">
-            <p>© {new Date().getFullYear()} FoTech JSC. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} FoTech Solutions. All rights reserved.</p>
 
             <div className="flex items-center gap-6 font-medium text-blue-100/90">
               {["Bảo mật", "Điều khoản dịch vụ", "Chính sách bảo mật"].map(
                 (text, i) => (
-                  <a
+                  <span
                     key={i}
-                    href="#"
-                    className="hover:text-white transition-colors"
+                    className="text-blue-100/70"
                   >
                     {text}
-                  </a>
+                  </span>
                 ),
               )}
             </div>

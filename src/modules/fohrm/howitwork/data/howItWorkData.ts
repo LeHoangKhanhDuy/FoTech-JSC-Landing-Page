@@ -1,6 +1,8 @@
 import type { StepData } from '@/modules/fohrm/howitwork/types/howItWorkTypes';
 import fohrmImg1 from '@/assets/fohrmIMG1.png';
 import fohrmImg2 from '@/assets/fohrmIMG2.png';
+import fohrmImg3 from '@/assets/fohrmIMG3.png';
+import fohrmImg4 from '@/assets/fohrmIMG4.png';
 
 export const HOW_IT_WORKS_STEPS: StepData[] = [
   {
@@ -58,7 +60,7 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Xuất phiếu lương điện tử mã hóa mật khẩu OTP gửi riêng từng nhân sự',
     ],
     accentColor: '#f59e0b', // Amber/Orange
-    image: fohrmImg1,
+    image: fohrmImg3,
     imageAlt: 'FoHRM - Bảng tính lương tự động chuẩn Luật Lao động 2026',
     metrics: [
       { label: 'Tốc độ chốt lương', value: '3 phút', trend: 'Nhanh gấp 10 lần' },
@@ -79,7 +81,7 @@ export const HOW_IT_WORKS_STEPS: StepData[] = [
       'Tự động hạch toán bút toán chi phí nhân công sang phần mềm kế toán',
     ],
     accentColor: '#10b981', // Emerald
-    image: fohrmImg2,
+    image: fohrmImg4,
     imageAlt: 'FoHRM - Chi trả lương Open Banking API & đồng bộ kế toán MISA/FAST',
     metrics: [
       { label: 'Tốc độ giải ngân', value: '30s', trend: 'Hàng loạt' },

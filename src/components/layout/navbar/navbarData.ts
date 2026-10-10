@@ -8,7 +8,6 @@ export interface EcosystemProduct {
   icon: ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
   color: string;
   link: string;
-  isRoute: boolean;
 }
 
 export interface NavLinkItem {
@@ -24,7 +23,6 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     icon: Users,
     color: "bg-blue-600",
     link: "/fohrm",
-    isRoute: true,
   },
   {
     name: "FoMed",
@@ -32,8 +30,7 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     desc: "Bệnh án điện tử chuẩn y tế, kho dược & khám chữa bệnh",
     icon: Stethoscope,
     color: "bg-[#0B4F4A]",
-    link: "/#solutions",
-    isRoute: false,
+    link: "/?service=fomed#solutions",
   },
   {
     name: "FoCode",
@@ -41,8 +38,7 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     desc: "Chợ mua bán Source Code Web & Ứng dụng",
     icon: ShoppingBag,
     color: "bg-[#F97316]",
-    link: "/#solutions",
-    isRoute: false,
+    link: "/?service=focode#solutions",
   },
   {
     name: "Troo.vn",
@@ -50,15 +46,14 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     desc: "Kết nối phòng trọ chính chủ & hợp đồng điện tử",
     icon: Home,
     color: "bg-amber-500",
-    link: "/#solutions",
-    isRoute: false,
+    link: "/?service=troovn#solutions",
   },
 ];
 
 export const NAV_LINKS: NavLinkItem[] = [
-  { label: "Về chúng tôi", href: "#why-trust" },
-  { label: "Thiết kế website", href: "#solutions" },
-  { label: "Liên hệ", href: "#contact" },
+  { label: "Về chúng tôi", href: "/#why-trust" },
+  { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
+  { label: "Liên hệ", href: "/#contact" },
 ];
 
 export const NAV_LINK_CLASS =

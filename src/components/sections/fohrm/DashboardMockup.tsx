@@ -54,7 +54,7 @@ export default function DashboardMockup() {
             <div className="h-4 w-px bg-slate-200 dark:bg-slate-800" />
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-200">
               <Building2 className="h-3.5 w-3.5 text-blue-600" aria-hidden="true" />
-              <span>FoTech JSC - Operations Dashboard</span>
+              <span>FoTech Solutions - Operations Dashboard</span>
             </div>
           </div>
 

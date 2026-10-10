@@ -1,5 +1,3 @@
-import { Zap } from "lucide-react";
-
 interface PricingHeaderProps {
   badge: string;
   title: string;
@@ -18,7 +16,6 @@ export default function PricingHeader({
   return (
     <div style={style} className={`mx-auto max-w-3xl text-center ${className}`}>
       <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1 text-xs font-bold text-blue-600 dark:border-blue-500/30 dark:bg-blue-950/50 dark:text-blue-400">
-        <Zap className="h-3.5 w-3.5" aria-hidden="true" />
         <span className="uppercase tracking-wider">{badge}</span>
       </div>
 

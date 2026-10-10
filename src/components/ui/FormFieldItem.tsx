@@ -41,7 +41,7 @@ export const FormFieldItem = memo(function FormFieldItem({
     <div>
       <label
         htmlFor={id}
-        className="block text-xs font-semibold text-slate-700 dark:text-slate-300"
+        className="block text-left text-xs font-semibold text-slate-700 dark:text-slate-300"
       >
         {label} {required && <span className="text-rose-500 font-bold">*</span>}
       </label>
