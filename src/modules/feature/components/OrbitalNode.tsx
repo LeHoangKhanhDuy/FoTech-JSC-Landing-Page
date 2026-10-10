@@ -32,10 +32,6 @@ export default function OrbitalNode({
         setShowTooltip(false);
         onHover(null);
       }}
-      onClick={() => {
-        setShowTooltip((visible) => !visible);
-        onHover(isActive ? null : node.id);
-      }}
     >
       <div
         className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl border transition-all duration-300 backdrop-blur-md shadow-md ${
