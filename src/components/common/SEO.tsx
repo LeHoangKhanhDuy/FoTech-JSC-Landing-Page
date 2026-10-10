@@ -62,7 +62,7 @@ export default function SEO({
       "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     );
     setMetaTag("name", "author", "Công ty Cổ phần Công nghệ FoTech");
-    setMetaTag("name", "publisher", "FoTech JSC");
+    setMetaTag("name", "publisher", "FoTech Solutions");
     setCanonical(currentCanonical);
 
     setMetaTag("property", "og:title", title);

@@ -24,6 +24,8 @@ export function useSmoothScroll() {
     (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     const handleAnchorClick = (e: MouseEvent) => {
+      if (e.defaultPrevented) return;
+
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
       if (

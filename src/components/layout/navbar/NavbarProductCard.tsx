@@ -30,17 +30,9 @@ export function NavbarProductCard({ product, onClick }: NavbarProductCardProps) 
     </div>
   );
 
-  if (product.isRoute) {
-    return (
-      <Link to={product.link} onClick={onClick}>
-        {content}
-      </Link>
-    );
-  }
-
   return (
-    <a href={product.link} onClick={onClick}>
+    <Link to={product.link} onClick={onClick}>
       {content}
-    </a>
+    </Link>
   );
 }
