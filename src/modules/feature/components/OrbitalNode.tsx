@@ -18,7 +18,7 @@ export default function OrbitalNode({
 
   return (
     <div
-      className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer animate-float-card"
+      className={`absolute ${isActive || showTooltip ? "z-[60]" : "z-30"} transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer animate-float-card`}
       style={{
         left: `${node.x}%`,
         top: `${node.y}%`,
@@ -31,6 +31,10 @@ export default function OrbitalNode({
       onMouseLeave={() => {
         setShowTooltip(false);
         onHover(null);
+      }}
+      onClick={() => {
+        setShowTooltip((visible) => !visible);
+        onHover(isActive ? null : node.id);
       }}
     >
       <div
@@ -56,7 +60,7 @@ export default function OrbitalNode({
       </span>
 
       {showTooltip && (
-        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-48 p-2.5 rounded-xl border border-slate-200 bg-white/95 text-slate-800 shadow-xl backdrop-blur-xl z-50 pointer-events-none animate-fade-in dark:border-blue-500/40 dark:bg-slate-900/95 dark:text-slate-100">
+        <div className={`absolute ${node.y <= 20 ? "top-full mt-3" : "bottom-full mb-3"} ${node.x < 50 ? "left-0" : "right-0"} w-48 max-w-[calc(100vw-2rem)] p-2.5 rounded-xl border border-slate-200 bg-white/95 text-slate-800 shadow-xl backdrop-blur-xl z-50 pointer-events-none animate-fade-in dark:border-blue-500/40 dark:bg-slate-900/95 dark:text-slate-100`}>
           <div className="font-bold text-blue-600 dark:text-blue-400 mb-0.5">
             {node.sublabel || node.label}
           </div>
