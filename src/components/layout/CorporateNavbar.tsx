@@ -43,9 +43,9 @@ export default function CorporateNavbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-3 sm:top-4 z-50 px-4 sm:px-6 lg:px-8 pointer-events-none">
+      <header className="fixed inset-x-0 top-3 sm:top-4 z-50 px-2 sm:px-6 lg:px-8 pointer-events-none">
         <nav
-          className={`pointer-events-auto mx-auto flex h-16 sm:h-20 max-w-[1380px] items-center justify-between px-6 sm:px-8 rounded-2xl transition-all duration-300 ${
+          className={`pointer-events-auto mx-auto flex h-16 sm:h-20 max-w-[1380px] items-center justify-between px-4 sm:px-8 rounded-2xl transition-all duration-300 ${
             scrolled
               ? "border border-slate-200/90 bg-white/90 text-slate-900 shadow-xl shadow-slate-900/5 backdrop-blur-2xl dark:border-white/15 dark:bg-[#061129]/95 dark:text-white dark:shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
               : "border border-transparent bg-transparent shadow-none backdrop-blur-none"

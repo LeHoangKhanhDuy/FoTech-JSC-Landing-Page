@@ -25,12 +25,12 @@ export default function WhyTrustFoTech() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="contents lg:col-span-4 lg:flex lg:flex-col lg:gap-6">
             {[0, 2].map((idx, order) => (
               <HowItWorksCard
                 key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
-                className={isInView ? "animate-hero-left" : "opacity-0"}
+                className={`${idx === 0 ? "order-1" : "order-3"} lg:order-none ${isInView ? "animate-hero-left" : "opacity-0"}`}
                 style={
                   isInView
                     ? { animationDelay: `${0.5 + order * 0.4}s` }
@@ -41,16 +41,16 @@ export default function WhyTrustFoTech() {
           </div>
 
           <HowItWorksCenterArch
-            className={isInView ? "animate-hero-down" : "opacity-0"}
+            className={`order-5 lg:order-none ${isInView ? "animate-hero-down" : "opacity-0"}`}
             style={isInView ? { animationDelay: "0.5s" } : undefined}
           />
 
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="contents lg:col-span-4 lg:flex lg:flex-col lg:gap-6">
             {[1, 3].map((idx, order) => (
               <HowItWorksCard
                 key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
-                className={isInView ? "animate-hero-right" : "opacity-0"}
+                className={`${idx === 1 ? "order-2" : "order-4"} lg:order-none ${isInView ? "animate-hero-right" : "opacity-0"}`}
                 style={
                   isInView
                     ? { animationDelay: `${0.5 + order * 0.4}s` }
