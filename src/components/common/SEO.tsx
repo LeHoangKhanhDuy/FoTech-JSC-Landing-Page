@@ -16,7 +16,7 @@ const DEFAULT_DESCRIPTION =
   "Hệ sinh thái giải pháp số toàn diện từ FoTech bao gồm FoHRM (Quản trị Nhân sự & Tính lương AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech thông minh). Tối ưu hóa vận hành, tự động hóa quy trình cho doanh nghiệp Việt Nam.";
 const DEFAULT_KEYWORDS =
   "FoTech, FoHRM, Quản trị nhân sự AI, Chuyển đổi số doanh nghiệp, phần mềm tính lương tự động, ERP Việt Nam, FoMed, FoCode, Troo.vn, HR Tech 2026";
-const BASE_URL = "https://fotech.vn";
+const BASE_URL = "https://www.fotech.solutions";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/fotech-og-image.png`;
 
 function setMetaTag(nameOrProperty: "name" | "property", key: string, content: string) {
