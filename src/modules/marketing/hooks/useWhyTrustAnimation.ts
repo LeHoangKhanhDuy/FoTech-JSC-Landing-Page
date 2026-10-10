@@ -13,7 +13,10 @@ export function useWhyTrustAnimation() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
       },
       {
         threshold: 0.1,
