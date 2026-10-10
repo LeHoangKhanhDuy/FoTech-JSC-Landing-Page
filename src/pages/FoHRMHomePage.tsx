@@ -13,7 +13,7 @@ const fohrmSchema = {
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "@id": "https://fotech.vn/fohrm#software",
+      "@id": "https://www.fotech.solutions/fohrm#software",
       name: "FoHRM - Hệ sinh thái Quản trị Nhân sự & Tính lương AI",
       operatingSystem: "Web, iOS, Android, Cloud-based",
       applicationCategory: "BusinessApplication",
@@ -38,13 +38,13 @@ const fohrmSchema = {
           "@type": "ListItem",
           position: 1,
           name: "Trang chủ",
-          item: "https://fotech.vn/",
+          item: "https://www.fotech.solutions/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "FoHRM AI",
-          item: "https://fotech.vn/fohrm",
+          item: "https://www.fotech.solutions/fohrm",
         },
       ],
     },
@@ -134,7 +134,7 @@ export default function FoHRMHomePage() {
         title="FoHRM - Phần mềm Quản trị Nhân sự & Tính lương Tự động AI 2026"
         description="Giải pháp quản lý nhân sự HRM thông minh tích hợp trợ lý AI FINA, chấm công FaceID đa điểm, tính lương tự động 1-click, chi lương Bank API và tuân thủ 100% Luật lao động Việt Nam 2026."
         keywords="FoHRM, phần mềm quản lý nhân sự AI, tính lương tự động, chấm công FaceID, trợ lý ảo HR FINA, Bank API chi lương, phần mềm HRM tốt nhất 2026"
-        canonical="https://fotech.vn/fohrm"
+        canonical="https://www.fotech.solutions/fohrm"
         schema={fohrmSchema}
       />
       <CorporateNavbar />

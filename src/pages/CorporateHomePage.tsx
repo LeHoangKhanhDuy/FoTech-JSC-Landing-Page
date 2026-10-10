@@ -14,7 +14,7 @@ export default function CorporateHomePage() {
         title="FoTech - Nền tảng Chuyển đổi số & Quản trị Doanh nghiệp AI Hàng Đầu"
         description="Hệ sinh thái giải pháp số toàn diện từ FoTech: FoHRM (Quản trị Nhân sự & Tính lương AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech thông minh). Tối ưu vận hành doanh nghiệp 2026."
         keywords="FoTech, Hệ sinh thái số FoTech, Chuyển đổi số doanh nghiệp, FoHRM, FoMed, FoCode, Troo.vn, Quản trị AI 2026"
-        canonical="https://fotech.vn/"
+        canonical="https://www.fotech.solutions/"
       />
       <CorporateNavbar />
       <main>
