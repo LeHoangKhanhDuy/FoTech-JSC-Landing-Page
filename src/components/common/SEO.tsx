@@ -17,7 +17,7 @@ const DEFAULT_DESCRIPTION =
 const DEFAULT_KEYWORDS =
   "FoTech, FoHRM, Quản trị nhân sự AI, Chuyển đổi số doanh nghiệp, phần mềm tính lương tự động, ERP Việt Nam, FoMed, FoCode, Troo.vn, HR Tech 2026";
 const BASE_URL = "https://fotech.vn";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/fotech-og-image.png`;
 
 function setMetaTag(nameOrProperty: "name" | "property", key: string, content: string) {
   let element = document.querySelector(`meta[${nameOrProperty}="${key}"]`);
@@ -69,6 +69,13 @@ export default function SEO({
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:url", currentCanonical);
     setMetaTag("property", "og:image", ogImage);
+    setMetaTag(
+      "property",
+      "og:image:alt",
+      "FoTech - hệ sinh thái giải pháp số cho doanh nghiệp Việt"
+    );
+    setMetaTag("property", "og:image:width", "1672");
+    setMetaTag("property", "og:image:height", "941");
     setMetaTag("property", "og:type", ogType);
     setMetaTag("property", "og:site_name", "FoTech Ecosystem");
     setMetaTag("property", "og:locale", "vi_VN");

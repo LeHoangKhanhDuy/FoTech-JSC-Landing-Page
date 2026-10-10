@@ -20,7 +20,6 @@ export default function WhyTrustFoTech() {
 
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <HowItWorksHeader
-          key={isInView ? "header-in" : "header-out"}
           className={isInView ? "animate-hero-left" : "opacity-0"}
           style={isInView ? { animationDelay: "0.4s" } : undefined}
         />
@@ -29,7 +28,7 @@ export default function WhyTrustFoTech() {
           <div className="lg:col-span-4 flex flex-col gap-6">
             {[0, 2].map((idx, order) => (
               <HowItWorksCard
-                key={`${howItWorksSteps[idx].number}-${isInView ? "in" : "out"}`}
+                key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
                 className={isInView ? "animate-hero-left" : "opacity-0"}
                 style={
@@ -42,7 +41,6 @@ export default function WhyTrustFoTech() {
           </div>
 
           <HowItWorksCenterArch
-            key={isInView ? "arch-in" : "arch-out"}
             className={isInView ? "animate-hero-down" : "opacity-0"}
             style={isInView ? { animationDelay: "0.5s" } : undefined}
           />
@@ -50,7 +48,7 @@ export default function WhyTrustFoTech() {
           <div className="lg:col-span-4 flex flex-col gap-6">
             {[1, 3].map((idx, order) => (
               <HowItWorksCard
-                key={`${howItWorksSteps[idx].number}-${isInView ? "in" : "out"}`}
+                key={howItWorksSteps[idx].number}
                 step={howItWorksSteps[idx]}
                 className={isInView ? "animate-hero-right" : "opacity-0"}
                 style={

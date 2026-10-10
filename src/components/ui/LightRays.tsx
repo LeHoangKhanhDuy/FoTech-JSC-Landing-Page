@@ -151,8 +151,10 @@ const LightRays: React.FC<LightRaysProps> = ({
 
       if (!containerRef.current) return;
 
+      // Render the decorative background below device resolution. The shader is
+      // intentionally detailed, so full-resolution 60fps rendering is wasteful.
       const renderer = new Renderer({
-        dpr: 1,
+        dpr: 0.75,
         alpha: true,
       });
       rendererRef.current = renderer;
@@ -304,8 +306,6 @@ void main() {
       const updatePlacement = () => {
         if (!containerRef.current || !renderer) return;
 
-        renderer.dpr = 1;
-
         const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
         renderer.setSize(wCSS, hCSS);
 
@@ -322,6 +322,8 @@ void main() {
 
       let isIntersecting = true;
       let observer: IntersectionObserver | null = null;
+      let lastRenderTime = 0;
+      const frameInterval = 1000 / 30;
 
       const loop = (t: number) => {
         if (!isIntersecting) {
@@ -332,6 +334,12 @@ void main() {
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
+
+        if (t - lastRenderTime < frameInterval) {
+          animationIdRef.current = requestAnimationFrame(loop);
+          return;
+        }
+        lastRenderTime = t;
 
         uniforms.iTime.value = t * 0.001;
 

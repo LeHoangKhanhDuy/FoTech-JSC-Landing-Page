@@ -122,13 +122,13 @@ export const SERVICE_PREVIEW_CONFIGS: Record<ServiceId, ServicePreviewConfigItem
   },
   fomed: {
     gradient:
-      'from-rose-50 to-pink-50/80 dark:from-rose-900/40 dark:to-slate-900/80 border-rose-100',
+      'from-[#E6F3F1] to-[#E6F3F1]/80 dark:from-[#0B4F4A]/30 dark:to-slate-900/80 border-[#0B4F4A]/20',
     icon: Stethoscope,
-    iconColor: 'text-rose-600 dark:text-rose-400',
+    iconColor: 'text-[#0B4F4A] dark:text-[#76D7CC]',
     title: 'FoMed EMR System',
     badge: 'Chuẩn Bộ Y Tế',
     badgeClass:
-      'text-rose-700 bg-rose-100 dark:text-rose-400 dark:bg-rose-950/80 border-rose-300/80 dark:border-rose-500/30',
+      'text-[#0B4F4A] bg-[#0B4F4A]/10 dark:text-[#76D7CC] dark:bg-[#0B4F4A]/25 border-[#0B4F4A]/25 dark:border-[#0B4F4A]/50',
     indicator: {
       type: 'detail',
       detailTitle: 'Số bệnh án EMR',
@@ -139,24 +139,24 @@ export const SERVICE_PREVIEW_CONFIGS: Record<ServiceId, ServicePreviewConfigItem
       {
         label: 'Giảm thời gian chờ',
         value: '-90%',
-        colorClass: 'text-rose-600 dark:text-rose-400',
+        colorClass: 'text-[#0B4F4A] dark:text-[#76D7CC]',
       },
       {
         label: 'Kho dược tự động',
         value: 'Chính xác 100%',
-        colorClass: 'text-emerald-600 dark:text-emerald-400',
+        colorClass: 'text-[#0B4F4A] dark:text-[#76D7CC]',
       },
     ],
   },
   focode: {
     gradient:
-      'from-emerald-50 to-teal-50/80 dark:from-emerald-900/40 dark:to-slate-900/80 border-emerald-100',
+      'from-orange-50 to-amber-50/80 dark:from-orange-900/30 dark:to-slate-900/80 border-orange-100',
     icon: ShoppingBag,
-    iconColor: 'text-emerald-600 dark:text-emerald-400',
+    iconColor: 'text-orange-700 dark:text-orange-300',
     title: 'FoCode Marketplace',
     badge: '1.000+ Repos',
     badgeClass:
-      'text-emerald-700 bg-emerald-100 dark:text-emerald-400 dark:bg-emerald-950/80 border-emerald-300/80 dark:border-emerald-500/30',
+      'text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-950/60 border-orange-300/80 dark:border-orange-500/30',
     indicator: {
       type: 'detail',
       detailTitle: 'Bàn giao mã nguồn',
@@ -167,7 +167,7 @@ export const SERVICE_PREVIEW_CONFIGS: Record<ServiceId, ServicePreviewConfigItem
       {
         label: 'Tiết kiệm thời gian',
         value: '80% Dev',
-        colorClass: 'text-emerald-600 dark:text-emerald-400',
+        colorClass: 'text-orange-700 dark:text-orange-300',
       },
       {
         label: 'Kiểm duyệt Clean Code',
