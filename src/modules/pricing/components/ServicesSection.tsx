@@ -1,4 +1,6 @@
 import ContactModal from '@/modules/contact/components/ContactModal';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import ServicesHeader from '@/modules/pricing/components/ServicesHeader';
 import ServiceTabNav from '@/modules/pricing/components/ServiceTabNav';
 import ServiceTabCard from '@/modules/pricing/components/ServiceTabCard';
@@ -8,6 +10,7 @@ import { useServicesAnimation } from '@/modules/pricing/hooks/useServicesAnimati
 
 export default function ServicesSection() {
   const { sectionRef, isInView } = useServicesAnimation();
+  const location = useLocation();
 
   const {
     activeTabId,
@@ -20,6 +23,12 @@ export default function ServicesSection() {
     handleMouseEnter,
     handleMouseLeave,
   } = useServicesSection({ enabled: isInView });
+
+  useEffect(() => {
+    const requestedService = new URLSearchParams(location.search).get('service');
+    const service = servicesTabData.find((tab) => tab.id === requestedService);
+    if (service) handleSelectTab(service.id);
+  }, [location.search, handleSelectTab]);
 
   return (
     <section

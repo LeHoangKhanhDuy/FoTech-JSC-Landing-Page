@@ -19,7 +19,7 @@ export function ContactProductSelect({
 
   return (
     <div>
-      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+      <label className="block text-left text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
         Sản phẩm quan tâm <span className="text-rose-500 font-bold">*</span>
       </label>
 

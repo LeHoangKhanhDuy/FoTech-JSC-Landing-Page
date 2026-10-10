@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   ECOSYSTEM_PRODUCTS,
   NAV_LINK_CLASS,
+  NAV_LINKS,
 } from "@/components/layout/navbar/navbarData";
 import { NavbarProductCard } from "@/components/layout/navbar/NavbarProductCard";
 
@@ -11,9 +13,9 @@ export function NavbarDesktopMenu() {
 
   return (
     <div className="hidden md:flex items-center gap-8 relative">
-      <a href="#why-trust" className={NAV_LINK_CLASS}>
-        Về chúng tôi
-      </a>
+      <Link to={NAV_LINKS[0].href} className={NAV_LINK_CLASS}>
+        {NAV_LINKS[0].label}
+      </Link>
 
       <div
         className="relative py-3 -my-3 flex items-center"
@@ -53,12 +55,11 @@ export function NavbarDesktopMenu() {
         )}
       </div>
 
-      <a href="#solutions" className={NAV_LINK_CLASS}>
-        Thiết kế website
-      </a>
-      <a href="#contact" className={NAV_LINK_CLASS}>
-        Liên hệ
-      </a>
+      {NAV_LINKS.slice(1).map((link) => (
+        <Link key={link.href} to={link.href} className={NAV_LINK_CLASS}>
+          {link.label}
+        </Link>
+      ))}
     </div>
   );
 }

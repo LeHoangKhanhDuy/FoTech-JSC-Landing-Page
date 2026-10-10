@@ -55,26 +55,10 @@ export function NavbarMobileDrawer({
               Sản phẩm FoTech
             </div>
             {ECOSYSTEM_PRODUCTS.map((prod) => {
-              if (prod.isRoute) {
-                return (
-                  <Link
-                    key={prod.name}
-                    to={prod.link}
-                    onClick={onClose}
-                    className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
-                  >
-                    <span className={`h-2 w-2 rounded-full ${prod.color}`} />
-                    <span>{prod.name}</span>
-                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-normal">
-                      ({prod.tagline})
-                    </span>
-                  </Link>
-                );
-              }
               return (
-                <a
+                <Link
                   key={prod.name}
-                  href={prod.link}
+                  to={prod.link}
                   onClick={onClose}
                   className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
@@ -83,7 +67,7 @@ export function NavbarMobileDrawer({
                   <span className="text-[10px] text-slate-500 dark:text-slate-400 font-normal">
                     ({prod.tagline})
                   </span>
-                </a>
+                </Link>
               );
             })}
 
@@ -91,14 +75,14 @@ export function NavbarMobileDrawer({
               Điều hướng
             </div>
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 onClick={onClose}
                 className="block rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

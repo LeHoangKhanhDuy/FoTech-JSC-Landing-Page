@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 import { BENTO_CONTENT } from '@/modules/fohrm/bento/data/bentoData';
 import { BentoIntegrationsCard } from '@/modules/fohrm/bento/components/BentoIntegrationsCard';
 import { useBentoAnimation } from '@/modules/fohrm/bento/hooks/useBentoAnimation';
@@ -28,7 +27,6 @@ export const BentoSection: React.FC = () => {
           style={isInView ? { animationDelay: "0.3s" } : undefined}
         >
           <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3.5 py-1 text-xs font-bold text-blue-600 dark:bg-blue-950/50 dark:text-blue-400">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
             {BENTO_CONTENT.badge}
           </span>
 
