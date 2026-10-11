@@ -25,7 +25,7 @@ export const ContactModal = memo(function ContactModal({
     handleFieldChange,
     handleSubmit,
     handleReset,
-  } = useContactModal({ isOpen, onClose, initialEmail, defaultProductId });
+  } = useContactModal({ isOpen, onClose, initialEmail, defaultProductId, intent: type });
 
   if (!isOpen) return null;
 

@@ -28,8 +28,9 @@ const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Liên hệ",
     links: [
-      { label: "Hotline: 1900 xxxx" },
-      { label: "Email: hi@fotech.vn", href: "mailto:hi@fotech.vn" },
+      { label: "Hotline: 1900 xxxx" }, 
+      { label: "Email: lhkhanhduy.dev@gmail.com", href: "mailto:lhkhanhduy.dev@gmail.com" },
+      { label: "Email: maitrithanh06@gmail.com", href: "mailto:maitrithanh06@gmail.com" },
       { label: "Trụ sở chính: TP. Hồ Chí Minh", href: "/#contact" },
     ],
   },
@@ -38,8 +39,14 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
       { label: "FoHRM (Quản trị Nhân sự)", to: "/fohrm" },
-      { label: "Troo.vn (Tìm & Quản lý Trọ)", href: "/?service=troovn#solutions" },
-      { label: "FoMed (Quản lý Phòng khám)", href: "/?service=fomed#solutions" },
+      {
+        label: "Troo.vn (Tìm & Quản lý Trọ)",
+        href: "/?service=troovn#solutions",
+      },
+      {
+        label: "FoMed (Quản lý Phòng khám)",
+        href: "/?service=fomed#solutions",
+      },
       { label: "FoCode (Sàn TMĐT)", href: "/?service=focode#solutions" },
     ],
   },

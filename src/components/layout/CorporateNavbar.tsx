@@ -3,6 +3,7 @@ import { Menu, ArrowUpRight } from "lucide-react";
 import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
 import { NavbarDesktopMenu } from "@/components/layout/navbar/NavbarDesktopMenu";
 import { NavbarMobileDrawer } from "@/components/layout/navbar/NavbarMobileDrawer";
+import { acquireScrollLock } from "@/utils/scrollLock";
 
 const ContactModal = lazy(
   () => import("@/modules/contact/components/ContactModal"),
@@ -31,14 +32,8 @@ export default function CorporateNavbar() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    if (!isOpen) return;
+    return acquireScrollLock();
   }, [isOpen]);
 
   return (
