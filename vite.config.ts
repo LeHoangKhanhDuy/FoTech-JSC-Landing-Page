@@ -41,16 +41,17 @@ function localContactApi(): Plugin {
             return;
           }
 
-          const { default: handleContactRequest } = await import('./src/services/contact.ts');
+          const contactServicePath = './src/services/contact.js';
+          const { default: handleContactRequest } = await import(contactServicePath);
           await handleContactRequest(
             { method: request.method, body },
             {
-              setHeader: (name, value) => response.setHeader(name, value),
-              status(code) {
+              setHeader: (name: string, value: string) => response.setHeader(name, value),
+              status(code: number) {
                 response.statusCode = code;
                 return this;
               },
-              json(payload) {
+              json(payload: unknown) {
                 response.setHeader('Content-Type', 'application/json');
                 response.end(JSON.stringify(payload));
               },

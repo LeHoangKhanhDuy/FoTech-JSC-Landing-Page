@@ -2,31 +2,18 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_INTENTS = new Set(["demo", "trial", "consulting"]);
 const DEFAULT_CONTACT_EMAIL = "lhkhanhduy.dev@gmail.com";
 
-function getServerEnv(name: string) {
-  const runtime = globalThis as typeof globalThis & {
-    process?: { env?: Record<string, string | undefined> };
-  };
+function getServerEnv(name) {
+  const runtime = globalThis;
   return runtime.process?.env?.[name];
 }
 
-interface ContactRequest {
-  method?: string;
-  body?: Record<string, unknown>;
-}
-
-interface ContactResponse {
-  setHeader(name: string, value: string): void;
-  status(code: number): ContactResponse;
-  json(payload: unknown): unknown;
-}
-
-function clean(value: unknown, maxLength: number) {
+function clean(value, maxLength) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
-function escapeHtml(value: string) {
+function escapeHtml(value) {
   return value.replace(/[&<>"']/g, (character) => {
-    const entities: Record<string, string> = {
+    const entities = {
       "&": "&amp;",
       "<": "&lt;",
       ">": "&gt;",
@@ -37,10 +24,7 @@ function escapeHtml(value: string) {
   });
 }
 
-export default async function handleContactRequest(
-  request: ContactRequest,
-  response: ContactResponse,
-) {
+export default async function handleContactRequest(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ error: "Phương thức không được hỗ trợ." });
@@ -94,7 +78,7 @@ export default async function handleContactRequest(
     ["Email làm việc", email],
     ["Số điện thoại", phone],
     ["Sản phẩm quan tâm", productName],
-  ] as const;
+  ];
   const htmlRows = fields
     .map(
       ([label, value]) => `
