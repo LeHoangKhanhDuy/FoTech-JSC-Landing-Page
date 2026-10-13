@@ -15,6 +15,53 @@ export interface NavLinkItem {
   href: string;
 }
 
+export interface NavbarPageConfig {
+  brandName: string;
+  tagline: string;
+  homePath: string;
+  navLinks: NavLinkItem[];
+  showProducts: boolean;
+  ctaLabel: string;
+}
+
+export const FOTECH_NAVBAR_CONFIG: NavbarPageConfig = {
+  brandName: "FoTech",
+  tagline: "Enterprise Ecosystem",
+  homePath: "/",
+  navLinks: [
+    { label: "Về chúng tôi", href: "/#why-trust" },
+    { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
+    { label: "Liên hệ", href: "/#contact" },
+  ],
+  showProducts: true,
+  ctaLabel: "Liên hệ tư vấn",
+};
+
+const PRODUCT_NAVBAR_CONFIGS: Record<string, NavbarPageConfig> = {
+  "/app/fohrm": {
+    brandName: "FoHRM",
+    tagline: "Quản trị Nhân sự AI",
+    homePath: "/app/fohrm#hero",
+    navLinks: [
+      { label: "Tổng quan", href: "/app/fohrm#hero" },
+      { label: "Tích hợp", href: "/app/fohrm#integrations" },
+      { label: "Quy trình", href: "/app/fohrm#features" },
+      { label: "Bảng giá", href: "/app/fohrm#pricing" },
+      { label: "Câu hỏi thường gặp", href: "/app/fohrm#faq" },
+    ],
+    showProducts: false,
+    ctaLabel: "Dùng thử FoHRM",
+  },
+};
+
+export function getNavbarPageConfig(pathname: string): NavbarPageConfig {
+  return (
+    Object.entries(PRODUCT_NAVBAR_CONFIGS).find(([path]) =>
+      pathname === path || pathname.startsWith(`${path}/`),
+    )?.[1] ?? FOTECH_NAVBAR_CONFIG
+  );
+}
+
 export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
   {
     name: "FoHRM",
@@ -22,7 +69,7 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     desc: "Tự động hóa chấm công, tính lương & HRM",
     icon: Users,
     color: "bg-blue-600",
-    link: "/fohrm",
+    link: "/app/fohrm",
   },
   {
     name: "FoMed",
@@ -48,12 +95,6 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     color: "bg-amber-500",
     link: "/?service=troovn#solutions",
   },
-];
-
-export const NAV_LINKS: NavLinkItem[] = [
-  { label: "Về chúng tôi", href: "/#why-trust" },
-  { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
-  { label: "Liên hệ", href: "/#contact" },
 ];
 
 export const NAV_LINK_CLASS =

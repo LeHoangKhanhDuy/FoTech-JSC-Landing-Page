@@ -4,7 +4,7 @@ import { ThemeContext, type Theme } from '@/contexts/theme-context';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const isFoHRM = location.pathname.startsWith('/fohrm');
+  const isFoHRM = location.pathname.startsWith('/app/fohrm');
   const [fotechTheme, setFoTechTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
       const stored =
