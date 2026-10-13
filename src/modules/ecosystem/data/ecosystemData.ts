@@ -35,7 +35,7 @@ export const ecosystemProducts: EcosystemProduct[] = [
     },
     cta: {
       label: 'Khám phá FoHRM',
-      link: '/fohrm',
+    link: '/app/fohrm',
     },
   },
   {

@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
 import {
   ECOSYSTEM_PRODUCTS,
-  NAV_LINKS,
+  type NavbarPageConfig,
 } from "@/components/layout/navbar/navbarData";
 
 interface NavbarMobileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenConsulting: () => void;
+  onOpenPrimaryAction: () => void;
+  config: NavbarPageConfig;
 }
 
 export function NavbarMobileDrawer({
   isOpen,
   onClose,
-  onOpenConsulting,
+  onOpenPrimaryAction,
+  config,
 }: NavbarMobileDrawerProps) {
   return (
     <div
@@ -39,7 +41,7 @@ export function NavbarMobileDrawer({
       >
         <div>
           <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
-            <CorporateLogoMark />
+            <CorporateLogoMark config={config} />
             <button
               type="button"
               aria-label="Đóng menu"
@@ -51,10 +53,11 @@ export function NavbarMobileDrawer({
           </div>
 
           <div className="mt-6 space-y-1.5">
-            <div className="px-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Sản phẩm FoTech
-            </div>
-            {ECOSYSTEM_PRODUCTS.map((prod) => {
+            {config.showProducts && <>
+              <div className="px-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Sản phẩm FoTech
+              </div>
+              {ECOSYSTEM_PRODUCTS.map((prod) => {
               return (
                 <Link
                   key={prod.name}
@@ -70,11 +73,12 @@ export function NavbarMobileDrawer({
                 </Link>
               );
             })}
+            </>}
 
-            <div className="pt-4 px-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            {config.showProducts && <div className="pt-4 px-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Điều hướng
-            </div>
-            {NAV_LINKS.map((link) => (
+            </div>}
+            {config.navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
@@ -92,11 +96,11 @@ export function NavbarMobileDrawer({
             type="button"
             onClick={() => {
               onClose();
-              onOpenConsulting();
+              onOpenPrimaryAction();
             }}
             className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs cursor-pointer"
           >
-            <span>Liên hệ tư vấn</span>
+            <span>{config.ctaLabel}</span>
             <ArrowUpRight className="h-4 w-4 text-white" aria-hidden="true" />
           </button>
         </div>
