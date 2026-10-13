@@ -38,7 +38,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
     title: "Sản phẩm",
     links: [
       { label: "Bảng giá thiết kế", href: "/?service=website#solutions" },
-      { label: "FoHRM (Quản trị Nhân sự)", to: "/fohrm" },
+      { label: "FoHRM (Quản trị Nhân sự)", to: "/app/fohrm" },
       {
         label: "Troo.vn (Tìm & Quản lý Trọ)",
         href: "/?service=troovn#solutions",

@@ -4,12 +4,16 @@ import CorporateLogoMark from "@/components/layout/CorporateLogoMark";
 import { NavbarDesktopMenu } from "@/components/layout/navbar/NavbarDesktopMenu";
 import { NavbarMobileDrawer } from "@/components/layout/navbar/NavbarMobileDrawer";
 import { acquireScrollLock } from "@/utils/scrollLock";
+import { getNavbarPageConfig } from "@/components/layout/navbar/navbarData";
+import { useLocation } from "react-router-dom";
 
 const ContactModal = lazy(
   () => import("@/modules/contact/components/ContactModal"),
 );
 
 export default function CorporateNavbar() {
+  const { pathname } = useLocation();
+  const pageConfig = getNavbarPageConfig(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -46,17 +50,19 @@ export default function CorporateNavbar() {
               : "border border-transparent bg-transparent shadow-none backdrop-blur-none"
           }`}
         >
-          <CorporateLogoMark />
+          <CorporateLogoMark config={pageConfig} />
 
-          <NavbarDesktopMenu />
+          <NavbarDesktopMenu config={pageConfig} />
 
           <div className="hidden items-center gap-3 md:flex">
             <button
               type="button"
-              onClick={() => openModal("consulting")}
+              onClick={() =>
+                openModal(pageConfig.showProducts ? "consulting" : "trial")
+              }
               className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/30 flex items-center gap-2 text-sm transition-all hover:scale-[1.02] cursor-pointer"
             >
-              <span>Liên hệ tư vấn</span>
+              <span>{pageConfig.ctaLabel}</span>
               <ArrowUpRight className="h-4 w-4 text-white" aria-hidden="true" />
             </button>
           </div>
@@ -81,7 +87,10 @@ export default function CorporateNavbar() {
       <NavbarMobileDrawer
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        onOpenConsulting={() => openModal("consulting")}
+        onOpenPrimaryAction={() =>
+          openModal(pageConfig.showProducts ? "consulting" : "trial")
+        }
+        config={pageConfig}
       />
 
       {modalState.isOpen && (
