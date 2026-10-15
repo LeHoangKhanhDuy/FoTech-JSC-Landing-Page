@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { Users, Stethoscope, ShoppingBag, Home } from "lucide-react";
-import FoMedLogo from "@/assets/FoMed_Logo.png";
+import FoMedLogo from "@/assets/fomed/FoMed_Logo.png";
 
 export interface EcosystemProduct {
   name: string;
