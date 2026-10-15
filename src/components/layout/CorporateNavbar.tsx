@@ -54,20 +54,20 @@ export default function CorporateNavbar() {
 
           <NavbarDesktopMenu config={pageConfig} />
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <button
               type="button"
               onClick={() =>
                 openModal(pageConfig.showProducts ? "consulting" : "trial")
               }
-              className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/30 flex items-center gap-2 text-sm transition-all hover:scale-[1.02] cursor-pointer"
+              className={`${pageConfig.ctaClass} text-white font-bold px-5 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-sm transition-all hover:scale-[1.02] cursor-pointer`}
             >
               <span>{pageConfig.ctaLabel}</span>
               <ArrowUpRight className="h-4 w-4 text-white" aria-hidden="true" />
             </button>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               type="button"
               aria-label="Mở menu"
@@ -99,6 +99,7 @@ export default function CorporateNavbar() {
             isOpen={modalState.isOpen}
             onClose={() => setModalState({ ...modalState, isOpen: false })}
             type={modalState.type}
+            defaultProductId={pageConfig.productId}
           />
         </Suspense>
       )}
