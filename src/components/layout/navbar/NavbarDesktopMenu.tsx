@@ -3,7 +3,6 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   ECOSYSTEM_PRODUCTS,
-  NAV_LINK_CLASS,
   type NavbarPageConfig,
 } from "@/components/layout/navbar/navbarData";
 import { NavbarProductCard } from "@/components/layout/navbar/NavbarProductCard";
@@ -12,10 +11,10 @@ export function NavbarDesktopMenu({ config }: { config: NavbarPageConfig }) {
   const [ecosystemOpen, setEcosystemOpen] = useState(false);
 
   return (
-    <div className="relative hidden items-center gap-5 lg:gap-8 md:flex">
+    <div className="relative hidden items-center gap-5 lg:gap-8 lg:flex">
       {config.navLinks.map((link, index) => (
         <Fragment key={link.href}>
-          <Link to={link.href} className={NAV_LINK_CLASS}>
+          <Link to={link.href} className={config.navLinkClass}>
             {link.label}
           </Link>
           {config.showProducts && index === 0 && (
@@ -27,7 +26,7 @@ export function NavbarDesktopMenu({ config }: { config: NavbarPageConfig }) {
               <button
                 type="button"
                 onClick={() => setEcosystemOpen((prev) => !prev)}
-                className={`flex cursor-pointer items-center gap-1.5 ${NAV_LINK_CLASS}`}
+                className={`flex cursor-pointer items-center gap-1.5 ${config.navLinkClass}`}
               >
                 <span>Sản phẩm</span>
                 <ChevronDown
