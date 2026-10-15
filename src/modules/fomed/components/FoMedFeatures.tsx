@@ -1,18 +1,16 @@
-import {
-  ArrowRight,
-  CalendarDays,
-  ChartNoAxesColumnIncreasing,
-  CreditCard,
-  FileHeart,
-  Settings2,
-  Stethoscope,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import FeatureImage from "@/assets/fomed/FoMed_FeatureBG.png";
+import AppointmentIcon from "@/assets/fomed/calendar.png";
+import PatientRecordsIcon from "@/assets/fomed/medical-report.png";
+import CareWorkflowIcon from "@/assets/fomed/folders.png";
+import PaymentIcon from "@/assets/fomed/wallet.png";
+import AnalyticsIcon from "@/assets/fomed/statistical.png";
+import SystemIcon from "@/assets/fomed/procedure.png";
 import Reveal from "@/components/ui/Reveal";
 
 const featureCards = [
   {
-    icon: CalendarDays,
+    icon: AppointmentIcon,
     title: "Đặt lịch khám trực tuyến",
     description:
       "Bệnh nhân dễ dàng đặt lịch qua website, ứng dụng hoặc quầy tiếp nhận, giảm tải cho nhân viên.",
@@ -20,7 +18,7 @@ const featureCards = [
     tone: "green",
   },
   {
-    icon: FileHeart,
+    icon: PatientRecordsIcon,
     title: "Quản lý hồ sơ bệnh nhân",
     description:
       "Lưu trữ và tra cứu hồ sơ, lịch sử khám, chẩn đoán, đơn thuốc nhanh chóng và bảo mật.",
@@ -28,7 +26,7 @@ const featureCards = [
     tone: "blue",
   },
   {
-    icon: Stethoscope,
+    icon: CareWorkflowIcon,
     title: "Quản lý khám chữa bệnh",
     description:
       "Hỗ trợ bác sĩ ghi nhận khám, chẩn đoán, chỉ định cận lâm sàng, kê đơn và theo dõi điều trị.",
@@ -36,7 +34,7 @@ const featureCards = [
     tone: "orange",
   },
   {
-    icon: CreditCard,
+    icon: PaymentIcon,
     title: "Thanh toán & hóa đơn",
     description:
       "Hỗ trợ thanh toán trực tuyến, tại quầy, xuất hóa đơn điện tử và theo dõi chi phí minh bạch.",
@@ -44,7 +42,7 @@ const featureCards = [
     tone: "purple",
   },
   {
-    icon: ChartNoAxesColumnIncreasing,
+    icon: AnalyticsIcon,
     title: "Báo cáo & thống kê",
     description:
       "Cung cấp báo cáo doanh thu, số lượt khám, hiệu suất bác sĩ và nhiều thống kê quan trọng khác.",
@@ -52,7 +50,7 @@ const featureCards = [
     tone: "pink",
   },
   {
-    icon: Settings2,
+    icon: SystemIcon,
     title: "Quản lý hệ thống linh hoạt",
     description:
       "Quản lý bác sĩ, nhân viên, chuyên khoa, dịch vụ, khung giờ làm việc và nhiều thiết lập khác.",
@@ -89,13 +87,12 @@ const toneStyles = {
 } as const;
 
 function FeatureCard({ feature }: { feature: (typeof featureCards)[number] }) {
-  const Icon = feature.icon;
   const tone = toneStyles[feature.tone];
 
   return (
-    <article className="group relative flex min-h-[168px] items-start gap-4 rounded-xl border border-white/90 bg-white/90 p-5 shadow-[0_14px_38px_rgba(11,79,74,0.08)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,79,74,0.14)] sm:p-6 dark:border-white/10 dark:bg-[#102A26]/90">
+    <article className="group relative flex min-h-[168px] items-start gap-4 rounded-xl border border-white/90 bg-white/90 cursor-pointer p-5 shadow-[0_14px_38px_rgba(11,79,74,0.08)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,79,74,0.14)] sm:p-6 dark:border-white/10 dark:bg-[#102A26]/90">
       <span className={`flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-[21px] ${tone.icon}`}>
-        <Icon className="h-9 w-9" strokeWidth={2.3} aria-hidden="true" />
+        <img src={feature.icon} alt="" aria-hidden="true" className="h-12 w-12 object-contain" loading="lazy" decoding="async" />
       </span>
       <div className="min-w-0 flex-1 pr-7">
         <h3 className="text-[16px] font-extrabold leading-6 tracking-tight text-[#101F3C] dark:text-white">
