@@ -5,6 +5,7 @@ import { ThemeContext, type Theme } from '@/contexts/theme-context';
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const isFoHRM = location.pathname.startsWith('/app/fohrm');
+  const isFoMed = location.pathname.startsWith('/app/fomed');
   const [fotechTheme, setFoTechTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
       const stored =
@@ -15,6 +16,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   });
 
   const [fohrmTheme, setFoHRMTheme] = useState<Theme>('dark');
+  const [fomedTheme, setFoMedTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light';
+    return localStorage.getItem('fomed-theme') === 'dark' ? 'dark' : 'light';
+  });
 
   useEffect(() => {
     try {
@@ -24,7 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  const theme = isFoHRM ? fohrmTheme : fotechTheme;
+  const theme = isFoHRM ? fohrmTheme : isFoMed ? fomedTheme : fotechTheme;
 
   useEffect(() => {
     const root = document.documentElement;
@@ -34,29 +39,35 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       root.classList.remove('dark');
     }
 
-    if (!isFoHRM) {
+    if (isFoMed) {
+      localStorage.setItem('fomed-theme', theme);
+    } else if (!isFoHRM) {
       localStorage.setItem('fotech-theme', theme);
       localStorage.setItem('fotalent-theme', theme);
     }
-  }, [theme, isFoHRM]);
+  }, [theme, isFoHRM, isFoMed]);
 
   const toggleTheme = useCallback(() => {
     if (isFoHRM) {
       setFoHRMTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    } else if (isFoMed) {
+      setFoMedTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
     } else {
       setFoTechTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
     }
-  }, [isFoHRM]);
+  }, [isFoHRM, isFoMed]);
 
   const setTheme = useCallback(
     (newTheme: Theme) => {
       if (isFoHRM) {
         setFoHRMTheme(newTheme);
+      } else if (isFoMed) {
+        setFoMedTheme(newTheme);
       } else {
         setFoTechTheme(newTheme);
       }
     },
-    [isFoHRM]
+    [isFoHRM, isFoMed]
   );
 
   const contextValue = useMemo(

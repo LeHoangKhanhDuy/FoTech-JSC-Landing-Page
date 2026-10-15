@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import { useLocation } from 'react-router-dom';
+import { getNavbarPageConfig } from '@/components/layout/navbar/navbarData';
+import type { CSSProperties } from 'react';
 
 export default function ScrollToTop() {
+  const { pathname } = useLocation();
+  const pageConfig = getNavbarPageConfig(pathname);
+  const accentStyle = {
+    '--brand-accent': pageConfig.accentHex,
+    '--brand-accent-hover': pageConfig.accentHoverHex,
+    '--brand-accent-soft': pageConfig.accentSoftHex,
+  } as CSSProperties;
   const [isVisible, setIsVisible] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -68,11 +78,17 @@ export default function ScrollToTop() {
           onClick={handleScrollToTop}
           aria-label="Cuộn lên đầu trang"
           title="Cuộn lên đầu trang"
-          className={`group relative flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 border border-slate-200/90 shadow-xl shadow-slate-900/10 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-600/40 hover:scale-110 active:bg-blue-700 active:text-white active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-500/30 cursor-pointer dark:bg-slate-900 dark:text-white dark:border-slate-800/80 dark:shadow-blue-950/25 ${
-            isClicked ? 'scale-90 bg-blue-700 text-white shadow-inner' : ''
+          style={{
+            ...accentStyle,
+            ...(isClicked
+              ? { backgroundColor: pageConfig.accentHex, borderColor: pageConfig.accentHex }
+              : {}),
+          }}
+          className={`group relative flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 border border-slate-200/90 shadow-xl shadow-slate-900/10 transition-all duration-300 hover:bg-[color:var(--brand-accent)] hover:text-white hover:border-[color:var(--brand-accent)] hover:shadow-2xl hover:scale-110 active:bg-[color:var(--brand-accent-hover)] active:text-white active:scale-95 focus:outline-none focus:ring-4 focus:ring-[color:var(--brand-accent-soft)] cursor-pointer dark:bg-slate-900 dark:text-white dark:border-slate-800/80 dark:shadow-black/25 ${
+            isClicked ? 'scale-90 text-white shadow-inner' : ''
           }`}
         >
-          <span className="absolute -inset-1 rounded-full bg-blue-500/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300 pointer-events-none" />
+          <span className="absolute -inset-1 rounded-full bg-[color:var(--brand-accent-soft)] opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300 pointer-events-none" />
 
           <ArrowUp
             className={`h-5 w-5 transition-transform duration-300 ${
