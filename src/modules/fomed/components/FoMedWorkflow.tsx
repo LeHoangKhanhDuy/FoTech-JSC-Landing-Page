@@ -86,7 +86,7 @@ export function FoMedWorkflow({ onContact }: FoMedWorkflowProps) {
 
           {steps.map(({ number, title, description, image, imageAlt, imageClass }) => (
             <article key={number} className="relative flex h-full min-h-[460px] flex-col rounded-[28px] border border-white/90 bg-white/80 px-5 pb-5 pt-8 shadow-[0_18px_45px_rgba(6,78,59,0.08)] backdrop-blur-sm transition-shadow hover:shadow-[0_22px_52px_rgba(6,78,59,0.12)] sm:px-6 dark:border-white/10 dark:bg-[#102A26]/90 dark:shadow-black/20">
-                <div className="mx-auto -mt-10 flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-gradient-to-br from-[#059669] to-[#064E3B] text-lg font-black text-white shadow-lg shadow-[#047857]/25 dark:border-[#102A26]">
+                <div className="mx-auto -mt-16 flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-gradient-to-br from-[#059669] to-[#064E3B] text-lg font-black text-white shadow-lg shadow-[#047857]/25 dark:border-[#102A26]">
                   {number}
                 </div>
                 <h3 className="mt-4 text-lg font-extrabold leading-snug text-[#102033] dark:text-white">{title}</h3>
