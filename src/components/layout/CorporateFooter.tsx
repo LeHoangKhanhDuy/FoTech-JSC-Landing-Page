@@ -45,7 +45,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
       },
       {
         label: "FoMed (Quản lý Phòng khám)",
-        href: "/?service=fomed#solutions",
+        to: "/app/fomed",
       },
       { label: "FoCode (Sàn TMĐT)", href: "/?service=focode#solutions" },
     ],

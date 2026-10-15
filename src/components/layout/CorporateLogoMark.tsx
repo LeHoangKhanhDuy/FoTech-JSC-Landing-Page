@@ -24,13 +24,13 @@ export default function CorporateLogoMark({ config }: { config: NavbarPageConfig
     >
       <div className="relative flex h-12 w-12 shrink-0 items-center justify-center transition-transform group-hover:scale-105">
         <img
-          src={FoTechLogo}
+          src={config.logoSrc ?? FoTechLogo}
           alt={`${config.brandName} logo`}
           className="h-full w-full object-contain"
         />
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-extrabold tracking-tight text-blue-600">
+        <span className={`text-xl font-extrabold tracking-tight ${config.accentTextClass}`}>
           {config.brandName}
         </span>
         <span className="mt-1 text-[11px] font-medium tracking-wide text-slate-500">
