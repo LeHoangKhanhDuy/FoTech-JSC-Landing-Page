@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  ArrowRight,
-  Building2,
-  Check,
-  Crown,
-  Home,
-  UsersRound,
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 interface FoMedPricingProps {
   onContact: () => void;
@@ -16,7 +10,6 @@ const plans = [
   {
     name: "Cơ bản",
     description: "Phù hợp phòng khám nhỏ",
-    icon: Home,
     annualPrice: 2_500_000,
     originalPrice: 3_000_000,
     discount: "-17%",
@@ -31,7 +24,6 @@ const plans = [
   {
     name: "Chuyên nghiệp",
     description: "Phù hợp phòng khám vừa",
-    icon: Building2,
     annualPrice: 5_900_000,
     originalPrice: 7_200_000,
     discount: "-18%",
@@ -48,7 +40,6 @@ const plans = [
   {
     name: "Doanh nghiệp",
     description: "Phù hợp chuỗi phòng khám",
-    icon: UsersRound,
     annualPrice: 12_900_000,
     originalPrice: 15_600_000,
     discount: "-17%",
@@ -64,7 +55,6 @@ const plans = [
   {
     name: "Tùy chỉnh",
     description: "Dành cho nhu cầu đặc thù",
-    icon: Crown,
     features: [
       "Thiết kế theo nhu cầu riêng",
       "Tích hợp hệ thống bên thứ 3",
@@ -92,7 +82,8 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
         aria-hidden="true"
       />
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-10">
-        <header className="mx-auto max-w-4xl text-center">
+        <Reveal className="mx-auto max-w-4xl text-center">
+        <header>
           <span className="inline-flex rounded-full bg-[#D1FAE5] px-5 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#064E3B]">
             Bảng giá
           </span>
@@ -111,9 +102,9 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
               onClick={() => setBilling("annual")}
               className={`rounded-full px-4 py-2 text-xs font-bold transition sm:px-5 ${billing === "annual" ? "bg-[#E0F7EF] text-[#064E3B]" : "text-slate-600 hover:text-[#047857] dark:text-slate-300"}`}
             >
-              Thanh toán theo năm{" "}
+              Theo năm{" "}
               <span className="ml-1 rounded-full bg-[#047857] px-2 py-1 text-[10px] text-white">
-                Tiết kiệm đến 20%
+                Tiết kiệm 20%
               </span>
             </button>
             <button
@@ -122,14 +113,14 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
               onClick={() => setBilling("monthly")}
               className={`rounded-full px-4 py-2 text-xs font-bold transition sm:px-5 ${billing === "monthly" ? "bg-[#E0F7EF] text-[#064E3B]" : "text-slate-600 hover:text-[#047857] dark:text-slate-300"}`}
             >
-              Thanh toán theo tháng
+              Theo tháng
             </button>
           </div>
         </header>
+        </Reveal>
 
-        <div className="mt-7 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {plans.map((plan) => {
-            const Icon = plan.icon;
+        <div className="mt-7 grid auto-rows-fr items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {plans.map((plan, index) => {
             const price = plan.annualPrice
               ? billing === "annual"
                 ? plan.annualPrice
@@ -141,9 +132,9 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
                 : null;
 
             return (
+              <Reveal key={plan.name} delay={index * 0.1} className="h-full">
               <article
-                key={plan.name}
-                className={`relative flex min-h-[400px] flex-col rounded-2xl border bg-white/90 p-5 shadow-[0_12px_34px_rgba(6,78,59,0.045)] transition-colors sm:p-6 dark:bg-[#102A26] ${plan.popular ? "border-[#6EE7B7] shadow-[0_16px_40px_rgba(4,120,87,0.12)]" : "border-[#DCEFE9] dark:border-white/10"}`}
+                className={`relative flex h-full min-h-[400px] flex-col rounded-2xl border bg-white/90 p-5 shadow-[0_12px_34px_rgba(6,78,59,0.045)] transition-colors sm:p-6 dark:bg-[#102A26] ${plan.popular ? "border-[#6EE7B7] shadow-[0_16px_40px_rgba(4,120,87,0.12)]" : "border-[#DCEFE9] dark:border-white/10"}`}
               >
                 {plan.popular && (
                   <span className="absolute right-3 top-3 rounded-full bg-[#10B981] px-3 py-1 text-[11px] font-bold text-white">
@@ -151,13 +142,6 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
                   </span>
                 )}
                 <div className="flex items-center gap-4">
-                  <span className="flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-[#D1FAE5] text-[#047857] dark:bg-[#064E3B] dark:text-[#6EE7B7]">
-                    <Icon
-                      className="h-7 w-7"
-                      strokeWidth={2.5}
-                      aria-hidden="true"
-                    />
-                  </span>
                   <div>
                     <h3 className="font-extrabold text-[#102C36] dark:text-white">
                       {plan.name}
@@ -238,6 +222,7 @@ export function FoMedPricing({ onContact }: FoMedPricingProps) {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
               </article>
+              </Reveal>
             );
           })}
         </div>

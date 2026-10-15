@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import FoMedLogo from "@/assets/FoMed_Logo.png";
 import FoMedFooterBackground from "@/assets/FoMed_Footer.png";
+import Reveal from "@/components/ui/Reveal";
 
 const productLinks = [
   { label: "Tính năng", href: "/app/fomed#features" },
@@ -49,6 +50,7 @@ export function FoMedFooter() {
       </svg>
       <div className="relative z-10 mx-auto max-w-[1440px] px-5 pb-6 pt-16 sm:px-8 sm:pt-20 lg:px-10 lg:pt-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.45fr_0.8fr_0.8fr_1.15fr] lg:gap-12">
+          <Reveal>
           <div>
             <a href="/app/fomed#hero" className="inline-flex items-center gap-3" aria-label="FoMed - về đầu trang">
               <img src={FoMedLogo} alt="" className="h-12 w-12 rounded-xl object-contain" />
@@ -57,7 +59,7 @@ export function FoMedFooter() {
                 <span className="block text-sm text-white/70">Product by FoTech</span>
               </span>
             </a>
-            <p className="mt-4 max-w-sm text-sm leading-6 text-white/75">
+            <p className="mt-4 max-w-sm text-sm leading-6 text-justify text-white/75">
               Giải pháp quản lý phòng khám hiện đại, giúp tối ưu quy trình vận hành, nâng cao chất lượng dịch vụ y tế và trải nghiệm bệnh nhân.
             </p>
             <div className="mt-4 flex items-center gap-2.5">
@@ -69,21 +71,27 @@ export function FoMedFooter() {
               </a>
             </div>
           </div>
+          </Reveal>
 
+          <Reveal delay={0.08}>
           <nav aria-label="Sản phẩm FoMed">
             <h2 className="mb-3 text-base font-extrabold">Sản phẩm</h2>
             <ul className="space-y-2.5">
               {productLinks.map((link) => <li key={link.label}><a href={link.href} className="text-sm text-white/70 transition hover:text-[#6EE7B7]">{link.label}</a></li>)}
             </ul>
           </nav>
+          </Reveal>
 
+          <Reveal delay={0.16}>
           <nav aria-label="Tài nguyên">
             <h2 className="mb-3 text-base font-extrabold">Tài nguyên</h2>
             <ul className="space-y-2.5">
               {resourceLinks.map((link) => <li key={link.label}><a href={link.href} className="text-sm text-white/70 transition hover:text-[#6EE7B7]">{link.label}</a></li>)}
             </ul>
           </nav>
+          </Reveal>
 
+          <Reveal delay={0.24}>
           <div>
             <h2 className="mb-3 text-base font-extrabold">Liên hệ</h2>
             <ul className="space-y-3">
@@ -101,10 +109,11 @@ export function FoMedFooter() {
               </li>
             </ul>
           </div>
+          </Reveal>
         </div>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} FoTech Solutions. FoMed - giải pháp quản lý phòng khám.</p>
+          <p>© {new Date().getFullYear()} FoTech Solutions. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <a href="mailto:contact@fotech.solutions?subject=Ch%C3%ADnh%20s%C3%A1ch%20b%E1%BA%A3o%20m%E1%BA%ADt%20FoMed" className="transition hover:text-white">Chính sách bảo mật</a>
             <span aria-hidden="true">|</span>
