@@ -4,6 +4,7 @@ import ScrollToTopOnNavigate from '@/components/common/ScrollToTopOnNavigate';
 
 const CorporateHomePage = lazy(() => import('@/pages/CorporateHomePage'));
 const FoHRMHomePage = lazy(() => import('@/pages/FoHRMHomePage'));
+const FoMedHomePage = lazy(() => import('@/pages/FoMedHomePage'));
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
         <Routes>
           <Route path="/" element={<CorporateHomePage />} />
           <Route path="/app/fohrm" element={<FoHRMHomePage />} />
+          <Route path="/app/fomed" element={<FoMedHomePage />} />
           <Route path="/fohrm" element={<Navigate to="/app/fohrm" replace />} />
         </Routes>
       </Suspense>
