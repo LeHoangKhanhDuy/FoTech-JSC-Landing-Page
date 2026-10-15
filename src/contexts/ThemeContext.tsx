@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ThemeContext, type Theme } from '@/contexts/theme-context';
 
@@ -16,32 +16,27 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   });
 
   const [fohrmTheme, setFoHRMTheme] = useState<Theme>('dark');
-  const [fomedTheme, setFoMedTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'light';
-    return localStorage.getItem('fomed-theme') === 'dark' ? 'dark' : 'light';
-  });
-
   useEffect(() => {
     try {
       localStorage.removeItem('fohrm-theme');
+      localStorage.removeItem('fomed-theme');
     } catch {
       // Ignore storage errors
     }
   }, []);
 
-  const theme = isFoHRM ? fohrmTheme : isFoMed ? fomedTheme : fotechTheme;
+  const theme = isFoHRM ? fohrmTheme : isFoMed ? 'light' : fotechTheme;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
+    root.style.colorScheme = theme;
 
-    if (isFoMed) {
-      localStorage.setItem('fomed-theme', theme);
-    } else if (!isFoHRM) {
+    if (!isFoHRM && !isFoMed) {
       localStorage.setItem('fotech-theme', theme);
       localStorage.setItem('fotalent-theme', theme);
     }
@@ -51,7 +46,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (isFoHRM) {
       setFoHRMTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
     } else if (isFoMed) {
-      setFoMedTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+      return;
     } else {
       setFoTechTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
     }
@@ -62,7 +57,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       if (isFoHRM) {
         setFoHRMTheme(newTheme);
       } else if (isFoMed) {
-        setFoMedTheme(newTheme);
+        return;
       } else {
         setFoTechTheme(newTheme);
       }

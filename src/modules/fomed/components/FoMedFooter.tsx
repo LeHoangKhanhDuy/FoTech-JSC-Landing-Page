@@ -45,7 +45,7 @@ export function FoMedFooter() {
       >
         <path
           d="M0 0H1440V18C1320 22 1230 42 1110 52C970 65 835 69 720 69C565 69 440 62 310 53C185 44 90 20 0 24Z"
-          fill="#F5FCFA"
+          className="fill-[#F5FCFA] dark:fill-[#091E1B]"
         />
       </svg>
       <div className="relative z-10 mx-auto max-w-[1440px] px-5 pb-6 pt-16 sm:px-8 sm:pt-20 lg:px-10 lg:pt-20">

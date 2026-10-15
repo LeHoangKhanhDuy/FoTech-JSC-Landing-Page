@@ -101,7 +101,7 @@ export default function ScrollToTop() {
         </button>
       </div>
 
-      <ThemeToggle />
+      {pageConfig.productId !== 'fomed' && <ThemeToggle />}
     </div>
   );
 }
