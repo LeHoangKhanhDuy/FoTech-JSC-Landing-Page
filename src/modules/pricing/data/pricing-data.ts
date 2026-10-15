@@ -1,12 +1,12 @@
 import { ServiceTabItemData } from "@/modules/pricing/types/pricing-types";
-import reactLogo from "@/assets/reacticon.png";
-import htmlLogo from "@/assets/HTML5_logo_and_wordmark.svg.png";
-import cssLogo from "@/assets/CSS3_logo_and_wordmark.svg.png";
-import tsLogo from "@/assets/Typescript_logo_2020.svg.png";
-import laravelLogo from "@/assets/Laravel.svg.png";
-import dotnetLogo from "@/assets/.netlogo.png";
-import phpLogo from "@/assets/PHP-logo.svg.png";
-import csharpLogo from "@/assets/Csharp_Logo.png";
+import reactLogo from "@/assets/fotech/reacticon.png";
+import htmlLogo from "@/assets/fotech/HTML5_logo_and_wordmark.svg.png";
+import cssLogo from "@/assets/fotech/CSS3_logo_and_wordmark.svg.png";
+import tsLogo from "@/assets/fotech/Typescript_logo_2020.svg.png";
+import laravelLogo from "@/assets/fotech/Laravel.svg.png";
+import dotnetLogo from "@/assets/fotech/.netlogo.png";
+import phpLogo from "@/assets/fotech/PHP-logo.svg.png";
+import csharpLogo from "@/assets/fotech/Csharp_Logo.png";
 
 const tech = {
   react: { name: "React", logo: reactLogo },

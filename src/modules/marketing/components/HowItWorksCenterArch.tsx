@@ -1,4 +1,4 @@
-import FoTechLogo from "@/assets/FoTech_Logo.png";
+import FoTechLogo from "@/assets/fotech/FoTech_Logo.png";
 
 interface HowItWorksCenterArchProps {
   className?: string;
