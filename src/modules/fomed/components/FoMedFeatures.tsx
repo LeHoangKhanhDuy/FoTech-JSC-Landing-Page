@@ -126,16 +126,19 @@ export function FoMedFeatures() {
     >
       <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-9">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-[#DDF8F0] px-5 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#07866E]">
+          <span className="inline-flex rounded-full bg-[#D1FAE5]/90 px-5 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#064E3B]">
             Tính năng nổi bật
           </span>
           <h2 className="mt-5 text-3xl font-black leading-[1.12] tracking-tight text-[#101F3C] sm:text-4xl lg:text-[46px] dark:text-white">
             Đầy đủ tính năng cho
-            <br className="hidden sm:block" /> quản lý phòng khám <span className="text-[#079778]">hiện đại</span>
+            <br className="hidden sm:block" /> quản lý phòng khám{" "}
+            <span className="text-[#079778]">hiện đại</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-6 text-slate-600 sm:text-base dark:text-slate-300">
-            FoMed cung cấp bộ tính năng toàn diện giúp phòng khám vận hành hiệu quả,
-            <br className="hidden md:block" /> tiết kiệm thời gian và nâng cao trải nghiệm cho cả bác sĩ và bệnh nhân.
+            FoMed cung cấp bộ tính năng toàn diện giúp phòng khám vận hành hiệu
+            quả,
+            <br className="hidden md:block" /> tiết kiệm thời gian và nâng cao
+            trải nghiệm cho cả bác sĩ và bệnh nhân.
           </p>
         </Reveal>
 

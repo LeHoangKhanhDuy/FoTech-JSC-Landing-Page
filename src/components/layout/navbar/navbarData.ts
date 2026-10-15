@@ -83,7 +83,6 @@ const PRODUCT_NAVBAR_CONFIGS: Record<string, NavbarPageConfig> = {
       { label: "Tính năng", href: "/app/fomed#features" },
       { label: "Giải pháp", href: "/app/fomed#workflow" },
       { label: "Bảng giá", href: "/app/fomed#pricing" },
-      { label: "Liên hệ", href: "/app/fomed#contact" },
     ],
     showProducts: false,
     ctaLabel: "Dùng thử miễn phí",
