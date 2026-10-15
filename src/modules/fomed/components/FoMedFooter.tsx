@@ -4,8 +4,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import FoMedLogo from "@/assets/FoMed_Logo.png";
-import FoMedFooterBackground from "@/assets/FoMed_Footer.png";
+import FoMedLogo from "@/assets/fomed/FoMed_Logo.png";
+import FoMedFooterBackground from "@/assets/fomed/FoMed_Footer.png";
 import Reveal from "@/components/ui/Reveal";
 
 const productLinks = [

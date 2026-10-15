@@ -59,7 +59,7 @@ export default function FoMedHomePage() {
       <main>
         <FoMedHero onStartTrial={() => setIsContactOpen(true)} />
         <FoMedFeatures />
-        <FoMedWorkflow />
+        <FoMedWorkflow onContact={() => setIsContactOpen(true)} />
         <FoMedPricing onContact={() => setIsContactOpen(true)} />
       </main>
       <FoMedFooter />
