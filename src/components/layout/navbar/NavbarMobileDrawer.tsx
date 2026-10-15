@@ -21,7 +21,7 @@ export function NavbarMobileDrawer({
 }: NavbarMobileDrawerProps) {
   return (
     <div
-      className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+      className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${
         isOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
@@ -62,6 +62,8 @@ export function NavbarMobileDrawer({
                 <Link
                   key={prod.name}
                   to={prod.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={onClose}
                   className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
@@ -98,7 +100,7 @@ export function NavbarMobileDrawer({
               onClose();
               onOpenPrimaryAction();
             }}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs cursor-pointer"
+            className={`w-full ${config.ctaClass} text-white font-bold py-3 px-5 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs cursor-pointer`}
           >
             <span>{config.ctaLabel}</span>
             <ArrowUpRight className="h-4 w-4 text-white" aria-hidden="true" />

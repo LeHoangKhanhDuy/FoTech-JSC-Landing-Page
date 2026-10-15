@@ -1,8 +1,8 @@
 import type { StepData } from '@/modules/fohrm/howitwork/types/howItWorkTypes';
-import fohrmImg1 from '@/assets/fohrmIMG1.png';
-import fohrmImg2 from '@/assets/fohrmIMG2.png';
-import fohrmImg3 from '@/assets/fohrmIMG3.png';
-import fohrmImg4 from '@/assets/fohrmIMG4.png';
+import fohrmImg1 from '@/assets/fohrm/fohrmIMG1.png';
+import fohrmImg2 from '@/assets/fohrm/fohrmIMG2.png';
+import fohrmImg3 from '@/assets/fohrm/fohrmIMG3.png';
+import fohrmImg4 from '@/assets/fohrm/fohrmIMG4.png';
 
 export const HOW_IT_WORKS_STEPS: StepData[] = [
   {

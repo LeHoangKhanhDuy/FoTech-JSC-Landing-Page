@@ -79,6 +79,14 @@
           document.documentElement.classList.add("dark");
           return;
         }
+        if (window.location.pathname.startsWith("/app/fomed")) {
+          if (localStorage.getItem("fomed-theme") === "dark") {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+          return;
+        }
         var stored =
           localStorage.getItem("fotech-theme") || localStorage.getItem("fotalent-theme");
         if (stored === "dark") {

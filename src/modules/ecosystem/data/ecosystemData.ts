@@ -69,6 +69,7 @@ export const ecosystemProducts: EcosystemProduct[] = [
     },
     cta: {
       label: 'Tìm hiểu FoMed',
+      link: '/app/fomed',
       modalType: 'demo',
     },
   },

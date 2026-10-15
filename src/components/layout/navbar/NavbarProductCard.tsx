@@ -31,7 +31,7 @@ export function NavbarProductCard({ product, onClick }: NavbarProductCardProps) 
   );
 
   return (
-    <Link to={product.link} onClick={onClick}>
+    <Link to={product.link} target="_blank" rel="noopener noreferrer" onClick={onClick}>
       {content}
     </Link>
   );

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import mktDashboardImg from "@/assets/MKTFoHRM.png";
+import mktDashboardImg from "@/assets/fohrm/MKTFoHRM.png";
 
 export const HeroVisual = memo(function HeroVisual() {
   return (

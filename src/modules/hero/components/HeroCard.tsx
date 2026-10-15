@@ -3,7 +3,7 @@ import HeroContent from "@/modules/hero/components/HeroContent";
 import TechnologyUsed from "@/modules/hero/components/TechnologyUsed";
 import HeroStats from "@/modules/hero/components/HeroStats";
 import LightRays from "@/components/ui/LightRays";
-import backgroundHero from "@/assets/backgroundHero.png";
+import backgroundHero from "@/assets/fotech/backgroundHero.png";
 
 const ContactModal = lazy(() => import("@/modules/contact/components/ContactModal"));
 

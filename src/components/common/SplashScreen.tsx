@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FoTechLogo from "@/assets/FoTech_Logo.png";
+import FoTechLogo from "@/assets/fotech/FoTech_Logo.png";
 
 const STORAGE_KEY = "fotech_splash_seen";
 const DURATION_MS = 3000;
