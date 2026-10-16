@@ -29,6 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useLayoutEffect(() => {
     const root = document.documentElement;
+    root.dataset.product = isFoMed ? 'fomed' : isFoHRM ? 'fohrm' : 'fotech';
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {

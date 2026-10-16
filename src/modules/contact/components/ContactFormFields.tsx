@@ -15,28 +15,30 @@ export const ContactFormFields = memo(function ContactFormFields({
 }: ContactFormFieldsProps) {
   return (
     <>
-      <FormFieldItem
-        id="contact-fullName"
-        name="fullName"
-        label="Họ và tên người đại diện"
-        placeholder="Nguyễn Văn A"
-        value={formData.fullName}
-        error={errors.fullName}
-        autoComplete="name"
-        onChange={(val) => onChange("fullName", val)}
-      />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <FormFieldItem
+          id="contact-fullName"
+          name="fullName"
+          label="Họ và tên người đại diện"
+          placeholder="Nguyễn Văn A"
+          value={formData.fullName}
+          error={errors.fullName}
+          autoComplete="name"
+          onChange={(val) => onChange("fullName", val)}
+        />
 
-      <FormFieldItem
-        id="contact-email"
-        name="email"
-        type="email"
-        label="Email làm việc (Work Email)"
-        placeholder="name@company.com"
-        value={formData.email}
-        error={errors.email}
-        autoComplete="email"
-        onChange={(val) => onChange("email", val)}
-      />
+        <FormFieldItem
+          id="contact-email"
+          name="email"
+          type="email"
+          label="Email làm việc (Work Email)"
+          placeholder="name@company.com"
+          value={formData.email}
+          error={errors.email}
+          autoComplete="email"
+          onChange={(val) => onChange("email", val)}
+        />
+      </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormFieldItem

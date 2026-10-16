@@ -26,7 +26,7 @@ export function ContactHeader({ type, title, subtitle }: ContactHeaderProps) {
   return (
     <div>
       {type !== "trial" && <div className="flex items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-600 dark:bg-blue-950/50 dark:text-blue-400">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--contact-accent-soft)] bg-[var(--contact-accent-soft)] px-3 py-1 text-xs font-bold text-[var(--contact-accent)]">
           FoTech Enterprise Platform
         </span>
       </div>}

@@ -288,36 +288,53 @@ html {
   scrollbar-color: #2563eb transparent;
 }
 
+html[data-product='fomed'] {
+  scrollbar-color: #047857 #e8f7f3;
+}
+
 html.dark,
 .dark html {
   scrollbar-color: #3b82f6 transparent;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+html::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+html::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: #2563eb;
   border-radius: 9999px;
   transition: background-color 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: #1d4ed8;
 }
 
-.dark ::-webkit-scrollbar-thumb {
+html.dark::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html.dark::-webkit-scrollbar-thumb {
   background: #3b82f6;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
+html.dark::-webkit-scrollbar-thumb:hover {
   background: #60a5fa;
+}
+
+html[data-product='fomed']::-webkit-scrollbar-track {
+  background: #e8f7f3;
+}
+
+html[data-product='fomed']::-webkit-scrollbar-thumb,
+html[data-product='fomed']::-webkit-scrollbar-thumb:hover {
+  background: #047857;
 }
 
 @keyframes star-movement-bottom {

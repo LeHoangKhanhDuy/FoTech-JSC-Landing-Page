@@ -21,13 +21,17 @@ export function ContactSuccessView({
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
         Cảm ơn bạn đã quan tâm đến giải pháp của <strong>FoTech Solutions</strong>.
         Chuyên viên tư vấn sẽ liên hệ tới email{" "}
-        <span className="font-semibold text-blue-600 dark:text-blue-400">
+        <span className="font-semibold text-[var(--contact-accent,#2563eb)]">
           {email || "của bạn"}
         </span>{" "}
         trong thời gian sớm nhất.
       </p>
       <div className="mt-6 flex justify-center">
-        <Button onClick={onReset} variant="primary">
+        <Button
+          onClick={onReset}
+          variant="primary"
+          className="!bg-[var(--contact-accent,#2563eb)] hover:!bg-[var(--contact-accent-hover,#1d4ed8)]"
+        >
           Hoàn tất
         </Button>
       </div>

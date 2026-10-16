@@ -15,7 +15,7 @@ const getInputClasses = (hasError?: boolean, className?: string) =>
   `mt-1.5 w-full rounded-xl border px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 dark:text-white dark:placeholder-slate-500 [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#0f172a_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:white] ${
     hasError
       ? "border-rose-500 bg-rose-950/10 focus:border-rose-500 focus:ring-rose-500/20 dark:border-rose-500 dark:bg-rose-950/20"
-      : "border-slate-300 bg-slate-50 focus:border-blue-500 focus:bg-white focus:ring-blue-500/25 dark:border-slate-700 dark:bg-slate-800/90 dark:focus:border-blue-500 dark:focus:bg-slate-800"
+      : "border-slate-300 bg-slate-50 focus:border-[var(--contact-accent,#2563eb)] focus:bg-white focus:ring-[var(--contact-accent-soft,rgba(37,99,235,0.25))] dark:border-slate-700 dark:bg-slate-800/90 dark:focus:border-[var(--contact-accent,#2563eb)] dark:focus:bg-slate-800"
   } ${className || ""}`.trim();
 
 export const FormFieldItem = memo(function FormFieldItem({
