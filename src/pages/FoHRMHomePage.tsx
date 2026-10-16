@@ -16,8 +16,9 @@ const fohrmSchema = {
       "@id": "https://www.fotech.solutions/app/fohrm#software",
       url: "https://www.fotech.solutions/app/fohrm",
       name: "FoHRM",
+      alternateName: ["FoTech HRM", "FoTech FoHRM"],
       description:
-        "Nền tảng quản lý nhân sự giúp doanh nghiệp quản lý chấm công, đơn từ, tính lương và vận hành nhân sự.",
+        "FoHRM là phần mềm quản lý nhân sự của FoTech Solutions, hỗ trợ chấm công, quản lý hồ sơ, đơn từ và tính lương.",
       operatingSystem: "Web",
       applicationCategory: "BusinessApplication",
       offers: {
@@ -40,7 +41,7 @@ const fohrmSchema = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "FoHRM AI",
+          name: "FoHRM",
           item: "https://www.fotech.solutions/app/fohrm",
         },
       ],
@@ -75,11 +76,13 @@ export default function FoHRMHomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#020817] text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <SEO
-        title="FoHRM – Phần mềm quản lý nhân sự, chấm công & tính lương"
-        description="Quản lý nhân sự, chấm công, đơn từ và tính lương trên một nền tảng. Dùng thử FoHRM miễn phí 14 ngày, không cần thẻ tín dụng."
-        keywords="FoHRM, phần mềm quản lý nhân sự, phần mềm HRM, chấm công FaceID, phần mềm chấm công, tính lương tự động, trợ lý AI FINA, chi lương Bank API"
-        ogDescription="FoHRM giúp doanh nghiệp quản lý nhân sự, chấm công, đơn từ và tính lương trên một nền tảng. Dùng thử miễn phí 14 ngày."
+        title="FoHRM | Phần mềm HRM, chấm công & tính lương"
+        description="FoHRM là phần mềm quản lý nhân sự của FoTech Solutions: chấm công, hồ sơ, đơn từ và tính lương. Dùng thử miễn phí 14 ngày."
+        keywords="FoHRM, FoTech HRM, FoTech FoHRM, FoHRM FoTech, phần mềm quản lý nhân sự, phần mềm HRM, chấm công FaceID, phần mềm chấm công, tính lương tự động, trợ lý AI FINA, chi lương Bank API"
+        ogDescription="FoHRM giúp doanh nghiệp quản lý nhân sự, chấm công, hồ sơ, đơn từ và tính lương. Dùng thử miễn phí 14 ngày."
         canonical="https://www.fotech.solutions/app/fohrm"
+        ogImage="https://www.fotech.solutions/fohrm-og-image.png"
+        ogImageAlt="FoHRM - Phần mềm quản lý nhân sự, chấm công và tính lương"
         schema={fohrmSchema}
       />
       <CorporateNavbar />
