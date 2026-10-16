@@ -11,9 +11,10 @@ export default function CorporateHomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <SEO
-        title="FoTech - Nền tảng Chuyển đổi số & Quản trị Doanh nghiệp AI Hàng Đầu"
-        description="Hệ sinh thái giải pháp số toàn diện từ FoTech: FoHRM (Quản trị Nhân sự & Tính lương AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech thông minh). Tối ưu vận hành doanh nghiệp 2026."
-        keywords="FoTech, Hệ sinh thái số FoTech, Chuyển đổi số doanh nghiệp, FoHRM, FoMed, FoCode, Troo.vn, Quản trị AI 2026"
+        title="FoTech Solutions | Hệ sinh thái giải pháp công nghệ"
+        description="FoTech Solutions phát triển hệ sinh thái công nghệ gồm FoHRM, FoMed, FoCode và Troo.vn. Cung cấp giải pháp quản lý, chuyển đổi số và thiết kế website cho doanh nghiệp."
+        ogDescription="Khám phá hệ sinh thái FoTech: FoHRM, FoMed, FoCode và Troo.vn. Giải pháp công nghệ hỗ trợ doanh nghiệp vận hành hiệu quả."
+        keywords="FoTech, FoHRM, Quản trị nhân sự AI, Chuyển đổi số doanh nghiệp, phần mềm tính lương tự động, ERP Việt Nam, FoMed, FoCode, Troo.vn, HR Tech 2026"
         canonical="https://www.fotech.solutions/"
       />
       <CorporateNavbar />

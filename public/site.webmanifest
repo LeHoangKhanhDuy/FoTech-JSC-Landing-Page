@@ -1,11 +1,11 @@
 {
-  "name": "FoTech Ecosystem - Chuyển đổi số & Quản trị AI",
+  "name": "FoTech Solutions | Hệ sinh thái giải pháp công nghệ",
   "short_name": "FoTech",
-  "description": "Hệ sinh thái phần mềm quản trị doanh nghiệp và nhân sự úng dụng AI thế hệ mới.",
+  "description": "FoTech Solutions phát triển hệ sinh thái công nghệ gồm FoHRM, FoMed, FoCode và Troo.vn. Cung cấp giải pháp quản lý, chuyển đổi số và thiết kế website cho doanh nghiệp.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020817",
-  "theme_color": "#020817",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/favicon.ico",
