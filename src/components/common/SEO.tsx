@@ -96,6 +96,8 @@ export default function SEO({
         document.head.appendChild(script);
       }
       script.text = JSON.stringify(schema);
+    } else {
+      document.getElementById("page-seo-schema")?.remove();
     }
   }, [title, description, ogDescription, keywords, currentCanonical, ogImage, ogType, schema]);
 
