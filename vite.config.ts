@@ -2,6 +2,112 @@ import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath, URL } from 'node:url';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+
+type RouteMetadata = {
+  path: string;
+  title: string;
+  description: string;
+  keywords: string;
+  canonical: string;
+  image: string;
+  imageAlt: string;
+};
+
+const routeMetadata: RouteMetadata[] = [
+  {
+    path: 'app/fohrm.html',
+    title: 'FoHRM | Phần mềm HRM, chấm công & tính lương',
+    description:
+      'FoHRM (FoTech HRM) là phần mềm quản lý nhân sự của FoTech Solutions: chấm công, hồ sơ, đơn từ và tính lương. Dùng thử miễn phí 14 ngày.',
+    keywords:
+      'FoHRM, FoTech HRM, FoTech FoHRM, FoHRM FoTech, phần mềm quản lý nhân sự, phần mềm HRM, chấm công FaceID, phần mềm chấm công, tính lương tự động, trợ lý AI FINA, chi lương Bank API',
+    canonical: 'https://www.fotech.solutions/app/fohrm',
+    image: 'https://www.fotech.solutions/fohrm-og-image.png',
+    imageAlt: 'FoHRM - Phần mềm quản lý nhân sự, chấm công và tính lương',
+  },
+  {
+    path: 'app/fomed.html',
+    title: 'FoMed - Phần mềm quản lý phòng khám và hồ sơ y tế',
+    description:
+      'FoMed hỗ trợ phòng khám quản lý lịch hẹn, bệnh nhân, hồ sơ y tế và quy trình vận hành trên một nền tảng hiện đại.',
+    keywords:
+      'FoMed, phần mềm quản lý phòng khám, quản lý lịch hẹn khám, hồ sơ bệnh án điện tử, quản lý bệnh nhân',
+    canonical: 'https://www.fotech.solutions/app/fomed',
+    image: 'https://www.fotech.solutions/fomed-og-image.png',
+    imageAlt: 'FoMed - Phần mềm quản lý phòng khám và hồ sơ y tế',
+  },
+];
+
+function escapeHtmlAttribute(value: string) {
+  return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+}
+
+function setHtmlTag(html: string, pattern: RegExp, replacement: string) {
+  return pattern.test(html) ? html.replace(pattern, replacement) : html.replace('</head>', `    ${replacement}\n  </head>`);
+}
+
+function setMeta(html: string, kind: 'name' | 'property', key: string, content: string) {
+  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(`<meta\\b(?=[^>]*\\b${kind}=["']${escapedKey}["'])[^>]*>`, 'i');
+  return setHtmlTag(
+    html,
+    pattern,
+    `<meta ${kind}="${key}" content="${escapeHtmlAttribute(content)}" />`,
+  );
+}
+
+function setRouteMetadata(html: string, metadata: RouteMetadata) {
+  const escapedTitle = escapeHtmlAttribute(metadata.title);
+  const escapedCanonical = escapeHtmlAttribute(metadata.canonical);
+  let result = setHtmlTag(html, /<title\b[^>]*>[\s\S]*?<\/title>/i, `<title>${escapedTitle}</title>`);
+  result = setMeta(result, 'name', 'description', metadata.description);
+  result = setMeta(result, 'name', 'keywords', metadata.keywords);
+  result = setHtmlTag(
+    result,
+    /<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/i,
+    `<link rel="canonical" href="${escapedCanonical}" />`,
+  );
+  result = setMeta(result, 'property', 'og:type', 'website');
+  result = setMeta(result, 'property', 'og:url', metadata.canonical);
+  result = setMeta(result, 'property', 'og:title', metadata.title);
+  result = setMeta(result, 'property', 'og:description', metadata.description);
+  result = setMeta(result, 'property', 'og:image', metadata.image);
+  result = setMeta(result, 'property', 'og:image:alt', metadata.imageAlt);
+  result = setMeta(result, 'property', 'og:image:width', '1672');
+  result = setMeta(result, 'property', 'og:image:height', '941');
+  result = setMeta(result, 'property', 'og:image:type', 'image/png');
+  result = setMeta(result, 'name', 'twitter:card', 'summary_large_image');
+  result = setMeta(result, 'name', 'twitter:title', metadata.title);
+  result = setMeta(result, 'name', 'twitter:description', metadata.description);
+  result = setMeta(result, 'name', 'twitter:image', metadata.image);
+  result = setMeta(result, 'name', 'twitter:image:alt', metadata.imageAlt);
+  return result;
+}
+
+function routeMetadataHtml(): Plugin {
+  let outputDirectory = resolve(process.cwd(), 'dist');
+
+  return {
+    name: 'route-specific-social-metadata',
+    apply: 'build',
+    configResolved(config) {
+      outputDirectory = resolve(config.root, config.build.outDir);
+    },
+    async writeBundle() {
+      const baseHtml = await readFile(resolve(outputDirectory, 'index.html'), 'utf8');
+
+      await Promise.all(
+        routeMetadata.map(async (metadata) => {
+          const outputPath = resolve(outputDirectory, metadata.path);
+          await mkdir(dirname(outputPath), { recursive: true });
+          await writeFile(outputPath, setRouteMetadata(baseHtml, metadata), 'utf8');
+        }),
+      );
+    },
+  };
+}
 
 function localContactApi(): Plugin {
   return {
@@ -72,7 +178,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-  plugins: [react(), tailwindcss(), localContactApi()],
+  plugins: [react(), tailwindcss(), localContactApi(), routeMetadataHtml()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
