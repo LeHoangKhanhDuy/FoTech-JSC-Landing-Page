@@ -60,7 +60,7 @@ function ServiceTabCard({
                 </span>
               </div>
               <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400">
-                FoTech Ecosystem
+                FoTech Solutions
               </span>
             </div>
           </div>

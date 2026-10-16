@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 export interface SEOProps {
   title?: string;
   description?: string;
+  ogDescription?: string;
   keywords?: string;
   canonical?: string;
   ogImage?: string;
@@ -11,9 +12,9 @@ export interface SEOProps {
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const DEFAULT_TITLE = "FoTech - Nền tảng Chuyển đổi số & Quản trị Doanh nghiệp AI Hàng Đầu";
+const DEFAULT_TITLE = "FoTech Solutions | Hệ sinh thái giải pháp công nghệ";
 const DEFAULT_DESCRIPTION =
-  "Hệ sinh thái giải pháp số toàn diện từ FoTech bao gồm FoHRM (Quản trị Nhân sự & Tính lương AI), FoMed (Quản lý Phòng khám), FoCode (Thương mại Điện tử) và Troo.vn (PropTech thông minh). Tối ưu hóa vận hành, tự động hóa quy trình cho doanh nghiệp Việt Nam.";
+  "FoTech Solutions phát triển hệ sinh thái công nghệ gồm FoHRM, FoMed, FoCode và Troo.vn. Cung cấp giải pháp quản lý, chuyển đổi số và thiết kế website cho doanh nghiệp.";
 const DEFAULT_KEYWORDS =
   "FoTech, FoHRM, Quản trị nhân sự AI, Chuyển đổi số doanh nghiệp, phần mềm tính lương tự động, ERP Việt Nam, FoMed, FoCode, Troo.vn, HR Tech 2026";
 const BASE_URL = "https://www.fotech.solutions";
@@ -42,6 +43,7 @@ function setCanonical(href: string) {
 export default function SEO({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
+  ogDescription = description,
   keywords = DEFAULT_KEYWORDS,
   canonical,
   ogImage = DEFAULT_OG_IMAGE,
@@ -61,23 +63,23 @@ export default function SEO({
       "robots",
       "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     );
-    setMetaTag("name", "author", "Công ty Cổ phần Công nghệ FoTech");
+    setMetaTag("name", "author", "FoTech Solutions");
     setMetaTag("name", "publisher", "FoTech Solutions");
     setCanonical(currentCanonical);
 
     setMetaTag("property", "og:title", title);
-    setMetaTag("property", "og:description", description);
+    setMetaTag("property", "og:description", ogDescription);
     setMetaTag("property", "og:url", currentCanonical);
     setMetaTag("property", "og:image", ogImage);
     setMetaTag(
       "property",
       "og:image:alt",
-      "FoTech - hệ sinh thái giải pháp số cho doanh nghiệp Việt"
+      "FoTech Solutions - Hệ sinh thái giải pháp công nghệ"
     );
     setMetaTag("property", "og:image:width", "1672");
     setMetaTag("property", "og:image:height", "941");
     setMetaTag("property", "og:type", ogType);
-    setMetaTag("property", "og:site_name", "FoTech Ecosystem");
+    setMetaTag("property", "og:site_name", "FoTech Solutions");
     setMetaTag("property", "og:locale", "vi_VN");
 
     setMetaTag("name", "twitter:card", "summary_large_image");
@@ -95,7 +97,7 @@ export default function SEO({
       }
       script.text = JSON.stringify(schema);
     }
-  }, [title, description, keywords, currentCanonical, ogImage, ogType, schema]);
+  }, [title, description, ogDescription, keywords, currentCanonical, ogImage, ogType, schema]);
 
   return null;
 }
