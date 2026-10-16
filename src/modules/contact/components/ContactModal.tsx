@@ -1,5 +1,6 @@
-import { memo } from "react";
+import { memo, type CSSProperties } from "react";
 import { X } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import Button from "@/components/ui/Button";
 import { ContactModalProps } from "@/modules/contact/types";
 import { ContactHeader } from "@/modules/contact/components/ContactHeader";
@@ -17,6 +18,13 @@ export const ContactModal = memo(function ContactModal({
   initialEmail,
   defaultProductId,
 }: ContactModalProps) {
+  const { pathname } = useLocation();
+  const isFoMedPage = pathname === "/app/fomed" || pathname.startsWith("/app/fomed/");
+  const accentStyle = {
+    "--contact-accent": isFoMedPage ? "#047857" : "#2563EB",
+    "--contact-accent-hover": isFoMedPage ? "#059669" : "#1D4ED8",
+    "--contact-accent-soft": isFoMedPage ? "rgba(4, 120, 87, 0.2)" : "rgba(37, 99, 235, 0.2)",
+  } as CSSProperties;
   const {
     formData,
     errors,
@@ -36,7 +44,7 @@ export const ContactModal = memo(function ContactModal({
         onClick={onClose}
       />
 
-      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-200 transform-gpu dark:border-slate-800 dark:bg-slate-900 sm:p-8">
+      <div style={accentStyle} className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-200 transform-gpu dark:border-slate-800 dark:bg-slate-900 sm:p-8">
         <button
           type="button"
           onClick={onClose}
@@ -69,7 +77,7 @@ export const ContactModal = memo(function ContactModal({
                 <Button
                   type="submit"
                   variant="primary"
-                  className="w-full"
+                  className="w-full !bg-[var(--contact-accent)] hover:!bg-[var(--contact-accent-hover)] focus:!ring-[var(--contact-accent-soft)]"
                   disabled={isSubmitting}
                 >
                   {isSubmitting

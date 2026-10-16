@@ -2,7 +2,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
-import WorkflowBackground from "@/assets/fomed/FoMed_Workflow_BG.png";
+import WorkflowBackground from "@/assets/fomed/FoMed_Workflow_BG.webp";
 import CalendarLockArtwork from "@/assets/fomed/FoMed_Calendar_Lock.png";
 import PhoneMockup from "@/assets/fomed/workflow-phone.png";
 import PatientListMockup from "@/assets/fomed/workflow-patient-list.png";
@@ -84,8 +84,9 @@ export function FoMedWorkflow({ onContact }: FoMedWorkflowProps) {
             <path d="M55 8C215 8 215 82 365 82S515 8 665 8s150 74 300 74 150-74 180-74" stroke="#14B8A6" strokeDasharray="3 7" strokeLinecap="round" strokeWidth="2" />
           </svg>
 
-          {steps.map(({ number, title, description, image, imageAlt, imageClass }) => (
-            <article key={number} className="relative flex h-full min-h-[460px] flex-col rounded-[28px] border border-white/90 bg-white/80 px-5 pb-5 pt-8 shadow-[0_18px_45px_rgba(6,78,59,0.08)] backdrop-blur-sm transition-shadow hover:shadow-[0_22px_52px_rgba(6,78,59,0.12)] sm:px-6 dark:border-white/10 dark:bg-[#102A26]/90 dark:shadow-black/20">
+          {steps.map(({ number, title, description, image, imageAlt, imageClass }, index) => (
+            <Reveal key={number} delay={index * 0.12} duration={0.55} className="h-full">
+              <article className="relative flex h-full min-h-[460px] flex-col rounded-xl border border-white/90 bg-white/80 px-5 pb-5 pt-8 shadow-[0_18px_45px_rgba(6,78,59,0.08)] transition-shadow hover:shadow-[0_22px_52px_rgba(6,78,59,0.12)] sm:px-6 dark:border-white/10 dark:bg-[#102A26]/90 dark:shadow-black/20">
                 <div className="mx-auto -mt-16 flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-gradient-to-br from-[#059669] to-[#064E3B] text-lg font-black text-white shadow-lg shadow-[#047857]/25 dark:border-[#102A26]">
                   {number}
                 </div>
@@ -95,11 +96,12 @@ export function FoMedWorkflow({ onContact }: FoMedWorkflowProps) {
                   <img src={image} alt={imageAlt} className={`block h-auto max-h-[220px] object-contain object-top ${imageClass}`} loading="lazy" decoding="async" />
                 </div>
               </article>
+            </Reveal>
           ))}
         </div>
 
         <Reveal delay={0.1} className="mt-16">
-          <div className="relative flex min-h-[170px] flex-col items-center overflow-hidden rounded-[30px] bg-gradient-to-r from-[#064E3B] via-[#056B5D] to-[#047857] px-6 py-6 text-white shadow-[0_20px_48px_rgba(6,78,59,0.2)] sm:flex-row sm:gap-5 sm:px-8 lg:px-10">
+          <div className="relative flex min-h-[170px] flex-col items-center overflow-hidden rounded-xl bg-gradient-to-r from-[#064E3B] via-[#056B5D] to-[#047857] px-6 py-6 text-white shadow-[0_20px_48px_rgba(6,78,59,0.2)] sm:flex-row sm:gap-5 sm:px-8 lg:px-10">
             <img
               src={CalendarLockArtwork}
               alt="Lịch hẹn khám FoMed với đồng hồ"

@@ -33,7 +33,7 @@ export function ContactProductSelect({
             className={`flex w-full items-center justify-between rounded-xl border px-3.5 py-2.5 text-sm transition focus:outline-none focus:ring-2 ${
               error
                 ? "border-rose-500 bg-rose-950/10 text-slate-900 focus:border-rose-500 focus:ring-rose-500/20 dark:border-rose-500 dark:bg-rose-950/20 dark:text-white"
-                : "border-slate-300 bg-slate-50 text-slate-900 hover:bg-slate-100 focus:border-blue-500 focus:ring-blue-500/25 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:hover:bg-slate-800"
+                : "border-slate-300 bg-slate-50 text-slate-900 hover:bg-slate-100 focus:border-[var(--contact-accent,#2563eb)] focus:ring-[var(--contact-accent-soft,rgba(37,99,235,0.25))] dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:hover:bg-slate-800"
             }`}
           >
             <div className="flex items-center gap-2.5 min-w-0">
