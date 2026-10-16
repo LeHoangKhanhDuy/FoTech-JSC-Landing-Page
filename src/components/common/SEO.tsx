@@ -8,6 +8,7 @@ export interface SEOProps {
   keywords?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: "website" | "article" | "product";
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
@@ -47,6 +48,7 @@ export default function SEO({
   keywords = DEFAULT_KEYWORDS,
   canonical,
   ogImage = DEFAULT_OG_IMAGE,
+  ogImageAlt = "FoTech Solutions - Hệ sinh thái giải pháp công nghệ",
   ogType = "website",
   schema,
 }: SEOProps) {
@@ -71,13 +73,10 @@ export default function SEO({
     setMetaTag("property", "og:description", ogDescription);
     setMetaTag("property", "og:url", currentCanonical);
     setMetaTag("property", "og:image", ogImage);
-    setMetaTag(
-      "property",
-      "og:image:alt",
-      "FoTech Solutions - Hệ sinh thái giải pháp công nghệ"
-    );
+    setMetaTag("property", "og:image:alt", ogImageAlt);
     setMetaTag("property", "og:image:width", "1672");
     setMetaTag("property", "og:image:height", "941");
+    setMetaTag("property", "og:image:type", "image/png");
     setMetaTag("property", "og:type", ogType);
     setMetaTag("property", "og:site_name", "FoTech Solutions");
     setMetaTag("property", "og:locale", "vi_VN");
@@ -86,6 +85,7 @@ export default function SEO({
     setMetaTag("name", "twitter:title", title);
     setMetaTag("name", "twitter:description", description);
     setMetaTag("name", "twitter:image", ogImage);
+    setMetaTag("name", "twitter:image:alt", ogImageAlt);
 
     if (schema) {
       let script = document.getElementById("page-seo-schema") as HTMLScriptElement | null;
@@ -96,8 +96,10 @@ export default function SEO({
         document.head.appendChild(script);
       }
       script.text = JSON.stringify(schema);
+    } else {
+      document.getElementById("page-seo-schema")?.remove();
     }
-  }, [title, description, ogDescription, keywords, currentCanonical, ogImage, ogType, schema]);
+  }, [title, description, ogDescription, keywords, currentCanonical, ogImage, ogImageAlt, ogType, schema]);
 
   return null;
 }

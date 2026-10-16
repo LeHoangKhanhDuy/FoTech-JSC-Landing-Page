@@ -51,8 +51,11 @@ export default function FoMedHomePage() {
       <SEO
         title="FoMed - Phần mềm quản lý phòng khám và hồ sơ y tế"
         description="FoMed hỗ trợ phòng khám quản lý lịch hẹn, bệnh nhân, hồ sơ y tế và quy trình vận hành trên một nền tảng hiện đại."
+        ogDescription="FoMed giúp phòng khám quản lý lịch hẹn, bệnh nhân, hồ sơ y tế và vận hành trên một nền tảng hiện đại."
         keywords="FoMed, phần mềm quản lý phòng khám, quản lý lịch hẹn khám, hồ sơ bệnh án điện tử, quản lý bệnh nhân"
         canonical="https://www.fotech.solutions/app/fomed"
+        ogImage="https://www.fotech.solutions/fomed-og-image.png"
+        ogImageAlt="FoMed - Phần mềm quản lý phòng khám và hồ sơ y tế"
         schema={foMedSchema}
       />
       <CorporateNavbar />

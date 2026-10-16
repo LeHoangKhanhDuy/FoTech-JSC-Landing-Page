@@ -20,6 +20,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/app/fohrm", "destination": "/app/fohrm.html" },
+    { "source": "/app/fomed", "destination": "/app/fomed.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
