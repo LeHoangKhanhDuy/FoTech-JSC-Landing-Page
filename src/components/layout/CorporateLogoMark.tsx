@@ -22,7 +22,7 @@ export default function CorporateLogoMark({ config }: { config: NavbarPageConfig
         <img
           src={config.logoSrc ?? FoTechLogo}
           alt={`${config.brandName} logo`}
-          className="h-full w-full object-contain"
+          className={`h-full w-full object-contain ${config.logoSrc ? "" : "scale-[1.3]"}`}
         />
       </div>
       <div className="flex flex-col leading-none">
