@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import FeatureImage from "@/assets/fomed/FoMed_FeatureBG.png";
+import FeatureImage from "@/assets/fomed/FoMed_FeatureBG.webp";
 import AppointmentIcon from "@/assets/fomed/calendar.png";
 import PatientRecordsIcon from "@/assets/fomed/medical-report.png";
 import CareWorkflowIcon from "@/assets/fomed/folders.png";
@@ -90,7 +90,7 @@ function FeatureCard({ feature }: { feature: (typeof featureCards)[number] }) {
   const tone = toneStyles[feature.tone];
 
   return (
-    <article className="group relative flex min-h-[168px] items-start gap-4 rounded-xl border border-white/90 bg-white/90 cursor-pointer p-5 shadow-[0_14px_38px_rgba(11,79,74,0.08)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,79,74,0.14)] sm:p-6 dark:border-white/10 dark:bg-[#102A26]/90">
+    <article className="group relative flex min-h-[168px] items-start gap-4 rounded-xl border border-white/90 bg-white/90 cursor-pointer p-5 shadow-[0_14px_38px_rgba(11,79,74,0.08)]  transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(11,79,74,0.14)] sm:p-6 dark:border-white/10 dark:bg-[#102A26]/90">
       <span className={`flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-[21px] ${tone.icon}`}>
         <img src={feature.icon} alt="" aria-hidden="true" className="h-12 w-12 object-contain" loading="lazy" decoding="async" />
       </span>
