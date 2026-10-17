@@ -94,13 +94,13 @@ export const SERVICE_PREVIEW_CONFIGS: Record<ServiceId, ServicePreviewConfigItem
   },
   troovn: {
     gradient:
-      'from-amber-50 to-orange-50/80 dark:from-amber-900/40 dark:to-slate-900/80 border-amber-100',
+      'from-[#FFFBEB] to-[#F59E0B]/10 dark:from-[#F59E0B]/20 dark:to-slate-900/80 border-[#F59E0B]/25',
     icon: Home,
-    iconColor: 'text-amber-600 dark:text-amber-400',
+    iconColor: 'text-[#B45309] dark:text-[#FBBF24]',
     title: 'Troo.vn PropTech Platform',
     badge: 'Chính chủ 100%',
     badgeClass:
-      'text-amber-700 bg-amber-100 dark:text-amber-400 dark:bg-amber-950/80 border-amber-300/80 dark:border-amber-500/30',
+      'text-[#92400E] bg-[#F59E0B]/15 dark:text-[#FBBF24] dark:bg-[#F59E0B]/15 border-[#F59E0B]/40 dark:border-[#F59E0B]/30',
     indicator: {
       type: 'detail',
       detailTitle: 'Tự động chốt điện nước',
@@ -111,7 +111,7 @@ export const SERVICE_PREVIEW_CONFIGS: Record<ServiceId, ServicePreviewConfigItem
       {
         label: 'Tỷ lệ lấp đầy phòng',
         value: '98.5%',
-        colorClass: 'text-amber-600 dark:text-amber-400',
+        colorClass: 'text-[#B45309] dark:text-[#FBBF24]',
       },
       {
         label: 'Hợp đồng điện tử',

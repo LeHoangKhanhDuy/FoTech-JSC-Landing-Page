@@ -16,6 +16,7 @@ export interface ServiceTabItemData {
   bullets: string[];
   brands: ServicePartnerBrand[];
   buttonText: string;
+  href?: string;
   badge: string;
   previewType: 'website' | 'fohrm' | 'troovn' | 'fomed' | 'focode' | 'custom';
 }
