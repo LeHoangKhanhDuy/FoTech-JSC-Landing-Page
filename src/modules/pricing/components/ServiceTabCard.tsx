@@ -7,7 +7,7 @@ import ServiceMockPreview from '@/modules/pricing/components/ServiceMockPreview'
 interface ServiceTabCardProps {
   data: ServiceTabItemData;
   slideDirection?: 'right' | 'left';
-  onOpenModal: () => void;
+  onButtonAction: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
@@ -15,7 +15,7 @@ interface ServiceTabCardProps {
 function ServiceTabCard({
   data,
   slideDirection = 'right',
-  onOpenModal,
+  onButtonAction,
   onMouseEnter,
   onMouseLeave,
 }: ServiceTabCardProps) {
@@ -120,7 +120,7 @@ function ServiceTabCard({
             <StarBorder
               as="button"
               type="button"
-              onClick={onOpenModal}
+              onClick={onButtonAction}
               color="#93c5fd"
               speed="4s"
               backgroundColor="#2563eb"

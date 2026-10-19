@@ -135,7 +135,7 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     tagline: "Nền tảng Tìm & Quản lý Trọ",
     desc: "Kết nối phòng trọ chính chủ & hợp đồng điện tử",
     icon: Home,
-    color: "bg-amber-500",
+    color: "bg-[#F59E0B]",
     link: "/?service=troovn#solutions",
   },
 ];
