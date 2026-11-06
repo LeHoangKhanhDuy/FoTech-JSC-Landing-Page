@@ -20,7 +20,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { label: "Về FoTech", href: "/#why-trust" },
       // {
       //   label: "Tuyển dụng",
-      //   href: "mailto:hi@fotech.vn?subject=Ung%20tuyen%20FoTech",
+      //   href: "mailto:contact@fotech.solutions?subject=Ung%20tuyen%20FoTech",
       //   badge: "WE'RE HIRING",
       // },
     ],
@@ -29,8 +29,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
     title: "Liên hệ",
     links: [
       // { label: "Hotline: 1900 xxxx" }, 
-      { label: "Email: lhkhanhduy.dev@gmail.com", href: "mailto:lhkhanhduy.dev@gmail.com" },
-      { label: "Email: maitrithanh06@gmail.com", href: "mailto:maitrithanh06@gmail.com" },
+      { label: "Email: contact@fotech.solutions", href: "mailto:contact@fotech.solutions" },
       { label: "Địa chỉ: TP. Hồ Chí Minh", href: "/#contact" },
     ],
   },
