@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { fileURLToPath, URL } from 'node:url';
+import { fileURLToPath, pathToFileURL, URL } from 'node:url';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 
@@ -147,8 +147,15 @@ function localContactApi(): Plugin {
             return;
           }
 
-          const contactServicePath = './src/services/contact.js';
-          const { default: handleContactRequest } = await import(contactServicePath);
+          const env = loadEnv(server.config.mode, server.config.root, '');
+          for (const key of ['RESEND_API_KEY', 'RESEND_FROM_EMAIL', 'CONTACT_TO_EMAIL']) {
+            if (env[key]) process.env[key] = env[key];
+          }
+
+          const contactServiceUrl = `${pathToFileURL(
+            resolve(server.config.root, 'src/services/contact.js'),
+          ).href}?t=${Date.now()}`;
+          const { default: handleContactRequest } = await import(contactServiceUrl);
           await handleContactRequest(
             { method: request.method, body },
             {
@@ -164,6 +171,13 @@ function localContactApi(): Plugin {
             },
           );
         } catch (error) {
+          console.error('Local /api/contact error:', error);
+          if (!response.writableEnded) {
+            response.statusCode = 500;
+            response.setHeader('Content-Type', 'application/json');
+            response.end(JSON.stringify({ error: 'Lỗi máy chủ khi xử lý đăng ký.' }));
+            return;
+          }
           next(error);
         }
       });

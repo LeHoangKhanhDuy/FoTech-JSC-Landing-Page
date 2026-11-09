@@ -1,6 +1,6 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_INTENTS = new Set(["demo", "trial", "consulting"]);
-const DEFAULT_CONTACT_EMAIL = "lhkhanhduy.dev@gmail.com";
+const DEFAULT_CONTACT_EMAIL = "contact@fotech.solutions";
 
 function getServerEnv(name) {
   const runtime = globalThis;
@@ -137,7 +137,10 @@ export default async function handleContactRequest(request, response) {
       });
     }
 
-    return response.status(200).json({ ok: true });
+    const mailData = await mailResponse.json().catch(() => null);
+    console.info("Resend sent contact email:", { id: mailData?.id, from, to });
+
+    return response.status(200).json({ ok: true, id: mailData?.id });
   } catch (error) {
     console.error("Unable to send contact submission", error);
     return response.status(502).json({
