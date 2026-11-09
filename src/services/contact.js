@@ -32,7 +32,7 @@ export default async function handleContactRequest(request, response) {
 
   const apiKey = getServerEnv("RESEND_API_KEY");
   const from = getServerEnv("RESEND_FROM_EMAIL");
-  const to = getServerEnv("CONTACT_TO_EMAIL") || DEFAULT_CONTACT_EMAIL;
+  const to = DEFAULT_CONTACT_EMAIL;
   if (!apiKey || !from) {
     return response.status(503).json({
       error: `Hệ thống nhận đăng ký chưa được cấu hình. Vui lòng liên hệ ${DEFAULT_CONTACT_EMAIL}.`,
