@@ -1,3 +1,3 @@
-import handleContactRequest from "../src/services/contact.js";
+import handleContactRequest from "@/services/contact";
 
 export default handleContactRequest;
